@@ -68,18 +68,21 @@ object StreamingPriceService {
             }
     }
 
-    fun getLocalFallback(context: Context): List<StreamingPlatform> {
+    private fun getRawLocalFallback(context: Context): List<StreamingPlatform> {
         return try {
             val inputStream = context.assets.open("streaming_prices.json")
             val reader = InputStreamReader(inputStream)
             val type = object : TypeToken<List<StreamingPlatform>>() {}.type
             val fullList: List<StreamingPlatform> = Gson().fromJson(reader, type)
-            val filtered = fullList.filter { it.id == "prime_video" || it.id == "netflix" || it.id == "spotify" || it.id == "apple_music" }
-            resolvePlatformsForUserCurrency(context, filtered)
+            fullList.filter { it.id == "prime_video" || it.id == "netflix" || it.id == "spotify" || it.id == "apple_music" }
         } catch (e: Exception) {
             e.printStackTrace()
             emptyList()
         }
+    }
+
+    fun getLocalFallback(context: Context): List<StreamingPlatform> {
+        return resolvePlatformsForUserCurrency(context, getRawLocalFallback(context))
     }
 
     suspend fun fetchAndSyncPrices(context: Context, forceRefresh: Boolean = false): List<StreamingPlatform> {
@@ -88,8 +91,8 @@ object StreamingPriceService {
             val cachedJson = sharedPrefs.getString(KEY_PRICES_JSON, null)
             val lastUpdate = sharedPrefs.getLong(KEY_LAST_UPDATE, 0)
 
-            // If updated in the last 12 hours and not forced, return cache
-            if (!forceRefresh && cachedJson != null && (System.currentTimeMillis() - lastUpdate) < 12 * 60 * 60 * 1000) {
+            // If updated in the last 12 hours, cached data contains supported_currencies, and not forced, return cache
+            if (!forceRefresh && cachedJson != null && cachedJson.contains("supported_currencies") && (System.currentTimeMillis() - lastUpdate) < 12 * 60 * 60 * 1000) {
                 try {
                     val type = object : TypeToken<List<StreamingPlatform>>() {}.type
                     val list: List<StreamingPlatform> = Gson().fromJson(cachedJson, type)
@@ -128,7 +131,7 @@ object StreamingPriceService {
             }
 
             if (fetchedList != null && fetchedList!!.isNotEmpty()) {
-                val localList = getLocalFallback(context)
+                val localList = getRawLocalFallback(context)
                 val finalFetchedList = (fetchedList!! + localList).distinctBy { it.id }
 
                 // Check and store price changes for trend analysis

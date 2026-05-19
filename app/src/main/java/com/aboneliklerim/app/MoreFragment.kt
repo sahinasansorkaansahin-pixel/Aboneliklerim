@@ -536,6 +536,7 @@ class MoreFragment : Fragment() {
             .setSingleChoiceItems(names, checkedItem) { dialog, which ->
                 prefs.edit().putString("default_currency", currencies[which].code).apply()
                 updateDefaultCurrencyUI()
+                view?.let { setupStreamingPrices(it) }
                 dialog.dismiss()
             }
             .show()
@@ -735,12 +736,10 @@ class MoreFragment : Fragment() {
             
             tvPlanName.text = plan.name
             
-            // Convert price
-            val amountInTry = CurrencyService.convertToTry(plan.price, plan.currency, rates)
-            val targetAmount = CurrencyService.convertFromTry(amountInTry, targetCurrency, rates)
-            
-            val formattedPrice = String.format(java.util.Locale.US, "%,.2f", targetAmount)
-            tvPlanPrice.text = "$formattedPrice $symbol"
+            // Display local price directly from JSON
+            val planSymbol = CurrencyHelper.getLocalizedSymbol(plan.currency, requireContext())
+            val formattedPrice = String.format(java.util.Locale.US, "%,.2f", plan.price)
+            tvPlanPrice.text = "$formattedPrice $planSymbol"
             
             tvPlanPeriod.text = when (plan.period) {
                 "monthly" -> if (activeLang.startsWith("tr")) "/ay" else "/mo"
