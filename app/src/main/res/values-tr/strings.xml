@@ -278,4 +278,6 @@
     <string name="update_prices_success">Platform fiyatları güncellendi!</string>
     <string name="update_prices_error">Fiyatlar güncellenemedi.</string>
     <string name="select_platform">Herhangi bir platform seç</string>
+    <string name="period_monthly_short">/ay</string>
+    <string name="period_yearly_short">/yıl</string>
 </resources>

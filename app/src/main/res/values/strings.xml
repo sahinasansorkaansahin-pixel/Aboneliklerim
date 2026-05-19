@@ -619,4 +619,6 @@
   <string name="update_prices_success">Platform prices updated!</string>
   <string name="update_prices_error">Failed to update prices.</string>
   <string name="select_platform">Select any platform</string>
+  <string name="period_monthly_short">/mo</string>
+  <string name="period_yearly_short">/yr</string>
 </resources>
