@@ -536,7 +536,6 @@ class MoreFragment : Fragment() {
             .setSingleChoiceItems(names, checkedItem) { dialog, which ->
                 prefs.edit().putString("default_currency", currencies[which].code).apply()
                 updateDefaultCurrencyUI()
-                view?.let { setupStreamingPrices(it) }
                 dialog.dismiss()
             }
             .show()

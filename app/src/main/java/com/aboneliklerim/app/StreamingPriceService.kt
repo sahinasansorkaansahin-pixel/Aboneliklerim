@@ -46,9 +46,8 @@ object StreamingPriceService {
     )
 
     private fun resolvePlatformsForUserCurrency(context: Context, platforms: List<StreamingPlatform>): List<StreamingPlatform> {
-        val sharedPrefs = context.getSharedPreferences("Settings", Context.MODE_PRIVATE)
         val activeLang = LocaleHelper.getActiveLanguage(context)
-        val targetCurrency = sharedPrefs.getString("default_currency", CurrencyHelper.getDefaultCurrencyBasedOnLanguage(activeLang)) ?: "TRY"
+        val targetCurrency = CurrencyHelper.getDefaultCurrencyBasedOnLanguage(activeLang)
 
         return platforms
             .filter { platform ->
