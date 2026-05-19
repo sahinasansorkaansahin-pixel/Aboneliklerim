@@ -289,6 +289,13 @@ def main():
                 "plans": plans_list
             }
             
+        # Define supported currencies (China/CNY has no Spotify and Netflix)
+        all_currencies = ["TRY", "USD", "EUR", "JPY", "GBP", "CHF", "KRW", "CNY", "SEK", "NOK", "DKK", "CAD", "AUD", "SGD", "AED", "SAR", "THB", "PLN", "CZK"]
+        if pid in ["spotify", "netflix"]:
+            supported = [c for c in all_currencies if c != "CNY"]
+        else:
+            supported = all_currencies
+
         updated_plat = {
             "id": pid,
             "name": meta["name"],
@@ -297,7 +304,8 @@ def main():
             "logo_res": meta["logo_res"],
             "official_url": meta["official_url"],
             "plans": scraped["plans"],
-            "regional": regional_dict
+            "regional": regional_dict,
+            "supported_currencies": supported
         }
         updated_list.append(updated_plat)
         

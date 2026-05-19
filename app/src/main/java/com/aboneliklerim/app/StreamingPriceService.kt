@@ -41,7 +41,8 @@ object StreamingPriceService {
         val logo_res: String,
         val official_url: String,
         val plans: List<Plan>,
-        val regional: Map<String, RegionalData>? = null
+        val regional: Map<String, RegionalData>? = null,
+        val supported_currencies: List<String>? = null
     )
 
     private fun resolvePlatformsForUserCurrency(context: Context, platforms: List<StreamingPlatform>): List<StreamingPlatform> {
@@ -49,18 +50,22 @@ object StreamingPriceService {
         val activeLang = LocaleHelper.getActiveLanguage(context)
         val targetCurrency = sharedPrefs.getString("default_currency", CurrencyHelper.getDefaultCurrencyBasedOnLanguage(activeLang)) ?: "TRY"
 
-        return platforms.map { platform ->
-            val regionalData = platform.regional?.get(targetCurrency)
-            if (regionalData != null) {
-                platform.copy(
-                    base_price = regionalData.base_price,
-                    base_currency = regionalData.base_currency,
-                    plans = regionalData.plans
-                )
-            } else {
-                platform
+        return platforms
+            .filter { platform ->
+                platform.supported_currencies == null || platform.supported_currencies.contains(targetCurrency)
             }
-        }
+            .map { platform ->
+                val regionalData = platform.regional?.get(targetCurrency)
+                if (regionalData != null) {
+                    platform.copy(
+                        base_price = regionalData.base_price,
+                        base_currency = regionalData.base_currency,
+                        plans = regionalData.plans
+                    )
+                } else {
+                    platform
+                }
+            }
     }
 
     fun getLocalFallback(context: Context): List<StreamingPlatform> {

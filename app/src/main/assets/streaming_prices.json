@@ -297,7 +297,28 @@
           }
         ]
       }
-    }
+    },
+    "supported_currencies": [
+      "TRY",
+      "USD",
+      "EUR",
+      "JPY",
+      "GBP",
+      "CHF",
+      "KRW",
+      "CNY",
+      "SEK",
+      "NOK",
+      "DKK",
+      "CAD",
+      "AUD",
+      "SGD",
+      "AED",
+      "SAR",
+      "THB",
+      "PLN",
+      "CZK"
+    ]
   },
   {
     "id": "netflix",
@@ -759,7 +780,27 @@
           }
         ]
       }
-    }
+    },
+    "supported_currencies": [
+      "TRY",
+      "USD",
+      "EUR",
+      "JPY",
+      "GBP",
+      "CHF",
+      "KRW",
+      "SEK",
+      "NOK",
+      "DKK",
+      "CAD",
+      "AUD",
+      "SGD",
+      "AED",
+      "SAR",
+      "THB",
+      "PLN",
+      "CZK"
+    ]
   },
   {
     "id": "spotify",
@@ -1323,7 +1364,27 @@
           }
         ]
       }
-    }
+    },
+    "supported_currencies": [
+      "TRY",
+      "USD",
+      "EUR",
+      "JPY",
+      "GBP",
+      "CHF",
+      "KRW",
+      "SEK",
+      "NOK",
+      "DKK",
+      "CAD",
+      "AUD",
+      "SGD",
+      "AED",
+      "SAR",
+      "THB",
+      "PLN",
+      "CZK"
+    ]
   },
   {
     "id": "apple_music",
@@ -1785,6 +1846,27 @@
           }
         ]
       }
-    }
+    },
+    "supported_currencies": [
+      "TRY",
+      "USD",
+      "EUR",
+      "JPY",
+      "GBP",
+      "CHF",
+      "KRW",
+      "CNY",
+      "SEK",
+      "NOK",
+      "DKK",
+      "CAD",
+      "AUD",
+      "SGD",
+      "AED",
+      "SAR",
+      "THB",
+      "PLN",
+      "CZK"
+    ]
   }
 ]
