@@ -1,9 +1,8 @@
 import json
 import re
-import os
 import requests
 
-# Fallback prices to use if scraping fails
+# Fallback prices to use if scraping fails (Turkish prices)
 fallback_prices = {
     "prime_video": {
         "price": 69.90,
@@ -40,6 +39,90 @@ fallback_prices = {
     }
 }
 
+# Regional prices data for the other 18 currencies/regions
+regional_data = {
+    "spotify": {
+        "USD": {"price": 11.99, "plans": [{"name": "Student", "price": 5.99}, {"name": "Individual", "price": 11.99}, {"name": "Duo", "price": 16.99}, {"name": "Family", "price": 19.99}]},
+        "EUR": {"price": 10.99, "plans": [{"name": "Student", "price": 5.99}, {"name": "Individual", "price": 10.99}, {"name": "Duo", "price": 14.99}, {"name": "Family", "price": 17.99}]},
+        "JPY": {"price": 980.0, "plans": [{"name": "Student", "price": 480.0}, {"name": "Individual", "price": 980.0}, {"name": "Duo", "price": 1280.0}, {"name": "Family", "price": 1580.0}]},
+        "GBP": {"price": 11.99, "plans": [{"name": "Student", "price": 5.99}, {"name": "Individual", "price": 11.99}, {"name": "Duo", "price": 16.99}, {"name": "Family", "price": 19.99}]},
+        "CHF": {"price": 13.95, "plans": [{"name": "Student", "price": 7.95}, {"name": "Individual", "price": 13.95}, {"name": "Duo", "price": 18.95}, {"name": "Family", "price": 22.95}]},
+        "KRW": {"price": 10900.0, "plans": [{"name": "Individual", "price": 10900.0}, {"name": "Duo", "price": 16350.0}, {"name": "Family", "price": 17900.0}]},
+        "CNY": {"price": 59.0, "plans": [{"name": "Student", "price": 29.0}, {"name": "Individual", "price": 59.0}, {"name": "Family", "price": 89.0}]},
+        "SEK": {"price": 119.0, "plans": [{"name": "Student", "price": 65.0}, {"name": "Individual", "price": 119.0}, {"name": "Duo", "price": 159.0}, {"name": "Family", "price": 189.0}]},
+        "NOK": {"price": 119.0, "plans": [{"name": "Student", "price": 65.0}, {"name": "Individual", "price": 119.0}, {"name": "Duo", "price": 159.0}, {"name": "Family", "price": 189.0}]},
+        "DKK": {"price": 109.0, "plans": [{"name": "Student", "price": 59.0}, {"name": "Individual", "price": 109.0}, {"name": "Duo", "price": 139.0}, {"name": "Family", "price": 169.0}]},
+        "CAD": {"price": 10.99, "plans": [{"name": "Student", "price": 6.49}, {"name": "Individual", "price": 10.99}, {"name": "Duo", "price": 14.99}, {"name": "Family", "price": 16.99}]},
+        "AUD": {"price": 12.99, "plans": [{"name": "Student", "price": 6.99}, {"name": "Individual", "price": 12.99}, {"name": "Duo", "price": 17.99}, {"name": "Family", "price": 20.99}]},
+        "SGD": {"price": 10.98, "plans": [{"name": "Student", "price": 5.98}, {"name": "Individual", "price": 10.98}, {"name": "Duo", "price": 14.98}, {"name": "Family", "price": 17.98}]},
+        "AED": {"price": 21.99, "plans": [{"name": "Student", "price": 11.99}, {"name": "Individual", "price": 21.99}, {"name": "Duo", "price": 27.99}, {"name": "Family", "price": 35.99}]},
+        "SAR": {"price": 21.99, "plans": [{"name": "Student", "price": 11.99}, {"name": "Individual", "price": 21.99}, {"name": "Duo", "price": 27.99}, {"name": "Family", "price": 35.99}]},
+        "THB": {"price": 139.0, "plans": [{"name": "Student", "price": 65.0}, {"name": "Individual", "price": 139.0}, {"name": "Duo", "price": 189.0}, {"name": "Family", "price": 219.0}]},
+        "PLN": {"price": 23.99, "plans": [{"name": "Student", "price": 12.99}, {"name": "Individual", "price": 23.99}, {"name": "Duo", "price": 30.99}, {"name": "Family", "price": 37.99}]},
+        "CZK": {"price": 169.0, "plans": [{"name": "Student", "price": 89.0}, {"name": "Individual", "price": 169.0}, {"name": "Duo", "price": 229.0}, {"name": "Family", "price": 269.0}]}
+    },
+    "apple_music": {
+        "USD": {"price": 10.99, "plans": [{"name": "Student", "price": 5.99}, {"name": "Individual", "price": 10.99}, {"name": "Family", "price": 16.99}]},
+        "EUR": {"price": 10.99, "plans": [{"name": "Student", "price": 5.99}, {"name": "Individual", "price": 10.99}, {"name": "Family", "price": 16.99}]},
+        "JPY": {"price": 1080.0, "plans": [{"name": "Student", "price": 580.0}, {"name": "Individual", "price": 1080.0}, {"name": "Family", "price": 1680.0}]},
+        "GBP": {"price": 10.99, "plans": [{"name": "Student", "price": 5.99}, {"name": "Individual", "price": 10.99}, {"name": "Family", "price": 16.99}]},
+        "CHF": {"price": 13.90, "plans": [{"name": "Student", "price": 7.90}, {"name": "Individual", "price": 13.90}, {"name": "Family", "price": 21.90}]},
+        "KRW": {"price": 8900.0, "plans": [{"name": "Student", "price": 4900.0}, {"name": "Individual", "price": 8900.0}, {"name": "Family", "price": 13500.0}]},
+        "CNY": {"price": 10.0, "plans": [{"name": "Student", "price": 5.0}, {"name": "Individual", "price": 10.0}, {"name": "Family", "price": 15.0}]},
+        "SEK": {"price": 119.0, "plans": [{"name": "Student", "price": 65.0}, {"name": "Individual", "price": 119.0}, {"name": "Family", "price": 189.0}]},
+        "NOK": {"price": 119.0, "plans": [{"name": "Student", "price": 65.0}, {"name": "Individual", "price": 119.0}, {"name": "Family", "price": 189.0}]},
+        "DKK": {"price": 109.0, "plans": [{"name": "Student", "price": 59.0}, {"name": "Individual", "price": 109.0}, {"name": "Family", "price": 169.0}]},
+        "CAD": {"price": 10.99, "plans": [{"name": "Student", "price": 5.99}, {"name": "Individual", "price": 10.99}, {"name": "Family", "price": 16.99}]},
+        "AUD": {"price": 12.99, "plans": [{"name": "Student", "price": 6.99}, {"name": "Individual", "price": 12.99}, {"name": "Family", "price": 22.99}]},
+        "SGD": {"price": 10.98, "plans": [{"name": "Student", "price": 5.98}, {"name": "Individual", "price": 10.98}, {"name": "Family", "price": 17.98}]},
+        "AED": {"price": 21.99, "plans": [{"name": "Student", "price": 11.99}, {"name": "Individual", "price": 21.99}, {"name": "Family", "price": 35.99}]},
+        "SAR": {"price": 21.99, "plans": [{"name": "Student", "price": 11.99}, {"name": "Individual", "price": 21.99}, {"name": "Family", "price": 35.99}]},
+        "THB": {"price": 139.0, "plans": [{"name": "Student", "price": 79.0}, {"name": "Individual", "price": 139.0}, {"name": "Family", "price": 229.0}]},
+        "PLN": {"price": 21.99, "plans": [{"name": "Student", "price": 11.99}, {"name": "Individual", "price": 21.99}, {"name": "Family", "price": 34.99}]},
+        "CZK": {"price": 165.0, "plans": [{"name": "Student", "price": 89.0}, {"name": "Individual", "price": 165.0}, {"name": "Family", "price": 259.0}]}
+    },
+    "netflix": {
+        "USD": {"price": 15.49, "plans": [{"name": "Basic", "price": 9.99}, {"name": "Standard", "price": 15.49}, {"name": "Premium", "price": 22.99}]},
+        "EUR": {"price": 12.99, "plans": [{"name": "Basic", "price": 7.99}, {"name": "Standard", "price": 12.99}, {"name": "Premium", "price": 17.99}]},
+        "JPY": {"price": 1490.0, "plans": [{"name": "Basic", "price": 990.0}, {"name": "Standard", "price": 1490.0}, {"name": "Premium", "price": 1980.0}]},
+        "GBP": {"price": 10.99, "plans": [{"name": "Basic", "price": 6.99}, {"name": "Standard", "price": 10.99}, {"name": "Premium", "price": 17.99}]},
+        "CHF": {"price": 18.90, "plans": [{"name": "Basic", "price": 11.90}, {"name": "Standard", "price": 18.90}, {"name": "Premium", "price": 24.90}]},
+        "KRW": {"price": 13500.0, "plans": [{"name": "Basic", "price": 9500.0}, {"name": "Standard", "price": 13500.0}, {"name": "Premium", "price": 17000.0}]},
+        "CNY": {"price": 90.0, "plans": [{"name": "Basic", "price": 60.0}, {"name": "Standard", "price": 90.0}, {"name": "Premium", "price": 120.0}]},
+        "SEK": {"price": 129.0, "plans": [{"name": "Basic", "price": 99.0}, {"name": "Standard", "price": 129.0}, {"name": "Premium", "price": 179.0}]},
+        "NOK": {"price": 109.0, "plans": [{"name": "Basic", "price": 89.0}, {"name": "Standard", "price": 109.0}, {"name": "Premium", "price": 159.0}]},
+        "DKK": {"price": 114.0, "plans": [{"name": "Basic", "price": 79.0}, {"name": "Standard", "price": 114.0}, {"name": "Premium", "price": 149.0}]},
+        "CAD": {"price": 16.49, "plans": [{"name": "Basic", "price": 9.99}, {"name": "Standard", "price": 16.49}, {"name": "Premium", "price": 20.99}]},
+        "AUD": {"price": 16.99, "plans": [{"name": "Basic", "price": 10.99}, {"name": "Standard", "price": 16.99}, {"name": "Premium", "price": 22.99}]},
+        "SGD": {"price": 17.98, "plans": [{"name": "Basic", "price": 12.98}, {"name": "Standard", "price": 17.98}, {"name": "Premium", "price": 21.98}]},
+        "AED": {"price": 39.0, "plans": [{"name": "Basic", "price": 29.0}, {"name": "Standard", "price": 39.0}, {"name": "Premium", "price": 56.0}]},
+        "SAR": {"price": 43.0, "plans": [{"name": "Basic", "price": 32.0}, {"name": "Standard", "price": 43.0}, {"name": "Premium", "price": 61.0}]},
+        "THB": {"price": 349.0, "plans": [{"name": "Basic", "price": 169.0}, {"name": "Standard", "price": 349.0}, {"name": "Premium", "price": 419.0}]},
+        "PLN": {"price": 43.0, "plans": [{"name": "Basic", "price": 29.0}, {"name": "Standard", "price": 43.0}, {"name": "Premium", "price": 60.0}]},
+        "CZK": {"price": 259.0, "plans": [{"name": "Basic", "price": 199.0}, {"name": "Standard", "price": 259.0}, {"name": "Premium", "price": 319.0}]}
+    },
+    "prime_video": {
+        "USD": {"price": 14.99, "plans": [{"name": "Prime Video", "price": 8.99}, {"name": "Prime Monthly", "price": 14.99}]},
+        "EUR": {"price": 8.99, "plans": [{"name": "Prime Monthly", "price": 8.99}, {"name": "Prime Yearly", "price": 89.90}]},
+        "JPY": {"price": 600.0, "plans": [{"name": "Prime Monthly", "price": 600.0}, {"name": "Prime Yearly", "price": 5900.0}]},
+        "GBP": {"price": 8.99, "plans": [{"name": "Prime Monthly", "price": 8.99}, {"name": "Prime Yearly", "price": 95.00}]},
+        "CHF": {"price": 9.90, "plans": [{"name": "Prime Monthly", "price": 9.90}]},
+        "KRW": {"price": 5.99, "plans": [{"name": "Prime Video", "price": 5.99}]},
+        "CNY": {"price": 20.0, "plans": [{"name": "Prime Monthly", "price": 20.0}, {"name": "Prime Yearly", "price": 188.0}]},
+        "SEK": {"price": 59.0, "plans": [{"name": "Prime Monthly", "price": 59.0}, {"name": "Prime Yearly", "price": 549.0}]},
+        "NOK": {"price": 79.0, "plans": [{"name": "Prime Monthly", "price": 79.0}, {"name": "Prime Yearly", "price": 699.0}]},
+        "DKK": {"price": 59.0, "plans": [{"name": "Prime Monthly", "price": 59.0}, {"name": "Prime Yearly", "price": 549.0}]},
+        "CAD": {"price": 9.99, "plans": [{"name": "Prime Monthly", "price": 9.99}, {"name": "Prime Yearly", "price": 99.00}]},
+        "AUD": {"price": 9.99, "plans": [{"name": "Prime Monthly", "price": 9.99}, {"name": "Prime Yearly", "price": 79.00}]},
+        "SGD": {"price": 4.99, "plans": [{"name": "Prime Monthly", "price": 4.99}]},
+        "AED": {"price": 16.0, "plans": [{"name": "Prime Monthly", "price": 16.0}]},
+        "SAR": {"price": 16.0, "plans": [{"name": "Prime Monthly", "price": 16.0}]},
+        "THB": {"price": 149.0, "plans": [{"name": "Prime Monthly", "price": 149.0}]},
+        "PLN": {"price": 10.99, "plans": [{"name": "Prime Monthly", "price": 10.99}, {"name": "Prime Yearly", "price": 49.00}]},
+        "CZK": {"price": 79.0, "plans": [{"name": "Prime Monthly", "price": 79.0}]}
+    }
+}
+
 def scrape_spotify():
     try:
         url = "https://www.spotify.com/tr/premium/"
@@ -57,7 +140,6 @@ def scrape_spotify():
             
             for plan in plans:
                 name = plan.get("shortPlanName") or plan.get("header") or ""
-                # Map names to nicer Turkish/English descriptions
                 if "bireysel" in name.lower() or "individual" in name.lower():
                     disp_name = "Bireysel (Individual)"
                 elif "renci" in name.lower() or "student" in name.lower():
@@ -69,7 +151,6 @@ def scrape_spotify():
                 else:
                     disp_name = name
 
-                # Parse price from subheaderPrice or secondaryPriceDescription
                 sh_price = plan.get("subheaderPrice", "")
                 sec_desc = plan.get("secondaryPriceDescription", "")
                 
@@ -94,7 +175,6 @@ def scrape_spotify():
                         
             if scraped_plans:
                 print(f"Scraped Spotify (TR): Bireysel = {individual_price} TL")
-                # Sort plans so Student/Individual is first
                 scraped_plans.sort(key=lambda x: x["price"])
                 return {
                     "price": individual_price,
@@ -125,7 +205,7 @@ def scrape_apple_music():
             student_price = float(student_matches[0].replace(",", ".")) if student_matches else 32.99
             
             ind_prices = [float(p.replace(",", ".")) for p in individual_matches]
-            ind_prices = [p for p in ind_prices if p > 20.0]  # Avoid promo 19.99
+            ind_prices = [p for p in ind_prices if p > 20.0]
             individual_price = ind_prices[0] if ind_prices else 59.99
             
             family_price = float(family_matches[0].replace(",", ".")) if family_matches else 99.99
@@ -148,7 +228,6 @@ def scrape_apple_music():
 def main():
     target_path = r"app/src/main/assets/streaming_prices.json"
     
-    # Existing assets details map (to keep links, logo res ids etc.)
     meta_info = {
         "prime_video": {
             "name": "Amazon Prime Video",
@@ -193,6 +272,23 @@ def main():
         scraped = scraped_map[pid]
         meta = meta_info[pid]
         
+        # Build "regional" field
+        regional_dict = {}
+        for cur, cur_data in regional_data[pid].items():
+            plans_list = []
+            for plan in cur_data["plans"]:
+                plans_list.append({
+                    "name": plan["name"],
+                    "price": plan["price"],
+                    "currency": cur,
+                    "period": "monthly"
+                })
+            regional_dict[cur] = {
+                "base_price": cur_data["price"],
+                "base_currency": cur,
+                "plans": plans_list
+            }
+            
         updated_plat = {
             "id": pid,
             "name": meta["name"],
@@ -200,11 +296,11 @@ def main():
             "base_currency": scraped["currency"],
             "logo_res": meta["logo_res"],
             "official_url": meta["official_url"],
-            "plans": scraped["plans"]
+            "plans": scraped["plans"],
+            "regional": regional_dict
         }
         updated_list.append(updated_plat)
         
-    # Write back
     with open(target_path, "w", encoding="utf-8") as f:
         json.dump(updated_list, f, indent=2, ensure_ascii=False)
         

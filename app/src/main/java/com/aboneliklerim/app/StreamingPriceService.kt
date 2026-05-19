@@ -27,6 +27,12 @@ object StreamingPriceService {
         val period: String
     )
 
+    data class RegionalData(
+        val base_price: Double,
+        val base_currency: String,
+        val plans: List<Plan>
+    )
+
     data class StreamingPlatform(
         val id: String,
         val name: String,
@@ -34,8 +40,28 @@ object StreamingPriceService {
         val base_currency: String,
         val logo_res: String,
         val official_url: String,
-        val plans: List<Plan>
+        val plans: List<Plan>,
+        val regional: Map<String, RegionalData>? = null
     )
+
+    private fun resolvePlatformsForUserCurrency(context: Context, platforms: List<StreamingPlatform>): List<StreamingPlatform> {
+        val sharedPrefs = context.getSharedPreferences("Settings", Context.MODE_PRIVATE)
+        val activeLang = LocaleHelper.getActiveLanguage(context)
+        val targetCurrency = sharedPrefs.getString("default_currency", CurrencyHelper.getDefaultCurrencyBasedOnLanguage(activeLang)) ?: "TRY"
+
+        return platforms.map { platform ->
+            val regionalData = platform.regional?.get(targetCurrency)
+            if (regionalData != null) {
+                platform.copy(
+                    base_price = regionalData.base_price,
+                    base_currency = regionalData.base_currency,
+                    plans = regionalData.plans
+                )
+            } else {
+                platform
+            }
+        }
+    }
 
     fun getLocalFallback(context: Context): List<StreamingPlatform> {
         return try {
@@ -43,7 +69,8 @@ object StreamingPriceService {
             val reader = InputStreamReader(inputStream)
             val type = object : TypeToken<List<StreamingPlatform>>() {}.type
             val fullList: List<StreamingPlatform> = Gson().fromJson(reader, type)
-            fullList.filter { it.id == "prime_video" || it.id == "netflix" || it.id == "spotify" || it.id == "apple_music" }
+            val filtered = fullList.filter { it.id == "prime_video" || it.id == "netflix" || it.id == "spotify" || it.id == "apple_music" }
+            resolvePlatformsForUserCurrency(context, filtered)
         } catch (e: Exception) {
             e.printStackTrace()
             emptyList()
@@ -61,7 +88,8 @@ object StreamingPriceService {
                 try {
                     val type = object : TypeToken<List<StreamingPlatform>>() {}.type
                     val list: List<StreamingPlatform> = Gson().fromJson(cachedJson, type)
-                    return@withContext list.filter { it.id == "prime_video" || it.id == "netflix" || it.id == "spotify" || it.id == "apple_music" }
+                    val filtered = list.filter { it.id == "prime_video" || it.id == "netflix" || it.id == "spotify" || it.id == "apple_music" }
+                    return@withContext resolvePlatformsForUserCurrency(context, filtered)
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
@@ -130,7 +158,7 @@ object StreamingPriceService {
                     .putLong(KEY_LAST_UPDATE, System.currentTimeMillis())
                     .apply()
 
-                return@withContext finalFetchedList
+                return@withContext resolvePlatformsForUserCurrency(context, finalFetchedList)
             }
 
             // Fallback to local cache
@@ -138,7 +166,8 @@ object StreamingPriceService {
                 try {
                     val type = object : TypeToken<List<StreamingPlatform>>() {}.type
                     val list: List<StreamingPlatform> = Gson().fromJson(cachedJson, type)
-                    return@withContext list.filter { it.id == "prime_video" || it.id == "netflix" || it.id == "spotify" || it.id == "apple_music" }
+                    val filtered = list.filter { it.id == "prime_video" || it.id == "netflix" || it.id == "spotify" || it.id == "apple_music" }
+                    return@withContext resolvePlatformsForUserCurrency(context, filtered)
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }

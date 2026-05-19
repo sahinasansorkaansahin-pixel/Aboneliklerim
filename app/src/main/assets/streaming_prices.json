@@ -13,7 +13,291 @@
         "currency": "TRY",
         "period": "monthly"
       }
-    ]
+    ],
+    "regional": {
+      "USD": {
+        "base_price": 14.99,
+        "base_currency": "USD",
+        "plans": [
+          {
+            "name": "Prime Video",
+            "price": 8.99,
+            "currency": "USD",
+            "period": "monthly"
+          },
+          {
+            "name": "Prime Monthly",
+            "price": 14.99,
+            "currency": "USD",
+            "period": "monthly"
+          }
+        ]
+      },
+      "EUR": {
+        "base_price": 8.99,
+        "base_currency": "EUR",
+        "plans": [
+          {
+            "name": "Prime Monthly",
+            "price": 8.99,
+            "currency": "EUR",
+            "period": "monthly"
+          },
+          {
+            "name": "Prime Yearly",
+            "price": 89.9,
+            "currency": "EUR",
+            "period": "monthly"
+          }
+        ]
+      },
+      "JPY": {
+        "base_price": 600.0,
+        "base_currency": "JPY",
+        "plans": [
+          {
+            "name": "Prime Monthly",
+            "price": 600.0,
+            "currency": "JPY",
+            "period": "monthly"
+          },
+          {
+            "name": "Prime Yearly",
+            "price": 5900.0,
+            "currency": "JPY",
+            "period": "monthly"
+          }
+        ]
+      },
+      "GBP": {
+        "base_price": 8.99,
+        "base_currency": "GBP",
+        "plans": [
+          {
+            "name": "Prime Monthly",
+            "price": 8.99,
+            "currency": "GBP",
+            "period": "monthly"
+          },
+          {
+            "name": "Prime Yearly",
+            "price": 95.0,
+            "currency": "GBP",
+            "period": "monthly"
+          }
+        ]
+      },
+      "CHF": {
+        "base_price": 9.9,
+        "base_currency": "CHF",
+        "plans": [
+          {
+            "name": "Prime Monthly",
+            "price": 9.9,
+            "currency": "CHF",
+            "period": "monthly"
+          }
+        ]
+      },
+      "KRW": {
+        "base_price": 5.99,
+        "base_currency": "KRW",
+        "plans": [
+          {
+            "name": "Prime Video",
+            "price": 5.99,
+            "currency": "KRW",
+            "period": "monthly"
+          }
+        ]
+      },
+      "CNY": {
+        "base_price": 20.0,
+        "base_currency": "CNY",
+        "plans": [
+          {
+            "name": "Prime Monthly",
+            "price": 20.0,
+            "currency": "CNY",
+            "period": "monthly"
+          },
+          {
+            "name": "Prime Yearly",
+            "price": 188.0,
+            "currency": "CNY",
+            "period": "monthly"
+          }
+        ]
+      },
+      "SEK": {
+        "base_price": 59.0,
+        "base_currency": "SEK",
+        "plans": [
+          {
+            "name": "Prime Monthly",
+            "price": 59.0,
+            "currency": "SEK",
+            "period": "monthly"
+          },
+          {
+            "name": "Prime Yearly",
+            "price": 549.0,
+            "currency": "SEK",
+            "period": "monthly"
+          }
+        ]
+      },
+      "NOK": {
+        "base_price": 79.0,
+        "base_currency": "NOK",
+        "plans": [
+          {
+            "name": "Prime Monthly",
+            "price": 79.0,
+            "currency": "NOK",
+            "period": "monthly"
+          },
+          {
+            "name": "Prime Yearly",
+            "price": 699.0,
+            "currency": "NOK",
+            "period": "monthly"
+          }
+        ]
+      },
+      "DKK": {
+        "base_price": 59.0,
+        "base_currency": "DKK",
+        "plans": [
+          {
+            "name": "Prime Monthly",
+            "price": 59.0,
+            "currency": "DKK",
+            "period": "monthly"
+          },
+          {
+            "name": "Prime Yearly",
+            "price": 549.0,
+            "currency": "DKK",
+            "period": "monthly"
+          }
+        ]
+      },
+      "CAD": {
+        "base_price": 9.99,
+        "base_currency": "CAD",
+        "plans": [
+          {
+            "name": "Prime Monthly",
+            "price": 9.99,
+            "currency": "CAD",
+            "period": "monthly"
+          },
+          {
+            "name": "Prime Yearly",
+            "price": 99.0,
+            "currency": "CAD",
+            "period": "monthly"
+          }
+        ]
+      },
+      "AUD": {
+        "base_price": 9.99,
+        "base_currency": "AUD",
+        "plans": [
+          {
+            "name": "Prime Monthly",
+            "price": 9.99,
+            "currency": "AUD",
+            "period": "monthly"
+          },
+          {
+            "name": "Prime Yearly",
+            "price": 79.0,
+            "currency": "AUD",
+            "period": "monthly"
+          }
+        ]
+      },
+      "SGD": {
+        "base_price": 4.99,
+        "base_currency": "SGD",
+        "plans": [
+          {
+            "name": "Prime Monthly",
+            "price": 4.99,
+            "currency": "SGD",
+            "period": "monthly"
+          }
+        ]
+      },
+      "AED": {
+        "base_price": 16.0,
+        "base_currency": "AED",
+        "plans": [
+          {
+            "name": "Prime Monthly",
+            "price": 16.0,
+            "currency": "AED",
+            "period": "monthly"
+          }
+        ]
+      },
+      "SAR": {
+        "base_price": 16.0,
+        "base_currency": "SAR",
+        "plans": [
+          {
+            "name": "Prime Monthly",
+            "price": 16.0,
+            "currency": "SAR",
+            "period": "monthly"
+          }
+        ]
+      },
+      "THB": {
+        "base_price": 149.0,
+        "base_currency": "THB",
+        "plans": [
+          {
+            "name": "Prime Monthly",
+            "price": 149.0,
+            "currency": "THB",
+            "period": "monthly"
+          }
+        ]
+      },
+      "PLN": {
+        "base_price": 10.99,
+        "base_currency": "PLN",
+        "plans": [
+          {
+            "name": "Prime Monthly",
+            "price": 10.99,
+            "currency": "PLN",
+            "period": "monthly"
+          },
+          {
+            "name": "Prime Yearly",
+            "price": 49.0,
+            "currency": "PLN",
+            "period": "monthly"
+          }
+        ]
+      },
+      "CZK": {
+        "base_price": 79.0,
+        "base_currency": "CZK",
+        "plans": [
+          {
+            "name": "Prime Monthly",
+            "price": 79.0,
+            "currency": "CZK",
+            "period": "monthly"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "netflix",
@@ -41,7 +325,441 @@
         "currency": "TRY",
         "period": "monthly"
       }
-    ]
+    ],
+    "regional": {
+      "USD": {
+        "base_price": 15.49,
+        "base_currency": "USD",
+        "plans": [
+          {
+            "name": "Basic",
+            "price": 9.99,
+            "currency": "USD",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard",
+            "price": 15.49,
+            "currency": "USD",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium",
+            "price": 22.99,
+            "currency": "USD",
+            "period": "monthly"
+          }
+        ]
+      },
+      "EUR": {
+        "base_price": 12.99,
+        "base_currency": "EUR",
+        "plans": [
+          {
+            "name": "Basic",
+            "price": 7.99,
+            "currency": "EUR",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard",
+            "price": 12.99,
+            "currency": "EUR",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium",
+            "price": 17.99,
+            "currency": "EUR",
+            "period": "monthly"
+          }
+        ]
+      },
+      "JPY": {
+        "base_price": 1490.0,
+        "base_currency": "JPY",
+        "plans": [
+          {
+            "name": "Basic",
+            "price": 990.0,
+            "currency": "JPY",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard",
+            "price": 1490.0,
+            "currency": "JPY",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium",
+            "price": 1980.0,
+            "currency": "JPY",
+            "period": "monthly"
+          }
+        ]
+      },
+      "GBP": {
+        "base_price": 10.99,
+        "base_currency": "GBP",
+        "plans": [
+          {
+            "name": "Basic",
+            "price": 6.99,
+            "currency": "GBP",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard",
+            "price": 10.99,
+            "currency": "GBP",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium",
+            "price": 17.99,
+            "currency": "GBP",
+            "period": "monthly"
+          }
+        ]
+      },
+      "CHF": {
+        "base_price": 18.9,
+        "base_currency": "CHF",
+        "plans": [
+          {
+            "name": "Basic",
+            "price": 11.9,
+            "currency": "CHF",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard",
+            "price": 18.9,
+            "currency": "CHF",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium",
+            "price": 24.9,
+            "currency": "CHF",
+            "period": "monthly"
+          }
+        ]
+      },
+      "KRW": {
+        "base_price": 13500.0,
+        "base_currency": "KRW",
+        "plans": [
+          {
+            "name": "Basic",
+            "price": 9500.0,
+            "currency": "KRW",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard",
+            "price": 13500.0,
+            "currency": "KRW",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium",
+            "price": 17000.0,
+            "currency": "KRW",
+            "period": "monthly"
+          }
+        ]
+      },
+      "CNY": {
+        "base_price": 90.0,
+        "base_currency": "CNY",
+        "plans": [
+          {
+            "name": "Basic",
+            "price": 60.0,
+            "currency": "CNY",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard",
+            "price": 90.0,
+            "currency": "CNY",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium",
+            "price": 120.0,
+            "currency": "CNY",
+            "period": "monthly"
+          }
+        ]
+      },
+      "SEK": {
+        "base_price": 129.0,
+        "base_currency": "SEK",
+        "plans": [
+          {
+            "name": "Basic",
+            "price": 99.0,
+            "currency": "SEK",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard",
+            "price": 129.0,
+            "currency": "SEK",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium",
+            "price": 179.0,
+            "currency": "SEK",
+            "period": "monthly"
+          }
+        ]
+      },
+      "NOK": {
+        "base_price": 109.0,
+        "base_currency": "NOK",
+        "plans": [
+          {
+            "name": "Basic",
+            "price": 89.0,
+            "currency": "NOK",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard",
+            "price": 109.0,
+            "currency": "NOK",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium",
+            "price": 159.0,
+            "currency": "NOK",
+            "period": "monthly"
+          }
+        ]
+      },
+      "DKK": {
+        "base_price": 114.0,
+        "base_currency": "DKK",
+        "plans": [
+          {
+            "name": "Basic",
+            "price": 79.0,
+            "currency": "DKK",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard",
+            "price": 114.0,
+            "currency": "DKK",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium",
+            "price": 149.0,
+            "currency": "DKK",
+            "period": "monthly"
+          }
+        ]
+      },
+      "CAD": {
+        "base_price": 16.49,
+        "base_currency": "CAD",
+        "plans": [
+          {
+            "name": "Basic",
+            "price": 9.99,
+            "currency": "CAD",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard",
+            "price": 16.49,
+            "currency": "CAD",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium",
+            "price": 20.99,
+            "currency": "CAD",
+            "period": "monthly"
+          }
+        ]
+      },
+      "AUD": {
+        "base_price": 16.99,
+        "base_currency": "AUD",
+        "plans": [
+          {
+            "name": "Basic",
+            "price": 10.99,
+            "currency": "AUD",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard",
+            "price": 16.99,
+            "currency": "AUD",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium",
+            "price": 22.99,
+            "currency": "AUD",
+            "period": "monthly"
+          }
+        ]
+      },
+      "SGD": {
+        "base_price": 17.98,
+        "base_currency": "SGD",
+        "plans": [
+          {
+            "name": "Basic",
+            "price": 12.98,
+            "currency": "SGD",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard",
+            "price": 17.98,
+            "currency": "SGD",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium",
+            "price": 21.98,
+            "currency": "SGD",
+            "period": "monthly"
+          }
+        ]
+      },
+      "AED": {
+        "base_price": 39.0,
+        "base_currency": "AED",
+        "plans": [
+          {
+            "name": "Basic",
+            "price": 29.0,
+            "currency": "AED",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard",
+            "price": 39.0,
+            "currency": "AED",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium",
+            "price": 56.0,
+            "currency": "AED",
+            "period": "monthly"
+          }
+        ]
+      },
+      "SAR": {
+        "base_price": 43.0,
+        "base_currency": "SAR",
+        "plans": [
+          {
+            "name": "Basic",
+            "price": 32.0,
+            "currency": "SAR",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard",
+            "price": 43.0,
+            "currency": "SAR",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium",
+            "price": 61.0,
+            "currency": "SAR",
+            "period": "monthly"
+          }
+        ]
+      },
+      "THB": {
+        "base_price": 349.0,
+        "base_currency": "THB",
+        "plans": [
+          {
+            "name": "Basic",
+            "price": 169.0,
+            "currency": "THB",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard",
+            "price": 349.0,
+            "currency": "THB",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium",
+            "price": 419.0,
+            "currency": "THB",
+            "period": "monthly"
+          }
+        ]
+      },
+      "PLN": {
+        "base_price": 43.0,
+        "base_currency": "PLN",
+        "plans": [
+          {
+            "name": "Basic",
+            "price": 29.0,
+            "currency": "PLN",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard",
+            "price": 43.0,
+            "currency": "PLN",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium",
+            "price": 60.0,
+            "currency": "PLN",
+            "period": "monthly"
+          }
+        ]
+      },
+      "CZK": {
+        "base_price": 259.0,
+        "base_currency": "CZK",
+        "plans": [
+          {
+            "name": "Basic",
+            "price": 199.0,
+            "currency": "CZK",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard",
+            "price": 259.0,
+            "currency": "CZK",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium",
+            "price": 319.0,
+            "currency": "CZK",
+            "period": "monthly"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "spotify",
@@ -75,7 +793,537 @@
         "currency": "TRY",
         "period": "monthly"
       }
-    ]
+    ],
+    "regional": {
+      "USD": {
+        "base_price": 11.99,
+        "base_currency": "USD",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 5.99,
+            "currency": "USD",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 11.99,
+            "currency": "USD",
+            "period": "monthly"
+          },
+          {
+            "name": "Duo",
+            "price": 16.99,
+            "currency": "USD",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 19.99,
+            "currency": "USD",
+            "period": "monthly"
+          }
+        ]
+      },
+      "EUR": {
+        "base_price": 10.99,
+        "base_currency": "EUR",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 5.99,
+            "currency": "EUR",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 10.99,
+            "currency": "EUR",
+            "period": "monthly"
+          },
+          {
+            "name": "Duo",
+            "price": 14.99,
+            "currency": "EUR",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 17.99,
+            "currency": "EUR",
+            "period": "monthly"
+          }
+        ]
+      },
+      "JPY": {
+        "base_price": 980.0,
+        "base_currency": "JPY",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 480.0,
+            "currency": "JPY",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 980.0,
+            "currency": "JPY",
+            "period": "monthly"
+          },
+          {
+            "name": "Duo",
+            "price": 1280.0,
+            "currency": "JPY",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 1580.0,
+            "currency": "JPY",
+            "period": "monthly"
+          }
+        ]
+      },
+      "GBP": {
+        "base_price": 11.99,
+        "base_currency": "GBP",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 5.99,
+            "currency": "GBP",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 11.99,
+            "currency": "GBP",
+            "period": "monthly"
+          },
+          {
+            "name": "Duo",
+            "price": 16.99,
+            "currency": "GBP",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 19.99,
+            "currency": "GBP",
+            "period": "monthly"
+          }
+        ]
+      },
+      "CHF": {
+        "base_price": 13.95,
+        "base_currency": "CHF",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 7.95,
+            "currency": "CHF",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 13.95,
+            "currency": "CHF",
+            "period": "monthly"
+          },
+          {
+            "name": "Duo",
+            "price": 18.95,
+            "currency": "CHF",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 22.95,
+            "currency": "CHF",
+            "period": "monthly"
+          }
+        ]
+      },
+      "KRW": {
+        "base_price": 10900.0,
+        "base_currency": "KRW",
+        "plans": [
+          {
+            "name": "Individual",
+            "price": 10900.0,
+            "currency": "KRW",
+            "period": "monthly"
+          },
+          {
+            "name": "Duo",
+            "price": 16350.0,
+            "currency": "KRW",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 17900.0,
+            "currency": "KRW",
+            "period": "monthly"
+          }
+        ]
+      },
+      "CNY": {
+        "base_price": 59.0,
+        "base_currency": "CNY",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 29.0,
+            "currency": "CNY",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 59.0,
+            "currency": "CNY",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 89.0,
+            "currency": "CNY",
+            "period": "monthly"
+          }
+        ]
+      },
+      "SEK": {
+        "base_price": 119.0,
+        "base_currency": "SEK",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 65.0,
+            "currency": "SEK",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 119.0,
+            "currency": "SEK",
+            "period": "monthly"
+          },
+          {
+            "name": "Duo",
+            "price": 159.0,
+            "currency": "SEK",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 189.0,
+            "currency": "SEK",
+            "period": "monthly"
+          }
+        ]
+      },
+      "NOK": {
+        "base_price": 119.0,
+        "base_currency": "NOK",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 65.0,
+            "currency": "NOK",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 119.0,
+            "currency": "NOK",
+            "period": "monthly"
+          },
+          {
+            "name": "Duo",
+            "price": 159.0,
+            "currency": "NOK",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 189.0,
+            "currency": "NOK",
+            "period": "monthly"
+          }
+        ]
+      },
+      "DKK": {
+        "base_price": 109.0,
+        "base_currency": "DKK",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 59.0,
+            "currency": "DKK",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 109.0,
+            "currency": "DKK",
+            "period": "monthly"
+          },
+          {
+            "name": "Duo",
+            "price": 139.0,
+            "currency": "DKK",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 169.0,
+            "currency": "DKK",
+            "period": "monthly"
+          }
+        ]
+      },
+      "CAD": {
+        "base_price": 10.99,
+        "base_currency": "CAD",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 6.49,
+            "currency": "CAD",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 10.99,
+            "currency": "CAD",
+            "period": "monthly"
+          },
+          {
+            "name": "Duo",
+            "price": 14.99,
+            "currency": "CAD",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 16.99,
+            "currency": "CAD",
+            "period": "monthly"
+          }
+        ]
+      },
+      "AUD": {
+        "base_price": 12.99,
+        "base_currency": "AUD",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 6.99,
+            "currency": "AUD",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 12.99,
+            "currency": "AUD",
+            "period": "monthly"
+          },
+          {
+            "name": "Duo",
+            "price": 17.99,
+            "currency": "AUD",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 20.99,
+            "currency": "AUD",
+            "period": "monthly"
+          }
+        ]
+      },
+      "SGD": {
+        "base_price": 10.98,
+        "base_currency": "SGD",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 5.98,
+            "currency": "SGD",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 10.98,
+            "currency": "SGD",
+            "period": "monthly"
+          },
+          {
+            "name": "Duo",
+            "price": 14.98,
+            "currency": "SGD",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 17.98,
+            "currency": "SGD",
+            "period": "monthly"
+          }
+        ]
+      },
+      "AED": {
+        "base_price": 21.99,
+        "base_currency": "AED",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 11.99,
+            "currency": "AED",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 21.99,
+            "currency": "AED",
+            "period": "monthly"
+          },
+          {
+            "name": "Duo",
+            "price": 27.99,
+            "currency": "AED",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 35.99,
+            "currency": "AED",
+            "period": "monthly"
+          }
+        ]
+      },
+      "SAR": {
+        "base_price": 21.99,
+        "base_currency": "SAR",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 11.99,
+            "currency": "SAR",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 21.99,
+            "currency": "SAR",
+            "period": "monthly"
+          },
+          {
+            "name": "Duo",
+            "price": 27.99,
+            "currency": "SAR",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 35.99,
+            "currency": "SAR",
+            "period": "monthly"
+          }
+        ]
+      },
+      "THB": {
+        "base_price": 139.0,
+        "base_currency": "THB",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 65.0,
+            "currency": "THB",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 139.0,
+            "currency": "THB",
+            "period": "monthly"
+          },
+          {
+            "name": "Duo",
+            "price": 189.0,
+            "currency": "THB",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 219.0,
+            "currency": "THB",
+            "period": "monthly"
+          }
+        ]
+      },
+      "PLN": {
+        "base_price": 23.99,
+        "base_currency": "PLN",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 12.99,
+            "currency": "PLN",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 23.99,
+            "currency": "PLN",
+            "period": "monthly"
+          },
+          {
+            "name": "Duo",
+            "price": 30.99,
+            "currency": "PLN",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 37.99,
+            "currency": "PLN",
+            "period": "monthly"
+          }
+        ]
+      },
+      "CZK": {
+        "base_price": 169.0,
+        "base_currency": "CZK",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 89.0,
+            "currency": "CZK",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 169.0,
+            "currency": "CZK",
+            "period": "monthly"
+          },
+          {
+            "name": "Duo",
+            "price": 229.0,
+            "currency": "CZK",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 269.0,
+            "currency": "CZK",
+            "period": "monthly"
+          }
+        ]
+      }
+    }
   },
   {
     "id": "apple_music",
@@ -103,6 +1351,440 @@
         "currency": "TRY",
         "period": "monthly"
       }
-    ]
+    ],
+    "regional": {
+      "USD": {
+        "base_price": 10.99,
+        "base_currency": "USD",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 5.99,
+            "currency": "USD",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 10.99,
+            "currency": "USD",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 16.99,
+            "currency": "USD",
+            "period": "monthly"
+          }
+        ]
+      },
+      "EUR": {
+        "base_price": 10.99,
+        "base_currency": "EUR",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 5.99,
+            "currency": "EUR",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 10.99,
+            "currency": "EUR",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 16.99,
+            "currency": "EUR",
+            "period": "monthly"
+          }
+        ]
+      },
+      "JPY": {
+        "base_price": 1080.0,
+        "base_currency": "JPY",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 580.0,
+            "currency": "JPY",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 1080.0,
+            "currency": "JPY",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 1680.0,
+            "currency": "JPY",
+            "period": "monthly"
+          }
+        ]
+      },
+      "GBP": {
+        "base_price": 10.99,
+        "base_currency": "GBP",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 5.99,
+            "currency": "GBP",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 10.99,
+            "currency": "GBP",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 16.99,
+            "currency": "GBP",
+            "period": "monthly"
+          }
+        ]
+      },
+      "CHF": {
+        "base_price": 13.9,
+        "base_currency": "CHF",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 7.9,
+            "currency": "CHF",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 13.9,
+            "currency": "CHF",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 21.9,
+            "currency": "CHF",
+            "period": "monthly"
+          }
+        ]
+      },
+      "KRW": {
+        "base_price": 8900.0,
+        "base_currency": "KRW",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 4900.0,
+            "currency": "KRW",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 8900.0,
+            "currency": "KRW",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 13500.0,
+            "currency": "KRW",
+            "period": "monthly"
+          }
+        ]
+      },
+      "CNY": {
+        "base_price": 10.0,
+        "base_currency": "CNY",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 5.0,
+            "currency": "CNY",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 10.0,
+            "currency": "CNY",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 15.0,
+            "currency": "CNY",
+            "period": "monthly"
+          }
+        ]
+      },
+      "SEK": {
+        "base_price": 119.0,
+        "base_currency": "SEK",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 65.0,
+            "currency": "SEK",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 119.0,
+            "currency": "SEK",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 189.0,
+            "currency": "SEK",
+            "period": "monthly"
+          }
+        ]
+      },
+      "NOK": {
+        "base_price": 119.0,
+        "base_currency": "NOK",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 65.0,
+            "currency": "NOK",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 119.0,
+            "currency": "NOK",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 189.0,
+            "currency": "NOK",
+            "period": "monthly"
+          }
+        ]
+      },
+      "DKK": {
+        "base_price": 109.0,
+        "base_currency": "DKK",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 59.0,
+            "currency": "DKK",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 109.0,
+            "currency": "DKK",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 169.0,
+            "currency": "DKK",
+            "period": "monthly"
+          }
+        ]
+      },
+      "CAD": {
+        "base_price": 10.99,
+        "base_currency": "CAD",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 5.99,
+            "currency": "CAD",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 10.99,
+            "currency": "CAD",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 16.99,
+            "currency": "CAD",
+            "period": "monthly"
+          }
+        ]
+      },
+      "AUD": {
+        "base_price": 12.99,
+        "base_currency": "AUD",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 6.99,
+            "currency": "AUD",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 12.99,
+            "currency": "AUD",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 22.99,
+            "currency": "AUD",
+            "period": "monthly"
+          }
+        ]
+      },
+      "SGD": {
+        "base_price": 10.98,
+        "base_currency": "SGD",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 5.98,
+            "currency": "SGD",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 10.98,
+            "currency": "SGD",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 17.98,
+            "currency": "SGD",
+            "period": "monthly"
+          }
+        ]
+      },
+      "AED": {
+        "base_price": 21.99,
+        "base_currency": "AED",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 11.99,
+            "currency": "AED",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 21.99,
+            "currency": "AED",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 35.99,
+            "currency": "AED",
+            "period": "monthly"
+          }
+        ]
+      },
+      "SAR": {
+        "base_price": 21.99,
+        "base_currency": "SAR",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 11.99,
+            "currency": "SAR",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 21.99,
+            "currency": "SAR",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 35.99,
+            "currency": "SAR",
+            "period": "monthly"
+          }
+        ]
+      },
+      "THB": {
+        "base_price": 139.0,
+        "base_currency": "THB",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 79.0,
+            "currency": "THB",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 139.0,
+            "currency": "THB",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 229.0,
+            "currency": "THB",
+            "period": "monthly"
+          }
+        ]
+      },
+      "PLN": {
+        "base_price": 21.99,
+        "base_currency": "PLN",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 11.99,
+            "currency": "PLN",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 21.99,
+            "currency": "PLN",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 34.99,
+            "currency": "PLN",
+            "period": "monthly"
+          }
+        ]
+      },
+      "CZK": {
+        "base_price": 165.0,
+        "base_currency": "CZK",
+        "plans": [
+          {
+            "name": "Student",
+            "price": 89.0,
+            "currency": "CZK",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual",
+            "price": 165.0,
+            "currency": "CZK",
+            "period": "monthly"
+          },
+          {
+            "name": "Family",
+            "price": 259.0,
+            "currency": "CZK",
+            "period": "monthly"
+          }
+        ]
+      }
+    }
   }
 ]
