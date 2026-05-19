@@ -1,0 +1,56 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    
+    <!-- Table (Top Center Flat Facet) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M7,4 L17,4 L14,7 L10,7 Z" />
+        
+    <!-- Crown Top-Left Facet -->
+    <path
+        android:fillColor="#E1F5FE"
+        android:pathData="M7,4 L10,7 L3,10 Z" />
+        
+    <!-- Crown Top-Right Facet -->
+    <path
+        android:fillColor="#E0F7FA"
+        android:pathData="M17,4 L21,10 L14,7 Z" />
+        
+    <!-- Crown Center-Left Facet -->
+    <path
+        android:fillColor="#B3E5FC"
+        android:pathData="M10,7 L12,12.5 L3,10 Z" />
+        
+    <!-- Crown Center-Right Facet -->
+    <path
+        android:fillColor="#B2DFDB"
+        android:pathData="M14,7 L21,10 L12,12.5 Z" />
+        
+    <!-- Crown Center-Bottom Sparkle -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M10,7 L14,7 L12,12.5 Z" />
+        
+    <!-- Pavilion Far-Left Facet -->
+    <path
+        android:fillColor="#4DD0E1"
+        android:pathData="M3,10 L7.5,12.5 L12,22 Z" />
+        
+    <!-- Pavilion Mid-Left Facet -->
+    <path
+        android:fillColor="#80DEEA"
+        android:pathData="M7.5,12.5 L12,12.5 L12,22 Z" />
+        
+    <!-- Pavilion Mid-Right Facet -->
+    <path
+        android:fillColor="#90CAF9"
+        android:pathData="M12,12.5 L16.5,12.5 L12,22 Z" />
+        
+    <!-- Pavilion Far-Right Facet -->
+    <path
+        android:fillColor="#64B5F6"
+        android:pathData="M16.5,12.5 L21,10 L12,22 Z" />
+</vector>

@@ -1,0 +1,39 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Adult 1 (Left) -->
+    <path
+        android:fillColor="#701b8b"
+        android:pathData="M 5,4 A 2.5,2.5 0 1,1 4.99,4 Z" />
+    <path
+        android:fillColor="#701b8b"
+        android:pathData="M 2,19 v -6 a 3,3 0 0 1 6,0 v 6 z" />
+
+    <!-- Child 1 (Middle-Left) -->
+    <path
+        android:fillColor="#8b30b5"
+        android:pathData="M 10,7 A 2,2 0 1,1 9.99,7 Z" />
+    <path
+        android:fillColor="#8b30b5"
+        android:pathData="M 7.5,19 v -4.5 a 2.5,2.5 0 0 1 5,0 v 4.5 z" />
+
+    <!-- Child 2 (Middle-Right) -->
+    <path
+        android:fillColor="#8b30b5"
+        android:pathData="M 14,7 A 2,2 0 1,1 13.99,7 Z" />
+    <path
+        android:fillColor="#8b30b5"
+        android:pathData="M 11.5,19 v -4.5 a 2.5,2.5 0 0 1 5,0 v 4.5 z" />
+
+    <!-- Adult 2 (Right) -->
+    <path
+        android:fillColor="#701b8b"
+        android:pathData="M 19,4 A 2.5,2.5 0 1,1 18.99,4 Z" />
+    <path
+        android:fillColor="#701b8b"
+        android:pathData="M 16,19 v -6 a 3,3 0 0 1 6,0 v 6 z" />
+
+</vector>

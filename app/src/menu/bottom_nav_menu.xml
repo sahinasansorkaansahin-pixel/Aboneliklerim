@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home_soft"
+        android:title="Ana Sayfa" />
+    <item
+        android:id="@+id/nav_upcoming"
+        android:icon="@drawable/ic_calendar_soft"
+        android:title="Yaklaşan" />
+    <item
+        android:id="@+id/nav_placeholder"
+        android:title=""
+        android:enabled="false" />
+    <item
+        android:id="@+id/nav_reports"
+        android:icon="@drawable/ic_chart_soft"
+        android:title="Raporlar" />
+    <item
+        android:id="@+id/nav_more"
+        android:icon="@drawable/ic_more_soft"
+        android:title="Daha Fazla" />
+</menu>

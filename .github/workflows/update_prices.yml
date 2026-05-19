@@ -1,0 +1,37 @@
+name: Update Streaming Prices Daily
+
+on:
+  schedule:
+    # Her gün Türkiye saatiyle 03:00'te (UTC 00:00) çalışır
+    - cron: '0 0 * * *'
+  workflow_dispatch: # GitHub arayüzünden elle tetiklemek için
+
+permissions:
+  contents: write
+
+jobs:
+  update-prices:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run Scraper Script
+        run: python update_streaming_prices.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action Scraper"
+          git add app/src/main/assets/streaming_prices.json
+          git diff-index --quiet HEAD || (git commit -m "chore: auto-update streaming prices [skip ci]" && git push)

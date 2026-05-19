@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main"
+    android:fitsSystemWindows="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center_horizontal">
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/premium_title"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_main"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"/>
+                
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/premium_subtitle"
+                android:textSize="16sp"
+                android:textColor="@color/text_sub"
+                android:gravity="center"
+                android:layout_marginBottom="24dp"/>
+                
+            <!-- Features List -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="24dp"
+                android:padding="0dp">
+
+                <!-- Feature 1 -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="12dp">
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                        android:src="@drawable/ic_diamond_faceted" android:layout_marginEnd="10dp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                        android:text="@string/premium_feature_no_ads" android:textColor="@color/text_main"
+                        android:textSize="14sp" android:textStyle="bold"/>
+                    <TextView android:id="@+id/btnInfoNoAds" android:layout_width="32dp" android:layout_height="32dp"
+                        android:text="ⓘ" android:textColor="@color/text_sub" android:textSize="16sp"
+                        android:gravity="center" android:clickable="true" android:focusable="true"
+                        android:background="?attr/selectableItemBackgroundBorderless"/>
+                </LinearLayout>
+
+                <!-- Feature 2 -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="12dp">
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                        android:src="@drawable/ic_diamond_faceted" android:layout_marginEnd="10dp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                        android:text="@string/premium_feature_currency" android:textColor="@color/text_main"
+                        android:textSize="14sp" android:textStyle="bold"/>
+                    <TextView android:id="@+id/btnInfoCurrency" android:layout_width="32dp" android:layout_height="32dp"
+                        android:text="ⓘ" android:textColor="@color/text_sub" android:textSize="16sp"
+                        android:gravity="center" android:clickable="true" android:focusable="true"
+                        android:background="?attr/selectableItemBackgroundBorderless"/>
+                </LinearLayout>
+
+                <!-- Feature 3 -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="12dp">
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                        android:src="@drawable/ic_diamond_faceted" android:layout_marginEnd="10dp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                        android:text="@string/premium_feature_shared_cost" android:textColor="@color/text_main"
+                        android:textSize="14sp" android:textStyle="bold"/>
+                    <TextView android:id="@+id/btnInfoSharedCost" android:layout_width="32dp" android:layout_height="32dp"
+                        android:text="ⓘ" android:textColor="@color/text_sub" android:textSize="16sp"
+                        android:gravity="center" android:clickable="true" android:focusable="true"
+                        android:background="?attr/selectableItemBackgroundBorderless"/>
+                </LinearLayout>
+
+                <!-- Feature 4 -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="12dp">
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                        android:src="@drawable/ic_diamond_faceted" android:layout_marginEnd="10dp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                        android:text="@string/premium_feature_limit" android:textColor="@color/text_main"
+                        android:textSize="14sp" android:textStyle="bold"/>
+                    <TextView android:id="@+id/btnInfoLimit" android:layout_width="32dp" android:layout_height="32dp"
+                        android:text="ⓘ" android:textColor="@color/text_sub" android:textSize="16sp"
+                        android:gravity="center" android:clickable="true" android:focusable="true"
+                        android:background="?attr/selectableItemBackgroundBorderless"/>
+                </LinearLayout>
+
+                <!-- Feature 5 -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="12dp">
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                        android:src="@drawable/ic_diamond_faceted" android:layout_marginEnd="10dp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                        android:text="@string/premium_feature_trend" android:textColor="@color/text_main"
+                        android:textSize="14sp" android:textStyle="bold"/>
+                    <TextView android:id="@+id/btnInfoTrend" android:layout_width="32dp" android:layout_height="32dp"
+                        android:text="ⓘ" android:textColor="@color/text_sub" android:textSize="16sp"
+                        android:gravity="center" android:clickable="true" android:focusable="true"
+                        android:background="?attr/selectableItemBackgroundBorderless"/>
+                </LinearLayout>
+
+                <!-- Feature 6 -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center_vertical">
+                    <ImageView android:layout_width="16dp" android:layout_height="16dp"
+                        android:src="@drawable/ic_diamond_faceted" android:layout_marginEnd="10dp"/>
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                        android:text="@string/premium_feature_guest_login" android:textColor="@color/text_main"
+                        android:textSize="14sp" android:textStyle="bold"/>
+                    <TextView android:id="@+id/btnInfoGuestLogin" android:layout_width="32dp" android:layout_height="32dp"
+                        android:text="ⓘ" android:textColor="@color/text_sub" android:textSize="16sp"
+                        android:gravity="center" android:clickable="true" android:focusable="true"
+                        android:background="?attr/selectableItemBackgroundBorderless"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Subscription Options -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/choose_plan"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_main"
+                android:layout_marginBottom="16dp"
+                android:layout_gravity="start"/>
+                
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPlanMonthly"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="@string/plan_monthly"
+                android:textSize="16sp"
+                app:cornerRadius="16dp"
+                android:backgroundTint="@color/surface_main"
+                android:textColor="@color/text_main"
+                app:strokeColor="#9B59B6"
+                app:strokeWidth="2dp"
+                android:layout_marginBottom="12dp"/>
+                
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPlanYearly"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="@string/plan_yearly"
+                android:textSize="16sp"
+                app:cornerRadius="16dp"
+                android:backgroundTint="@color/surface_main"
+                android:textColor="@color/text_main"
+                app:strokeColor="#9B59B6"
+                app:strokeWidth="2dp"
+                android:layout_marginBottom="12dp"/>
+                
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPlanLifetime"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:text="@string/plan_lifetime"
+                android:textSize="16sp"
+                app:cornerRadius="16dp"
+                android:backgroundTint="@color/surface_main"
+                android:textColor="@color/text_main"
+                app:strokeColor="#9B59B6"
+                app:strokeWidth="2dp"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:id="@+id/btnRestorePurchases"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/restore_purchases"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:padding="12dp"
+                android:layout_marginBottom="24dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"/>
+
+            <!-- Legal & Privacy Links -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginBottom="16dp">
+                
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/tvPremiumPrivacy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/policy_privacy_title"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:padding="8dp"/>
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" • "
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp"
+                        android:padding="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tvPremiumTerms"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/policy_copyright_title"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:padding="8dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+                    <TextView
+                        android:id="@+id/tvPremiumDeletion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/policy_deletion_title"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:padding="8dp"/>
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" • "
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp"
+                        android:padding="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tvPremiumAdPartners"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/policy_adpartners_title"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="12sp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:padding="8dp"/>
+                </LinearLayout>
+            </LinearLayout>
+                
+                
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabClosePremium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_close"
+        app:tint="@color/white"
+        app:backgroundTint="@color/surface_main"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"
+        app:fabSize="mini"
+        app:maxImageSize="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

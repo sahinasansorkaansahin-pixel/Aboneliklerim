@@ -1,0 +1,108 @@
+[
+  {
+    "id": "prime_video",
+    "name": "Amazon Prime Video",
+    "base_price": 69.9,
+    "base_currency": "TRY",
+    "logo_res": "ic_logo_prime_video",
+    "official_url": "https://www.amazon.com.tr/prime",
+    "plans": [
+      {
+        "name": "Prime Membership",
+        "price": 69.9,
+        "currency": "TRY",
+        "period": "monthly"
+      }
+    ]
+  },
+  {
+    "id": "netflix",
+    "name": "Netflix",
+    "base_price": 149.99,
+    "base_currency": "TRY",
+    "logo_res": "ic_logo_netflix",
+    "official_url": "https://www.netflix.com",
+    "plans": [
+      {
+        "name": "Basic (Temel)",
+        "price": 149.99,
+        "currency": "TRY",
+        "period": "monthly"
+      },
+      {
+        "name": "Standard (Standart)",
+        "price": 229.99,
+        "currency": "TRY",
+        "period": "monthly"
+      },
+      {
+        "name": "Premium (Özel)",
+        "price": 299.99,
+        "currency": "TRY",
+        "period": "monthly"
+      }
+    ]
+  },
+  {
+    "id": "spotify",
+    "name": "Spotify",
+    "base_price": 99.0,
+    "base_currency": "TRY",
+    "logo_res": "ic_logo_spotify",
+    "official_url": "https://www.spotify.com/tr/premium/",
+    "plans": [
+      {
+        "name": "Öğrenci (Student)",
+        "price": 55.0,
+        "currency": "TRY",
+        "period": "monthly"
+      },
+      {
+        "name": "Bireysel (Individual)",
+        "price": 99.0,
+        "currency": "TRY",
+        "period": "monthly"
+      },
+      {
+        "name": "Duo",
+        "price": 135.0,
+        "currency": "TRY",
+        "period": "monthly"
+      },
+      {
+        "name": "Aile (Family)",
+        "price": 165.0,
+        "currency": "TRY",
+        "period": "monthly"
+      }
+    ]
+  },
+  {
+    "id": "apple_music",
+    "name": "Apple Music",
+    "base_price": 59.99,
+    "base_currency": "TRY",
+    "logo_res": "ic_logo_apple_music",
+    "official_url": "https://www.apple.com/tr/apple-music/",
+    "plans": [
+      {
+        "name": "Student (Öğrenci)",
+        "price": 32.99,
+        "currency": "TRY",
+        "period": "monthly"
+      },
+      {
+        "name": "Individual (Bireysel)",
+        "price": 59.99,
+        "currency": "TRY",
+        "period": "monthly"
+      },
+      {
+        "name": "Family (Aile)",
+        "price": 99.99,
+        "currency": "TRY",
+        "period": "monthly"
+      }
+    ]
+  }
+]

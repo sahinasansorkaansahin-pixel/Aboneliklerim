@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Paramount Blue Circle Background -->
+    <path
+        android:fillColor="#0064FF"
+        android:pathData="M24,24m-22,0a22,22 0,1,1 44,0a22,22 0,1,1 -44,0" />
+    <!-- Mountain Peak -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M24,14 L36,32 L12,32 Z" />
+    <!-- Mountain Shadow (aesthetic detail) -->
+    <path
+        android:fillColor="#E0E0E0"
+        android:pathData="M24,14 L24,32 L36,32 Z" />
+    <!-- Star Arc (representation of stars) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M11,26 L12,26 L12,25 L11,25 Z M37,26 L36,26 L36,25 L37,25 Z M14,20 L15,20 L15,19 L14,19 Z M34,20 L33,20 L33,19 L34,19 Z M18,16 L19,16 L19,15 L18,15 Z M30,16 L29,16 L29,15 L30,15 Z M24,13 L25,13 L25,12 L24,12 Z" />
+</vector>

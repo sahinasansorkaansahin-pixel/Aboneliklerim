@@ -1,0 +1,42 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+    
+    <!-- Trailing (inactive) right curved dash - very soft and dim -->
+    <path
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:strokeColor="#26730692"
+        android:pathData="M52,20 C57,27 57,37 52,44" />
+        
+    <!-- Leading (active) left curved dash - extremely bright, thick and glowing -->
+    <path
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:strokeColor="#FFA855F7"
+        android:pathData="M12,44 C7,37 7,27 12,20" />
+
+    <!-- High-fidelity 3D-like double-headed arrow with gradient -->
+    <path
+        android:pathData="M16,32 L26,22 C27.5,20.5 29,21.5 29,23.5 L29,28 L35,28 L35,23.5 C35,21.5 36.5,20.5 38,22 L48,32 L38,42 C36.5,43.5 35,42.5 35,40.5 L35,36 L29,36 L29,40.5 C29,42.5 27.5,43.5 26,42 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="16"
+                android:startY="32"
+                android:endX="48"
+                android:endY="32"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#FFA855F7" />
+                <item android:offset="1.0" android:color="#FF730692" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Gloss overlay path for the 3D neomorphic glass feel -->
+    <path
+        android:fillColor="#33FFFFFF"
+        android:pathData="M18,32 L26,24 L27,24 L27,30 L37,30 L37,24 L38,24 L46,32 L38,40 L37,40 L37,34 L27,34 L27,40 L26,40 Z" />
+</vector>

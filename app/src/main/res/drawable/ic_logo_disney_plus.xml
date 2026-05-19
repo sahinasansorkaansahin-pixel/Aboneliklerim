@@ -1,0 +1,25 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Royal Blue Circle Background -->
+    <path
+        android:fillColor="#0A1826"
+        android:pathData="M24,24m-22,0a22,22 0,1,1 44,0a22,22 0,1,1 -44,0" />
+    <!-- Disney D Shape (approximate representation) -->
+    <path
+        android:fillColor="#00D2FE"
+        android:pathData="M16,14 C16,14 26,12 28,20 C30,28 20,34 16,34 L16,14 Z" />
+    <path
+        android:fillColor="#0A1826"
+        android:pathData="M20,18 C20,18 25,18 25,23 C25,28 21,30 20,30 L20,18 Z" />
+    <!-- Plus symbol + -->
+    <path
+        android:fillColor="#00D2FE"
+        android:pathData="M31,22 L33,22 L33,20 L35,20 L35,22 L37,22 L37,24 L35,24 L35,26 L33,26 L33,24 L31,24 Z" />
+    <!-- Arc over D -->
+    <path
+        android:fillColor="#00D2FE"
+        android:pathData="M12,18 Q24,8 36,18 Q24,10 12,18" />
+</vector>

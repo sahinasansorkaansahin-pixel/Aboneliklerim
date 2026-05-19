@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Semantic Colors (Dark Mode) -->
+    <color name="bg_main">#12131a</color>
+    <color name="surface_main">#1f212a</color>
+    <color name="text_main">#FFFFFF</color>
+    <color name="text_sub">#9ca3af</color>
+    <color name="surface_secondary">#2d303d</color>
+    
+    <!-- Legacy compatibility -->
+    <color name="bg_dark">#12131a</color>
+    <color name="surface_dark">#1f212a</color>
+    <color name="text_secondary">#9ca3af</color>
+</resources>

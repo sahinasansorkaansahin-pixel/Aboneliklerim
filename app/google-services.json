@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "553232665382",
+    "project_id": "aboneliklerim-39663",
+    "storage_bucket": "aboneliklerim-39663.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:553232665382:android:7c5fa9dea1c0552973cfe7",
+        "android_client_info": {
+          "package_name": "com.aboneliklerim.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDBWQormg3ff4wq9R_V_pkqbuYEFgGZVU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

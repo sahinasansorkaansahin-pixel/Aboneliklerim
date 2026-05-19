@@ -1,0 +1,354 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="80dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:paddingTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvPageTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/more"
+                android:textColor="@color/text_main"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_options"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/appearance"
+                    android:textColor="@color/text_main"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    app:cardBackgroundColor="@color/surface_main"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="8dp">
+
+                        <LinearLayout android:id="@+id/rowTheme" android:layout_width="match_parent" android:layout_height="56dp"
+                            android:orientation="horizontal" android:gravity="center_vertical"
+                            android:paddingHorizontal="16dp"
+                            android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                android:layout_weight="1" android:text="@string/dark_mode" android:textColor="@color/text_main" android:textSize="15sp"/>
+                            <TextView android:id="@+id/tvCurrentTheme" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="@string/theme_smart" android:textColor="@color/text_secondary" android:textSize="13sp" android:layout_marginEnd="8dp"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="›" android:textColor="@color/text_secondary" android:textSize="18sp"/>
+                        </LinearLayout>
+
+                        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#1AFFFFFF" android:layout_marginHorizontal="16dp"/>
+
+                        <LinearLayout android:id="@+id/rowLanguage" android:layout_width="match_parent" android:layout_height="56dp"
+                            android:orientation="horizontal" android:gravity="center_vertical"
+                            android:paddingHorizontal="16dp"
+                            android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                android:layout_weight="1" android:text="@string/language" android:textColor="@color/text_main" android:textSize="15sp"/>
+                            <TextView android:id="@+id/tvCurrentLanguage" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="Türkçe" android:textColor="@color/text_secondary" android:textSize="13sp" android:layout_marginEnd="8dp"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="›" android:textColor="@color/text_secondary" android:textSize="18sp"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/general"
+                    android:textColor="@color/text_main"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    app:cardBackgroundColor="@color/surface_main"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="8dp">
+
+                        <LinearLayout android:id="@+id/rowRate" android:layout_width="match_parent" android:layout_height="56dp"
+                            android:orientation="horizontal" android:gravity="center_vertical"
+                            android:paddingHorizontal="16dp"
+                            android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                android:layout_weight="1" android:text="@string/rate_app" android:textColor="@color/text_main" android:textSize="15sp"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="›" android:textColor="@color/text_secondary" android:textSize="18sp"/>
+                        </LinearLayout>
+
+                        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#1AFFFFFF" android:layout_marginHorizontal="16dp"/>
+
+                        <LinearLayout android:id="@+id/rowShare" android:layout_width="match_parent" android:layout_height="56dp"
+                            android:orientation="horizontal" android:gravity="center_vertical"
+                            android:paddingHorizontal="16dp"
+                            android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                android:layout_weight="1" android:text="@string/share_app" android:textColor="@color/text_main" android:textSize="15sp"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="›" android:textColor="@color/text_secondary" android:textSize="18sp"/>
+                        </LinearLayout>
+
+                        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#1AFFFFFF" android:layout_marginHorizontal="16dp"/>
+
+                        <LinearLayout android:id="@+id/rowTutorial" android:layout_width="match_parent" android:layout_height="56dp"
+                            android:orientation="horizontal" android:gravity="center_vertical"
+                            android:paddingHorizontal="16dp"
+                            android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                android:layout_weight="1" android:text="@string/how_to_use" android:textColor="@color/text_main" android:textSize="15sp"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="›" android:textColor="@color/text_secondary" android:textSize="18sp"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!-- Yasal & Gizlilik / Legal & Privacy Section -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/legal_and_privacy"
+                    android:textColor="@color/text_main"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    app:cardBackgroundColor="@color/surface_main"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:orientation="vertical" android:padding="8dp">
+
+                        <!-- Privacy Policy (Gizlilik Sözleşmesi) -->
+                        <LinearLayout android:id="@+id/rowPrivacyPolicy" android:layout_width="match_parent" android:layout_height="56dp"
+                            android:orientation="horizontal" android:gravity="center_vertical"
+                            android:paddingHorizontal="16dp"
+                            android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                android:layout_weight="1" android:text="@string/policy_privacy_title" android:textColor="#8b5cf6" android:textStyle="bold" android:textSize="15sp"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="›" android:textColor="#8b5cf6" android:textSize="18sp"/>
+                        </LinearLayout>
+
+                        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#1AFFFFFF" android:layout_marginHorizontal="16dp"/>
+
+                        <!-- Data Account Deletion (Veri Silme Talebi) -->
+                        <LinearLayout android:id="@+id/rowAccountDeletion" android:layout_width="match_parent" android:layout_height="56dp"
+                            android:orientation="horizontal" android:gravity="center_vertical"
+                            android:paddingHorizontal="16dp"
+                            android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                android:layout_weight="1" android:text="@string/policy_deletion_title" android:textColor="#8b5cf6" android:textStyle="bold" android:textSize="15sp"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="›" android:textColor="#8b5cf6" android:textSize="18sp"/>
+                        </LinearLayout>
+
+                        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#1AFFFFFF" android:layout_marginHorizontal="16dp"/>
+
+                        <!-- Copyright & Terms (Telif Hakkı) -->
+                        <LinearLayout android:id="@+id/rowCopyright" android:layout_width="match_parent" android:layout_height="56dp"
+                            android:orientation="horizontal" android:gravity="center_vertical"
+                            android:paddingHorizontal="16dp"
+                            android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                android:layout_weight="1" android:text="@string/policy_copyright_title" android:textColor="#8b5cf6" android:textStyle="bold" android:textSize="15sp"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="›" android:textColor="#8b5cf6" android:textSize="18sp"/>
+                        </LinearLayout>
+
+                        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#1AFFFFFF" android:layout_marginHorizontal="16dp"/>
+
+                        <!-- Ad Partners Privacy (Reklam Ortakları) -->
+                        <LinearLayout android:id="@+id/rowAdPartners" android:layout_width="match_parent" android:layout_height="56dp"
+                            android:orientation="horizontal" android:gravity="center_vertical"
+                            android:paddingHorizontal="16dp"
+                            android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                                android:layout_weight="1" android:text="@string/policy_adpartners_title" android:textColor="#8b5cf6" android:textStyle="bold" android:textSize="15sp"/>
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="›" android:textColor="#8b5cf6" android:textSize="18sp"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Bottom App Bar with Center FAB -->
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:backgroundTint="@color/surface_main"
+        app:fabAlignmentMode="center"
+        app:fabCradleMargin="8dp"
+        app:fabCradleRoundedCornerRadius="16dp"
+        app:fabCradleVerticalOffset="0dp">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:elevation="0dp"
+            app:labelVisibilityMode="labeled"
+            app:itemIconSize="20dp"
+                app:menu="@menu/bottom_nav_menu"
+            app:itemIconTint="@color/nav_color_selector"
+            app:itemTextColor="@color/nav_color_selector"
+            app:itemTextAppearanceActive="@style/BottomNavText"
+            app:itemTextAppearanceInactive="@style/BottomNavText" />
+
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/primary_indigo"
+        android:src="@android:drawable/ic_input_add"
+        app:tint="@color/white"
+        app:elevation="12dp"
+        app:borderWidth="0dp"
+        app:layout_anchor="@id/bottomAppBar"
+        app:maxImageSize="36dp" />
+
+    <!-- Full-screen Policy Viewer Overlay Modal -->
+    <FrameLayout
+        android:id="@+id/layoutPolicyOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F20B0B14"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginVertical="80dp"
+            app:cardBackgroundColor="@color/surface_main"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="24dp">
+
+                <!-- Header: Title and Close button -->
+                <TextView
+                    android:id="@+id/tvPolicyTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_main"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/btnClosePolicy"
+                    android:layout_marginEnd="16dp"
+                    android:text="Policy Title" />
+
+                <ImageView
+                    android:id="@+id/btnClosePolicy"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:src="@android:drawable/ic_menu_close_clear_cancel"
+                    app:tint="#730692"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:padding="4dp"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <!-- Policy Content ScrollView -->
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tvPolicyTitle"
+                    android:layout_marginTop="20dp"
+                    android:scrollbars="vertical">
+
+                    <TextView
+                        android:id="@+id/tvPolicyContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp"
+                        android:lineSpacingMultiplier="1.3"
+                        android:text="Policy Content details..." />
+                </ScrollView>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

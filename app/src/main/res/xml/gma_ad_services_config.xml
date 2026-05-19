@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    AdMob / Firebase Analytics manifest merger çakışmasını çözen yapılandırma dosyası.
+    AndroidManifest.xml'deki 'android.adservices.AD_SERVICES_CONFIG' property'si bu dosyaya referans veriyor.
+-->
+<ad-services-config>
+    <attribution reportingJobEnabled="false"/>
+</ad-services-config>

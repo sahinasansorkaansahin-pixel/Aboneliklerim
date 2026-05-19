@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Deep Blue Circle Background -->
+    <path
+        android:fillColor="#002BE7"
+        android:pathData="M24,24m-22,0a22,22 0,1,1 44,0a22,22 0,1,1 -44,0" />
+    <!-- Max bold stylized 'M' -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M14,32 L19,32 L19,23 L24,28 L29,23 L29,32 L34,32 L34,16 L29,16 L24,22 L19,16 L14,16 Z" />
+    <!-- White Circle dot in the center of play -->
+    <path
+        android:fillColor="#002BE7"
+        android:pathData="M24,22m-2,0a2,2 0,1,1 4,0a2,2 0,1,1 -4,0" />
+</vector>

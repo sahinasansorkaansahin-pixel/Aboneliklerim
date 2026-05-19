@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_bg"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:background="#730692" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sort_by"
+        android:textColor="@color/text_main"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Name -->
+    <LinearLayout
+        android:id="@+id/sortByName"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="?attr/selectableItemBackground">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/sort_name"
+            android:textColor="@color/text_main"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/ivSortNameDesc"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_triangle_down"
+            android:background="@drawable/circle_outline_selected"
+            android:tint="@color/primary_indigo" />
+
+        <ImageView
+            android:id="@+id/ivSortNameAsc"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="10dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_triangle_up"
+            android:tint="@color/text_secondary" />
+    </LinearLayout>
+
+    <!-- Price -->
+    <LinearLayout
+        android:id="@+id/sortByPrice"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="?attr/selectableItemBackground">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/sort_price"
+            android:textColor="@color/text_main"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/ivSortPriceDesc"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_triangle_down"
+            android:tint="@color/text_secondary" />
+
+        <ImageView
+            android:id="@+id/ivSortPriceAsc"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="10dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_triangle_up"
+            android:tint="@color/text_secondary" />
+    </LinearLayout>
+
+    <!-- Date -->
+    <LinearLayout
+        android:id="@+id/sortByDate"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="?attr/selectableItemBackground">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/sort_date"
+            android:textColor="@color/text_main"
+            android:textSize="15sp"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <ImageView
+            android:id="@+id/ivSortDateDesc"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_triangle_down"
+            android:tint="@color/text_secondary" />
+
+        <ImageView
+            android:id="@+id/ivSortDateAsc"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="10dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_triangle_up"
+            android:tint="@color/text_secondary" />
+    </LinearLayout>
+
+    <!-- Color -->
+    <LinearLayout
+        android:id="@+id/sortByColor"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="?attr/selectableItemBackground">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/sort_color"
+            android:textColor="@color/text_main"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/ivSortColorDesc"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_triangle_down"
+            android:tint="@color/text_secondary" />
+
+        <ImageView
+            android:id="@+id/ivSortColorAsc"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="10dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_triangle_up"
+            android:tint="@color/text_secondary" />
+    </LinearLayout>
+
+    <!-- Payment Type -->
+    <LinearLayout
+        android:id="@+id/sortByPaymentType"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="?attr/selectableItemBackground">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/payment_method"
+            android:textColor="@color/text_main"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/ivSortPaymentTypeDesc"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_triangle_down"
+            android:tint="@color/text_secondary" />
+
+        <ImageView
+            android:id="@+id/ivSortPaymentTypeAsc"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="10dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_triangle_up"
+            android:tint="@color/text_secondary" />
+    </LinearLayout>
+
+</LinearLayout>

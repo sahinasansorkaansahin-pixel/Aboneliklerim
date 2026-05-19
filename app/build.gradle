@@ -1,0 +1,94 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.google.services)
+    alias(libs.plugins.crashlytics)
+}
+
+android {
+    namespace 'com.aboneliklerim.app'
+    compileSdk libs.versions.compileSdk.get().toInteger()
+
+    defaultConfig {
+        applicationId "com.aboneliklerim.app"
+        minSdk libs.versions.minSdk.get().toInteger()
+        targetSdk libs.versions.targetSdk.get().toInteger()
+        versionCode 5
+        versionName "1.3"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("C:/Users/Admin/upload-keystore.jks")
+            storePassword "kaan16"
+            keyAlias "upload"
+            keyPassword "kaan16"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            ndk {
+                debugSymbolLevel 'FULL'
+            }
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlin {
+        compilerOptions {
+            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+        }
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    lint {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.core.splashscreen
+    implementation libs.androidx.swiperefreshlayout
+
+    // Firebase BoM
+    implementation platform(libs.firebase.bom)
+    implementation libs.firebase.analytics
+    implementation libs.firebase.messaging
+    implementation libs.firebase.firestore
+    implementation libs.firebase.auth
+    implementation libs.firebase.crashlytics
+
+    // AdMob
+    implementation libs.play.services.ads
+
+    implementation libs.gson
+    implementation libs.okhttp
+    implementation libs.kotlinx.coroutines.android
+    implementation libs.androidx.lifecycle.runtime.ktx
+    implementation libs.play.services.auth
+    implementation libs.androidx.work.runtime.ktx
+
+    // Glide
+    implementation libs.glide
+    annotationProcessor libs.glide.compiler
+
+    // Google Play Billing
+    implementation libs.billing.ktx
+}
+
+
+// AdMob

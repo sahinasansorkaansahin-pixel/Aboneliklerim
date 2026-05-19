@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Layer 1: Outer Dark Shadow/Border -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#36004D" />
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+
+    <!-- Layer 2: Inner Highlight Bezel -->
+    <item
+        android:top="2dp"
+        android:bottom="2dp"
+        android:left="2dp"
+        android:right="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#7800B3" />
+            <corners android:radius="14dp" />
+        </shape>
+    </item>
+
+    <!-- Layer 3: Main Button Face -->
+    <item
+        android:top="3dp"
+        android:bottom="4dp"
+        android:left="3dp"
+        android:right="3dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#590082" />
+            <corners android:radius="13dp" />
+        </shape>
+    </item>
+</layer-list>

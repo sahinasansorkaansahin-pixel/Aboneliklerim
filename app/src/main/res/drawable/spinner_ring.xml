@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Purple arc spinner: a sweep-gradient ring that fades from transparent to #730692.
+    Used as the src of an ImageView that is animated with R.anim.rotate_spinner.
+    The 'transparent end' creates the appearance of a trailing dotted arc.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="ring"
+    android:innerRadiusRatio="2.8"
+    android:thicknessRatio="10"
+    android:useLevel="false">
+
+    <gradient
+        android:type="sweep"
+        android:startColor="#00730692"
+        android:centerColor="#88730692"
+        android:endColor="#FF730692" />
+
+</shape>
