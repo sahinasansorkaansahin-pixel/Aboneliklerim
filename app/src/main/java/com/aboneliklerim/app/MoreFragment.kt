@@ -649,20 +649,31 @@ class MoreFragment : Fragment() {
                 val platforms = StreamingPriceService.fetchAndSyncPrices(requireContext(), forceRefresh = false)
                 
                 if (platforms.isNotEmpty()) {
-                    val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, platforms.map { it.name })
+                    val platformNames = mutableListOf(getString(R.string.select_platform))
+                    platformNames.addAll(platforms.map { it.name })
+                    
+                    val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, platformNames)
                     adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
                     spinner.adapter = adapter
                     
                     spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                         override fun onItemSelected(parent: AdapterView<*>?, v: View?, position: Int, id: Long) {
-                            val selectedPlatform = platforms[position]
-                            updateSelectedPlatformUI(view, selectedPlatform, rates)
+                            if (position == 0) {
+                                // Hide everything
+                                view.findViewById<ImageView>(R.id.imgSelectedStreamingLogo).setImageDrawable(null)
+                                view.findViewById<TextView>(R.id.tvStreamingSelectedTrend).visibility = View.GONE
+                                view.findViewById<LinearLayout>(R.id.layoutStreamingSelectedPlans).removeAllViews()
+                                view.findViewById<View>(R.id.btnOpenStreamingWeb).visibility = View.GONE
+                            } else {
+                                val selectedPlatform = platforms[position - 1]
+                                updateSelectedPlatformUI(view, selectedPlatform, rates)
+                            }
                         }
                         override fun onNothingSelected(parent: AdapterView<*>?) {}
                     }
                     
-                    // Initial selection UI update
-                    updateSelectedPlatformUI(view, platforms[0], rates)
+                    // Initial selection: Placeholder
+                    spinner.setSelection(0)
                 } else {
                     cardStreamingPrices.visibility = View.GONE
                 }
@@ -678,6 +689,9 @@ class MoreFragment : Fragment() {
         val tvTrend = viewParent.findViewById<TextView>(R.id.tvStreamingSelectedTrend)
         val plansContainer = viewParent.findViewById<LinearLayout>(R.id.layoutStreamingSelectedPlans)
         val btnWeb = viewParent.findViewById<View>(R.id.btnOpenStreamingWeb)
+        
+        // Ensure web button is visible
+        btnWeb.visibility = View.VISIBLE
         
         // Load Logo
         val logoResId = requireContext().resources.getIdentifier(platform.logo_res, "drawable", requireContext().packageName)
@@ -718,11 +732,7 @@ class MoreFragment : Fragment() {
             tvTrend.visibility = View.VISIBLE
         }
         
-        // Currency Prefs
-        val prefs = requireContext().getSharedPreferences("Settings", Context.MODE_PRIVATE)
         val activeLang = LocaleHelper.getActiveLanguage(requireContext())
-        val targetCurrency = prefs.getString("default_currency", CurrencyHelper.getDefaultCurrencyBasedOnLanguage(activeLang)) ?: "TRY"
-        val symbol = CurrencyHelper.getLocalizedSymbol(targetCurrency, requireContext())
         
         // Populate plans
         plansContainer.removeAllViews()
@@ -748,10 +758,20 @@ class MoreFragment : Fragment() {
             plansContainer.addView(planRow)
         }
         
-        // Web Link Button
+        // Web Link Button Dynamic Country URL
         btnWeb.setOnClickListener {
             try {
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(platform.official_url))
+                val countryCode = activeLang.split("-").last().lowercase()
+                var finalUrl = platform.official_url
+                
+                when (platform.id) {
+                    "spotify" -> finalUrl = "https://www.spotify.com/$countryCode/premium/"
+                    "apple_music" -> finalUrl = if (countryCode == "us") "https://www.apple.com/apple-music/" else "https://www.apple.com/$countryCode/apple-music/"
+                    "prime_video" -> finalUrl = "https://www.primevideo.com/"
+                    "netflix" -> finalUrl = "https://www.netflix.com/"
+                }
+                
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(finalUrl))
                 startActivity(intent)
             } catch (e: Exception) {
                 e.printStackTrace()

@@ -277,4 +277,5 @@
     <string name="loading_prices">Fiyatlar güncelleniyor...</string>
     <string name="update_prices_success">Platform fiyatları güncellendi!</string>
     <string name="update_prices_error">Fiyatlar güncellenemedi.</string>
+    <string name="select_platform">Herhangi bir platform seç</string>
 </resources>
