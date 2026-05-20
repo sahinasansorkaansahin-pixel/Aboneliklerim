@@ -87,14 +87,14 @@
           }
         ]
       },
-      "IDR": {
-        "base_price": 59000.0,
-        "base_currency": "IDR",
+      "AZN": {
+        "base_price": 4.99,
+        "base_currency": "AZN",
         "plans": [
           {
             "name": "Prime Monthly",
-            "price": 59000.0,
-            "currency": "IDR",
+            "price": 4.99,
+            "currency": "AZN",
             "period": "monthly"
           }
         ]
@@ -111,20 +111,20 @@
           }
         ]
       },
-      "INR": {
-        "base_price": 299.0,
-        "base_currency": "INR",
+      "UAH": {
+        "base_price": 129.0,
+        "base_currency": "UAH",
         "plans": [
           {
             "name": "Prime Monthly",
-            "price": 299.0,
-            "currency": "INR",
+            "price": 129.0,
+            "currency": "UAH",
             "period": "monthly"
           },
           {
             "name": "Prime Yearly",
-            "price": 1499.0,
-            "currency": "INR",
+            "price": 1199.0,
+            "currency": "UAH",
             "period": "monthly"
           }
         ]
@@ -304,9 +304,9 @@
       "EUR",
       "JPY",
       "GBP",
-      "IDR",
+      "AZN",
       "KRW",
-      "INR",
+      "UAH",
       "SEK",
       "NOK",
       "DKK",
@@ -444,26 +444,26 @@
           }
         ]
       },
-      "IDR": {
-        "base_price": 120000.0,
-        "base_currency": "IDR",
+      "AZN": {
+        "base_price": 9.99,
+        "base_currency": "AZN",
         "plans": [
           {
             "name": "Basic",
-            "price": 65000.0,
-            "currency": "IDR",
+            "price": 5.99,
+            "currency": "AZN",
             "period": "monthly"
           },
           {
             "name": "Standard",
-            "price": 120000.0,
-            "currency": "IDR",
+            "price": 9.99,
+            "currency": "AZN",
             "period": "monthly"
           },
           {
             "name": "Premium",
-            "price": 186000.0,
-            "currency": "IDR",
+            "price": 13.99,
+            "currency": "AZN",
             "period": "monthly"
           }
         ]
@@ -492,26 +492,26 @@
           }
         ]
       },
-      "INR": {
-        "base_price": 499.0,
-        "base_currency": "INR",
+      "UAH": {
+        "base_price": 249.0,
+        "base_currency": "UAH",
         "plans": [
           {
             "name": "Basic",
-            "price": 199.0,
-            "currency": "INR",
+            "price": 149.0,
+            "currency": "UAH",
             "period": "monthly"
           },
           {
             "name": "Standard",
-            "price": 499.0,
-            "currency": "INR",
+            "price": 249.0,
+            "currency": "UAH",
             "period": "monthly"
           },
           {
             "name": "Premium",
-            "price": 649.0,
-            "currency": "INR",
+            "price": 349.0,
+            "currency": "UAH",
             "period": "monthly"
           }
         ]
@@ -787,9 +787,9 @@
       "EUR",
       "JPY",
       "GBP",
-      "IDR",
+      "AZN",
       "KRW",
-      "INR",
+      "UAH",
       "SEK",
       "NOK",
       "DKK",
@@ -957,32 +957,32 @@
           }
         ]
       },
-      "IDR": {
-        "base_price": 54990.0,
-        "base_currency": "IDR",
+      "AZN": {
+        "base_price": 5.99,
+        "base_currency": "AZN",
         "plans": [
           {
             "name": "Student",
-            "price": 27500.0,
-            "currency": "IDR",
+            "price": 2.99,
+            "currency": "AZN",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 54990.0,
-            "currency": "IDR",
+            "price": 5.99,
+            "currency": "AZN",
             "period": "monthly"
           },
           {
             "name": "Duo",
-            "price": 71490.0,
-            "currency": "IDR",
+            "price": 7.99,
+            "currency": "AZN",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 86900.0,
-            "currency": "IDR",
+            "price": 9.99,
+            "currency": "AZN",
             "period": "monthly"
           }
         ]
@@ -1011,32 +1011,32 @@
           }
         ]
       },
-      "INR": {
-        "base_price": 119.0,
-        "base_currency": "INR",
+      "UAH": {
+        "base_price": 149.0,
+        "base_currency": "UAH",
         "plans": [
           {
             "name": "Student",
-            "price": 59.0,
-            "currency": "INR",
+            "price": 75.0,
+            "currency": "UAH",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 119.0,
-            "currency": "INR",
+            "price": 149.0,
+            "currency": "UAH",
             "period": "monthly"
           },
           {
             "name": "Duo",
-            "price": 149.0,
-            "currency": "INR",
+            "price": 199.0,
+            "currency": "UAH",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 179.0,
-            "currency": "INR",
+            "price": 239.0,
+            "currency": "UAH",
             "period": "monthly"
           }
         ]
@@ -1378,9 +1378,9 @@
       "EUR",
       "JPY",
       "GBP",
-      "IDR",
+      "AZN",
       "KRW",
-      "INR",
+      "UAH",
       "SEK",
       "NOK",
       "DKK",
@@ -1518,26 +1518,26 @@
           }
         ]
       },
-      "IDR": {
-        "base_price": 55000.0,
-        "base_currency": "IDR",
+      "AZN": {
+        "base_price": 6.99,
+        "base_currency": "AZN",
         "plans": [
           {
             "name": "Student",
-            "price": 35000.0,
-            "currency": "IDR",
+            "price": 3.99,
+            "currency": "AZN",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 55000.0,
-            "currency": "IDR",
+            "price": 6.99,
+            "currency": "AZN",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 85000.0,
-            "currency": "IDR",
+            "price": 10.99,
+            "currency": "AZN",
             "period": "monthly"
           }
         ]
@@ -1566,26 +1566,26 @@
           }
         ]
       },
-      "INR": {
-        "base_price": 99.0,
-        "base_currency": "INR",
+      "UAH": {
+        "base_price": 159.0,
+        "base_currency": "UAH",
         "plans": [
           {
             "name": "Student",
-            "price": 59.0,
-            "currency": "INR",
+            "price": 79.0,
+            "currency": "UAH",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 99.0,
-            "currency": "INR",
+            "price": 159.0,
+            "currency": "UAH",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 149.0,
-            "currency": "INR",
+            "price": 239.0,
+            "currency": "UAH",
             "period": "monthly"
           }
         ]
@@ -1861,9 +1861,9 @@
       "EUR",
       "JPY",
       "GBP",
-      "IDR",
+      "AZN",
       "KRW",
-      "INR",
+      "UAH",
       "SEK",
       "NOK",
       "DKK",
@@ -2001,26 +2001,26 @@
           }
         ]
       },
-      "IDR": {
-        "base_price": 26900.0,
-        "base_currency": "IDR",
+      "AZN": {
+        "base_price": 2.99,
+        "base_currency": "AZN",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 26900.0,
-            "currency": "IDR",
+            "price": 2.99,
+            "currency": "AZN",
             "period": "monthly"
           },
           {
             "name": "Standard (200 GB)",
-            "price": 43000.0,
-            "currency": "IDR",
+            "price": 4.99,
+            "currency": "AZN",
             "period": "monthly"
           },
           {
             "name": "Premium (2 TB)",
-            "price": 135000.0,
-            "currency": "IDR",
+            "price": 14.99,
+            "currency": "AZN",
             "period": "monthly"
           }
         ]
@@ -2049,26 +2049,26 @@
           }
         ]
       },
-      "INR": {
-        "base_price": 130.0,
-        "base_currency": "INR",
+      "UAH": {
+        "base_price": 49.0,
+        "base_currency": "UAH",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 130.0,
-            "currency": "INR",
+            "price": 49.0,
+            "currency": "UAH",
             "period": "monthly"
           },
           {
             "name": "Standard (200 GB)",
-            "price": 210.0,
-            "currency": "INR",
+            "price": 79.0,
+            "currency": "UAH",
             "period": "monthly"
           },
           {
             "name": "Premium (2 TB)",
-            "price": 650.0,
-            "currency": "INR",
+            "price": 249.0,
+            "currency": "UAH",
             "period": "monthly"
           }
         ]
@@ -2344,9 +2344,9 @@
       "EUR",
       "JPY",
       "GBP",
-      "IDR",
+      "AZN",
       "KRW",
-      "INR",
+      "UAH",
       "SEK",
       "NOK",
       "DKK",
@@ -2484,26 +2484,26 @@
           }
         ]
       },
-      "IDR": {
-        "base_price": 28999.0,
-        "base_currency": "IDR",
+      "AZN": {
+        "base_price": 2.99,
+        "base_currency": "AZN",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 28999.0,
-            "currency": "IDR",
+            "price": 2.99,
+            "currency": "AZN",
             "period": "monthly"
           },
           {
             "name": "Personal (1 TB)",
-            "price": 87999.0,
-            "currency": "IDR",
+            "price": 8.99,
+            "currency": "AZN",
             "period": "monthly"
           },
           {
             "name": "Family (6 TB)",
-            "price": 129999.0,
-            "currency": "IDR",
+            "price": 12.99,
+            "currency": "AZN",
             "period": "monthly"
           }
         ]
@@ -2532,26 +2532,26 @@
           }
         ]
       },
-      "INR": {
-        "base_price": 149.0,
-        "base_currency": "INR",
+      "UAH": {
+        "base_price": 59.0,
+        "base_currency": "UAH",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 149.0,
-            "currency": "INR",
+            "price": 59.0,
+            "currency": "UAH",
             "period": "monthly"
           },
           {
             "name": "Personal (1 TB)",
-            "price": 489.0,
-            "currency": "INR",
+            "price": 189.0,
+            "currency": "UAH",
             "period": "monthly"
           },
           {
             "name": "Family (6 TB)",
-            "price": 619.0,
-            "currency": "INR",
+            "price": 249.0,
+            "currency": "UAH",
             "period": "monthly"
           }
         ]
@@ -2827,9 +2827,9 @@
       "EUR",
       "JPY",
       "GBP",
-      "IDR",
+      "AZN",
       "KRW",
-      "INR",
+      "UAH",
       "SEK",
       "NOK",
       "DKK",

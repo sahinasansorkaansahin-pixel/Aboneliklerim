@@ -50,8 +50,8 @@ object LocaleHelper {
                 "cs-CZ" -> "Čeština"
                     "ja-JP" -> "日本語"
                 "ko-KR" -> "한국어"
-                "hi-IN" -> "हिन्दी"
-            "id-ID" -> "Bahasa Indonesia"
+                "az-AZ" -> "Azərbaycanca"
+            "uk-UA" -> "Українська"
                 "th-TH" -> "ไทย"
                 "ar-AE" -> "العربية"
                 else -> locale.getDisplayLanguage(locale).replaceFirstChar { it.uppercase() }

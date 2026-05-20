@@ -8,7 +8,7 @@ object CurrencyHelper {
     fun getCurrencies(context: Context): List<CurrencyItem> {
         val activeLang = LocaleHelper.getActiveLanguage(context)
         val currentLocale = Locale.forLanguageTag(activeLang)
-        return listOf("TRY", "USD", "EUR", "JPY", "GBP", "IDR", "KRW", "INR", "SEK", "NOK", "DKK", "CAD", "AUD", "SGD", "AED", "SAR", "THB", "PLN", "CZK")
+        return listOf("TRY", "USD", "EUR", "JPY", "GBP", "AZN", "KRW", "UAH", "SEK", "NOK", "DKK", "CAD", "AUD", "SGD", "AED", "SAR", "THB", "PLN", "CZK")
             .map { code ->
                 try {
                     val curr = java.util.Currency.getInstance(code)
@@ -43,10 +43,10 @@ object CurrencyHelper {
 
     private fun getFlagEmoji(currencyCode: String): String {
         return when(currencyCode) {
-            "USD" -> "🇺🇸"; "EUR" -> "🇪🇺"; "GBP" -> "🇬🇧"; "TRY" -> "🇹🇷"; "IDR" -> "🇮🇩"
+            "USD" -> "🇺🇸"; "EUR" -> "🇪🇺"; "GBP" -> "🇬🇧"; "TRY" -> "🇹🇷"; "AZN" -> "🇦🇿"
             "NOK" -> "🇳🇴"; "SGD" -> "🇸🇬"; "DKK" -> "🇩🇰"; "AUD" -> "🇦🇺"; "SEK" -> "🇸🇪"
             "CAD" -> "🇨🇦"; "AED" -> "🇦🇪"; "JPY" -> "🇯🇵"; "KRW" -> "🇰🇷"; "SAR" -> "🇸🇦"
-            "CZK" -> "🇨🇿"; "PLN" -> "🇵🇱"; "THB" -> "🇹🇭"; "INR" -> "🇮🇳"
+            "CZK" -> "🇨🇿"; "PLN" -> "🇵🇱"; "THB" -> "🇹🇭"; "UAH" -> "🇺🇦"
             else -> "🏳️"
         }
     }
@@ -59,8 +59,8 @@ object CurrencyHelper {
             "GBP" -> "£"
             "JPY" -> "¥"
             "KRW" -> "₩"
-            "INR" -> "₹"
-            "IDR" -> "Rp"
+            "AZN" -> "₼"
+            "UAH" -> "₴"
             "NOK", "SEK", "DKK" -> "kr"
             "SAR" -> "SR"
             "AED" -> "DH"
@@ -82,8 +82,8 @@ object CurrencyHelper {
             "de-DE", "fr-FR", "it-IT", "es-ES", "pt-PT", "nl-NL", "fi-FI" -> "EUR"
             "ja-JP" -> "JPY"
             "ko-KR" -> "KRW"
-            "hi-IN" -> "INR"
-            "id-ID" -> "IDR"
+            "az-AZ" -> "AZN"
+            "uk-UA" -> "UAH"
             "ar-AE" -> "AED"
             "sv-SE" -> "SEK"
             "no-NO" -> "NOK"
@@ -98,8 +98,8 @@ object CurrencyHelper {
             else -> {
                 if (lang.startsWith("tr")) "TRY"
                 else if (lang.startsWith("en")) "USD"
-                else if (lang.startsWith("hi")) "INR"
-                else if (lang.startsWith("id")) "IDR"
+                else if (lang.startsWith("az")) "AZN"
+                else if (lang.startsWith("uk")) "UAH"
                 else if (lang.startsWith("th")) "THB"
                 else "USD"
             }

@@ -502,14 +502,10 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginBottom="8dp">
                 <TextView
+                    android:id="@+id/tvStreamingTitle"
                     android:layout_width="wrap_content" android:layout_height="wrap_content"
                     android:text="@string/streaming_prices" android:textColor="@color/text_main" android:textSize="14sp"
                     android:textStyle="bold" />
-                <ImageView android:id="@+id/ivStreamingLock"
-                    android:layout_width="16dp" android:layout_height="16dp"
-                    android:layout_marginStart="6dp"
-                    android:src="@drawable/ic_lock" app:tint="#8E8E93"
-                    android:visibility="gone"/>
             </LinearLayout>
 
             <androidx.cardview.widget.CardView
@@ -587,9 +583,10 @@
                         android:layout_width="wrap_content" 
                         android:layout_height="wrap_content" 
                         android:text="@string/premium_get_service" 
-                        android:layout_marginTop="8dp"
-                        android:textColor="@color/text_main"
-                        android:textStyle="bold"/>
+                        android:textColor="#8E8E93" 
+                        android:textSize="14sp" 
+                        android:textStyle="bold" 
+                        android:layout_marginTop="8dp"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
