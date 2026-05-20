@@ -87,14 +87,14 @@
           }
         ]
       },
-      "CHF": {
-        "base_price": 9.9,
-        "base_currency": "CHF",
+      "IDR": {
+        "base_price": 59000.0,
+        "base_currency": "IDR",
         "plans": [
           {
             "name": "Prime Monthly",
-            "price": 9.9,
-            "currency": "CHF",
+            "price": 59000.0,
+            "currency": "IDR",
             "period": "monthly"
           }
         ]
@@ -111,20 +111,20 @@
           }
         ]
       },
-      "BRL": {
-        "base_price": 19.9,
-        "base_currency": "BRL",
+      "INR": {
+        "base_price": 299.0,
+        "base_currency": "INR",
         "plans": [
           {
             "name": "Prime Monthly",
-            "price": 19.9,
-            "currency": "BRL",
+            "price": 299.0,
+            "currency": "INR",
             "period": "monthly"
           },
           {
             "name": "Prime Yearly",
-            "price": 166.8,
-            "currency": "BRL",
+            "price": 1499.0,
+            "currency": "INR",
             "period": "monthly"
           }
         ]
@@ -304,9 +304,9 @@
       "EUR",
       "JPY",
       "GBP",
-      "CHF",
+      "IDR",
       "KRW",
-      "BRL",
+      "INR",
       "SEK",
       "NOK",
       "DKK",
@@ -444,26 +444,26 @@
           }
         ]
       },
-      "CHF": {
-        "base_price": 18.9,
-        "base_currency": "CHF",
+      "IDR": {
+        "base_price": 120000.0,
+        "base_currency": "IDR",
         "plans": [
           {
             "name": "Basic",
-            "price": 11.9,
-            "currency": "CHF",
+            "price": 65000.0,
+            "currency": "IDR",
             "period": "monthly"
           },
           {
             "name": "Standard",
-            "price": 18.9,
-            "currency": "CHF",
+            "price": 120000.0,
+            "currency": "IDR",
             "period": "monthly"
           },
           {
             "name": "Premium",
-            "price": 24.9,
-            "currency": "CHF",
+            "price": 186000.0,
+            "currency": "IDR",
             "period": "monthly"
           }
         ]
@@ -492,26 +492,26 @@
           }
         ]
       },
-      "BRL": {
-        "base_price": 44.9,
-        "base_currency": "BRL",
+      "INR": {
+        "base_price": 499.0,
+        "base_currency": "INR",
         "plans": [
           {
             "name": "Basic",
-            "price": 20.9,
-            "currency": "BRL",
+            "price": 199.0,
+            "currency": "INR",
             "period": "monthly"
           },
           {
             "name": "Standard",
-            "price": 44.9,
-            "currency": "BRL",
+            "price": 499.0,
+            "currency": "INR",
             "period": "monthly"
           },
           {
             "name": "Premium",
-            "price": 59.9,
-            "currency": "BRL",
+            "price": 649.0,
+            "currency": "INR",
             "period": "monthly"
           }
         ]
@@ -787,9 +787,9 @@
       "EUR",
       "JPY",
       "GBP",
-      "CHF",
+      "IDR",
       "KRW",
-      "BRL",
+      "INR",
       "SEK",
       "NOK",
       "DKK",
@@ -957,32 +957,32 @@
           }
         ]
       },
-      "CHF": {
-        "base_price": 13.95,
-        "base_currency": "CHF",
+      "IDR": {
+        "base_price": 54990.0,
+        "base_currency": "IDR",
         "plans": [
           {
             "name": "Student",
-            "price": 7.95,
-            "currency": "CHF",
+            "price": 27500.0,
+            "currency": "IDR",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 13.95,
-            "currency": "CHF",
+            "price": 54990.0,
+            "currency": "IDR",
             "period": "monthly"
           },
           {
             "name": "Duo",
-            "price": 18.95,
-            "currency": "CHF",
+            "price": 71490.0,
+            "currency": "IDR",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 22.95,
-            "currency": "CHF",
+            "price": 86900.0,
+            "currency": "IDR",
             "period": "monthly"
           }
         ]
@@ -1011,32 +1011,32 @@
           }
         ]
       },
-      "BRL": {
-        "base_price": 21.9,
-        "base_currency": "BRL",
+      "INR": {
+        "base_price": 119.0,
+        "base_currency": "INR",
         "plans": [
           {
             "name": "Student",
-            "price": 11.9,
-            "currency": "BRL",
+            "price": 59.0,
+            "currency": "INR",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 21.9,
-            "currency": "BRL",
+            "price": 119.0,
+            "currency": "INR",
             "period": "monthly"
           },
           {
             "name": "Duo",
-            "price": 27.9,
-            "currency": "BRL",
+            "price": 149.0,
+            "currency": "INR",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 34.9,
-            "currency": "BRL",
+            "price": 179.0,
+            "currency": "INR",
             "period": "monthly"
           }
         ]
@@ -1378,9 +1378,9 @@
       "EUR",
       "JPY",
       "GBP",
-      "CHF",
+      "IDR",
       "KRW",
-      "BRL",
+      "INR",
       "SEK",
       "NOK",
       "DKK",
@@ -1518,26 +1518,26 @@
           }
         ]
       },
-      "CHF": {
-        "base_price": 13.9,
-        "base_currency": "CHF",
+      "IDR": {
+        "base_price": 55000.0,
+        "base_currency": "IDR",
         "plans": [
           {
             "name": "Student",
-            "price": 7.9,
-            "currency": "CHF",
+            "price": 35000.0,
+            "currency": "IDR",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 13.9,
-            "currency": "CHF",
+            "price": 55000.0,
+            "currency": "IDR",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 21.9,
-            "currency": "CHF",
+            "price": 85000.0,
+            "currency": "IDR",
             "period": "monthly"
           }
         ]
@@ -1566,26 +1566,26 @@
           }
         ]
       },
-      "BRL": {
-        "base_price": 21.9,
-        "base_currency": "BRL",
+      "INR": {
+        "base_price": 99.0,
+        "base_currency": "INR",
         "plans": [
           {
             "name": "Student",
-            "price": 11.9,
-            "currency": "BRL",
+            "price": 59.0,
+            "currency": "INR",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 21.9,
-            "currency": "BRL",
+            "price": 99.0,
+            "currency": "INR",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 34.9,
-            "currency": "BRL",
+            "price": 149.0,
+            "currency": "INR",
             "period": "monthly"
           }
         ]
@@ -1861,9 +1861,9 @@
       "EUR",
       "JPY",
       "GBP",
-      "CHF",
+      "IDR",
       "KRW",
-      "BRL",
+      "INR",
       "SEK",
       "NOK",
       "DKK",
@@ -2001,26 +2001,26 @@
           }
         ]
       },
-      "CHF": {
-        "base_price": 2.0,
-        "base_currency": "CHF",
+      "IDR": {
+        "base_price": 26900.0,
+        "base_currency": "IDR",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 2.0,
-            "currency": "CHF",
+            "price": 26900.0,
+            "currency": "IDR",
             "period": "monthly"
           },
           {
             "name": "Standard (200 GB)",
-            "price": 3.0,
-            "currency": "CHF",
+            "price": 43000.0,
+            "currency": "IDR",
             "period": "monthly"
           },
           {
             "name": "Premium (2 TB)",
-            "price": 10.0,
-            "currency": "CHF",
+            "price": 135000.0,
+            "currency": "IDR",
             "period": "monthly"
           }
         ]
@@ -2049,26 +2049,26 @@
           }
         ]
       },
-      "BRL": {
-        "base_price": 6.99,
-        "base_currency": "BRL",
+      "INR": {
+        "base_price": 130.0,
+        "base_currency": "INR",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 6.99,
-            "currency": "BRL",
+            "price": 130.0,
+            "currency": "INR",
             "period": "monthly"
           },
           {
             "name": "Standard (200 GB)",
-            "price": 9.99,
-            "currency": "BRL",
+            "price": 210.0,
+            "currency": "INR",
             "period": "monthly"
           },
           {
             "name": "Premium (2 TB)",
-            "price": 34.99,
-            "currency": "BRL",
+            "price": 650.0,
+            "currency": "INR",
             "period": "monthly"
           }
         ]
@@ -2344,9 +2344,9 @@
       "EUR",
       "JPY",
       "GBP",
-      "CHF",
+      "IDR",
       "KRW",
-      "BRL",
+      "INR",
       "SEK",
       "NOK",
       "DKK",
@@ -2484,26 +2484,26 @@
           }
         ]
       },
-      "CHF": {
-        "base_price": 2.0,
-        "base_currency": "CHF",
+      "IDR": {
+        "base_price": 28999.0,
+        "base_currency": "IDR",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 2.0,
-            "currency": "CHF",
+            "price": 28999.0,
+            "currency": "IDR",
             "period": "monthly"
           },
           {
             "name": "Personal (1 TB)",
-            "price": 7.0,
-            "currency": "CHF",
+            "price": 87999.0,
+            "currency": "IDR",
             "period": "monthly"
           },
           {
             "name": "Family (6 TB)",
-            "price": 10.0,
-            "currency": "CHF",
+            "price": 129999.0,
+            "currency": "IDR",
             "period": "monthly"
           }
         ]
@@ -2532,26 +2532,26 @@
           }
         ]
       },
-      "BRL": {
-        "base_price": 9.0,
-        "base_currency": "BRL",
+      "INR": {
+        "base_price": 149.0,
+        "base_currency": "INR",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 9.0,
-            "currency": "BRL",
+            "price": 149.0,
+            "currency": "INR",
             "period": "monthly"
           },
           {
             "name": "Personal (1 TB)",
-            "price": 36.0,
-            "currency": "BRL",
+            "price": 489.0,
+            "currency": "INR",
             "period": "monthly"
           },
           {
             "name": "Family (6 TB)",
-            "price": 45.0,
-            "currency": "BRL",
+            "price": 619.0,
+            "currency": "INR",
             "period": "monthly"
           }
         ]
@@ -2827,9 +2827,9 @@
       "EUR",
       "JPY",
       "GBP",
-      "CHF",
+      "IDR",
       "KRW",
-      "BRL",
+      "INR",
       "SEK",
       "NOK",
       "DKK",
