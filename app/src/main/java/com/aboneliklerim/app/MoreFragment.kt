@@ -386,12 +386,24 @@ class MoreFragment : Fragment() {
 
         val ivGuestLock = view.findViewById<View>(R.id.ivGuestLock)
         val tvGuestArrow = view.findViewById<View>(R.id.tvGuestArrow)
+        val streamingOverlay = view.findViewById<View>(R.id.layoutStreamingPremiumOverlay)
+        val streamingLockIcon = view.findViewById<View>(R.id.ivStreamingLock)
+        
         if (!isPremium) {
             ivGuestLock?.visibility = View.VISIBLE
             tvGuestArrow?.visibility = View.GONE
+            
+            streamingOverlay?.visibility = View.VISIBLE
+            streamingOverlay?.setOnClickListener {
+                startActivity(Intent(ctx, PremiumActivity::class.java))
+            }
+            streamingLockIcon?.visibility = View.VISIBLE
         } else {
             ivGuestLock?.visibility = View.GONE
             tvGuestArrow?.visibility = View.VISIBLE
+            
+            streamingOverlay?.visibility = View.GONE
+            streamingLockIcon?.visibility = View.GONE
         }
     }
 
