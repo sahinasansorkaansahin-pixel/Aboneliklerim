@@ -36,6 +36,24 @@ fallback_prices = {
             {"name": "Individual (Bireysel)", "price": 59.99, "currency": "TRY", "period": "monthly"},
             {"name": "Family (Aile)", "price": 99.99, "currency": "TRY", "period": "monthly"}
         ]
+    },
+    "google_one": {
+        "price": 5.79,
+        "currency": "TRY",
+        "plans": [
+            {"name": "Basic (100 GB)", "price": 5.79, "currency": "TRY", "period": "monthly"},
+            {"name": "Standard (200 GB)", "price": 11.59, "currency": "TRY", "period": "monthly"},
+            {"name": "Premium (2 TB)", "price": 28.99, "currency": "TRY", "period": "monthly"}
+        ]
+    },
+    "microsoft_onedrive": {
+        "price": 59.99,
+        "currency": "TRY",
+        "plans": [
+            {"name": "Basic (100 GB)", "price": 59.99, "currency": "TRY", "period": "monthly"},
+            {"name": "Personal (1 TB)", "price": 179.99, "currency": "TRY", "period": "monthly"},
+            {"name": "Family (6 TB)", "price": 239.99, "currency": "TRY", "period": "monthly"}
+        ]
     }
 }
 
@@ -48,7 +66,7 @@ regional_data = {
         "GBP": {"price": 11.99, "plans": [{"name": "Student", "price": 5.99}, {"name": "Individual", "price": 11.99}, {"name": "Duo", "price": 16.99}, {"name": "Family", "price": 19.99}]},
         "CHF": {"price": 13.95, "plans": [{"name": "Student", "price": 7.95}, {"name": "Individual", "price": 13.95}, {"name": "Duo", "price": 18.95}, {"name": "Family", "price": 22.95}]},
         "KRW": {"price": 10900.0, "plans": [{"name": "Individual", "price": 10900.0}, {"name": "Duo", "price": 16350.0}, {"name": "Family", "price": 17900.0}]},
-        "CNY": {"price": 59.0, "plans": [{"name": "Student", "price": 29.0}, {"name": "Individual", "price": 59.0}, {"name": "Family", "price": 89.0}]},
+        "BRL": {"price": 21.90, "plans": [{"name": "Student", "price": 11.90}, {"name": "Individual", "price": 21.90}, {"name": "Duo", "price": 27.90}, {"name": "Family", "price": 34.90}]},
         "SEK": {"price": 119.0, "plans": [{"name": "Student", "price": 65.0}, {"name": "Individual", "price": 119.0}, {"name": "Duo", "price": 159.0}, {"name": "Family", "price": 189.0}]},
         "NOK": {"price": 119.0, "plans": [{"name": "Student", "price": 65.0}, {"name": "Individual", "price": 119.0}, {"name": "Duo", "price": 159.0}, {"name": "Family", "price": 189.0}]},
         "DKK": {"price": 109.0, "plans": [{"name": "Student", "price": 59.0}, {"name": "Individual", "price": 109.0}, {"name": "Duo", "price": 139.0}, {"name": "Family", "price": 169.0}]},
@@ -68,7 +86,7 @@ regional_data = {
         "GBP": {"price": 10.99, "plans": [{"name": "Student", "price": 5.99}, {"name": "Individual", "price": 10.99}, {"name": "Family", "price": 16.99}]},
         "CHF": {"price": 13.90, "plans": [{"name": "Student", "price": 7.90}, {"name": "Individual", "price": 13.90}, {"name": "Family", "price": 21.90}]},
         "KRW": {"price": 8900.0, "plans": [{"name": "Student", "price": 4900.0}, {"name": "Individual", "price": 8900.0}, {"name": "Family", "price": 13500.0}]},
-        "CNY": {"price": 10.0, "plans": [{"name": "Student", "price": 5.0}, {"name": "Individual", "price": 10.0}, {"name": "Family", "price": 15.0}]},
+        "BRL": {"price": 21.90, "plans": [{"name": "Student", "price": 11.90}, {"name": "Individual", "price": 21.90}, {"name": "Family", "price": 34.90}]},
         "SEK": {"price": 119.0, "plans": [{"name": "Student", "price": 65.0}, {"name": "Individual", "price": 119.0}, {"name": "Family", "price": 189.0}]},
         "NOK": {"price": 119.0, "plans": [{"name": "Student", "price": 65.0}, {"name": "Individual", "price": 119.0}, {"name": "Family", "price": 189.0}]},
         "DKK": {"price": 109.0, "plans": [{"name": "Student", "price": 59.0}, {"name": "Individual", "price": 109.0}, {"name": "Family", "price": 169.0}]},
@@ -88,7 +106,7 @@ regional_data = {
         "GBP": {"price": 10.99, "plans": [{"name": "Basic", "price": 6.99}, {"name": "Standard", "price": 10.99}, {"name": "Premium", "price": 17.99}]},
         "CHF": {"price": 18.90, "plans": [{"name": "Basic", "price": 11.90}, {"name": "Standard", "price": 18.90}, {"name": "Premium", "price": 24.90}]},
         "KRW": {"price": 13500.0, "plans": [{"name": "Basic", "price": 9500.0}, {"name": "Standard", "price": 13500.0}, {"name": "Premium", "price": 17000.0}]},
-        "CNY": {"price": 90.0, "plans": [{"name": "Basic", "price": 60.0}, {"name": "Standard", "price": 90.0}, {"name": "Premium", "price": 120.0}]},
+        "BRL": {"price": 44.90, "plans": [{"name": "Basic", "price": 20.90}, {"name": "Standard", "price": 44.90}, {"name": "Premium", "price": 59.90}]},
         "SEK": {"price": 129.0, "plans": [{"name": "Basic", "price": 99.0}, {"name": "Standard", "price": 129.0}, {"name": "Premium", "price": 179.0}]},
         "NOK": {"price": 109.0, "plans": [{"name": "Basic", "price": 89.0}, {"name": "Standard", "price": 109.0}, {"name": "Premium", "price": 159.0}]},
         "DKK": {"price": 114.0, "plans": [{"name": "Basic", "price": 79.0}, {"name": "Standard", "price": 114.0}, {"name": "Premium", "price": 149.0}]},
@@ -108,7 +126,7 @@ regional_data = {
         "GBP": {"price": 8.99, "plans": [{"name": "Prime Monthly", "price": 8.99}, {"name": "Prime Yearly", "price": 95.00}]},
         "CHF": {"price": 9.90, "plans": [{"name": "Prime Monthly", "price": 9.90}]},
         "KRW": {"price": 5.99, "plans": [{"name": "Prime Video", "price": 5.99}]},
-        "CNY": {"price": 20.0, "plans": [{"name": "Prime Monthly", "price": 20.0}, {"name": "Prime Yearly", "price": 188.0}]},
+        "BRL": {"price": 19.90, "plans": [{"name": "Prime Monthly", "price": 19.90}, {"name": "Prime Yearly", "price": 166.80}]},
         "SEK": {"price": 59.0, "plans": [{"name": "Prime Monthly", "price": 59.0}, {"name": "Prime Yearly", "price": 549.0}]},
         "NOK": {"price": 79.0, "plans": [{"name": "Prime Monthly", "price": 79.0}, {"name": "Prime Yearly", "price": 699.0}]},
         "DKK": {"price": 59.0, "plans": [{"name": "Prime Monthly", "price": 59.0}, {"name": "Prime Yearly", "price": 549.0}]},
@@ -120,6 +138,46 @@ regional_data = {
         "THB": {"price": 149.0, "plans": [{"name": "Prime Monthly", "price": 149.0}]},
         "PLN": {"price": 10.99, "plans": [{"name": "Prime Monthly", "price": 10.99}, {"name": "Prime Yearly", "price": 49.00}]},
         "CZK": {"price": 79.0, "plans": [{"name": "Prime Monthly", "price": 79.0}]}
+    },
+    "google_one": {
+        "USD": {"price": 1.99, "plans": [{"name": "Basic (100 GB)", "price": 1.99}, {"name": "Standard (200 GB)", "price": 2.99}, {"name": "Premium (2 TB)", "price": 9.99}]},
+        "EUR": {"price": 1.99, "plans": [{"name": "Basic (100 GB)", "price": 1.99}, {"name": "Standard (200 GB)", "price": 2.99}, {"name": "Premium (2 TB)", "price": 9.99}]},
+        "JPY": {"price": 250.0, "plans": [{"name": "Basic (100 GB)", "price": 250.0}, {"name": "Standard (200 GB)", "price": 380.0}, {"name": "Premium (2 TB)", "price": 1300.0}]},
+        "GBP": {"price": 1.59, "plans": [{"name": "Basic (100 GB)", "price": 1.59}, {"name": "Standard (200 GB)", "price": 2.49}, {"name": "Premium (2 TB)", "price": 7.99}]},
+        "CHF": {"price": 2.0, "plans": [{"name": "Basic (100 GB)", "price": 2.0}, {"name": "Standard (200 GB)", "price": 3.0}, {"name": "Premium (2 TB)", "price": 10.0}]},
+        "KRW": {"price": 2400.0, "plans": [{"name": "Basic (100 GB)", "price": 2400.0}, {"name": "Standard (200 GB)", "price": 3700.0}, {"name": "Premium (2 TB)", "price": 11900.0}]},
+        "BRL": {"price": 6.99, "plans": [{"name": "Basic (100 GB)", "price": 6.99}, {"name": "Standard (200 GB)", "price": 9.99}, {"name": "Premium (2 TB)", "price": 34.99}]},
+        "SEK": {"price": 19.0, "plans": [{"name": "Basic (100 GB)", "price": 19.0}, {"name": "Standard (200 GB)", "price": 29.0}, {"name": "Premium (2 TB)", "price": 99.0}]},
+        "NOK": {"price": 19.0, "plans": [{"name": "Basic (100 GB)", "price": 19.0}, {"name": "Standard (200 GB)", "price": 29.0}, {"name": "Premium (2 TB)", "price": 99.0}]},
+        "DKK": {"price": 17.0, "plans": [{"name": "Basic (100 GB)", "price": 17.0}, {"name": "Standard (200 GB)", "price": 25.0}, {"name": "Premium (2 TB)", "price": 89.0}]},
+        "CAD": {"price": 2.79, "plans": [{"name": "Basic (100 GB)", "price": 2.79}, {"name": "Standard (200 GB)", "price": 3.99}, {"name": "Premium (2 TB)", "price": 13.99}]},
+        "AUD": {"price": 2.49, "plans": [{"name": "Basic (100 GB)", "price": 2.49}, {"name": "Standard (200 GB)", "price": 4.39}, {"name": "Premium (2 TB)", "price": 12.49}]},
+        "SGD": {"price": 2.79, "plans": [{"name": "Basic (100 GB)", "price": 2.79}, {"name": "Standard (200 GB)", "price": 3.99}, {"name": "Premium (2 TB)", "price": 13.99}]},
+        "AED": {"price": 7.39, "plans": [{"name": "Basic (100 GB)", "price": 7.39}, {"name": "Standard (200 GB)", "price": 10.99}, {"name": "Premium (2 TB)", "price": 36.99}]},
+        "SAR": {"price": 7.49, "plans": [{"name": "Basic (100 GB)", "price": 7.49}, {"name": "Standard (200 GB)", "price": 10.99}, {"name": "Premium (2 TB)", "price": 36.99}]},
+        "THB": {"price": 70.0, "plans": [{"name": "Basic (100 GB)", "price": 70.0}, {"name": "Standard (200 GB)", "price": 99.0}, {"name": "Premium (2 TB)", "price": 350.0}]},
+        "PLN": {"price": 8.99, "plans": [{"name": "Basic (100 GB)", "price": 8.99}, {"name": "Standard (200 GB)", "price": 13.99}, {"name": "Premium (2 TB)", "price": 46.99}]},
+        "CZK": {"price": 59.99, "plans": [{"name": "Basic (100 GB)", "price": 59.99}, {"name": "Standard (200 GB)", "price": 79.99}, {"name": "Premium (2 TB)", "price": 299.99}]}
+    },
+    "microsoft_onedrive": {
+        "USD": {"price": 1.99, "plans": [{"name": "Basic (100 GB)", "price": 1.99}, {"name": "Personal (1 TB)", "price": 6.99}, {"name": "Family (6 TB)", "price": 9.99}]},
+        "EUR": {"price": 2.0, "plans": [{"name": "Basic (100 GB)", "price": 2.0}, {"name": "Personal (1 TB)", "price": 7.0}, {"name": "Family (6 TB)", "price": 10.0}]},
+        "JPY": {"price": 260.0, "plans": [{"name": "Basic (100 GB)", "price": 260.0}, {"name": "Personal (1 TB)", "price": 1490.0}, {"name": "Family (6 TB)", "price": 2100.0}]},
+        "GBP": {"price": 1.99, "plans": [{"name": "Basic (100 GB)", "price": 1.99}, {"name": "Personal (1 TB)", "price": 5.99}, {"name": "Family (6 TB)", "price": 7.99}]},
+        "CHF": {"price": 2.0, "plans": [{"name": "Basic (100 GB)", "price": 2.0}, {"name": "Personal (1 TB)", "price": 7.0}, {"name": "Family (6 TB)", "price": 10.0}]},
+        "KRW": {"price": 2500.0, "plans": [{"name": "Basic (100 GB)", "price": 2500.0}, {"name": "Personal (1 TB)", "price": 8900.0}, {"name": "Family (6 TB)", "price": 11900.0}]},
+        "BRL": {"price": 9.0, "plans": [{"name": "Basic (100 GB)", "price": 9.0}, {"name": "Personal (1 TB)", "price": 36.0}, {"name": "Family (6 TB)", "price": 45.0}]},
+        "SEK": {"price": 20.0, "plans": [{"name": "Basic (100 GB)", "price": 20.0}, {"name": "Personal (1 TB)", "price": 75.0}, {"name": "Family (6 TB)", "price": 100.0}]},
+        "NOK": {"price": 20.0, "plans": [{"name": "Basic (100 GB)", "price": 20.0}, {"name": "Personal (1 TB)", "price": 75.0}, {"name": "Family (6 TB)", "price": 100.0}]},
+        "DKK": {"price": 15.0, "plans": [{"name": "Basic (100 GB)", "price": 15.0}, {"name": "Personal (1 TB)", "price": 55.0}, {"name": "Family (6 TB)", "price": 75.0}]},
+        "CAD": {"price": 2.0, "plans": [{"name": "Basic (100 GB)", "price": 2.0}, {"name": "Personal (1 TB)", "price": 8.0}, {"name": "Family (6 TB)", "price": 11.0}]},
+        "AUD": {"price": 3.0, "plans": [{"name": "Basic (100 GB)", "price": 3.0}, {"name": "Personal (1 TB)", "price": 10.0}, {"name": "Family (6 TB)", "price": 13.0}]},
+        "SGD": {"price": 3.0, "plans": [{"name": "Basic (100 GB)", "price": 3.0}, {"name": "Personal (1 TB)", "price": 11.0}, {"name": "Family (6 TB)", "price": 15.0}]},
+        "AED": {"price": 7.0, "plans": [{"name": "Basic (100 GB)", "price": 7.0}, {"name": "Personal (1 TB)", "price": 26.0}, {"name": "Family (6 TB)", "price": 37.0}]},
+        "SAR": {"price": 7.0, "plans": [{"name": "Basic (100 GB)", "price": 7.0}, {"name": "Personal (1 TB)", "price": 26.0}, {"name": "Family (6 TB)", "price": 37.0}]},
+        "THB": {"price": 70.0, "plans": [{"name": "Basic (100 GB)", "price": 70.0}, {"name": "Personal (1 TB)", "price": 210.0}, {"name": "Family (6 TB)", "price": 290.0}]},
+        "PLN": {"price": 8.0, "plans": [{"name": "Basic (100 GB)", "price": 8.0}, {"name": "Personal (1 TB)", "price": 30.0}, {"name": "Family (6 TB)", "price": 43.0}]},
+        "CZK": {"price": 50.0, "plans": [{"name": "Basic (100 GB)", "price": 50.0}, {"name": "Personal (1 TB)", "price": 190.0}, {"name": "Family (6 TB)", "price": 270.0}]}
     }
 }
 
@@ -225,6 +283,14 @@ def scrape_apple_music():
     print("Using fallback for Apple Music")
     return fallback_prices["apple_music"]
 
+def scrape_google_one():
+    print("Using fallback for Google One")
+    return fallback_prices["google_one"]
+
+def scrape_onedrive():
+    print("Using fallback for OneDrive")
+    return fallback_prices["microsoft_onedrive"]
+
 def main():
     target_path = r"app/src/main/assets/streaming_prices.json"
     
@@ -248,6 +314,16 @@ def main():
             "name": "Apple Music",
             "logo_res": "ic_logo_apple_music",
             "official_url": "https://www.apple.com/tr/apple-music/"
+        },
+        "google_one": {
+            "name": "Google One",
+            "logo_res": "ic_logo_google_one",
+            "official_url": "https://one.google.com/"
+        },
+        "microsoft_onedrive": {
+            "name": "Microsoft 365 (OneDrive)",
+            "logo_res": "ic_logo_onedrive",
+            "official_url": "https://www.microsoft.com/tr-tr/microsoft-365"
         }
     }
     
@@ -257,6 +333,12 @@ def main():
     print("Scraping Apple Music...")
     apple_data = scrape_apple_music()
     
+    print("Scraping Google One...")
+    google_data = scrape_google_one()
+    
+    print("Scraping OneDrive...")
+    onedrive_data = scrape_onedrive()
+    
     prime_data = fallback_prices["prime_video"]
     netflix_data = fallback_prices["netflix"]
     
@@ -264,11 +346,13 @@ def main():
         "prime_video": prime_data,
         "netflix": netflix_data,
         "spotify": spotify_data,
-        "apple_music": apple_data
+        "apple_music": apple_data,
+        "google_one": google_data,
+        "microsoft_onedrive": onedrive_data
     }
     
     updated_list = []
-    for pid in ["prime_video", "netflix", "spotify", "apple_music"]:
+    for pid in ["prime_video", "netflix", "spotify", "apple_music", "google_one", "microsoft_onedrive"]:
         scraped = scraped_map[pid]
         meta = meta_info[pid]
         
@@ -289,12 +373,9 @@ def main():
                 "plans": plans_list
             }
             
-        # Define supported currencies (China/CNY has no Spotify and Netflix)
-        all_currencies = ["TRY", "USD", "EUR", "JPY", "GBP", "CHF", "KRW", "CNY", "SEK", "NOK", "DKK", "CAD", "AUD", "SGD", "AED", "SAR", "THB", "PLN", "CZK"]
-        if pid in ["spotify", "netflix"]:
-            supported = [c for c in all_currencies if c != "CNY"]
-        else:
-            supported = all_currencies
+        # Define supported currencies (Brazil/BRL added)
+        all_currencies = ["TRY", "USD", "EUR", "JPY", "GBP", "CHF", "KRW", "BRL", "SEK", "NOK", "DKK", "CAD", "AUD", "SGD", "AED", "SAR", "THB", "PLN", "CZK"]
+        supported = all_currencies
 
         updated_plat = {
             "id": pid,

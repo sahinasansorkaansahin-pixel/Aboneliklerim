@@ -1,6 +1,7 @@
 package com.aboneliklerim.app
 
 import android.content.Context
+import android.content.Intent
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.Dispatchers
@@ -155,6 +156,7 @@ object StreamingPriceService {
                         val oldPlat = oldMap[plat.id]
                         if (oldPlat != null && oldPlat.base_price != plat.base_price) {
                             prevPricesMap[plat.id] = oldPlat.base_price
+                            triggerPriceChangeNotification(context, plat, oldPlat.base_price, plat.base_price)
                         }
                     }
                 }
@@ -196,5 +198,63 @@ object StreamingPriceService {
     fun getLastUpdateTime(context: Context): Long {
         val sharedPrefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
         return sharedPrefs.getLong(KEY_LAST_UPDATE, 0)
+    }
+
+    fun isNotificationEnabledForPlatform(context: Context, platformId: String): Boolean {
+        val sharedPrefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+        return sharedPrefs.getBoolean("notif_platform_$platformId", true)
+    }
+
+    fun setNotificationEnabledForPlatform(context: Context, platformId: String, enabled: Boolean) {
+        val sharedPrefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+        sharedPrefs.edit().putBoolean("notif_platform_$platformId", enabled).apply()
+    }
+
+    fun triggerPriceChangeNotification(context: Context, platform: StreamingPlatform, oldPrice: Double, newPrice: Double) {
+        if (!isNotificationEnabledForPlatform(context, platform.id)) return
+
+        val channelId = "streaming_price_alerts_v1"
+        val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as android.app.NotificationManager
+        val soundUri = android.media.RingtoneManager.getDefaultUri(android.media.RingtoneManager.TYPE_NOTIFICATION)
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            val channel = android.app.NotificationChannel(channelId, "Platform Fiyat Takibi", android.app.NotificationManager.IMPORTANCE_HIGH).apply {
+                description = "Platform fiyat değişiklik bildirimleri"
+                enableVibration(true)
+                setSound(soundUri, android.media.AudioAttributes.Builder()
+                    .setContentType(android.media.AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                    .setUsage(android.media.AudioAttributes.USAGE_NOTIFICATION)
+                    .build())
+            }
+            notificationManager.createNotificationChannel(channel)
+        }
+
+        val launchIntent = Intent(context, MainActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        }
+        val pendingIntent = android.app.PendingIntent.getActivity(
+            context,
+            platform.id.hashCode(),
+            launchIntent,
+            android.app.PendingIntent.FLAG_IMMUTABLE or android.app.PendingIntent.FLAG_UPDATE_CURRENT
+        )
+
+        val changeMsg = if (newPrice < oldPrice) {
+            context.getString(R.string.platform_price_decreased_msg, platform.name, "$oldPrice ${platform.base_currency}", "$newPrice ${platform.base_currency}")
+        } else {
+            context.getString(R.string.platform_price_increased_msg, platform.name, "$oldPrice ${platform.base_currency}", "$newPrice ${platform.base_currency}")
+        }
+
+        val notification = androidx.core.app.NotificationCompat.Builder(context, channelId)
+            .setSmallIcon(R.drawable.ic_bell)
+            .setContentTitle(context.getString(R.string.platform_price_change_title, platform.name))
+            .setContentText(changeMsg)
+            .setPriority(androidx.core.app.NotificationCompat.PRIORITY_MAX)
+            .setVisibility(androidx.core.app.NotificationCompat.VISIBILITY_PUBLIC)
+            .setContentIntent(pendingIntent)
+            .setAutoCancel(true)
+            .build()
+
+        notificationManager.notify(platform.id.hashCode(), notification)
     }
 }

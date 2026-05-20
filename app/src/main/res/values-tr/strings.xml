@@ -268,7 +268,7 @@
     <string name="billing_connection_failed">Google Play bağlantısı kurulamadı. Lütfen internet bağlantınızı kontrol edip tekrar deneyin.</string>
     <string name="ok">Tamam</string>
     <string name="tester_premium_toggle">Premium Durumunu Değiştir (Test)</string>
-    <string name="streaming_prices">Dijital Platform Fiyatları</string>
+    <string name="streaming_prices">Platform Fiyatları Takibi</string>
     <string name="last_update">Son Güncelleme: %s</string>
     <string name="stable">Sabit</string>
     <string name="price_increased">▲ %s Artış</string>
@@ -280,4 +280,9 @@
     <string name="select_platform">Herhangi bir platform seç</string>
     <string name="period_monthly_short">/ay</string>
     <string name="period_yearly_short">/yıl</string>
+    <string name="notif_platform_enabled_toast">%1$s için fiyat takip bildirimleri açıldı.</string>
+    <string name="notif_platform_disabled_toast">%1$s için fiyat takip bildirimleri kapatıldı.</string>
+    <string name="platform_price_change_title">%1$s Fiyat Değişikliği!</string>
+    <string name="platform_price_increased_msg">%1$s fiyatı arttı! Eski: %2$s, Yeni: %3$s</string>
+    <string name="platform_price_decreased_msg">%1$s fiyatı düştü! Eski: %2$s, Yeni: %3$s</string>
 </resources>

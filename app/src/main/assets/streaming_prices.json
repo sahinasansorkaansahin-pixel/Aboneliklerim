@@ -111,20 +111,20 @@
           }
         ]
       },
-      "CNY": {
-        "base_price": 20.0,
-        "base_currency": "CNY",
+      "BRL": {
+        "base_price": 19.9,
+        "base_currency": "BRL",
         "plans": [
           {
             "name": "Prime Monthly",
-            "price": 20.0,
-            "currency": "CNY",
+            "price": 19.9,
+            "currency": "BRL",
             "period": "monthly"
           },
           {
             "name": "Prime Yearly",
-            "price": 188.0,
-            "currency": "CNY",
+            "price": 166.8,
+            "currency": "BRL",
             "period": "monthly"
           }
         ]
@@ -306,7 +306,7 @@
       "GBP",
       "CHF",
       "KRW",
-      "CNY",
+      "BRL",
       "SEK",
       "NOK",
       "DKK",
@@ -492,26 +492,26 @@
           }
         ]
       },
-      "CNY": {
-        "base_price": 90.0,
-        "base_currency": "CNY",
+      "BRL": {
+        "base_price": 44.9,
+        "base_currency": "BRL",
         "plans": [
           {
             "name": "Basic",
-            "price": 60.0,
-            "currency": "CNY",
+            "price": 20.9,
+            "currency": "BRL",
             "period": "monthly"
           },
           {
             "name": "Standard",
-            "price": 90.0,
-            "currency": "CNY",
+            "price": 44.9,
+            "currency": "BRL",
             "period": "monthly"
           },
           {
             "name": "Premium",
-            "price": 120.0,
-            "currency": "CNY",
+            "price": 59.9,
+            "currency": "BRL",
             "period": "monthly"
           }
         ]
@@ -789,6 +789,7 @@
       "GBP",
       "CHF",
       "KRW",
+      "BRL",
       "SEK",
       "NOK",
       "DKK",
@@ -1010,26 +1011,32 @@
           }
         ]
       },
-      "CNY": {
-        "base_price": 59.0,
-        "base_currency": "CNY",
+      "BRL": {
+        "base_price": 21.9,
+        "base_currency": "BRL",
         "plans": [
           {
             "name": "Student",
-            "price": 29.0,
-            "currency": "CNY",
+            "price": 11.9,
+            "currency": "BRL",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 59.0,
-            "currency": "CNY",
+            "price": 21.9,
+            "currency": "BRL",
+            "period": "monthly"
+          },
+          {
+            "name": "Duo",
+            "price": 27.9,
+            "currency": "BRL",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 89.0,
-            "currency": "CNY",
+            "price": 34.9,
+            "currency": "BRL",
             "period": "monthly"
           }
         ]
@@ -1373,6 +1380,7 @@
       "GBP",
       "CHF",
       "KRW",
+      "BRL",
       "SEK",
       "NOK",
       "DKK",
@@ -1558,26 +1566,26 @@
           }
         ]
       },
-      "CNY": {
-        "base_price": 10.0,
-        "base_currency": "CNY",
+      "BRL": {
+        "base_price": 21.9,
+        "base_currency": "BRL",
         "plans": [
           {
             "name": "Student",
-            "price": 5.0,
-            "currency": "CNY",
+            "price": 11.9,
+            "currency": "BRL",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 10.0,
-            "currency": "CNY",
+            "price": 21.9,
+            "currency": "BRL",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 15.0,
-            "currency": "CNY",
+            "price": 34.9,
+            "currency": "BRL",
             "period": "monthly"
           }
         ]
@@ -1855,7 +1863,973 @@
       "GBP",
       "CHF",
       "KRW",
-      "CNY",
+      "BRL",
+      "SEK",
+      "NOK",
+      "DKK",
+      "CAD",
+      "AUD",
+      "SGD",
+      "AED",
+      "SAR",
+      "THB",
+      "PLN",
+      "CZK"
+    ]
+  },
+  {
+    "id": "google_one",
+    "name": "Google One",
+    "base_price": 5.79,
+    "base_currency": "TRY",
+    "logo_res": "ic_logo_google_one",
+    "official_url": "https://one.google.com/",
+    "plans": [
+      {
+        "name": "Basic (100 GB)",
+        "price": 5.79,
+        "currency": "TRY",
+        "period": "monthly"
+      },
+      {
+        "name": "Standard (200 GB)",
+        "price": 11.59,
+        "currency": "TRY",
+        "period": "monthly"
+      },
+      {
+        "name": "Premium (2 TB)",
+        "price": 28.99,
+        "currency": "TRY",
+        "period": "monthly"
+      }
+    ],
+    "regional": {
+      "USD": {
+        "base_price": 1.99,
+        "base_currency": "USD",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 1.99,
+            "currency": "USD",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard (200 GB)",
+            "price": 2.99,
+            "currency": "USD",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium (2 TB)",
+            "price": 9.99,
+            "currency": "USD",
+            "period": "monthly"
+          }
+        ]
+      },
+      "EUR": {
+        "base_price": 1.99,
+        "base_currency": "EUR",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 1.99,
+            "currency": "EUR",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard (200 GB)",
+            "price": 2.99,
+            "currency": "EUR",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium (2 TB)",
+            "price": 9.99,
+            "currency": "EUR",
+            "period": "monthly"
+          }
+        ]
+      },
+      "JPY": {
+        "base_price": 250.0,
+        "base_currency": "JPY",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 250.0,
+            "currency": "JPY",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard (200 GB)",
+            "price": 380.0,
+            "currency": "JPY",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium (2 TB)",
+            "price": 1300.0,
+            "currency": "JPY",
+            "period": "monthly"
+          }
+        ]
+      },
+      "GBP": {
+        "base_price": 1.59,
+        "base_currency": "GBP",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 1.59,
+            "currency": "GBP",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard (200 GB)",
+            "price": 2.49,
+            "currency": "GBP",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium (2 TB)",
+            "price": 7.99,
+            "currency": "GBP",
+            "period": "monthly"
+          }
+        ]
+      },
+      "CHF": {
+        "base_price": 2.0,
+        "base_currency": "CHF",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 2.0,
+            "currency": "CHF",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard (200 GB)",
+            "price": 3.0,
+            "currency": "CHF",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium (2 TB)",
+            "price": 10.0,
+            "currency": "CHF",
+            "period": "monthly"
+          }
+        ]
+      },
+      "KRW": {
+        "base_price": 2400.0,
+        "base_currency": "KRW",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 2400.0,
+            "currency": "KRW",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard (200 GB)",
+            "price": 3700.0,
+            "currency": "KRW",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium (2 TB)",
+            "price": 11900.0,
+            "currency": "KRW",
+            "period": "monthly"
+          }
+        ]
+      },
+      "BRL": {
+        "base_price": 6.99,
+        "base_currency": "BRL",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 6.99,
+            "currency": "BRL",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard (200 GB)",
+            "price": 9.99,
+            "currency": "BRL",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium (2 TB)",
+            "price": 34.99,
+            "currency": "BRL",
+            "period": "monthly"
+          }
+        ]
+      },
+      "SEK": {
+        "base_price": 19.0,
+        "base_currency": "SEK",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 19.0,
+            "currency": "SEK",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard (200 GB)",
+            "price": 29.0,
+            "currency": "SEK",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium (2 TB)",
+            "price": 99.0,
+            "currency": "SEK",
+            "period": "monthly"
+          }
+        ]
+      },
+      "NOK": {
+        "base_price": 19.0,
+        "base_currency": "NOK",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 19.0,
+            "currency": "NOK",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard (200 GB)",
+            "price": 29.0,
+            "currency": "NOK",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium (2 TB)",
+            "price": 99.0,
+            "currency": "NOK",
+            "period": "monthly"
+          }
+        ]
+      },
+      "DKK": {
+        "base_price": 17.0,
+        "base_currency": "DKK",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 17.0,
+            "currency": "DKK",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard (200 GB)",
+            "price": 25.0,
+            "currency": "DKK",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium (2 TB)",
+            "price": 89.0,
+            "currency": "DKK",
+            "period": "monthly"
+          }
+        ]
+      },
+      "CAD": {
+        "base_price": 2.79,
+        "base_currency": "CAD",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 2.79,
+            "currency": "CAD",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard (200 GB)",
+            "price": 3.99,
+            "currency": "CAD",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium (2 TB)",
+            "price": 13.99,
+            "currency": "CAD",
+            "period": "monthly"
+          }
+        ]
+      },
+      "AUD": {
+        "base_price": 2.49,
+        "base_currency": "AUD",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 2.49,
+            "currency": "AUD",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard (200 GB)",
+            "price": 4.39,
+            "currency": "AUD",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium (2 TB)",
+            "price": 12.49,
+            "currency": "AUD",
+            "period": "monthly"
+          }
+        ]
+      },
+      "SGD": {
+        "base_price": 2.79,
+        "base_currency": "SGD",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 2.79,
+            "currency": "SGD",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard (200 GB)",
+            "price": 3.99,
+            "currency": "SGD",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium (2 TB)",
+            "price": 13.99,
+            "currency": "SGD",
+            "period": "monthly"
+          }
+        ]
+      },
+      "AED": {
+        "base_price": 7.39,
+        "base_currency": "AED",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 7.39,
+            "currency": "AED",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard (200 GB)",
+            "price": 10.99,
+            "currency": "AED",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium (2 TB)",
+            "price": 36.99,
+            "currency": "AED",
+            "period": "monthly"
+          }
+        ]
+      },
+      "SAR": {
+        "base_price": 7.49,
+        "base_currency": "SAR",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 7.49,
+            "currency": "SAR",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard (200 GB)",
+            "price": 10.99,
+            "currency": "SAR",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium (2 TB)",
+            "price": 36.99,
+            "currency": "SAR",
+            "period": "monthly"
+          }
+        ]
+      },
+      "THB": {
+        "base_price": 70.0,
+        "base_currency": "THB",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 70.0,
+            "currency": "THB",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard (200 GB)",
+            "price": 99.0,
+            "currency": "THB",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium (2 TB)",
+            "price": 350.0,
+            "currency": "THB",
+            "period": "monthly"
+          }
+        ]
+      },
+      "PLN": {
+        "base_price": 8.99,
+        "base_currency": "PLN",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 8.99,
+            "currency": "PLN",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard (200 GB)",
+            "price": 13.99,
+            "currency": "PLN",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium (2 TB)",
+            "price": 46.99,
+            "currency": "PLN",
+            "period": "monthly"
+          }
+        ]
+      },
+      "CZK": {
+        "base_price": 59.99,
+        "base_currency": "CZK",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 59.99,
+            "currency": "CZK",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard (200 GB)",
+            "price": 79.99,
+            "currency": "CZK",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium (2 TB)",
+            "price": 299.99,
+            "currency": "CZK",
+            "period": "monthly"
+          }
+        ]
+      }
+    },
+    "supported_currencies": [
+      "TRY",
+      "USD",
+      "EUR",
+      "JPY",
+      "GBP",
+      "CHF",
+      "KRW",
+      "BRL",
+      "SEK",
+      "NOK",
+      "DKK",
+      "CAD",
+      "AUD",
+      "SGD",
+      "AED",
+      "SAR",
+      "THB",
+      "PLN",
+      "CZK"
+    ]
+  },
+  {
+    "id": "microsoft_onedrive",
+    "name": "Microsoft 365 (OneDrive)",
+    "base_price": 59.99,
+    "base_currency": "TRY",
+    "logo_res": "ic_logo_onedrive",
+    "official_url": "https://www.microsoft.com/tr-tr/microsoft-365",
+    "plans": [
+      {
+        "name": "Basic (100 GB)",
+        "price": 59.99,
+        "currency": "TRY",
+        "period": "monthly"
+      },
+      {
+        "name": "Personal (1 TB)",
+        "price": 179.99,
+        "currency": "TRY",
+        "period": "monthly"
+      },
+      {
+        "name": "Family (6 TB)",
+        "price": 239.99,
+        "currency": "TRY",
+        "period": "monthly"
+      }
+    ],
+    "regional": {
+      "USD": {
+        "base_price": 1.99,
+        "base_currency": "USD",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 1.99,
+            "currency": "USD",
+            "period": "monthly"
+          },
+          {
+            "name": "Personal (1 TB)",
+            "price": 6.99,
+            "currency": "USD",
+            "period": "monthly"
+          },
+          {
+            "name": "Family (6 TB)",
+            "price": 9.99,
+            "currency": "USD",
+            "period": "monthly"
+          }
+        ]
+      },
+      "EUR": {
+        "base_price": 2.0,
+        "base_currency": "EUR",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 2.0,
+            "currency": "EUR",
+            "period": "monthly"
+          },
+          {
+            "name": "Personal (1 TB)",
+            "price": 7.0,
+            "currency": "EUR",
+            "period": "monthly"
+          },
+          {
+            "name": "Family (6 TB)",
+            "price": 10.0,
+            "currency": "EUR",
+            "period": "monthly"
+          }
+        ]
+      },
+      "JPY": {
+        "base_price": 260.0,
+        "base_currency": "JPY",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 260.0,
+            "currency": "JPY",
+            "period": "monthly"
+          },
+          {
+            "name": "Personal (1 TB)",
+            "price": 1490.0,
+            "currency": "JPY",
+            "period": "monthly"
+          },
+          {
+            "name": "Family (6 TB)",
+            "price": 2100.0,
+            "currency": "JPY",
+            "period": "monthly"
+          }
+        ]
+      },
+      "GBP": {
+        "base_price": 1.99,
+        "base_currency": "GBP",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 1.99,
+            "currency": "GBP",
+            "period": "monthly"
+          },
+          {
+            "name": "Personal (1 TB)",
+            "price": 5.99,
+            "currency": "GBP",
+            "period": "monthly"
+          },
+          {
+            "name": "Family (6 TB)",
+            "price": 7.99,
+            "currency": "GBP",
+            "period": "monthly"
+          }
+        ]
+      },
+      "CHF": {
+        "base_price": 2.0,
+        "base_currency": "CHF",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 2.0,
+            "currency": "CHF",
+            "period": "monthly"
+          },
+          {
+            "name": "Personal (1 TB)",
+            "price": 7.0,
+            "currency": "CHF",
+            "period": "monthly"
+          },
+          {
+            "name": "Family (6 TB)",
+            "price": 10.0,
+            "currency": "CHF",
+            "period": "monthly"
+          }
+        ]
+      },
+      "KRW": {
+        "base_price": 2500.0,
+        "base_currency": "KRW",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 2500.0,
+            "currency": "KRW",
+            "period": "monthly"
+          },
+          {
+            "name": "Personal (1 TB)",
+            "price": 8900.0,
+            "currency": "KRW",
+            "period": "monthly"
+          },
+          {
+            "name": "Family (6 TB)",
+            "price": 11900.0,
+            "currency": "KRW",
+            "period": "monthly"
+          }
+        ]
+      },
+      "BRL": {
+        "base_price": 9.0,
+        "base_currency": "BRL",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 9.0,
+            "currency": "BRL",
+            "period": "monthly"
+          },
+          {
+            "name": "Personal (1 TB)",
+            "price": 36.0,
+            "currency": "BRL",
+            "period": "monthly"
+          },
+          {
+            "name": "Family (6 TB)",
+            "price": 45.0,
+            "currency": "BRL",
+            "period": "monthly"
+          }
+        ]
+      },
+      "SEK": {
+        "base_price": 20.0,
+        "base_currency": "SEK",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 20.0,
+            "currency": "SEK",
+            "period": "monthly"
+          },
+          {
+            "name": "Personal (1 TB)",
+            "price": 75.0,
+            "currency": "SEK",
+            "period": "monthly"
+          },
+          {
+            "name": "Family (6 TB)",
+            "price": 100.0,
+            "currency": "SEK",
+            "period": "monthly"
+          }
+        ]
+      },
+      "NOK": {
+        "base_price": 20.0,
+        "base_currency": "NOK",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 20.0,
+            "currency": "NOK",
+            "period": "monthly"
+          },
+          {
+            "name": "Personal (1 TB)",
+            "price": 75.0,
+            "currency": "NOK",
+            "period": "monthly"
+          },
+          {
+            "name": "Family (6 TB)",
+            "price": 100.0,
+            "currency": "NOK",
+            "period": "monthly"
+          }
+        ]
+      },
+      "DKK": {
+        "base_price": 15.0,
+        "base_currency": "DKK",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 15.0,
+            "currency": "DKK",
+            "period": "monthly"
+          },
+          {
+            "name": "Personal (1 TB)",
+            "price": 55.0,
+            "currency": "DKK",
+            "period": "monthly"
+          },
+          {
+            "name": "Family (6 TB)",
+            "price": 75.0,
+            "currency": "DKK",
+            "period": "monthly"
+          }
+        ]
+      },
+      "CAD": {
+        "base_price": 2.0,
+        "base_currency": "CAD",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 2.0,
+            "currency": "CAD",
+            "period": "monthly"
+          },
+          {
+            "name": "Personal (1 TB)",
+            "price": 8.0,
+            "currency": "CAD",
+            "period": "monthly"
+          },
+          {
+            "name": "Family (6 TB)",
+            "price": 11.0,
+            "currency": "CAD",
+            "period": "monthly"
+          }
+        ]
+      },
+      "AUD": {
+        "base_price": 3.0,
+        "base_currency": "AUD",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 3.0,
+            "currency": "AUD",
+            "period": "monthly"
+          },
+          {
+            "name": "Personal (1 TB)",
+            "price": 10.0,
+            "currency": "AUD",
+            "period": "monthly"
+          },
+          {
+            "name": "Family (6 TB)",
+            "price": 13.0,
+            "currency": "AUD",
+            "period": "monthly"
+          }
+        ]
+      },
+      "SGD": {
+        "base_price": 3.0,
+        "base_currency": "SGD",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 3.0,
+            "currency": "SGD",
+            "period": "monthly"
+          },
+          {
+            "name": "Personal (1 TB)",
+            "price": 11.0,
+            "currency": "SGD",
+            "period": "monthly"
+          },
+          {
+            "name": "Family (6 TB)",
+            "price": 15.0,
+            "currency": "SGD",
+            "period": "monthly"
+          }
+        ]
+      },
+      "AED": {
+        "base_price": 7.0,
+        "base_currency": "AED",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 7.0,
+            "currency": "AED",
+            "period": "monthly"
+          },
+          {
+            "name": "Personal (1 TB)",
+            "price": 26.0,
+            "currency": "AED",
+            "period": "monthly"
+          },
+          {
+            "name": "Family (6 TB)",
+            "price": 37.0,
+            "currency": "AED",
+            "period": "monthly"
+          }
+        ]
+      },
+      "SAR": {
+        "base_price": 7.0,
+        "base_currency": "SAR",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 7.0,
+            "currency": "SAR",
+            "period": "monthly"
+          },
+          {
+            "name": "Personal (1 TB)",
+            "price": 26.0,
+            "currency": "SAR",
+            "period": "monthly"
+          },
+          {
+            "name": "Family (6 TB)",
+            "price": 37.0,
+            "currency": "SAR",
+            "period": "monthly"
+          }
+        ]
+      },
+      "THB": {
+        "base_price": 70.0,
+        "base_currency": "THB",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 70.0,
+            "currency": "THB",
+            "period": "monthly"
+          },
+          {
+            "name": "Personal (1 TB)",
+            "price": 210.0,
+            "currency": "THB",
+            "period": "monthly"
+          },
+          {
+            "name": "Family (6 TB)",
+            "price": 290.0,
+            "currency": "THB",
+            "period": "monthly"
+          }
+        ]
+      },
+      "PLN": {
+        "base_price": 8.0,
+        "base_currency": "PLN",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 8.0,
+            "currency": "PLN",
+            "period": "monthly"
+          },
+          {
+            "name": "Personal (1 TB)",
+            "price": 30.0,
+            "currency": "PLN",
+            "period": "monthly"
+          },
+          {
+            "name": "Family (6 TB)",
+            "price": 43.0,
+            "currency": "PLN",
+            "period": "monthly"
+          }
+        ]
+      },
+      "CZK": {
+        "base_price": 50.0,
+        "base_currency": "CZK",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 50.0,
+            "currency": "CZK",
+            "period": "monthly"
+          },
+          {
+            "name": "Personal (1 TB)",
+            "price": 190.0,
+            "currency": "CZK",
+            "period": "monthly"
+          },
+          {
+            "name": "Family (6 TB)",
+            "price": 270.0,
+            "currency": "CZK",
+            "period": "monthly"
+          }
+        ]
+      }
+    },
+    "supported_currencies": [
+      "TRY",
+      "USD",
+      "EUR",
+      "JPY",
+      "GBP",
+      "CHF",
+      "KRW",
+      "BRL",
       "SEK",
       "NOK",
       "DKK",

@@ -19,7 +19,7 @@ object CurrencyService {
         "AUD" to 0.030751,
         "CAD" to 0.030194,
         "CHF" to 0.017275,
-        "CNY" to 0.1499,
+        "BRL" to 0.16,
         "CZK" to 0.459427,
         "DKK" to 0.140941,
         "EUR" to 0.018892,

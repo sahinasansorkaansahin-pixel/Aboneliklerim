@@ -9,7 +9,7 @@ object LocaleHelper {
     val SUPPORTED_LOCALES = listOf(
         "tr-TR", "en-US", "de-DE", "fr-FR", "it-IT", "es-ES", "pt-PT", "nl-NL",
         "sv-SE", "no-NO", "da-DK", "fi-FI", "pl-PL", "cs-CZ", "de-CH", "ja-JP", 
-        "ko-KR", "zh-CN", "th-TH", "ar-AE"
+        "ko-KR", "pt-BR", "th-TH", "ar-AE"
     )
 
     fun getCountryFlag(localeTag: String): String {
@@ -20,7 +20,7 @@ object LocaleHelper {
             "IT" -> "🇮🇹"; "ES" -> "🇪🇸"; "PT" -> "🇵🇹"; "NL" -> "🇳🇱"
             "SE" -> "🇸🇪"; "NO" -> "🇳🇴"; "DK" -> "🇩🇰"; "FI" -> "🇫🇮"
             "PL" -> "🇵🇱"; "CZ" -> "🇨🇿"; "CH" -> "🇨🇭"; "JP" -> "🇯🇵"
-            "KR" -> "🇰🇷"; "CN" -> "🇨🇳"; "TH" -> "🇹🇭"; "AE" -> "🇦🇪"
+            "KR" -> "🇰🇷"; "BR" -> "🇧🇷"; "TH" -> "🇹🇭"; "AE" -> "🇦🇪"
             else -> "🏳️"
         }
     }
@@ -51,7 +51,7 @@ object LocaleHelper {
                 "de-CH" -> "Deutsch (Schweiz)"
                 "ja-JP" -> "日本語"
                 "ko-KR" -> "한국어"
-                "zh-CN" -> "简体中文"
+                "pt-BR" -> "Português (Brasil)"
                 "th-TH" -> "ไทย"
                 "ar-AE" -> "العربية"
                 else -> locale.getDisplayLanguage(locale).replaceFirstChar { it.uppercase() }

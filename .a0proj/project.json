@@ -1,0 +1,15 @@
+{
+  "title": "Aboneliklerim",
+  "description": "Android Abonelik Takip Uygulamasi",
+  "instructions": "",
+  "color": "#4f46e5",
+  "git_url": "",
+  "file_structure": {
+    "enabled": true,
+    "max_depth": 5,
+    "max_files": 20,
+    "max_folders": 20,
+    "max_lines": 250,
+    "gitignore": "venv/**\n**/__pycache__/**\n**/node_modules/**\n**/.git/**\n**/.gradle/**\n**/build/**"
+  }
+}

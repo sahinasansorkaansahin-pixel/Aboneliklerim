@@ -609,7 +609,7 @@
   <string name="billing_connection_failed">Could not establish connection with Google Play. Please check your internet connection and try again.</string>
   <string name="ok">OK</string>
   <string name="tester_premium_toggle">Toggle Premium Status (Test)</string>
-  <string name="streaming_prices">Streaming Platform Prices</string>
+  <string name="streaming_prices">Platform Prices Tracking</string>
   <string name="last_update">Last Update: %s</string>
   <string name="stable">Stable</string>
   <string name="price_increased">▲ %s Increase</string>
@@ -621,4 +621,9 @@
   <string name="select_platform">Select any platform</string>
   <string name="period_monthly_short">/mo</string>
   <string name="period_yearly_short">/yr</string>
+  <string name="notif_platform_enabled_toast">Price tracking notifications enabled for %1$s.</string>
+  <string name="notif_platform_disabled_toast">Price tracking notifications disabled for %1$s.</string>
+  <string name="platform_price_change_title">%1$s Price Change!</string>
+  <string name="platform_price_increased_msg">%1$s price increased! Old: %2$s, New: %3$s</string>
+  <string name="platform_price_decreased_msg">%1$s price decreased! Old: %2$s, New: %3$s</string>
 </resources>

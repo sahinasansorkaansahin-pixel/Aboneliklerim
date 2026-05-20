@@ -8,7 +8,7 @@ object CurrencyHelper {
     fun getCurrencies(context: Context): List<CurrencyItem> {
         val activeLang = LocaleHelper.getActiveLanguage(context)
         val currentLocale = Locale.forLanguageTag(activeLang)
-        return listOf("TRY", "USD", "EUR", "JPY", "GBP", "CHF", "KRW", "CNY", "SEK", "NOK", "DKK", "CAD", "AUD", "SGD", "AED", "SAR", "THB", "PLN", "CZK")
+        return listOf("TRY", "USD", "EUR", "JPY", "GBP", "CHF", "KRW", "BRL", "SEK", "NOK", "DKK", "CAD", "AUD", "SGD", "AED", "SAR", "THB", "PLN", "CZK")
             .map { code ->
                 try {
                     val curr = java.util.Currency.getInstance(code)
@@ -46,7 +46,7 @@ object CurrencyHelper {
             "USD" -> "🇺🇸"; "EUR" -> "🇪🇺"; "GBP" -> "🇬🇧"; "TRY" -> "🇹🇷"; "CHF" -> "🇨🇭"
             "NOK" -> "🇳🇴"; "SGD" -> "🇸🇬"; "DKK" -> "🇩🇰"; "AUD" -> "🇦🇺"; "SEK" -> "🇸🇪"
             "CAD" -> "🇨🇦"; "AED" -> "🇦🇪"; "JPY" -> "🇯🇵"; "KRW" -> "🇰🇷"; "SAR" -> "🇸🇦"
-            "CZK" -> "🇨🇿"; "PLN" -> "🇵🇱"; "THB" -> "🇹🇭"; "CNY" -> "🇨🇳"
+            "CZK" -> "🇨🇿"; "PLN" -> "🇵🇱"; "THB" -> "🇹🇭"; "BRL" -> "🇧🇷"
             else -> "🏳️"
         }
     }
@@ -59,7 +59,7 @@ object CurrencyHelper {
             "GBP" -> "£"
             "JPY" -> "¥"
             "KRW" -> "₩"
-            "CNY" -> "¥"
+            "BRL" -> "R$"
             "NOK", "SEK", "DKK" -> "kr"
             "CHF" -> "Fr."
             "SAR" -> "SR"
@@ -82,7 +82,7 @@ object CurrencyHelper {
             "de-DE", "fr-FR", "it-IT", "es-ES", "pt-PT", "nl-NL", "fi-FI" -> "EUR"
             "ja-JP" -> "JPY"
             "ko-KR" -> "KRW"
-            "zh-CN" -> "CNY"
+            "pt-BR" -> "BRL"
             "ar-AE" -> "AED"
             "sv-SE" -> "SEK"
             "no-NO" -> "NOK"

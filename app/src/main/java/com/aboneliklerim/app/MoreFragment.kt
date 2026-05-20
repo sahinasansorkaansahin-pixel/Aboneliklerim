@@ -662,6 +662,7 @@ class MoreFragment : Fragment() {
                                 view.findViewById<ImageView>(R.id.imgSelectedStreamingLogo).visibility = View.INVISIBLE
                                 view.findViewById<TextView>(R.id.tvStreamingSelectedTrend).visibility = View.GONE
                                 view.findViewById<LinearLayout>(R.id.layoutStreamingDetails).visibility = View.GONE
+                                view.findViewById<ImageView>(R.id.imgSelectedStreamingBell).visibility = View.GONE
                             } else {
                                 val selectedPlatform = platforms[position - 1]
                                 updateSelectedPlatformUI(view, selectedPlatform, rates)
@@ -687,10 +688,27 @@ class MoreFragment : Fragment() {
         val tvTrend = viewParent.findViewById<TextView>(R.id.tvStreamingSelectedTrend)
         val plansContainer = viewParent.findViewById<LinearLayout>(R.id.layoutStreamingSelectedPlans)
         val btnWeb = viewParent.findViewById<View>(R.id.btnOpenStreamingWeb)
+        val imgBell = viewParent.findViewById<ImageView>(R.id.imgSelectedStreamingBell)
         
         // Show details container and logo
         viewParent.findViewById<LinearLayout>(R.id.layoutStreamingDetails).visibility = View.VISIBLE
         imgLogo.visibility = View.VISIBLE
+        imgBell.visibility = View.VISIBLE
+        
+        val isNotifEnabled = StreamingPriceService.isNotificationEnabledForPlatform(requireContext(), platform.id)
+        updateBellIcon(imgBell, isNotifEnabled)
+
+        imgBell.setOnClickListener {
+            val newState = !StreamingPriceService.isNotificationEnabledForPlatform(requireContext(), platform.id)
+            StreamingPriceService.setNotificationEnabledForPlatform(requireContext(), platform.id, newState)
+            updateBellIcon(imgBell, newState)
+            val msg = if (newState) {
+                getString(R.string.notif_platform_enabled_toast, platform.name)
+            } else {
+                getString(R.string.notif_platform_disabled_toast, platform.name)
+            }
+            Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
+        }
         
         // Load Logo
         val logoResId = requireContext().resources.getIdentifier(platform.logo_res, "drawable", requireContext().packageName)
@@ -717,18 +735,10 @@ class MoreFragment : Fragment() {
                 tvTrend.setTextColor(android.graphics.Color.parseColor("#4CAF50"))
                 tvTrend.visibility = View.VISIBLE
             } else {
-                tvTrend.text = getString(R.string.stable)
-                tvTrend.setBackgroundResource(R.drawable.bg_shared_contact_pill)
-                tvTrend.backgroundTintList = android.content.res.ColorStateList.valueOf(android.graphics.Color.parseColor("#F3F4F6"))
-                tvTrend.setTextColor(android.graphics.Color.parseColor("#6B7280"))
-                tvTrend.visibility = View.VISIBLE
+                tvTrend.visibility = View.GONE
             }
         } else {
-            tvTrend.text = getString(R.string.stable)
-            tvTrend.setBackgroundResource(R.drawable.bg_shared_contact_pill)
-            tvTrend.backgroundTintList = android.content.res.ColorStateList.valueOf(android.graphics.Color.parseColor("#F3F4F6"))
-            tvTrend.setTextColor(android.graphics.Color.parseColor("#6B7280"))
-            tvTrend.visibility = View.VISIBLE
+            tvTrend.visibility = View.GONE
         }
         
         val activeLang = LocaleHelper.getActiveLanguage(requireContext())
@@ -776,5 +786,11 @@ class MoreFragment : Fragment() {
                 e.printStackTrace()
             }
         }
+    }
+
+    private fun updateBellIcon(imageView: ImageView, enabled: Boolean) {
+        imageView.setImageResource(R.drawable.ic_bell)
+        val colorStr = if (enabled) "#4CAF50" else "#FF5252"
+        imageView.setColorFilter(android.graphics.Color.parseColor(colorStr))
     }
 }

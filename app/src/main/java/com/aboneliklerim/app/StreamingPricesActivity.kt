@@ -131,6 +131,7 @@ class StreamingPricesActivity : BaseActivity() {
             val imgLogo: ImageView = view.findViewById(R.id.imgPlatformLogo)
             val tvName: TextView = view.findViewById(R.id.tvPlatformName)
             val tvTrendBadge: TextView = view.findViewById(R.id.tvTrendBadge)
+            val imgBell: ImageView = view.findViewById(R.id.imgNotificationBell)
             val plansContainer: LinearLayout = view.findViewById(R.id.plansContainer)
             val btnOpenWeb: View = view.findViewById(R.id.btnOpenWeb)
         }
@@ -152,6 +153,22 @@ class StreamingPricesActivity : BaseActivity() {
                 holder.imgLogo.setImageResource(android.R.drawable.ic_menu_slideshow)
             }
 
+            // Notification Bell Toggle
+            val isEnabled = StreamingPriceService.isNotificationEnabledForPlatform(context, item.id)
+            updateBellIcon(holder.imgBell, isEnabled)
+
+            holder.imgBell.setOnClickListener {
+                val newState = !StreamingPriceService.isNotificationEnabledForPlatform(context, item.id)
+                StreamingPriceService.setNotificationEnabledForPlatform(context, item.id, newState)
+                updateBellIcon(holder.imgBell, newState)
+                val msg = if (newState) {
+                    context.getString(R.string.notif_platform_enabled_toast, item.name)
+                } else {
+                    context.getString(R.string.notif_platform_disabled_toast, item.name)
+                }
+                Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
+            }
+
             // Calculate price trend / badge
             val prevPrice = StreamingPriceService.getPreviousPrice(context, item.id)
             if (prevPrice != null && prevPrice > 0.0) {
@@ -169,18 +186,10 @@ class StreamingPricesActivity : BaseActivity() {
                     holder.tvTrendBadge.setTextColor(android.graphics.Color.parseColor("#4CAF50")) // Green text
                     holder.tvTrendBadge.visibility = View.VISIBLE
                 } else {
-                    holder.tvTrendBadge.text = context.getString(R.string.stable)
-                    holder.tvTrendBadge.setBackgroundResource(R.drawable.bg_shared_contact_pill)
-                    holder.tvTrendBadge.backgroundTintList = android.content.res.ColorStateList.valueOf(android.graphics.Color.parseColor("#F3F4F6")) // Light Grey background
-                    holder.tvTrendBadge.setTextColor(android.graphics.Color.parseColor("#6B7280")) // Grey text
-                    holder.tvTrendBadge.visibility = View.VISIBLE
+                    holder.tvTrendBadge.visibility = View.GONE
                 }
             } else {
-                holder.tvTrendBadge.text = context.getString(R.string.stable)
-                holder.tvTrendBadge.setBackgroundResource(R.drawable.bg_shared_contact_pill)
-                holder.tvTrendBadge.backgroundTintList = android.content.res.ColorStateList.valueOf(android.graphics.Color.parseColor("#F3F4F6")) // Light Grey background
-                holder.tvTrendBadge.setTextColor(android.graphics.Color.parseColor("#6B7280")) // Grey text
-                holder.tvTrendBadge.visibility = View.VISIBLE
+                holder.tvTrendBadge.visibility = View.GONE
             }
 
             // Populate Plans programmatically
@@ -226,5 +235,11 @@ class StreamingPricesActivity : BaseActivity() {
         }
 
         override fun getItemCount() = items.size
+
+        private fun updateBellIcon(imageView: ImageView, enabled: Boolean) {
+            imageView.setImageResource(R.drawable.ic_bell)
+            val colorStr = if (enabled) "#4CAF50" else "#FF5252"
+            imageView.setColorFilter(android.graphics.Color.parseColor(colorStr))
+        }
     }
 }

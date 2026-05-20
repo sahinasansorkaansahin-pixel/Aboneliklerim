@@ -18,12 +18,9 @@
    <locale android:name="en-AU"/>
    <locale android:name="en-CA"/>
    <locale android:name="ja-JP"/>
-   <locale android:name="zh-CN"/>
-   <locale android:name="zh-HK"/>
    <locale android:name="is-IS"/>
    <locale android:name="en-NZ"/>
    <locale android:name="ko-KR"/>
-   <locale android:name="zh-TW"/>
    <locale android:name="cs-CZ"/>
    <locale android:name="pl-PL"/>
    <locale android:name="hu-HU"/>
