@@ -15,6 +15,18 @@
       }
     ],
     "regional": {
+      "TRY": {
+        "base_price": 69.9,
+        "base_currency": "TRY",
+        "plans": [
+          {
+            "name": "Prime Membership",
+            "price": 69.9,
+            "currency": "TRY",
+            "period": "monthly"
+          }
+        ]
+      },
       "USD": {
         "base_price": 14.99,
         "base_currency": "USD",
@@ -34,264 +46,306 @@
         ]
       },
       "EUR": {
-        "base_price": 8.99,
+        "base_price": 12.99,
         "base_currency": "EUR",
         "plans": [
           {
-            "name": "Prime Monthly",
-            "price": 8.99,
+            "name": "Prime Video",
+            "price": 7.99,
             "currency": "EUR",
             "period": "monthly"
           },
           {
-            "name": "Prime Yearly",
-            "price": 89.9,
+            "name": "Prime Monthly",
+            "price": 12.99,
             "currency": "EUR",
             "period": "monthly"
           }
         ]
       },
       "JPY": {
-        "base_price": 600.0,
+        "base_price": 1900,
         "base_currency": "JPY",
         "plans": [
           {
-            "name": "Prime Monthly",
-            "price": 600.0,
+            "name": "Prime Video",
+            "price": 1100,
             "currency": "JPY",
             "period": "monthly"
           },
           {
-            "name": "Prime Yearly",
-            "price": 5900.0,
+            "name": "Prime Monthly",
+            "price": 1900,
             "currency": "JPY",
             "period": "monthly"
           }
         ]
       },
       "GBP": {
-        "base_price": 8.99,
+        "base_price": 10.99,
         "base_currency": "GBP",
         "plans": [
           {
-            "name": "Prime Monthly",
-            "price": 8.99,
+            "name": "Prime Video",
+            "price": 6.99,
             "currency": "GBP",
             "period": "monthly"
           },
           {
-            "name": "Prime Yearly",
-            "price": 95.0,
+            "name": "Prime Monthly",
+            "price": 10.99,
             "currency": "GBP",
             "period": "monthly"
           }
         ]
       },
       "AZN": {
-        "base_price": 4.99,
+        "base_price": 12.99,
         "base_currency": "AZN",
         "plans": [
           {
+            "name": "Prime Video",
+            "price": 7.99,
+            "currency": "AZN",
+            "period": "monthly"
+          },
+          {
             "name": "Prime Monthly",
-            "price": 4.99,
+            "price": 12.99,
             "currency": "AZN",
             "period": "monthly"
           }
         ]
       },
       "KRW": {
-        "base_price": 5.99,
+        "base_price": 18100,
         "base_currency": "KRW",
         "plans": [
           {
             "name": "Prime Video",
-            "price": 5.99,
+            "price": 10800,
+            "currency": "KRW",
+            "period": "monthly"
+          },
+          {
+            "name": "Prime Monthly",
+            "price": 18100,
             "currency": "KRW",
             "period": "monthly"
           }
         ]
       },
       "UAH": {
-        "base_price": 129.0,
+        "base_price": 259.0,
         "base_currency": "UAH",
         "plans": [
           {
-            "name": "Prime Monthly",
-            "price": 129.0,
+            "name": "Prime Video",
+            "price": 159.0,
             "currency": "UAH",
             "period": "monthly"
           },
           {
-            "name": "Prime Yearly",
-            "price": 1199.0,
+            "name": "Prime Monthly",
+            "price": 259.0,
             "currency": "UAH",
             "period": "monthly"
           }
         ]
       },
       "SEK": {
-        "base_price": 59.0,
+        "base_price": 129.0,
         "base_currency": "SEK",
         "plans": [
           {
-            "name": "Prime Monthly",
-            "price": 59.0,
+            "name": "Prime Video",
+            "price": 79.0,
             "currency": "SEK",
             "period": "monthly"
           },
           {
-            "name": "Prime Yearly",
-            "price": 549.0,
+            "name": "Prime Monthly",
+            "price": 129.0,
             "currency": "SEK",
             "period": "monthly"
           }
         ]
       },
       "NOK": {
-        "base_price": 79.0,
+        "base_price": 129.0,
         "base_currency": "NOK",
         "plans": [
           {
-            "name": "Prime Monthly",
-            "price": 79.0,
+            "name": "Prime Video",
+            "price": 69.0,
             "currency": "NOK",
             "period": "monthly"
           },
           {
-            "name": "Prime Yearly",
-            "price": 699.0,
+            "name": "Prime Monthly",
+            "price": 129.0,
             "currency": "NOK",
             "period": "monthly"
           }
         ]
       },
       "DKK": {
-        "base_price": 59.0,
+        "base_price": 89.0,
         "base_currency": "DKK",
         "plans": [
           {
-            "name": "Prime Monthly",
-            "price": 59.0,
+            "name": "Prime Video",
+            "price": 49.0,
             "currency": "DKK",
             "period": "monthly"
           },
           {
-            "name": "Prime Yearly",
-            "price": 549.0,
+            "name": "Prime Monthly",
+            "price": 89.0,
             "currency": "DKK",
             "period": "monthly"
           }
         ]
       },
       "CAD": {
-        "base_price": 9.99,
+        "base_price": 17.99,
         "base_currency": "CAD",
         "plans": [
           {
-            "name": "Prime Monthly",
-            "price": 9.99,
+            "name": "Prime Video",
+            "price": 10.99,
             "currency": "CAD",
             "period": "monthly"
           },
           {
-            "name": "Prime Yearly",
-            "price": 99.0,
+            "name": "Prime Monthly",
+            "price": 17.99,
             "currency": "CAD",
             "period": "monthly"
           }
         ]
       },
       "AUD": {
-        "base_price": 9.99,
+        "base_price": 17.99,
         "base_currency": "AUD",
         "plans": [
           {
-            "name": "Prime Monthly",
-            "price": 9.99,
+            "name": "Prime Video",
+            "price": 10.99,
             "currency": "AUD",
             "period": "monthly"
           },
           {
-            "name": "Prime Yearly",
-            "price": 79.0,
+            "name": "Prime Monthly",
+            "price": 17.99,
             "currency": "AUD",
             "period": "monthly"
           }
         ]
       },
       "SGD": {
-        "base_price": 4.99,
+        "base_price": 15.99,
         "base_currency": "SGD",
         "plans": [
           {
+            "name": "Prime Video",
+            "price": 9.99,
+            "currency": "SGD",
+            "period": "monthly"
+          },
+          {
             "name": "Prime Monthly",
-            "price": 4.99,
+            "price": 15.99,
             "currency": "SGD",
             "period": "monthly"
           }
         ]
       },
       "AED": {
-        "base_price": 16.0,
+        "base_price": 49.99,
         "base_currency": "AED",
         "plans": [
           {
+            "name": "Prime Video",
+            "price": 29.99,
+            "currency": "AED",
+            "period": "monthly"
+          },
+          {
             "name": "Prime Monthly",
-            "price": 16.0,
+            "price": 49.99,
             "currency": "AED",
             "period": "monthly"
           }
         ]
       },
       "SAR": {
-        "base_price": 16.0,
+        "base_price": 44.99,
         "base_currency": "SAR",
         "plans": [
           {
+            "name": "Prime Video",
+            "price": 26.99,
+            "currency": "SAR",
+            "period": "monthly"
+          },
+          {
             "name": "Prime Monthly",
-            "price": 16.0,
+            "price": 44.99,
             "currency": "SAR",
             "period": "monthly"
           }
         ]
       },
       "THB": {
-        "base_price": 149.0,
+        "base_price": 239.0,
         "base_currency": "THB",
         "plans": [
           {
-            "name": "Prime Monthly",
+            "name": "Prime Video",
             "price": 149.0,
+            "currency": "THB",
+            "period": "monthly"
+          },
+          {
+            "name": "Prime Monthly",
+            "price": 239.0,
             "currency": "THB",
             "period": "monthly"
           }
         ]
       },
       "PLN": {
-        "base_price": 10.99,
+        "base_price": 32.99,
         "base_currency": "PLN",
         "plans": [
           {
-            "name": "Prime Monthly",
-            "price": 10.99,
+            "name": "Prime Video",
+            "price": 19.99,
             "currency": "PLN",
             "period": "monthly"
           },
           {
-            "name": "Prime Yearly",
-            "price": 49.0,
+            "name": "Prime Monthly",
+            "price": 32.99,
             "currency": "PLN",
             "period": "monthly"
           }
         ]
       },
       "CZK": {
-        "base_price": 79.0,
+        "base_price": 189.0,
         "base_currency": "CZK",
         "plans": [
           {
+            "name": "Prime Video",
+            "price": 109.0,
+            "currency": "CZK",
+            "period": "monthly"
+          },
+          {
             "name": "Prime Monthly",
-            "price": 79.0,
+            "price": 189.0,
             "currency": "CZK",
             "period": "monthly"
           }
@@ -323,122 +377,146 @@
   {
     "id": "netflix",
     "name": "Netflix",
-    "base_price": 149.99,
+    "base_price": 289.99,
     "base_currency": "TRY",
     "logo_res": "ic_logo_netflix",
     "official_url": "https://www.netflix.com",
     "plans": [
       {
         "name": "Basic (Temel)",
-        "price": 149.99,
+        "price": 189.99,
         "currency": "TRY",
         "period": "monthly"
       },
       {
         "name": "Standard (Standart)",
-        "price": 229.99,
+        "price": 289.99,
         "currency": "TRY",
         "period": "monthly"
       },
       {
         "name": "Premium (Özel)",
-        "price": 299.99,
+        "price": 379.99,
         "currency": "TRY",
         "period": "monthly"
       }
     ],
     "regional": {
+      "TRY": {
+        "base_price": 289.99,
+        "base_currency": "TRY",
+        "plans": [
+          {
+            "name": "Basic (Temel)",
+            "price": 189.99,
+            "currency": "TRY",
+            "period": "monthly"
+          },
+          {
+            "name": "Standard (Standart)",
+            "price": 289.99,
+            "currency": "TRY",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium (Özel)",
+            "price": 379.99,
+            "currency": "TRY",
+            "period": "monthly"
+          }
+        ]
+      },
       "USD": {
-        "base_price": 15.49,
+        "base_price": 19.99,
         "base_currency": "USD",
         "plans": [
           {
-            "name": "Basic",
-            "price": 9.99,
+            "name": "Standard",
+            "price": 8.99,
             "currency": "USD",
             "period": "monthly"
           },
           {
             "name": "Standard",
-            "price": 15.49,
+            "price": 19.99,
             "currency": "USD",
             "period": "monthly"
           },
           {
             "name": "Premium",
-            "price": 22.99,
+            "price": 26.99,
             "currency": "USD",
             "period": "monthly"
           }
         ]
       },
       "EUR": {
-        "base_price": 12.99,
+        "base_price": 13.99,
         "base_currency": "EUR",
         "plans": [
           {
-            "name": "Basic",
-            "price": 7.99,
+            "name": "Standard",
+            "price": 4.99,
             "currency": "EUR",
             "period": "monthly"
           },
           {
             "name": "Standard",
-            "price": 12.99,
+            "price": 13.99,
             "currency": "EUR",
             "period": "monthly"
           },
           {
             "name": "Premium",
-            "price": 17.99,
+            "price": 19.99,
             "currency": "EUR",
             "period": "monthly"
           }
         ]
       },
       "JPY": {
-        "base_price": 1490.0,
+        "base_price": 1590.0,
         "base_currency": "JPY",
         "plans": [
           {
-            "name": "Basic",
-            "price": 990.0,
+            "name": "Standard",
+            "price": 890.0,
             "currency": "JPY",
             "period": "monthly"
           },
           {
             "name": "Standard",
-            "price": 1490.0,
+            "price": 1590.0,
             "currency": "JPY",
             "period": "monthly"
           },
           {
             "name": "Premium",
-            "price": 1980.0,
+            "price": 2290.0,
             "currency": "JPY",
             "period": "monthly"
           }
         ]
       },
       "GBP": {
-        "base_price": 10.99,
+        "base_price": 12.99,
         "base_currency": "GBP",
         "plans": [
           {
-            "name": "Basic",
-            "price": 6.99,
+            "name": "Standard",
+            "price": 5.99,
             "currency": "GBP",
             "period": "monthly"
           },
           {
             "name": "Standard",
-            "price": 10.99,
+            "price": 12.99,
             "currency": "GBP",
             "period": "monthly"
           },
           {
             "name": "Premium",
-            "price": 17.99,
+            "price": 18.99,
             "currency": "GBP",
             "period": "monthly"
           }
@@ -450,7 +528,7 @@
         "plans": [
           {
             "name": "Basic",
-            "price": 5.99,
+            "price": 7.99,
             "currency": "AZN",
             "period": "monthly"
           },
@@ -462,7 +540,7 @@
           },
           {
             "name": "Premium",
-            "price": 13.99,
+            "price": 11.99,
             "currency": "AZN",
             "period": "monthly"
           }
@@ -473,8 +551,8 @@
         "base_currency": "KRW",
         "plans": [
           {
-            "name": "Basic",
-            "price": 9500.0,
+            "name": "Standard",
+            "price": 7000.0,
             "currency": "KRW",
             "period": "monthly"
           },
@@ -493,216 +571,216 @@
         ]
       },
       "UAH": {
-        "base_price": 249.0,
+        "base_price": 7.49,
         "base_currency": "UAH",
         "plans": [
           {
             "name": "Basic",
-            "price": 149.0,
+            "price": 4.99,
             "currency": "UAH",
             "period": "monthly"
           },
           {
             "name": "Standard",
-            "price": 249.0,
+            "price": 7.49,
             "currency": "UAH",
             "period": "monthly"
           },
           {
             "name": "Premium",
-            "price": 349.0,
+            "price": 9.99,
             "currency": "UAH",
             "period": "monthly"
           }
         ]
       },
       "SEK": {
-        "base_price": 129.0,
+        "base_price": 149.0,
         "base_currency": "SEK",
         "plans": [
           {
             "name": "Basic",
-            "price": 99.0,
+            "price": 109.0,
             "currency": "SEK",
             "period": "monthly"
           },
           {
             "name": "Standard",
-            "price": 129.0,
+            "price": 149.0,
             "currency": "SEK",
             "period": "monthly"
           },
           {
             "name": "Premium",
-            "price": 179.0,
+            "price": 199.0,
             "currency": "SEK",
             "period": "monthly"
           }
         ]
       },
       "NOK": {
-        "base_price": 109.0,
+        "base_price": 129.0,
         "base_currency": "NOK",
         "plans": [
           {
             "name": "Basic",
-            "price": 89.0,
+            "price": 99.0,
             "currency": "NOK",
             "period": "monthly"
           },
           {
             "name": "Standard",
-            "price": 109.0,
+            "price": 129.0,
             "currency": "NOK",
             "period": "monthly"
           },
           {
             "name": "Premium",
-            "price": 159.0,
+            "price": 189.0,
             "currency": "NOK",
             "period": "monthly"
           }
         ]
       },
       "DKK": {
-        "base_price": 114.0,
+        "base_price": 129.0,
         "base_currency": "DKK",
         "plans": [
           {
             "name": "Basic",
-            "price": 79.0,
+            "price": 89.0,
             "currency": "DKK",
             "period": "monthly"
           },
           {
             "name": "Standard",
-            "price": 114.0,
+            "price": 129.0,
             "currency": "DKK",
             "period": "monthly"
           },
           {
             "name": "Premium",
-            "price": 149.0,
+            "price": 169.0,
             "currency": "DKK",
             "period": "monthly"
           }
         ]
       },
       "CAD": {
-        "base_price": 16.49,
+        "base_price": 18.99,
         "base_currency": "CAD",
         "plans": [
           {
-            "name": "Basic",
-            "price": 9.99,
+            "name": "Standard",
+            "price": 7.99,
             "currency": "CAD",
             "period": "monthly"
           },
           {
             "name": "Standard",
-            "price": 16.49,
+            "price": 18.99,
             "currency": "CAD",
             "period": "monthly"
           },
           {
             "name": "Premium",
-            "price": 20.99,
+            "price": 23.99,
             "currency": "CAD",
             "period": "monthly"
           }
         ]
       },
       "AUD": {
-        "base_price": 16.99,
+        "base_price": 20.99,
         "base_currency": "AUD",
         "plans": [
           {
-            "name": "Basic",
-            "price": 10.99,
+            "name": "Standard",
+            "price": 9.99,
             "currency": "AUD",
             "period": "monthly"
           },
           {
             "name": "Standard",
-            "price": 16.99,
+            "price": 20.99,
             "currency": "AUD",
             "period": "monthly"
           },
           {
             "name": "Premium",
-            "price": 22.99,
+            "price": 28.99,
             "currency": "AUD",
             "period": "monthly"
           }
         ]
       },
       "SGD": {
-        "base_price": 17.98,
+        "base_price": 22.98,
         "base_currency": "SGD",
         "plans": [
           {
             "name": "Basic",
-            "price": 12.98,
+            "price": 15.98,
             "currency": "SGD",
             "period": "monthly"
           },
           {
             "name": "Standard",
-            "price": 17.98,
+            "price": 22.98,
             "currency": "SGD",
             "period": "monthly"
           },
           {
             "name": "Premium",
-            "price": 21.98,
+            "price": 29.98,
             "currency": "SGD",
             "period": "monthly"
           }
         ]
       },
       "AED": {
-        "base_price": 39.0,
+        "base_price": 49.0,
         "base_currency": "AED",
         "plans": [
           {
             "name": "Basic",
-            "price": 29.0,
+            "price": 35.0,
             "currency": "AED",
             "period": "monthly"
           },
           {
             "name": "Standard",
-            "price": 39.0,
+            "price": 49.0,
             "currency": "AED",
             "period": "monthly"
           },
           {
             "name": "Premium",
-            "price": 56.0,
+            "price": 71.0,
             "currency": "AED",
             "period": "monthly"
           }
         ]
       },
       "SAR": {
-        "base_price": 43.0,
+        "base_price": 49.0,
         "base_currency": "SAR",
         "plans": [
           {
             "name": "Basic",
-            "price": 32.0,
+            "price": 35.0,
             "currency": "SAR",
             "period": "monthly"
           },
           {
             "name": "Standard",
-            "price": 43.0,
+            "price": 49.0,
             "currency": "SAR",
             "period": "monthly"
           },
           {
             "name": "Premium",
-            "price": 61.0,
+            "price": 71.0,
             "currency": "SAR",
             "period": "monthly"
           }
@@ -712,6 +790,12 @@
         "base_price": 349.0,
         "base_currency": "THB",
         "plans": [
+          {
+            "name": "Mobile",
+            "price": 99.0,
+            "currency": "THB",
+            "period": "monthly"
+          },
           {
             "name": "Basic",
             "price": 169.0,
@@ -733,48 +817,48 @@
         ]
       },
       "PLN": {
-        "base_price": 43.0,
+        "base_price": 49.0,
         "base_currency": "PLN",
         "plans": [
           {
             "name": "Basic",
-            "price": 29.0,
+            "price": 33.0,
             "currency": "PLN",
             "period": "monthly"
           },
           {
             "name": "Standard",
-            "price": 43.0,
+            "price": 49.0,
             "currency": "PLN",
             "period": "monthly"
           },
           {
             "name": "Premium",
-            "price": 60.0,
+            "price": 67.0,
             "currency": "PLN",
             "period": "monthly"
           }
         ]
       },
       "CZK": {
-        "base_price": 259.0,
+        "base_price": 339.0,
         "base_currency": "CZK",
         "plans": [
           {
             "name": "Basic",
-            "price": 199.0,
-            "currency": "CZK",
-            "period": "monthly"
-          },
-          {
-            "name": "Standard",
             "price": 259.0,
             "currency": "CZK",
             "period": "monthly"
           },
           {
+            "name": "Standard",
+            "price": 339.0,
+            "currency": "CZK",
+            "period": "monthly"
+          },
+          {
             "name": "Premium",
-            "price": 319.0,
+            "price": 419.0,
             "currency": "CZK",
             "period": "monthly"
           }
@@ -837,31 +921,61 @@
       }
     ],
     "regional": {
+      "TRY": {
+        "base_price": 99.0,
+        "base_currency": "TRY",
+        "plans": [
+          {
+            "name": "Öğrenci (Student)",
+            "price": 55.0,
+            "currency": "TRY",
+            "period": "monthly"
+          },
+          {
+            "name": "Bireysel (Individual)",
+            "price": 99.0,
+            "currency": "TRY",
+            "period": "monthly"
+          },
+          {
+            "name": "Duo",
+            "price": 135.0,
+            "currency": "TRY",
+            "period": "monthly"
+          },
+          {
+            "name": "Aile (Family)",
+            "price": 165.0,
+            "currency": "TRY",
+            "period": "monthly"
+          }
+        ]
+      },
       "USD": {
-        "base_price": 11.99,
+        "base_price": 12.99,
         "base_currency": "USD",
         "plans": [
           {
             "name": "Student",
-            "price": 5.99,
+            "price": 6.99,
             "currency": "USD",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 11.99,
+            "price": 12.99,
             "currency": "USD",
             "period": "monthly"
           },
           {
             "name": "Duo",
-            "price": 16.99,
+            "price": 18.99,
             "currency": "USD",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 19.99,
+            "price": 21.99,
             "currency": "USD",
             "period": "monthly"
           }
@@ -885,175 +999,181 @@
           },
           {
             "name": "Duo",
-            "price": 14.99,
+            "price": 15.99,
             "currency": "EUR",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 17.99,
+            "price": 18.99,
             "currency": "EUR",
             "period": "monthly"
           }
         ]
       },
       "JPY": {
-        "base_price": 980.0,
+        "base_price": 1700,
         "base_currency": "JPY",
         "plans": [
           {
             "name": "Student",
-            "price": 480.0,
+            "price": 900,
             "currency": "JPY",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 980.0,
+            "price": 1700,
             "currency": "JPY",
             "period": "monthly"
           },
           {
             "name": "Duo",
-            "price": 1280.0,
+            "price": 2400,
             "currency": "JPY",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 1580.0,
+            "price": 2800,
             "currency": "JPY",
             "period": "monthly"
           }
         ]
       },
       "GBP": {
-        "base_price": 11.99,
+        "base_price": 9.99,
         "base_currency": "GBP",
         "plans": [
           {
             "name": "Student",
-            "price": 5.99,
+            "price": 4.99,
             "currency": "GBP",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 11.99,
+            "price": 9.99,
             "currency": "GBP",
             "period": "monthly"
           },
           {
             "name": "Duo",
-            "price": 16.99,
+            "price": 13.99,
             "currency": "GBP",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 19.99,
+            "price": 15.99,
             "currency": "GBP",
             "period": "monthly"
           }
         ]
       },
       "AZN": {
-        "base_price": 5.99,
+        "base_price": 10.99,
         "base_currency": "AZN",
         "plans": [
           {
             "name": "Student",
-            "price": 2.99,
-            "currency": "AZN",
-            "period": "monthly"
-          },
-          {
-            "name": "Individual",
             "price": 5.99,
             "currency": "AZN",
             "period": "monthly"
           },
           {
+            "name": "Individual",
+            "price": 10.99,
+            "currency": "AZN",
+            "period": "monthly"
+          },
+          {
             "name": "Duo",
-            "price": 7.99,
+            "price": 15.99,
             "currency": "AZN",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 9.99,
+            "price": 18.99,
             "currency": "AZN",
             "period": "monthly"
           }
         ]
       },
       "KRW": {
-        "base_price": 10900.0,
+        "base_price": 15700,
         "base_currency": "KRW",
         "plans": [
           {
+            "name": "Student",
+            "price": 8400,
+            "currency": "KRW",
+            "period": "monthly"
+          },
+          {
             "name": "Individual",
-            "price": 10900.0,
+            "price": 15700,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Duo",
-            "price": 16350.0,
+            "price": 22900,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 17900.0,
+            "price": 26500,
             "currency": "KRW",
             "period": "monthly"
           }
         ]
       },
       "UAH": {
-        "base_price": 149.0,
+        "base_price": 229.0,
         "base_currency": "UAH",
         "plans": [
           {
             "name": "Student",
-            "price": 75.0,
+            "price": 119.0,
             "currency": "UAH",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 149.0,
+            "price": 229.0,
             "currency": "UAH",
             "period": "monthly"
           },
           {
             "name": "Duo",
-            "price": 199.0,
+            "price": 339.0,
             "currency": "UAH",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 239.0,
+            "price": 389.0,
             "currency": "UAH",
             "period": "monthly"
           }
         ]
       },
       "SEK": {
-        "base_price": 119.0,
+        "base_price": 109.0,
         "base_currency": "SEK",
         "plans": [
           {
             "name": "Student",
-            "price": 65.0,
+            "price": 59.0,
             "currency": "SEK",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 119.0,
+            "price": 109.0,
             "currency": "SEK",
             "period": "monthly"
           },
@@ -1072,18 +1192,18 @@
         ]
       },
       "NOK": {
-        "base_price": 119.0,
+        "base_price": 109.0,
         "base_currency": "NOK",
         "plans": [
           {
             "name": "Student",
-            "price": 65.0,
+            "price": 59.0,
             "currency": "NOK",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 119.0,
+            "price": 109.0,
             "currency": "NOK",
             "period": "monthly"
           },
@@ -1095,254 +1215,254 @@
           },
           {
             "name": "Family",
-            "price": 189.0,
+            "price": 179.0,
             "currency": "NOK",
             "period": "monthly"
           }
         ]
       },
       "DKK": {
-        "base_price": 109.0,
+        "base_price": 79.0,
         "base_currency": "DKK",
         "plans": [
           {
             "name": "Student",
-            "price": 59.0,
+            "price": 39.0,
             "currency": "DKK",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 109.0,
+            "price": 79.0,
             "currency": "DKK",
             "period": "monthly"
           },
           {
             "name": "Duo",
-            "price": 139.0,
+            "price": 109.0,
             "currency": "DKK",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 169.0,
+            "price": 129.0,
             "currency": "DKK",
             "period": "monthly"
           }
         ]
       },
       "CAD": {
-        "base_price": 10.99,
+        "base_price": 14.99,
         "base_currency": "CAD",
         "plans": [
           {
             "name": "Student",
-            "price": 6.49,
+            "price": 7.99,
             "currency": "CAD",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 10.99,
-            "currency": "CAD",
-            "period": "monthly"
-          },
-          {
-            "name": "Duo",
             "price": 14.99,
             "currency": "CAD",
             "period": "monthly"
           },
           {
+            "name": "Duo",
+            "price": 21.99,
+            "currency": "CAD",
+            "period": "monthly"
+          },
+          {
             "name": "Family",
-            "price": 16.99,
+            "price": 25.99,
             "currency": "CAD",
             "period": "monthly"
           }
         ]
       },
       "AUD": {
-        "base_price": 12.99,
+        "base_price": 15.99,
         "base_currency": "AUD",
         "plans": [
           {
             "name": "Student",
-            "price": 6.99,
+            "price": 7.99,
             "currency": "AUD",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 12.99,
+            "price": 15.99,
             "currency": "AUD",
             "period": "monthly"
           },
           {
             "name": "Duo",
-            "price": 17.99,
+            "price": 22.99,
             "currency": "AUD",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 20.99,
+            "price": 25.99,
             "currency": "AUD",
             "period": "monthly"
           }
         ]
       },
       "SGD": {
-        "base_price": 10.98,
+        "base_price": 13.99,
         "base_currency": "SGD",
         "plans": [
           {
             "name": "Student",
-            "price": 5.98,
+            "price": 7.99,
             "currency": "SGD",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 10.98,
+            "price": 13.99,
             "currency": "SGD",
             "period": "monthly"
           },
           {
             "name": "Duo",
-            "price": 14.98,
+            "price": 20.99,
             "currency": "SGD",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 17.98,
+            "price": 23.99,
             "currency": "SGD",
             "period": "monthly"
           }
         ]
       },
       "AED": {
-        "base_price": 21.99,
+        "base_price": 42.99,
         "base_currency": "AED",
         "plans": [
           {
             "name": "Student",
-            "price": 11.99,
+            "price": 22.99,
             "currency": "AED",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 21.99,
+            "price": 42.99,
             "currency": "AED",
             "period": "monthly"
           },
           {
             "name": "Duo",
-            "price": 27.99,
+            "price": 62.99,
             "currency": "AED",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 35.99,
+            "price": 72.99,
             "currency": "AED",
             "period": "monthly"
           }
         ]
       },
       "SAR": {
-        "base_price": 21.99,
+        "base_price": 38.99,
         "base_currency": "SAR",
         "plans": [
           {
             "name": "Student",
-            "price": 11.99,
+            "price": 20.99,
             "currency": "SAR",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 21.99,
+            "price": 38.99,
             "currency": "SAR",
             "period": "monthly"
           },
           {
             "name": "Duo",
-            "price": 27.99,
+            "price": 56.99,
             "currency": "SAR",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 35.99,
+            "price": 65.99,
             "currency": "SAR",
             "period": "monthly"
           }
         ]
       },
       "THB": {
-        "base_price": 139.0,
+        "base_price": 209.0,
         "base_currency": "THB",
         "plans": [
           {
             "name": "Student",
-            "price": 65.0,
+            "price": 109.0,
             "currency": "THB",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 139.0,
+            "price": 209.0,
             "currency": "THB",
             "period": "monthly"
           },
           {
             "name": "Duo",
-            "price": 189.0,
+            "price": 309.0,
             "currency": "THB",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 219.0,
+            "price": 359.0,
             "currency": "THB",
             "period": "monthly"
           }
         ]
       },
       "PLN": {
-        "base_price": 23.99,
+        "base_price": 28.99,
         "base_currency": "PLN",
         "plans": [
           {
             "name": "Student",
-            "price": 12.99,
+            "price": 14.99,
             "currency": "PLN",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 23.99,
+            "price": 28.99,
             "currency": "PLN",
             "period": "monthly"
           },
           {
             "name": "Duo",
-            "price": 30.99,
+            "price": 41.99,
             "currency": "PLN",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 37.99,
+            "price": 47.99,
             "currency": "PLN",
             "period": "monthly"
           }
         ]
       },
       "CZK": {
-        "base_price": 169.0,
+        "base_price": 159.0,
         "base_currency": "CZK",
         "plans": [
           {
@@ -1353,19 +1473,19 @@
           },
           {
             "name": "Individual",
-            "price": 169.0,
+            "price": 159.0,
             "currency": "CZK",
             "period": "monthly"
           },
           {
             "name": "Duo",
-            "price": 229.0,
+            "price": 239.0,
             "currency": "CZK",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 269.0,
+            "price": 279.0,
             "currency": "CZK",
             "period": "monthly"
           }
@@ -1422,6 +1542,30 @@
       }
     ],
     "regional": {
+      "TRY": {
+        "base_price": 59.99,
+        "base_currency": "TRY",
+        "plans": [
+          {
+            "name": "Student (Öğrenci)",
+            "price": 32.99,
+            "currency": "TRY",
+            "period": "monthly"
+          },
+          {
+            "name": "Individual (Bireysel)",
+            "price": 59.99,
+            "currency": "TRY",
+            "period": "monthly"
+          },
+          {
+            "name": "Family (Aile)",
+            "price": 99.99,
+            "currency": "TRY",
+            "period": "monthly"
+          }
+        ]
+      },
       "USD": {
         "base_price": 10.99,
         "base_currency": "USD",
@@ -1447,240 +1591,240 @@
         ]
       },
       "EUR": {
-        "base_price": 10.99,
+        "base_price": 8.99,
         "base_currency": "EUR",
         "plans": [
           {
             "name": "Student",
-            "price": 5.99,
+            "price": 4.99,
             "currency": "EUR",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 10.99,
+            "price": 8.99,
             "currency": "EUR",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 16.99,
+            "price": 14.99,
             "currency": "EUR",
             "period": "monthly"
           }
         ]
       },
       "JPY": {
-        "base_price": 1080.0,
+        "base_price": 1400,
         "base_currency": "JPY",
         "plans": [
           {
             "name": "Student",
-            "price": 580.0,
+            "price": 800,
             "currency": "JPY",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 1080.0,
+            "price": 1400,
             "currency": "JPY",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 1680.0,
+            "price": 2200,
             "currency": "JPY",
             "period": "monthly"
           }
         ]
       },
       "GBP": {
-        "base_price": 10.99,
+        "base_price": 7.99,
         "base_currency": "GBP",
         "plans": [
           {
             "name": "Student",
-            "price": 5.99,
+            "price": 3.99,
             "currency": "GBP",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 10.99,
+            "price": 7.99,
             "currency": "GBP",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 16.99,
+            "price": 12.99,
             "currency": "GBP",
             "period": "monthly"
           }
         ]
       },
       "AZN": {
-        "base_price": 6.99,
+        "base_price": 8.99,
         "base_currency": "AZN",
         "plans": [
           {
             "name": "Student",
-            "price": 3.99,
+            "price": 4.99,
             "currency": "AZN",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 6.99,
+            "price": 8.99,
             "currency": "AZN",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 10.99,
+            "price": 13.99,
             "currency": "AZN",
             "period": "monthly"
           }
         ]
       },
       "KRW": {
-        "base_price": 8900.0,
+        "base_price": 13300,
         "base_currency": "KRW",
         "plans": [
           {
             "name": "Student",
-            "price": 4900.0,
+            "price": 7200,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 8900.0,
+            "price": 13300,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 13500.0,
+            "price": 20500,
             "currency": "KRW",
             "period": "monthly"
           }
         ]
       },
       "UAH": {
-        "base_price": 159.0,
+        "base_price": 189.0,
         "base_currency": "UAH",
         "plans": [
           {
             "name": "Student",
-            "price": 79.0,
+            "price": 109.0,
             "currency": "UAH",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 159.0,
+            "price": 189.0,
             "currency": "UAH",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 239.0,
+            "price": 299.0,
             "currency": "UAH",
             "period": "monthly"
           }
         ]
       },
       "SEK": {
-        "base_price": 119.0,
+        "base_price": 89.0,
         "base_currency": "SEK",
         "plans": [
           {
             "name": "Student",
-            "price": 65.0,
+            "price": 49.0,
             "currency": "SEK",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 119.0,
+            "price": 89.0,
             "currency": "SEK",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 189.0,
+            "price": 139.0,
             "currency": "SEK",
             "period": "monthly"
           }
         ]
       },
       "NOK": {
-        "base_price": 119.0,
+        "base_price": 89.0,
         "base_currency": "NOK",
         "plans": [
           {
             "name": "Student",
-            "price": 65.0,
+            "price": 49.0,
             "currency": "NOK",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 119.0,
+            "price": 89.0,
             "currency": "NOK",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 189.0,
+            "price": 139.0,
             "currency": "NOK",
             "period": "monthly"
           }
         ]
       },
       "DKK": {
-        "base_price": 109.0,
+        "base_price": 59.0,
         "base_currency": "DKK",
         "plans": [
           {
             "name": "Student",
-            "price": 59.0,
+            "price": 29.0,
             "currency": "DKK",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 109.0,
+            "price": 59.0,
             "currency": "DKK",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 169.0,
+            "price": 99.0,
             "currency": "DKK",
             "period": "monthly"
           }
         ]
       },
       "CAD": {
-        "base_price": 10.99,
+        "base_price": 12.99,
         "base_currency": "CAD",
         "plans": [
           {
             "name": "Student",
-            "price": 5.99,
+            "price": 6.99,
             "currency": "CAD",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 10.99,
+            "price": 12.99,
             "currency": "CAD",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 16.99,
+            "price": 19.99,
             "currency": "CAD",
             "period": "monthly"
           }
@@ -1704,151 +1848,151 @@
           },
           {
             "name": "Family",
-            "price": 22.99,
+            "price": 19.99,
             "currency": "AUD",
             "period": "monthly"
           }
         ]
       },
       "SGD": {
-        "base_price": 10.98,
+        "base_price": 11.99,
         "base_currency": "SGD",
         "plans": [
           {
             "name": "Student",
-            "price": 5.98,
+            "price": 6.99,
             "currency": "SGD",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 10.98,
+            "price": 11.99,
             "currency": "SGD",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 17.98,
+            "price": 18.99,
             "currency": "SGD",
             "period": "monthly"
           }
         ]
       },
       "AED": {
-        "base_price": 21.99,
+        "base_price": 35.99,
         "base_currency": "AED",
         "plans": [
           {
             "name": "Student",
-            "price": 11.99,
+            "price": 19.99,
             "currency": "AED",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 21.99,
+            "price": 35.99,
             "currency": "AED",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 35.99,
+            "price": 55.99,
             "currency": "AED",
             "period": "monthly"
           }
         ]
       },
       "SAR": {
-        "base_price": 21.99,
+        "base_price": 32.99,
         "base_currency": "SAR",
         "plans": [
           {
             "name": "Student",
-            "price": 11.99,
+            "price": 17.99,
             "currency": "SAR",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 21.99,
+            "price": 32.99,
             "currency": "SAR",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 35.99,
+            "price": 50.99,
             "currency": "SAR",
             "period": "monthly"
           }
         ]
       },
       "THB": {
-        "base_price": 139.0,
+        "base_price": 179.0,
         "base_currency": "THB",
         "plans": [
           {
             "name": "Student",
-            "price": 79.0,
+            "price": 99.0,
             "currency": "THB",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 139.0,
+            "price": 179.0,
             "currency": "THB",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 229.0,
+            "price": 279.0,
             "currency": "THB",
             "period": "monthly"
           }
         ]
       },
       "PLN": {
-        "base_price": 21.99,
+        "base_price": 23.99,
         "base_currency": "PLN",
         "plans": [
           {
             "name": "Student",
-            "price": 11.99,
+            "price": 12.99,
             "currency": "PLN",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 21.99,
+            "price": 23.99,
             "currency": "PLN",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 34.99,
+            "price": 36.99,
             "currency": "PLN",
             "period": "monthly"
           }
         ]
       },
       "CZK": {
-        "base_price": 165.0,
+        "base_price": 139.0,
         "base_currency": "CZK",
         "plans": [
           {
             "name": "Student",
-            "price": 89.0,
+            "price": 79.0,
             "currency": "CZK",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 165.0,
+            "price": 139.0,
             "currency": "CZK",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 259.0,
+            "price": 209.0,
             "currency": "CZK",
             "period": "monthly"
           }
@@ -1880,31 +2024,43 @@
   {
     "id": "google_one",
     "name": "Google One",
-    "base_price": 5.79,
+    "base_price": 49.99,
     "base_currency": "TRY",
     "logo_res": "ic_logo_google_one",
     "official_url": "https://one.google.com/",
     "plans": [
       {
         "name": "Basic (100 GB)",
-        "price": 5.79,
-        "currency": "TRY",
-        "period": "monthly"
-      },
-      {
-        "name": "Standard (200 GB)",
-        "price": 11.59,
+        "price": 49.99,
         "currency": "TRY",
         "period": "monthly"
       },
       {
         "name": "Premium (2 TB)",
-        "price": 28.99,
+        "price": 204.99,
         "currency": "TRY",
         "period": "monthly"
       }
     ],
     "regional": {
+      "TRY": {
+        "base_price": 49.99,
+        "base_currency": "TRY",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 49.99,
+            "currency": "TRY",
+            "period": "monthly"
+          },
+          {
+            "name": "Premium (2 TB)",
+            "price": 204.99,
+            "currency": "TRY",
+            "period": "monthly"
+          }
+        ]
+      },
       "USD": {
         "base_price": 1.99,
         "base_currency": "USD",
@@ -1947,127 +2103,127 @@
           },
           {
             "name": "Premium (2 TB)",
-            "price": 9.99,
+            "price": 8.99,
             "currency": "EUR",
             "period": "monthly"
           }
         ]
       },
       "JPY": {
-        "base_price": 250.0,
+        "base_price": 300,
         "base_currency": "JPY",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 250.0,
+            "price": 300,
             "currency": "JPY",
             "period": "monthly"
           },
           {
             "name": "Standard (200 GB)",
-            "price": 380.0,
+            "price": 400,
             "currency": "JPY",
             "period": "monthly"
           },
           {
             "name": "Premium (2 TB)",
-            "price": 1300.0,
+            "price": 1300,
             "currency": "JPY",
             "period": "monthly"
           }
         ]
       },
       "GBP": {
-        "base_price": 1.59,
+        "base_price": 0.99,
         "base_currency": "GBP",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 1.59,
+            "price": 0.99,
             "currency": "GBP",
             "period": "monthly"
           },
           {
             "name": "Standard (200 GB)",
-            "price": 2.49,
+            "price": 1.99,
             "currency": "GBP",
             "period": "monthly"
           },
           {
             "name": "Premium (2 TB)",
-            "price": 7.99,
+            "price": 6.99,
             "currency": "GBP",
             "period": "monthly"
           }
         ]
       },
       "AZN": {
-        "base_price": 2.99,
+        "base_price": 1.99,
         "base_currency": "AZN",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 2.99,
+            "price": 1.99,
             "currency": "AZN",
             "period": "monthly"
           },
           {
             "name": "Standard (200 GB)",
-            "price": 4.99,
+            "price": 2.99,
             "currency": "AZN",
             "period": "monthly"
           },
           {
             "name": "Premium (2 TB)",
-            "price": 14.99,
+            "price": 7.99,
             "currency": "AZN",
             "period": "monthly"
           }
         ]
       },
       "KRW": {
-        "base_price": 2400.0,
+        "base_price": 2400,
         "base_currency": "KRW",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 2400.0,
+            "price": 2400,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Standard (200 GB)",
-            "price": 3700.0,
+            "price": 3600,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Premium (2 TB)",
-            "price": 11900.0,
+            "price": 12000,
             "currency": "KRW",
             "period": "monthly"
           }
         ]
       },
       "UAH": {
-        "base_price": 49.0,
+        "base_price": 39.0,
         "base_currency": "UAH",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 49.0,
+            "price": 39.0,
             "currency": "UAH",
             "period": "monthly"
           },
           {
             "name": "Standard (200 GB)",
-            "price": 79.0,
+            "price": 49.0,
             "currency": "UAH",
             "period": "monthly"
           },
           {
             "name": "Premium (2 TB)",
-            "price": 249.0,
+            "price": 179.0,
             "currency": "UAH",
             "period": "monthly"
           }
@@ -2091,7 +2247,7 @@
           },
           {
             "name": "Premium (2 TB)",
-            "price": 99.0,
+            "price": 79.0,
             "currency": "SEK",
             "period": "monthly"
           }
@@ -2109,229 +2265,229 @@
           },
           {
             "name": "Standard (200 GB)",
-            "price": 29.0,
+            "price": 19.0,
             "currency": "NOK",
             "period": "monthly"
           },
           {
             "name": "Premium (2 TB)",
-            "price": 99.0,
+            "price": 79.0,
             "currency": "NOK",
             "period": "monthly"
           }
         ]
       },
       "DKK": {
-        "base_price": 17.0,
+        "base_price": 9.0,
         "base_currency": "DKK",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 17.0,
+            "price": 9.0,
             "currency": "DKK",
             "period": "monthly"
           },
           {
             "name": "Standard (200 GB)",
-            "price": 25.0,
+            "price": 19.0,
             "currency": "DKK",
             "period": "monthly"
           },
           {
             "name": "Premium (2 TB)",
-            "price": 89.0,
+            "price": 59.0,
             "currency": "DKK",
             "period": "monthly"
           }
         ]
       },
       "CAD": {
-        "base_price": 2.79,
+        "base_price": 1.99,
         "base_currency": "CAD",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 2.79,
+            "price": 1.99,
             "currency": "CAD",
             "period": "monthly"
           },
           {
             "name": "Standard (200 GB)",
-            "price": 3.99,
+            "price": 2.99,
             "currency": "CAD",
             "period": "monthly"
           },
           {
             "name": "Premium (2 TB)",
-            "price": 13.99,
+            "price": 11.99,
             "currency": "CAD",
             "period": "monthly"
           }
         ]
       },
       "AUD": {
-        "base_price": 2.49,
+        "base_price": 1.99,
         "base_currency": "AUD",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 2.49,
+            "price": 1.99,
             "currency": "AUD",
             "period": "monthly"
           },
           {
             "name": "Standard (200 GB)",
-            "price": 4.39,
+            "price": 3.99,
             "currency": "AUD",
             "period": "monthly"
           },
           {
             "name": "Premium (2 TB)",
-            "price": 12.49,
+            "price": 11.99,
             "currency": "AUD",
             "period": "monthly"
           }
         ]
       },
       "SGD": {
-        "base_price": 2.79,
+        "base_price": 1.99,
         "base_currency": "SGD",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 2.79,
+            "price": 1.99,
             "currency": "SGD",
             "period": "monthly"
           },
           {
             "name": "Standard (200 GB)",
-            "price": 3.99,
+            "price": 2.99,
             "currency": "SGD",
             "period": "monthly"
           },
           {
             "name": "Premium (2 TB)",
-            "price": 13.99,
+            "price": 10.99,
             "currency": "SGD",
             "period": "monthly"
           }
         ]
       },
       "AED": {
-        "base_price": 7.39,
+        "base_price": 6.99,
         "base_currency": "AED",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 7.39,
+            "price": 6.99,
             "currency": "AED",
             "period": "monthly"
           },
           {
             "name": "Standard (200 GB)",
-            "price": 10.99,
+            "price": 9.99,
             "currency": "AED",
             "period": "monthly"
           },
           {
             "name": "Premium (2 TB)",
-            "price": 36.99,
+            "price": 32.99,
             "currency": "AED",
             "period": "monthly"
           }
         ]
       },
       "SAR": {
-        "base_price": 7.49,
+        "base_price": 5.99,
         "base_currency": "SAR",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 7.49,
+            "price": 5.99,
             "currency": "SAR",
             "period": "monthly"
           },
           {
             "name": "Standard (200 GB)",
-            "price": 10.99,
+            "price": 8.99,
             "currency": "SAR",
             "period": "monthly"
           },
           {
             "name": "Premium (2 TB)",
-            "price": 36.99,
+            "price": 29.99,
             "currency": "SAR",
             "period": "monthly"
           }
         ]
       },
       "THB": {
-        "base_price": 70.0,
+        "base_price": 29.0,
         "base_currency": "THB",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 70.0,
+            "price": 29.0,
             "currency": "THB",
             "period": "monthly"
           },
           {
             "name": "Standard (200 GB)",
-            "price": 99.0,
+            "price": 49.0,
             "currency": "THB",
             "period": "monthly"
           },
           {
             "name": "Premium (2 TB)",
-            "price": 350.0,
+            "price": 159.0,
             "currency": "THB",
             "period": "monthly"
           }
         ]
       },
       "PLN": {
-        "base_price": 8.99,
+        "base_price": 3.99,
         "base_currency": "PLN",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 8.99,
+            "price": 3.99,
             "currency": "PLN",
             "period": "monthly"
           },
           {
             "name": "Standard (200 GB)",
-            "price": 13.99,
+            "price": 6.99,
             "currency": "PLN",
             "period": "monthly"
           },
           {
             "name": "Premium (2 TB)",
-            "price": 46.99,
+            "price": 21.99,
             "currency": "PLN",
             "period": "monthly"
           }
         ]
       },
       "CZK": {
-        "base_price": 59.99,
+        "base_price": 29.0,
         "base_currency": "CZK",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 59.99,
+            "price": 29.0,
             "currency": "CZK",
             "period": "monthly"
           },
           {
             "name": "Standard (200 GB)",
-            "price": 79.99,
+            "price": 39.0,
             "currency": "CZK",
             "period": "monthly"
           },
           {
             "name": "Premium (2 TB)",
-            "price": 299.99,
+            "price": 129.0,
             "currency": "CZK",
             "period": "monthly"
           }
@@ -2362,32 +2518,56 @@
   },
   {
     "id": "microsoft_onedrive",
-    "name": "Microsoft 365 (OneDrive)",
-    "base_price": 59.99,
+    "name": "Microsoft 365",
+    "base_price": 76.99,
     "base_currency": "TRY",
     "logo_res": "ic_logo_onedrive",
     "official_url": "https://www.microsoft.com/tr-tr/microsoft-365",
     "plans": [
       {
         "name": "Basic (100 GB)",
-        "price": 59.99,
+        "price": 76.99,
         "currency": "TRY",
         "period": "monthly"
       },
       {
         "name": "Personal (1 TB)",
-        "price": 179.99,
+        "price": 329.99,
         "currency": "TRY",
         "period": "monthly"
       },
       {
         "name": "Family (6 TB)",
-        "price": 239.99,
+        "price": 409.99,
         "currency": "TRY",
         "period": "monthly"
       }
     ],
     "regional": {
+      "TRY": {
+        "base_price": 76.99,
+        "base_currency": "TRY",
+        "plans": [
+          {
+            "name": "Basic (100 GB)",
+            "price": 76.99,
+            "currency": "TRY",
+            "period": "monthly"
+          },
+          {
+            "name": "Personal (1 TB)",
+            "price": 329.99,
+            "currency": "TRY",
+            "period": "monthly"
+          },
+          {
+            "name": "Family (6 TB)",
+            "price": 409.99,
+            "currency": "TRY",
+            "period": "monthly"
+          }
+        ]
+      },
       "USD": {
         "base_price": 1.99,
         "base_currency": "USD",
@@ -2413,408 +2593,408 @@
         ]
       },
       "EUR": {
-        "base_price": 2.0,
+        "base_price": 1.99,
         "base_currency": "EUR",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 2.0,
+            "price": 1.99,
             "currency": "EUR",
             "period": "monthly"
           },
           {
             "name": "Personal (1 TB)",
-            "price": 7.0,
+            "price": 5.99,
             "currency": "EUR",
             "period": "monthly"
           },
           {
             "name": "Family (6 TB)",
-            "price": 10.0,
+            "price": 8.99,
             "currency": "EUR",
             "period": "monthly"
           }
         ]
       },
       "JPY": {
-        "base_price": 260.0,
+        "base_price": 300,
         "base_currency": "JPY",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 260.0,
+            "price": 300,
             "currency": "JPY",
             "period": "monthly"
           },
           {
             "name": "Personal (1 TB)",
-            "price": 1490.0,
+            "price": 900,
             "currency": "JPY",
             "period": "monthly"
           },
           {
             "name": "Family (6 TB)",
-            "price": 2100.0,
+            "price": 1300,
             "currency": "JPY",
             "period": "monthly"
           }
         ]
       },
       "GBP": {
-        "base_price": 1.99,
+        "base_price": 0.99,
         "base_currency": "GBP",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 1.99,
+            "price": 0.99,
             "currency": "GBP",
             "period": "monthly"
           },
           {
             "name": "Personal (1 TB)",
-            "price": 5.99,
+            "price": 4.99,
             "currency": "GBP",
             "period": "monthly"
           },
           {
             "name": "Family (6 TB)",
-            "price": 7.99,
+            "price": 6.99,
             "currency": "GBP",
             "period": "monthly"
           }
         ]
       },
       "AZN": {
-        "base_price": 2.99,
+        "base_price": 1.99,
         "base_currency": "AZN",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 2.99,
+            "price": 1.99,
             "currency": "AZN",
             "period": "monthly"
           },
           {
             "name": "Personal (1 TB)",
-            "price": 8.99,
+            "price": 5.99,
             "currency": "AZN",
             "period": "monthly"
           },
           {
             "name": "Family (6 TB)",
-            "price": 12.99,
+            "price": 7.99,
             "currency": "AZN",
             "period": "monthly"
           }
         ]
       },
       "KRW": {
-        "base_price": 2500.0,
+        "base_price": 2400,
         "base_currency": "KRW",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 2500.0,
+            "price": 2400,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Personal (1 TB)",
-            "price": 8900.0,
+            "price": 8400,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Family (6 TB)",
-            "price": 11900.0,
+            "price": 12000,
             "currency": "KRW",
             "period": "monthly"
           }
         ]
       },
       "UAH": {
-        "base_price": 59.0,
+        "base_price": 39.0,
         "base_currency": "UAH",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 59.0,
+            "price": 39.0,
             "currency": "UAH",
             "period": "monthly"
           },
           {
             "name": "Personal (1 TB)",
-            "price": 189.0,
+            "price": 119.0,
             "currency": "UAH",
             "period": "monthly"
           },
           {
             "name": "Family (6 TB)",
-            "price": 249.0,
+            "price": 179.0,
             "currency": "UAH",
             "period": "monthly"
           }
         ]
       },
       "SEK": {
-        "base_price": 20.0,
+        "base_price": 19.0,
         "base_currency": "SEK",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 20.0,
+            "price": 19.0,
             "currency": "SEK",
             "period": "monthly"
           },
           {
             "name": "Personal (1 TB)",
-            "price": 75.0,
+            "price": 59.0,
             "currency": "SEK",
             "period": "monthly"
           },
           {
             "name": "Family (6 TB)",
-            "price": 100.0,
+            "price": 79.0,
             "currency": "SEK",
             "period": "monthly"
           }
         ]
       },
       "NOK": {
-        "base_price": 20.0,
+        "base_price": 19.0,
         "base_currency": "NOK",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 20.0,
+            "price": 19.0,
             "currency": "NOK",
             "period": "monthly"
           },
           {
             "name": "Personal (1 TB)",
-            "price": 75.0,
+            "price": 59.0,
             "currency": "NOK",
             "period": "monthly"
           },
           {
             "name": "Family (6 TB)",
-            "price": 100.0,
+            "price": 79.0,
             "currency": "NOK",
             "period": "monthly"
           }
         ]
       },
       "DKK": {
-        "base_price": 15.0,
+        "base_price": 9.0,
         "base_currency": "DKK",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 15.0,
+            "price": 9.0,
             "currency": "DKK",
             "period": "monthly"
           },
           {
             "name": "Personal (1 TB)",
-            "price": 55.0,
+            "price": 39.0,
             "currency": "DKK",
             "period": "monthly"
           },
           {
             "name": "Family (6 TB)",
-            "price": 75.0,
+            "price": 59.0,
             "currency": "DKK",
             "period": "monthly"
           }
         ]
       },
       "CAD": {
-        "base_price": 2.0,
+        "base_price": 1.99,
         "base_currency": "CAD",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 2.0,
+            "price": 1.99,
             "currency": "CAD",
             "period": "monthly"
           },
           {
             "name": "Personal (1 TB)",
-            "price": 8.0,
+            "price": 7.99,
             "currency": "CAD",
             "period": "monthly"
           },
           {
             "name": "Family (6 TB)",
-            "price": 11.0,
+            "price": 11.99,
             "currency": "CAD",
             "period": "monthly"
           }
         ]
       },
       "AUD": {
-        "base_price": 3.0,
+        "base_price": 1.99,
         "base_currency": "AUD",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 3.0,
+            "price": 1.99,
             "currency": "AUD",
             "period": "monthly"
           },
           {
             "name": "Personal (1 TB)",
-            "price": 10.0,
+            "price": 7.99,
             "currency": "AUD",
             "period": "monthly"
           },
           {
             "name": "Family (6 TB)",
-            "price": 13.0,
+            "price": 11.99,
             "currency": "AUD",
             "period": "monthly"
           }
         ]
       },
       "SGD": {
-        "base_price": 3.0,
+        "base_price": 1.99,
         "base_currency": "SGD",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 3.0,
+            "price": 1.99,
             "currency": "SGD",
             "period": "monthly"
           },
           {
             "name": "Personal (1 TB)",
-            "price": 11.0,
+            "price": 7.99,
             "currency": "SGD",
             "period": "monthly"
           },
           {
             "name": "Family (6 TB)",
-            "price": 15.0,
+            "price": 10.99,
             "currency": "SGD",
             "period": "monthly"
           }
         ]
       },
       "AED": {
-        "base_price": 7.0,
+        "base_price": 6.99,
         "base_currency": "AED",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 7.0,
+            "price": 6.99,
             "currency": "AED",
             "period": "monthly"
           },
           {
             "name": "Personal (1 TB)",
-            "price": 26.0,
+            "price": 22.99,
             "currency": "AED",
             "period": "monthly"
           },
           {
             "name": "Family (6 TB)",
-            "price": 37.0,
+            "price": 32.99,
             "currency": "AED",
             "period": "monthly"
           }
         ]
       },
       "SAR": {
-        "base_price": 7.0,
+        "base_price": 5.99,
         "base_currency": "SAR",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 7.0,
+            "price": 5.99,
             "currency": "SAR",
             "period": "monthly"
           },
           {
             "name": "Personal (1 TB)",
-            "price": 26.0,
+            "price": 20.99,
             "currency": "SAR",
             "period": "monthly"
           },
           {
             "name": "Family (6 TB)",
-            "price": 37.0,
+            "price": 29.99,
             "currency": "SAR",
             "period": "monthly"
           }
         ]
       },
       "THB": {
-        "base_price": 70.0,
+        "base_price": 29.0,
         "base_currency": "THB",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 70.0,
+            "price": 29.0,
             "currency": "THB",
             "period": "monthly"
           },
           {
             "name": "Personal (1 TB)",
-            "price": 210.0,
+            "price": 109.0,
             "currency": "THB",
             "period": "monthly"
           },
           {
             "name": "Family (6 TB)",
-            "price": 290.0,
+            "price": 159.0,
             "currency": "THB",
             "period": "monthly"
           }
         ]
       },
       "PLN": {
-        "base_price": 8.0,
+        "base_price": 3.99,
         "base_currency": "PLN",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 8.0,
+            "price": 3.99,
             "currency": "PLN",
             "period": "monthly"
           },
           {
             "name": "Personal (1 TB)",
-            "price": 30.0,
+            "price": 14.99,
             "currency": "PLN",
             "period": "monthly"
           },
           {
             "name": "Family (6 TB)",
-            "price": 43.0,
+            "price": 21.99,
             "currency": "PLN",
             "period": "monthly"
           }
         ]
       },
       "CZK": {
-        "base_price": 50.0,
+        "base_price": 29.0,
         "base_currency": "CZK",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 50.0,
+            "price": 29.0,
             "currency": "CZK",
             "period": "monthly"
           },
           {
             "name": "Personal (1 TB)",
-            "price": 190.0,
+            "price": 89.0,
             "currency": "CZK",
             "period": "monthly"
           },
           {
             "name": "Family (6 TB)",
-            "price": 270.0,
+            "price": 129.0,
             "currency": "CZK",
             "period": "monthly"
           }

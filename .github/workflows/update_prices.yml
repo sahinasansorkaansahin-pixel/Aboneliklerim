@@ -2,8 +2,8 @@ name: Update Streaming Prices Daily
 
 on:
   schedule:
-    # Her gün Türkiye saatiyle 03:00'te (UTC 00:00) çalışır
-    - cron: '0 0 * * *'
+    # Her 12 saatte bir çalışır
+    - cron: '0 */12 * * *'
   workflow_dispatch: # GitHub arayüzünden elle tetiklemek için
 
 permissions:
