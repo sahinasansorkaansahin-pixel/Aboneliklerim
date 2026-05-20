@@ -74,7 +74,7 @@ object StreamingPriceService {
             val reader = InputStreamReader(inputStream)
             val type = object : TypeToken<List<StreamingPlatform>>() {}.type
             val fullList: List<StreamingPlatform> = Gson().fromJson(reader, type)
-            fullList.filter { it.id == "prime_video" || it.id == "netflix" || it.id == "spotify" || it.id == "apple_music" }
+            fullList.filter { it.id == "prime_video" || it.id == "netflix" || it.id == "spotify" || it.id == "apple_music" || it.id == "google_one" || it.id == "microsoft_onedrive" }
         } catch (e: Exception) {
             e.printStackTrace()
             emptyList()
@@ -96,7 +96,7 @@ object StreamingPriceService {
                 try {
                     val type = object : TypeToken<List<StreamingPlatform>>() {}.type
                     val list: List<StreamingPlatform> = Gson().fromJson(cachedJson, type)
-                    val filtered = list.filter { it.id == "prime_video" || it.id == "netflix" || it.id == "spotify" || it.id == "apple_music" }
+                    val filtered = list.filter { it.id == "prime_video" || it.id == "netflix" || it.id == "spotify" || it.id == "apple_music" || it.id == "google_one" || it.id == "microsoft_onedrive" }
                     return@withContext resolvePlatformsForUserCurrency(context, filtered)
                 } catch (e: Exception) {
                     e.printStackTrace()
@@ -122,7 +122,7 @@ object StreamingPriceService {
                         if (bodyString != null) {
                             val type = object : TypeToken<List<StreamingPlatform>>() {}.type
                             val list: List<StreamingPlatform> = Gson().fromJson(bodyString, type)
-                            fetchedList = list.filter { it.id == "prime_video" || it.id == "netflix" || it.id == "spotify" || it.id == "apple_music" }
+                            fetchedList = list.filter { it.id == "prime_video" || it.id == "netflix" || it.id == "spotify" || it.id == "apple_music" || it.id == "google_one" || it.id == "microsoft_onedrive" }
                         }
                     }
                 }
@@ -144,7 +144,7 @@ object StreamingPriceService {
                     try {
                         val type = object : TypeToken<List<StreamingPlatform>>() {}.type
                         val list: List<StreamingPlatform> = Gson().fromJson(cachedJson, type)
-                        list.filter { it.id == "prime_video" || it.id == "netflix" || it.id == "spotify" || it.id == "apple_music" }
+                        list.filter { it.id == "prime_video" || it.id == "netflix" || it.id == "spotify" || it.id == "apple_music" || it.id == "google_one" || it.id == "microsoft_onedrive" }
                     } catch (e: Exception) { null }
                 } else {
                     null
@@ -175,7 +175,7 @@ object StreamingPriceService {
                 try {
                     val type = object : TypeToken<List<StreamingPlatform>>() {}.type
                     val list: List<StreamingPlatform> = Gson().fromJson(cachedJson, type)
-                    val filtered = list.filter { it.id == "prime_video" || it.id == "netflix" || it.id == "spotify" || it.id == "apple_music" }
+                    val filtered = list.filter { it.id == "prime_video" || it.id == "netflix" || it.id == "spotify" || it.id == "apple_music" || it.id == "google_one" || it.id == "microsoft_onedrive" }
                     return@withContext resolvePlatformsForUserCurrency(context, filtered)
                 } catch (e: Exception) {
                     e.printStackTrace()

@@ -668,7 +668,7 @@ class MoreFragment : Fragment() {
                     spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                         override fun onItemSelected(parent: AdapterView<*>?, v: View?, position: Int, id: Long) {
                             if (position == 0) {
-                                view.findViewById<ImageView>(R.id.imgSelectedStreamingLogo).visibility = View.INVISIBLE
+                                view.findViewById<ImageView>(R.id.imgSelectedStreamingLogo).visibility = View.GONE
                                 view.findViewById<TextView>(R.id.tvStreamingSelectedTrend).visibility = View.GONE
                                 view.findViewById<LinearLayout>(R.id.layoutStreamingDetails).visibility = View.GONE
                                 view.findViewById<ImageView>(R.id.imgSelectedStreamingBell).visibility = View.GONE

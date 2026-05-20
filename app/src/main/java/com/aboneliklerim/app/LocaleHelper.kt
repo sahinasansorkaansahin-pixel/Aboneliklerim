@@ -8,8 +8,8 @@ import java.util.Locale
 object LocaleHelper {
     val SUPPORTED_LOCALES = listOf(
         "tr-TR", "en-US", "de-DE", "fr-FR", "it-IT", "es-ES", "pt-PT", "nl-NL",
-        "sv-SE", "no-NO", "da-DK", "fi-FI", "pl-PL", "cs-CZ", "de-CH", "ja-JP", 
-        "ko-KR", "pt-BR", "th-TH", "ar-AE"
+        "sv-SE", "no-NO", "da-DK", "fi-FI", "pl-PL", "cs-CZ", "az-AZ", "ja-JP", 
+        "ko-KR", "uk-UA", "th-TH", "ar-AE"
     )
 
     fun getCountryFlag(localeTag: String): String {
@@ -19,8 +19,8 @@ object LocaleHelper {
             "TR" -> "🇹🇷"; "US" -> "🇺🇸"; "DE" -> "🇩🇪"; "FR" -> "🇫🇷"
             "IT" -> "🇮🇹"; "ES" -> "🇪🇸"; "PT" -> "🇵🇹"; "NL" -> "🇳🇱"
             "SE" -> "🇸🇪"; "NO" -> "🇳🇴"; "DK" -> "🇩🇰"; "FI" -> "🇫🇮"
-            "PL" -> "🇵🇱"; "CZ" -> "🇨🇿"; "CH" -> "🇨🇭"; "JP" -> "🇯🇵"
-            "KR" -> "🇰🇷"; "BR" -> "🇧🇷"; "TH" -> "🇹🇭"; "AE" -> "🇦🇪"
+            "PL" -> "🇵🇱"; "CZ" -> "🇨🇿"; "AZ" -> "🇦🇿"; "JP" -> "🇯🇵"
+            "KR" -> "🇰🇷"; "UA" -> "🇺🇦"; "TH" -> "🇹🇭"; "AE" -> "🇦🇪"
             else -> "🏳️"
         }
     }
