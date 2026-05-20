@@ -790,6 +790,8 @@ class MoreFragment : Fragment() {
                     "apple_music" -> finalUrl = if (countryCode == "us") "https://www.apple.com/apple-music/" else "https://www.apple.com/$countryCode/apple-music/"
                     "prime_video" -> finalUrl = "https://www.primevideo.com/"
                     "netflix" -> finalUrl = "https://www.netflix.com/"
+                    "microsoft_onedrive" -> finalUrl = "https://www.microsoft.com/${activeLang.lowercase()}/microsoft-365"
+                    "google_one" -> finalUrl = "https://one.google.com/"
                 }
                 
                 val intent = Intent(Intent.ACTION_VIEW, Uri.parse(finalUrl))
