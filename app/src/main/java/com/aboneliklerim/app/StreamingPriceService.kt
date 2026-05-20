@@ -97,7 +97,9 @@ object StreamingPriceService {
                     val type = object : TypeToken<List<StreamingPlatform>>() {}.type
                     val list: List<StreamingPlatform> = Gson().fromJson(cachedJson, type)
                     val filtered = list.filter { it.id == "prime_video" || it.id == "netflix" || it.id == "spotify" || it.id == "apple_music" || it.id == "google_one" || it.id == "microsoft_onedrive" }
-                    return@withContext resolvePlatformsForUserCurrency(context, filtered)
+                    if (filtered.any { it.id == "google_one" }) {
+                        return@withContext resolvePlatformsForUserCurrency(context, filtered)
+                    }
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
@@ -176,7 +178,9 @@ object StreamingPriceService {
                     val type = object : TypeToken<List<StreamingPlatform>>() {}.type
                     val list: List<StreamingPlatform> = Gson().fromJson(cachedJson, type)
                     val filtered = list.filter { it.id == "prime_video" || it.id == "netflix" || it.id == "spotify" || it.id == "apple_music" || it.id == "google_one" || it.id == "microsoft_onedrive" }
-                    return@withContext resolvePlatformsForUserCurrency(context, filtered)
+                    if (filtered.any { it.id == "google_one" }) {
+                        return@withContext resolvePlatformsForUserCurrency(context, filtered)
+                    }
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
