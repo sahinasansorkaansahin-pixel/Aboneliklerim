@@ -172,18 +172,18 @@
         ]
       },
       "NOK": {
-        "base_price": 129.0,
+        "base_price": 119.0,
         "base_currency": "NOK",
         "plans": [
           {
             "name": "Prime Video",
-            "price": 79.0,
+            "price": 69.0,
             "currency": "NOK",
             "period": "monthly"
           },
           {
             "name": "Prime Monthly",
-            "price": 129.0,
+            "price": 119.0,
             "currency": "NOK",
             "period": "monthly"
           }
@@ -1095,13 +1095,13 @@
           },
           {
             "name": "Duo",
-            "price": 22800,
+            "price": 22900,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 26400,
+            "price": 26500,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1408,7 +1408,7 @@
         ]
       },
       "PLN": {
-        "base_price": 28.99,
+        "base_price": 27.99,
         "base_currency": "PLN",
         "plans": [
           {
@@ -1419,7 +1419,7 @@
           },
           {
             "name": "Individual",
-            "price": 28.99,
+            "price": 27.99,
             "currency": "PLN",
             "period": "monthly"
           },
@@ -1680,7 +1680,7 @@
           },
           {
             "name": "Family",
-            "price": 20400,
+            "price": 20500,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -2301,7 +2301,7 @@
           },
           {
             "name": "Standard (200 GB)",
-            "price": 2.99,
+            "price": 3.99,
             "currency": "CAD",
             "period": "monthly"
           },
@@ -2458,12 +2458,12 @@
         ]
       },
       "CZK": {
-        "base_price": 29.0,
+        "base_price": 19.0,
         "base_currency": "CZK",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 29.0,
+            "price": 19.0,
             "currency": "CZK",
             "period": "monthly"
           },
@@ -2965,12 +2965,12 @@
         ]
       },
       "CZK": {
-        "base_price": 29.0,
+        "base_price": 19.0,
         "base_currency": "CZK",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 29.0,
+            "price": 19.0,
             "currency": "CZK",
             "period": "monthly"
           },
