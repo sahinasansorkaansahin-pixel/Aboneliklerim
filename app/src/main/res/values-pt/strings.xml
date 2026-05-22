@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Aboneliklerim</string>
     <string name="my_subscriptions">Minhas assinaturas</string>
@@ -115,7 +115,7 @@
     <string name="onboarding_title_4">Estatísticas detalhadas</string>
     <string name="onboarding_desc_4">Analise seus gastos com gráficos mensais e anuais para economizar dinheiro.</string>
     <string name="onboarding_title_5">Suporte global e rastreamento de moeda</string>
-    <string name="onboarding_desc_5">Gerencie assinaturas em vários idiomas e moedas. Acompanhe as taxas de câmbio em tempo real integradas para todos os países suportados.</string>
+    <string name="onboarding_desc_5">Gerencie assinaturas em vários idiomas e moedas. Acompanhe as taxas de câmbio integradas em tempo real para todos os países suportados.</string>
     <string name="onboarding_title_6">Marcação avançada</string>
     <string name="onboarding_desc_6">Categorize suas assinaturas para gerenciar melhor seus gastos.</string>
     <string name="onboarding_title_7">Backup local e na nuvem</string>
@@ -168,6 +168,7 @@
     <string name="filter_tags">Etiquetas</string>
     <string name="filter_archived">Arquivado</string>
     <string name="default_currency">Moeda padrão</string>
+    <string name="display_currency">Exibir moeda</string>
     <string name="date_format">Formato de data</string>
     <string name="select_date_format">Selecione o formato de data</string>
     <string name="no_subs_to_backup">Você não tem nenhuma assinatura para fazer backup.</string>
@@ -178,7 +179,7 @@
     <string name="archive">Arquivo</string>
     <string name="unarchive">Restaurar</string>
     <string name="filter_all">Todos</string>
-    <string name="filter_regular_only">Apenas regular</string>
+    <string name="filter_regular_only">Apenas normal</string>
     <string name="filter_one_time_only">Somente uma vez</string>
     <string name="filter_payment_type_label">Filtro de tipo de pagamento</string>
     <string name="logout">Sair</string>
@@ -216,19 +217,14 @@
     <string name="no_local_backup">Nenhum backup local encontrado.</string>
     <string name="local_delete_confirm">Tem certeza de que deseja excluir o backup local?</string>
     <string name="local_restore_confirm">Quando o backup local for restaurado, ele substituirá os dados atuais. Você quer continuar?</string>
-    <string name="tester_tools">FERRAMENTAS DE TESTE</string>
-    <string name="show_ad_id">Mostrar meu ID de publicidade</string>
     <string name="account">Conta</string>
     <string name="made_by">Feito por FALCON ANDROİD STUDİO</string>
     <string name="msg_archived">Arquivado</string>
     <string name="msg_unarchived">Restaurado</string>
     <string name="google_login_failed">Falha no login do Google: %s</string>
     <string name="google_login_cancelled">Login do Google cancelado. Código: %s</string>
-    <string name="ad_id_copied">ID de publicidade copiado:\n%s</string>
-    <string name="ad_id_failed">Falha ao obter ID: %s</string>
     <string name="error_general">Erro: %s</string>
     <string name="play_services_update">Atualize o Google Play Services</string>
-    <string name="ad_inspector_preparing">Preparando o Inspetor de Anúncios...</string>
     <string name="duplicate_contact_warning">Este contato já foi adicionado</string>
     <string name="legal_and_privacy">Jurídico e privacidade</string>
     <string name="policy_privacy_title">política de Privacidade</string>
@@ -267,5 +263,23 @@
     <string name="premium_active_toast">Ativo Premium! 🎉</string>
     <string name="billing_connection_failed">Não foi possível estabelecer conexão com o Google Play. Verifique sua conexão com a Internet e tente novamente.</string>
     <string name="ok">OK</string>
-    <string name="tester_premium_toggle">Alternar status Premium (teste)</string>
-</resources>
+    <string name="blue_light_filter">Filtro de luz azul</string>
+    <string name="add_photo">Adicionar foto</string>
+    <string name="change_photo">Alterar foto</string>
+    <string name="choose_from_gallery">Escolha na Galeria</string>
+    <string name="remove_photo">Remover foto</string>
+    <string name="payment_today">Pagamento hoje!</string>
+    <string name="upcoming_widget">Próximo widget de pagamento</string>
+    <string name="widget_status_off">Widget desativado</string>
+    <string name="no_upcoming_subs">Nenhuma assinatura futura</string>
+    <string name="no_subs_at_all">Nenhuma assinatura adicionada ainda</string>
+    <string name="widget_instructions_title">Como adicionar widget</string>
+    <string name="widget_instructions_text">1. Vá para a tela inicial do seu telefone.\n2. Mantenha pressionado uma área vazia ou o ícone do aplicativo.\n3. Selecione \"Widgets\".\n4. Encontre \"Aboneliklerim\" e arraste-o para a tela.</string>
+    <string name="biometric_title">Segurança de aplicativos</string>
+    <string name="biometric_subtitle">Desbloqueie Aboneliklerim para continuar</string>
+    <string name="app_lock">Bloqueio de aplicativo</string>
+    <string name="default_currency_view">Moeda padrão (plano)</string>
+    <string name="active_users_loading">Usuários on-line: ...</string>
+    <string name="active_users_count">Usuários ativos atuais: %d</string>
+    <string name="currency_info_msg">Esta opção permite definir a moeda que deseja usar ao criar um novo plano.</string>
+<string name="no_plans_found">Nenhum plano encontrado</string></resources>

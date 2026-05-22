@@ -110,7 +110,8 @@ object FirebaseManager {
                                     name = contactMap["name"] as? String ?: "",
                                     phoneNumber = contactMap["phoneNumber"] as? String ?: ""
                                 )
-                            } ?: emptyList()
+                            } ?: emptyList(),
+                            imagePath = map["imagePath"] as? String
                         )
                     }
                     onResult(subscriptions, profile)

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="12dp"
+    android:paddingBottom="12dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?attr/selectableItemBackground">
+
+    <!-- Row 1: Source + Category Badges + Date -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Source Badge -->
+        <TextView
+            android:id="@+id/tvNewsSource"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CNET"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_indigo"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="3dp"
+            android:layout_marginEnd="6dp" />
+
+        <!-- Category Badge -->
+        <TextView
+            android:id="@+id/tvNewsCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zam"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:textColor="#FF5252"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="3dp"
+            android:visibility="gone" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Date -->
+        <TextView
+            android:id="@+id/tvNewsDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="May 2026"
+            android:textColor="@color/text_secondary"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/tvNewsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/text_main"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:maxLines="2"
+        android:ellipsize="end" />
+
+    <!-- Description -->
+    <TextView
+        android:id="@+id/tvNewsDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp"
+        android:maxLines="3"
+        android:ellipsize="end" />
+
+    <!-- Divider -->
+    <View
+        android:id="@+id/vNewsDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/surface_secondary"
+        android:layout_marginTop="12dp" />
+
+</LinearLayout>

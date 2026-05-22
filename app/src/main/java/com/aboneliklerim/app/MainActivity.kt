@@ -33,6 +33,7 @@ class MainActivity : BaseActivity() {
         var showTagsGlobal = true
         var showActiveOnlyGlobal = true
         var paymentTypeFilterGlobal = 0 // 0: All, 1: Regular, 2: One-time
+        var selectedDisplayCurrencyGlobal: String? = null // null = All (Premium)
     }
 
     private var homeFragment = HomeFragment()
@@ -121,11 +122,11 @@ class MainActivity : BaseActivity() {
             val subscriptions: List<Subscription> = com.google.gson.Gson().fromJson(json, type) ?: emptyList()
             
             val prefsSettings = getSharedPreferences("Settings", Context.MODE_PRIVATE)
-            val isPremium = prefsSettings.getBoolean("is_premium_active", false)
-            val limit = if (isPremium) 100 else 8
+            val isPremiumInner = prefsSettings.getBoolean("is_premium_active", false)
+            val limit = if (isPremiumInner) 100 else 8
             
             if (subscriptions.size >= limit) {
-                if (!isPremium) {
+                if (!isPremiumInner) {
                     startActivity(Intent(this, PremiumActivity::class.java))
                 } else {
                     Toast.makeText(this, getString(R.string.premium_limit_max), Toast.LENGTH_LONG).show()
@@ -134,12 +135,6 @@ class MainActivity : BaseActivity() {
             }
 
             startActivityForResult(Intent(this, AddEditActivity::class.java), 100)
-        }
-
-        // Alternatif Giriş: Alttaki mor barın herhangi bir yerine uzun basınca Inspector açılır
-        findViewById<View>(R.id.bottomAppBar)?.setOnLongClickListener {
-            openInspector()
-            true
         }
 
         scheduleNotifications()
@@ -181,6 +176,8 @@ class MainActivity : BaseActivity() {
         }
     }
 
+    private fun loadBannerAdsInner() {}
+
     private fun loadInterstitialAd() {
         val adRequest = AdRequest.Builder().build()
         InterstitialAd.load(this, "ca-app-pub-3041412504257891/3575008419", adRequest,
@@ -221,16 +218,6 @@ class MainActivity : BaseActivity() {
         }
     }
 
-    private fun openInspector() {
-        Toast.makeText(this, getString(R.string.ad_inspector_preparing), Toast.LENGTH_SHORT).show()
-        MobileAds.openAdInspector(this) { error ->
-            if (error != null) {
-                Log.e("AdMob", "Inspector Açılamadı: ${error.message}")
-                Toast.makeText(this, getString(R.string.error_general, error.message ?: ""), Toast.LENGTH_LONG).show()
-            }
-        }
-    }
-
     private fun setupFragments(savedInstanceState: Bundle?) {
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction().apply {
@@ -264,6 +251,10 @@ class MainActivity : BaseActivity() {
         mAdViewBottom?.resume()
         val prefs = getSharedPreferences("Settings", Context.MODE_PRIVATE)
         CurrencyService.isPremiumActive = prefs.getBoolean("is_premium_active", false)
+        
+        // Ensure widget is synced with current theme (especially for smart mode transitions)
+        SubscriptionWidget.updateWidget(this)
+        SubscriptionOneTimeWidget.updateWidget(this)
     }
 
     override fun onDestroy() {

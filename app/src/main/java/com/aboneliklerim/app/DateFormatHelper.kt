@@ -7,17 +7,18 @@ import java.util.*
 object DateFormatHelper {
     
     val FORMATS = listOf(
-        "dd/MM/yyyy",
+        "dd.MM.yyyy",
         "MM/dd/yyyy",
-        "yyyy/MM/dd"
+        "yyyy-MM-dd",
+        "dd MMM yyyy"
     )
 
     fun getDefaultFormat(context: Context): String {
         val activeLang = LocaleHelper.getActiveLanguage(context)
         return when {
             activeLang.startsWith("en-US") -> "MM/dd/yyyy"
-            activeLang.startsWith("ja") || activeLang.startsWith("ko") || activeLang.startsWith("zh") -> "yyyy/MM/dd"
-            else -> "dd/MM/yyyy"
+            activeLang.startsWith("ja") || activeLang.startsWith("ko") || activeLang.startsWith("zh") || activeLang.startsWith("sv") -> "yyyy-MM-dd"
+            else -> "dd.MM.yyyy"
         }
     }
 
@@ -32,8 +33,8 @@ object DateFormatHelper {
             val sdfInternal = SimpleDateFormat("yyyy-MM-dd", Locale.US)
             val date = sdfInternal.parse(dateStr) ?: return dateStr
             val selectedFormat = getSelectedFormat(context)
-            // Sistem dilini ve formatı eşleştir
-            val sdfDisplay = SimpleDateFormat(selectedFormat, Locale.getDefault())
+            val appLocale = Locale.forLanguageTag(LocaleHelper.getActiveLanguage(context))
+            val sdfDisplay = SimpleDateFormat(selectedFormat, appLocale)
             return sdfDisplay.format(date)
         } catch (e: Exception) {
             return dateStr
@@ -42,7 +43,8 @@ object DateFormatHelper {
     
     fun formatForDisplay(context: Context, date: Date): String {
         val selectedFormat = getSelectedFormat(context)
-        val sdfDisplay = SimpleDateFormat(selectedFormat, Locale.getDefault())
+        val appLocale = Locale.forLanguageTag(LocaleHelper.getActiveLanguage(context))
+        val sdfDisplay = SimpleDateFormat(selectedFormat, appLocale)
         return sdfDisplay.format(date)
     }
 }

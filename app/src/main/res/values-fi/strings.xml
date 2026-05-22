@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Aboneliklerim</string>
     <string name="my_subscriptions">Omat tilaukset</string>
@@ -42,7 +42,7 @@
     <string name="edit_subscription">Muokkaa tilausta</string>
     <string name="off">Pois</string>
     <string name="same_day">Sama päivä</string>
-    <string name="one_day_before">1 päivää ennen</string>
+    <string name="one_day_before">1 päivä ennen</string>
     <string name="three_days_before">3 päivää ennen</string>
     <string name="seven_days_before">7 päivää ennen</string>
     <string name="custom_days_before">%d päivää ennen</string>
@@ -115,7 +115,7 @@
     <string name="onboarding_title_4">Yksityiskohtaiset tilastot</string>
     <string name="onboarding_desc_4">Analysoi kulutustasi kuukausi- ja vuosikaavioiden avulla säästääksesi rahaa.</string>
     <string name="onboarding_title_5">Globaali tuki ja valuuttaseuranta</string>
-    <string name="onboarding_desc_5">Hallinnoi tilauksia useilla kielillä ja valuutoilla. Seuraa tuettujen maiden integroituja reaaliaikaisia ​​valuuttakursseja.</string>
+    <string name="onboarding_desc_5">Hallitse tilauksia useilla kielillä ja valuutoilla. Seuraa kaikkien tuettujen maiden integroituja reaaliaikaisia ​​valuuttakursseja.</string>
     <string name="onboarding_title_6">Advanced Tagging</string>
     <string name="onboarding_desc_6">Luokittele tilauksesi hallitaksesi kulutustasi paremmin.</string>
     <string name="onboarding_title_7">Paikallinen ja pilvivarmuuskopio</string>
@@ -168,6 +168,7 @@
     <string name="filter_tags">Tunnisteet</string>
     <string name="filter_archived">Arkistoitu</string>
     <string name="default_currency">Oletusvaluutta</string>
+    <string name="display_currency">Näytä valuutta</string>
     <string name="date_format">Päivämäärän muoto</string>
     <string name="select_date_format">Valitse Päivämäärän muoto</string>
     <string name="no_subs_to_backup">Sinulla ei ole varmuuskopioitavia tilauksia.</string>
@@ -216,19 +217,14 @@
     <string name="no_local_backup">Paikallista varmuuskopiota ei löytynyt.</string>
     <string name="local_delete_confirm">Haluatko varmasti poistaa paikallisen varmuuskopion?</string>
     <string name="local_restore_confirm">Kun paikallinen varmuuskopio palautetaan, se korvaa nykyiset tietosi. Haluatko jatkaa?</string>
-    <string name="tester_tools">TESTERI TYÖKALUT</string>
-    <string name="show_ad_id">Näytä mainostunnukseni</string>
     <string name="account">Tili</string>
     <string name="made_by">Valmistaja FALCON ANDROİD STUDİO</string>
     <string name="msg_archived">Arkistoitu</string>
     <string name="msg_unarchived">Palautettu</string>
     <string name="google_login_failed">Google-sisäänkirjautuminen epäonnistui: %s</string>
     <string name="google_login_cancelled">Google-sisäänkirjautuminen peruutettu. Koodi: %s</string>
-    <string name="ad_id_copied">Mainostunnus kopioitu:\n%s</string>
-    <string name="ad_id_failed">ID:n saaminen epäonnistui: %s</string>
     <string name="error_general">Virhe: %s</string>
     <string name="play_services_update">Päivitä Google Play Palvelut</string>
-    <string name="ad_inspector_preparing">Valmistellaan Ad Inspectoria...</string>
     <string name="duplicate_contact_warning">Tämä yhteystieto on jo lisätty</string>
     <string name="legal_and_privacy">Laki ja yksityisyys</string>
     <string name="policy_privacy_title">Tietosuojakäytäntö</string>
@@ -267,5 +263,23 @@
     <string name="premium_active_toast">Premium aktiivinen! 🎉</string>
     <string name="billing_connection_failed">Yhteyttä Google Playhin ei voitu muodostaa. Tarkista internetyhteytesi ja yritä uudelleen.</string>
     <string name="ok">OK</string>
-    <string name="tester_premium_toggle">Vaihda Premium-tila (testi)</string>
-</resources>
+    <string name="blue_light_filter">Sinisen valon suodatin</string>
+    <string name="add_photo">Lisää valokuva</string>
+    <string name="change_photo">Vaihda valokuva</string>
+    <string name="choose_from_gallery">Valitse Galleriasta</string>
+    <string name="remove_photo">Poista valokuva</string>
+    <string name="payment_today">Maksu tänään!</string>
+    <string name="upcoming_widget">Tuleva maksuwidget</string>
+    <string name="widget_status_off">Widget pois käytöstä</string>
+    <string name="no_upcoming_subs">Ei tulevia tilauksia</string>
+    <string name="no_subs_at_all">Tilauksia ei ole vielä lisätty</string>
+    <string name="widget_instructions_title">Widgetin lisääminen</string>
+    <string name="widget_instructions_text">1. Siirry puhelimesi aloitusnäyttöön.\n2. Paina pitkään tyhjää aluetta tai sovelluskuvaketta.\n3. Valitse \"Widgetit\".\n4. Etsi \"Aboneliklerim\" ja vedä se näytölle.</string>
+    <string name="biometric_title">Sovelluksen suojaus</string>
+    <string name="biometric_subtitle">Avaa Aboneliklerim jatkaaksesi</string>
+    <string name="app_lock">Sovelluksen lukitus</string>
+    <string name="default_currency_view">Oletusvaluutta (suunnitelma)</string>
+    <string name="active_users_loading">Online-käyttäjät:...</string>
+    <string name="active_users_count">Nykyiset aktiiviset käyttäjät: %d</string>
+    <string name="currency_info_msg">Tämän vaihtoehdon avulla voit määrittää valuutan, jota haluat käyttää uutta suunnitelmaa luodessasi.</string>
+<string name="no_plans_found">Suunnitelmia ei löytynyt</string></resources>

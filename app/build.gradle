@@ -88,6 +88,11 @@ dependencies {
 
     // Google Play Billing
     implementation libs.billing.ktx
+
+    // Newly added dependencies
+    implementation 'com.google.firebase:firebase-database'
+    implementation 'androidx.biometric:biometric:1.2.0-alpha05'
+    implementation 'com.google.android.play:review-ktx:2.0.1'
 }
 
 

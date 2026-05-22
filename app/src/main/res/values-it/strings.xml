@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Aboneliklerim</string>
     <string name="my_subscriptions">I miei abbonamenti</string>
@@ -115,13 +115,13 @@
     <string name="onboarding_title_4">Statistiche dettagliate</string>
     <string name="onboarding_desc_4">Analizza le tue spese con grafici mensili e annuali per risparmiare denaro.</string>
     <string name="onboarding_title_5">Supporto globale e monitoraggio della valuta</string>
-    <string name="onboarding_desc_5">Gestisci abbonamenti in numerose lingue e valute. Tieni traccia dei tassi di cambio in tempo reale integrati per tutti i paesi supportati.</string>
+    <string name="onboarding_desc_5">Gestisci abbonamenti in numerose lingue e valute. Tieni traccia dei tassi di cambio integrati in tempo reale per tutti i paesi supportati.</string>
     <string name="onboarding_title_6">Etichettatura avanzata</string>
     <string name="onboarding_desc_6">Categorizza i tuoi abbonamenti per gestire al meglio le tue spese.</string>
     <string name="onboarding_title_7">Backup locale e sul cloud</string>
     <string name="onboarding_desc_7">Esegui il backup dei tuoi dati sia localmente sul tuo dispositivo che nel cloud per accedervi da tutti i tuoi dispositivi.</string>
     <string name="onboarding_title_8">Inizia ora!</string>
-    <string name="onboarding_desc_8">Controlla subito i tuoi abbonamenti aggiungendo il primo.</string>
+    <string name="onboarding_desc_8">Controlla subito i tuoi abbonamenti aggiungendo il tuo primo.</string>
     <string name="onboarding_title_9">Condivisione dei costi</string>
     <string name="onboarding_desc_9">Dividi i costi di abbonamento con amici o familiari e invia rapidi promemoria di pagamento con un clic!</string>
     <string name="onboarding_title_10">Passa a Premium e senza pubblicità</string>
@@ -168,6 +168,7 @@
     <string name="filter_tags">Tag</string>
     <string name="filter_archived">Archiviato</string>
     <string name="default_currency">Valuta predefinita</string>
+    <string name="display_currency">Visualizza valuta</string>
     <string name="date_format">Formato data</string>
     <string name="select_date_format">Seleziona il formato della data</string>
     <string name="no_subs_to_backup">Non hai abbonamenti di cui eseguire il backup.</string>
@@ -216,19 +217,14 @@
     <string name="no_local_backup">Nessun backup locale trovato.</string>
     <string name="local_delete_confirm">Sei sicuro di voler eliminare il backup locale?</string>
     <string name="local_restore_confirm">Quando il backup locale viene ripristinato, sovrascriverà i dati correnti. Vuoi continuare?</string>
-    <string name="tester_tools">STRUMENTI DI TESTER</string>
-    <string name="show_ad_id">Mostra il mio ID pubblicitario</string>
     <string name="account">Account</string>
     <string name="made_by">Realizzato da FALCON ANDROİD STUDİO</string>
     <string name="msg_archived">Archiviato</string>
     <string name="msg_unarchived">Restaurato</string>
     <string name="google_login_failed">Accesso a Google non riuscito: %s</string>
     <string name="google_login_cancelled">Accesso a Google annullato. Codice: %s</string>
-    <string name="ad_id_copied">ID pubblicità copiato:\n%s</string>
-    <string name="ad_id_failed">Impossibile ottenere l\'ID: %s</string>
     <string name="error_general">Errore: %s</string>
     <string name="play_services_update">Aggiorna Google Play Services</string>
-    <string name="ad_inspector_preparing">Preparazione dello strumento di controllo annunci...</string>
     <string name="duplicate_contact_warning">Questo contatto è già aggiunto</string>
     <string name="legal_and_privacy">Legale e Privacy</string>
     <string name="policy_privacy_title">politica sulla riservatezza</string>
@@ -267,5 +263,23 @@
     <string name="premium_active_toast">Attivo Premium! 🎉</string>
     <string name="billing_connection_failed">Impossibile stabilire la connessione con Google Play. Controlla la connessione Internet e riprova.</string>
     <string name="ok">OK</string>
-    <string name="tester_premium_toggle">Attiva/disattiva lo stato Premium (test)</string>
-</resources>
+    <string name="blue_light_filter">Filtro luce blu</string>
+    <string name="add_photo">Aggiungi foto</string>
+    <string name="change_photo">Cambia foto</string>
+    <string name="choose_from_gallery">Scegli dalla Galleria</string>
+    <string name="remove_photo">Rimuovi foto</string>
+    <string name="payment_today">Pagamento oggi!</string>
+    <string name="upcoming_widget">Prossimo widget di pagamento</string>
+    <string name="widget_status_off">Widget disabilitato</string>
+    <string name="no_upcoming_subs">Nessun abbonamento imminente</string>
+    <string name="no_subs_at_all">Nessun abbonamento ancora aggiunto</string>
+    <string name="widget_instructions_title">Come aggiungere widget</string>
+    <string name="widget_instructions_text">1. Vai alla schermata Home del tuo telefono.\n2. Premi a lungo su un\'area vuota o sull\'icona dell\'app.\n3. Seleziona \"Widget\".\n4. Trova \"Aboneliklerim\" e trascinalo sullo schermo.</string>
+    <string name="biometric_title">Sicurezza dell\'app</string>
+    <string name="biometric_subtitle">Sblocca Aboneliklerim per continuare</string>
+    <string name="app_lock">Blocco dell\'app</string>
+    <string name="default_currency_view">Valuta predefinita (piano)</string>
+    <string name="active_users_loading">Utenti in linea: ...</string>
+    <string name="active_users_count">Utenti attivi attuali: %d</string>
+    <string name="currency_info_msg">Questa opzione ti consente di impostare la valuta che desideri utilizzare quando crei un nuovo piano.</string>
+<string name="no_plans_found">Nessun piano trovato</string></resources>

@@ -1,0 +1,34 @@
+[
+  {
+    "title": "PlayStation Plus May 2026 Catalog Expansion Revealed",
+    "description": "Sony has officially announced the new batch of free monthly games and catalog additions for all PlayStation Plus tiers, including major blockbuster releases.",
+    "link": "https://www.playstation.com",
+    "source": "PlayStation",
+    "date": "May 2026",
+    "type": "campaign"
+  },
+  {
+    "title": "Netflix Introduces Advanced AI Search for Premium Subscribers",
+    "description": "Streaming giant Netflix is rolling out an AI-driven smart discovery tool exclusive to Premium accounts, making personalized recommendations faster than ever.",
+    "link": "https://www.netflix.com",
+    "source": "Netflix",
+    "date": "May 2026",
+    "type": "campaign"
+  },
+  {
+    "title": "Spotify Premium Hi-Fi Subscription Upgrade Plans Leaked",
+    "description": "Internal reports suggest Spotify is preparing to launch its highly anticipated lossless audio tier with a minor price adjust in select European markets.",
+    "link": "https://www.spotify.com",
+    "source": "Spotify",
+    "date": "May 2026",
+    "type": "hike"
+  },
+  {
+    "title": "Xbox Game Pass Adds Exciting New Titles and Member Discounts",
+    "description": "Microsoft continues to pack Xbox Game Pass with value, adding several day-one releases and announcing exclusive premium member discounts for the spring season.",
+    "link": "https://www.xbox.com",
+    "source": "Xbox",
+    "date": "May 2026",
+    "type": "discount"
+  }
+]

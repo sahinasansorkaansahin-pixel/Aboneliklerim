@@ -114,48 +114,89 @@
             </androidx.cardview.widget.CardView>
 
             <!-- Statistics Grid -->
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:orientation="horizontal" android:layout_marginBottom="16dp">
-                <androidx.cardview.widget.CardView android:layout_width="0dp" android:layout_height="match_parent"
-                    android:layout_weight="1" android:layout_marginEnd="8dp"
-                    app:cardBackgroundColor="@color/surface_main" app:cardCornerRadius="16dp">
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
-                        android:orientation="vertical" android:padding="16dp"
-                        android:gravity="center_vertical">
-                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-                            android:text="@string/most_expensive" android:textColor="@color/text_secondary"
-                            android:textSize="13sp" android:gravity="center" android:layout_marginBottom="4dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp"
+                android:baselineAligned="false">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.3"
+                    android:layout_marginEnd="8dp"
+                    app:cardBackgroundColor="@color/surface_main"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingVertical="12dp"
+                        android:paddingHorizontal="8dp"
+                        android:gravity="center">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/most_expensive"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:layout_marginBottom="4dp"/>
                         <TextView
                             android:id="@+id/tvReportMostExpensive"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="-"
                             android:textColor="@color/text_main"
-                            android:textSize="14sp"
+                            android:textSize="13sp"
                             android:textStyle="bold"
                             android:gravity="center"
-                            android:singleLine="true"
-                            android:ellipsize="marquee"
-                            android:marqueeRepeatLimit="marquee_forever"
-                            android:focusable="true"
-                            android:focusableInTouchMode="true"
-                            android:scrollHorizontally="true" />
+                            android:maxLines="2"
+                            android:ellipsize="end" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView android:layout_width="0dp" android:layout_height="match_parent"
-                    android:layout_weight="1" android:layout_marginStart="8dp"
-                    app:cardBackgroundColor="@color/surface_main" app:cardCornerRadius="16dp">
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
-                        android:orientation="vertical" android:padding="16dp"
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    app:cardBackgroundColor="@color/surface_main"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingVertical="12dp"
+                        android:paddingHorizontal="8dp"
                         android:gravity="center">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:text="@string/subscriptions" android:textColor="@color/text_secondary"
-                            android:textSize="13sp" android:gravity="center" android:layout_marginBottom="4dp"/>
-                        <TextView android:id="@+id/tvReportSubCount" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:text="0" android:textColor="@color/text_main" android:textSize="16sp" android:textStyle="bold"
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/subscriptions"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            android:layout_marginBottom="2dp"/>
+                        <TextView
+                            android:id="@+id/tvReportSubCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textColor="@color/text_main"
+                            android:textSize="24sp"
+                            android:textStyle="bold"
                             android:gravity="center"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
             </LinearLayout>
 
             <!-- Spending Trend Card -->
@@ -167,66 +208,27 @@
                 app:cardBackgroundColor="@color/surface_main"
                 app:cardCornerRadius="16dp">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                    android:orientation="vertical" android:padding="16dp">
-                    
-                    <TextView android:id="@+id/tvTrendTitle" android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:text="@string/spending_trend" android:textColor="@color/text_secondary" android:layout_marginBottom="16dp"
-                        android:gravity="center" android:textStyle="bold" android:textSize="14sp"/>
+                    android:orientation="vertical"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="4dp"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp">
 
-                    <FrameLayout
+                    <TextView android:id="@+id/tvTrendTitle"
                         android:layout_width="match_parent"
-                        android:layout_height="140dp">
-                        
-                        <HorizontalScrollView
-                            android:id="@+id/hsvTrend"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:scrollbars="none"
-                            android:fillViewport="true">
-                            <LinearLayout
-                                android:id="@+id/llTrendBarsContainer"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal"
-                                android:gravity="bottom"
-                                android:paddingHorizontal="8dp" />
-                        </HorizontalScrollView>
+                        android:layout_height="wrap_content"
+                        android:text="@string/spending_trend"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginBottom="4dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textSize="14sp"/>
 
-                        <ImageView
-                            android:id="@+id/ivSwipeHintTrend"
-                            android:layout_width="72dp"
-                            android:layout_height="72dp"
-                            android:layout_gravity="center"
-                            android:src="@drawable/ic_swipe_horizontal"
-                            android:alpha="0.6"
-                            android:visibility="gone" />
+                    <com.aboneliklerim.app.SpendingTrendChartView
+                        android:id="@+id/trendChartView"
+                        android:layout_width="match_parent"
+                        android:layout_height="210dp"/>
 
-                        <!-- Premium Lock Overlay -->
-                        <LinearLayout
-                            android:id="@+id/layoutTrendPremiumOverlay"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="#EE0B0B14"
-                            android:orientation="vertical"
-                            android:gravity="center"
-                            android:clickable="true"
-                            android:focusable="true"
-                            android:visibility="gone">
-                            <ImageView 
-                                android:layout_width="40dp" 
-                                android:layout_height="40dp" 
-                                android:src="@drawable/ic_lock" 
-                                app:tint="#8E8E93"/>
-                            <TextView 
-                                android:layout_width="wrap_content" 
-                                android:layout_height="wrap_content" 
-                                android:text="@string/premium_get_service" 
-                                android:textColor="#8E8E93" 
-                                android:textSize="14sp" 
-                                android:textStyle="bold" 
-                                android:layout_marginTop="8dp"/>
-                        </LinearLayout>
-                    </FrameLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

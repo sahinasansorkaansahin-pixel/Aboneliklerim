@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Aboneliklerim</string>
     <string name="my_subscriptions">Mes abonnements</string>
@@ -115,14 +115,14 @@
     <string name="onboarding_title_4">Statistiques détaillées</string>
     <string name="onboarding_desc_4">Analysez vos dépenses avec des graphiques mensuels et annuels pour économiser de l\'argent.</string>
     <string name="onboarding_title_5">Assistance mondiale et suivi des devises</string>
-    <string name="onboarding_desc_5">Gérez les abonnements dans de nombreuses langues et devises. Suivez les taux de change en temps réel intégrés pour tous les pays pris en charge.</string>
+    <string name="onboarding_desc_5">Gérez les abonnements dans de nombreuses langues et devises. Suivez les taux de change intégrés en temps réel pour tous les pays pris en charge.</string>
     <string name="onboarding_title_6">Marquage avancé</string>
     <string name="onboarding_desc_6">Catégorisez vos abonnements pour mieux gérer vos dépenses.</string>
     <string name="onboarding_title_7">Sauvegarde locale et cloud</string>
     <string name="onboarding_desc_7">Sauvegardez vos données localement sur votre appareil et dans le cloud pour y accéder depuis tous vos appareils.</string>
     <string name="onboarding_title_8">Commencez maintenant !</string>
     <string name="onboarding_desc_8">Contrôlez vos abonnements dès maintenant en ajoutant votre premier.</string>
-    <string name="onboarding_title_9">Partage des Coûts</string>
+    <string name="onboarding_title_9">Partage des coûts</string>
     <string name="onboarding_desc_9">Partagez les frais d\'abonnement avec vos amis ou votre famille et envoyez des rappels de paiement rapides en un clic !</string>
     <string name="onboarding_title_10">Passez à Premium et sans publicité</string>
     <string name="onboarding_desc_10">Profitez de sauvegardes illimitées, de taux de change en temps réel, d\'un partage avancé des coûts et d\'une expérience premium totalement sans publicité.</string>
@@ -168,6 +168,7 @@
     <string name="filter_tags">Balises</string>
     <string name="filter_archived">Archivé</string>
     <string name="default_currency">Devise par défaut</string>
+    <string name="display_currency">Devise d\'affichage</string>
     <string name="date_format">Format des dates</string>
     <string name="select_date_format">Sélectionnez le format de date</string>
     <string name="no_subs_to_backup">Vous n\'avez aucun abonnement à sauvegarder.</string>
@@ -216,19 +217,14 @@
     <string name="no_local_backup">Aucune sauvegarde locale trouvée.</string>
     <string name="local_delete_confirm">Êtes-vous sûr de vouloir supprimer la sauvegarde locale ?</string>
     <string name="local_restore_confirm">Lorsque la sauvegarde locale est restaurée, elle écrasera vos données actuelles. Voulez-vous continuer ?</string>
-    <string name="tester_tools">OUTILS DE TESTEUR</string>
-    <string name="show_ad_id">Afficher mon identifiant publicitaire</string>
     <string name="account">Compte</string>
     <string name="made_by">Fabriqué par FALCON ANDROID STUDIO</string>
     <string name="msg_archived">Archivé</string>
     <string name="msg_unarchived">Restauré</string>
     <string name="google_login_failed">Échec de la connexion à Google : %s</string>
     <string name="google_login_cancelled">Connexion Google annulée. Code : %s</string>
-    <string name="ad_id_copied">Identifiant publicitaire copié :\n%s</string>
-    <string name="ad_id_failed">Échec de l\'obtention de l\'ID : %s</string>
     <string name="error_general">Erreur : %s</string>
     <string name="play_services_update">Veuillez mettre à jour les services Google Play</string>
-    <string name="ad_inspector_preparing">Préparation de l\'inspecteur d\'annonces...</string>
     <string name="duplicate_contact_warning">Ce contact est déjà ajouté</string>
     <string name="legal_and_privacy">Mentions légales et confidentialité</string>
     <string name="policy_privacy_title">politique de confidentialité</string>
@@ -267,5 +263,23 @@
     <string name="premium_active_toast">Actif Premium ! 🎉</string>
     <string name="billing_connection_failed">Impossible d\'établir la connexion avec Google Play. Veuillez vérifier votre connexion Internet et réessayer.</string>
     <string name="ok">D\'ACCORD</string>
-    <string name="tester_premium_toggle">Basculer le statut Premium (Test)</string>
-</resources>
+    <string name="blue_light_filter">Filtre de lumière bleue</string>
+    <string name="add_photo">Ajouter une photo</string>
+    <string name="change_photo">Changer de photo</string>
+    <string name="choose_from_gallery">Choisissez dans la galerie</string>
+    <string name="remove_photo">Supprimer la photo</string>
+    <string name="payment_today">Paiement aujourd\'hui !</string>
+    <string name="upcoming_widget">Widget de paiement à venir</string>
+    <string name="widget_status_off">Widget désactivé</string>
+    <string name="no_upcoming_subs">Aucun abonnement à venir</string>
+    <string name="no_subs_at_all">Aucun abonnement ajouté pour le moment</string>
+    <string name="widget_instructions_title">Comment ajouter un widget</string>
+    <string name="widget_instructions_text">1. Accédez à l\'écran d\'accueil de votre téléphone.\n2. Appuyez longuement sur une zone vide ou sur l\'icône de l\'application.\n3. Sélectionnez \"Widgets\".\n4. Recherchez \"Aboneliklerim\" et faites-le glisser sur votre écran.</string>
+    <string name="biometric_title">Sécurité des applications</string>
+    <string name="biometric_subtitle">Débloquez Aboneliklerim pour continuer</string>
+    <string name="app_lock">Verrouillage d\'application</string>
+    <string name="default_currency_view">Devise par défaut (Plan)</string>
+    <string name="active_users_loading">Utilisateurs en ligne : ...</string>
+    <string name="active_users_count">Utilisateurs actifs actuels : %d</string>
+    <string name="currency_info_msg">Cette option vous permet de définir la devise que vous souhaitez utiliser lors de la création d\'un nouveau forfait.</string>
+<string name="no_plans_found">Aucun plan trouvé</string></resources>

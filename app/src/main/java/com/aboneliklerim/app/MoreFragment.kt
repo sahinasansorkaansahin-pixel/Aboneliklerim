@@ -10,18 +10,17 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
-import android.content.ClipboardManager
-import android.content.ClipData
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import android.widget.ProgressBar
 import android.app.Activity
 import com.aboneliklerim.app.FirebaseManager
-import com.google.android.gms.ads.identifier.AdvertisingIdClient
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
 import androidx.lifecycle.lifecycleScope
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
@@ -45,6 +44,11 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import android.util.Log
 import com.google.gson.JsonParser
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.LinearLayoutManager
+import android.graphics.drawable.GradientDrawable
+
+
 
 class MoreFragment : Fragment() {
     
@@ -186,10 +190,22 @@ class MoreFragment : Fragment() {
         updateUserInfo(view)
         
         view.findViewById<LinearLayout>(R.id.rowRate).setOnClickListener {
-            try {
-                startActivity(Intent(Intent.ACTION_VIEW,
-                    Uri.parse("market://details?id=${requireContext().packageName}")))
-            } catch (_: Exception) {}
+            val manager = com.google.android.play.core.review.ReviewManagerFactory.create(requireContext())
+            val request = manager.requestReviewFlow()
+            request.addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    val reviewInfo = task.result
+                    val flow = manager.launchReviewFlow(requireActivity(), reviewInfo)
+                    flow.addOnCompleteListener { _ ->
+                        // The flow has finished.
+                    }
+                } else {
+                    try {
+                        startActivity(Intent(Intent.ACTION_VIEW,
+                            Uri.parse("market://details?id=${requireContext().packageName}")))
+                    } catch (_: Exception) {}
+                }
+            }
         }
         view.findViewById<LinearLayout>(R.id.rowShare).setOnClickListener {
             val intent = Intent(Intent.ACTION_SEND).apply {
@@ -214,17 +230,49 @@ class MoreFragment : Fragment() {
             showLanguageSelector()
         }
 
-        updateDefaultCurrencyUI()
-        view.findViewById<LinearLayout>(R.id.rowDefaultCurrency).setOnClickListener {
-            showDefaultCurrencySelector()
-        }
-
         updateDateFormatUI()
         view.findViewById<android.widget.LinearLayout>(R.id.rowDateFormat).setOnClickListener {
             showDateFormatSelector()
         }
 
+        updateDefaultCurrencyUI()
+        view.findViewById<android.widget.LinearLayout>(R.id.rowDefaultCurrency)?.setOnClickListener {
+            showDefaultCurrencySelector()
+        }
 
+        // --- BLUE LIGHT FILTER TOGGLE ---
+        val swBlueLightFilter = view.findViewById<androidx.appcompat.widget.SwitchCompat>(R.id.swBlueLightFilter)
+        val rowBlueLightFilter = view.findViewById<LinearLayout>(R.id.rowBlueLightFilter)
+        val displayPrefs = requireContext().getSharedPreferences("Settings", Context.MODE_PRIVATE)
+        var isBlueLightActive = displayPrefs.getBoolean("blue_light_filter_enabled", false)
+        swBlueLightFilter?.isChecked = isBlueLightActive
+
+        rowBlueLightFilter?.setOnClickListener {
+            isBlueLightActive = !isBlueLightActive
+            swBlueLightFilter?.isChecked = isBlueLightActive
+            displayPrefs.edit().putBoolean("blue_light_filter_enabled", isBlueLightActive).apply()
+            val currentActivity = activity
+            if (currentActivity is BaseActivity) {
+                if (isBlueLightActive) {
+                    currentActivity.showBlueLightFilter()
+                } else {
+                    currentActivity.hideBlueLightFilter()
+                }
+            }
+        }
+
+        // --- APP LOCK TOGGLE ---
+        val swAppLock = view.findViewById<androidx.appcompat.widget.SwitchCompat>(R.id.swAppLock)
+        val rowAppLock = view.findViewById<LinearLayout>(R.id.rowAppLock)
+        val settingsPrefs = requireContext().getSharedPreferences("Settings", Context.MODE_PRIVATE)
+        var isLockEnabled = settingsPrefs.getBoolean("app_lock_enabled", false)
+        swAppLock?.isChecked = isLockEnabled
+
+        rowAppLock?.setOnClickListener {
+            isLockEnabled = !isLockEnabled
+            swAppLock?.isChecked = isLockEnabled
+            settingsPrefs.edit().putBoolean("app_lock_enabled", isLockEnabled).apply()
+        }
 
         // --- YEREL YEDEKLEME İŞLEMLERİ ---
         view.findViewById<View>(R.id.rowLocalBackup).setOnClickListener {
@@ -286,75 +334,8 @@ class MoreFragment : Fragment() {
                 .show()
         }
 
-        // --- REKLAM KİMLİĞİ ÖĞRENME (Testerlar İçin - Herkese Açık) ---
-        view.findViewById<LinearLayout>(R.id.rowShowAdId).setOnClickListener {
-            lifecycleScope.launch(Dispatchers.IO) {
-                try {
-                    val idInfo = AdvertisingIdClient.getAdvertisingIdInfo(requireContext())
-                    val adId = idInfo.id ?: "Bilinmiyor"
-                    withContext(Dispatchers.Main) {
-                        val clipboard = requireContext().getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-                        val clip = ClipData.newPlainText("AdID", adId)
-                        clipboard.setPrimaryClip(clip)
-                        Toast.makeText(requireContext(), getString(R.string.ad_id_copied, adId), Toast.LENGTH_LONG).show()
-                    }
-                } catch (e: Exception) {
-                    withContext(Dispatchers.Main) {
-                        Toast.makeText(requireContext(), getString(R.string.ad_id_failed, e.message ?: ""), Toast.LENGTH_SHORT).show()
-                    }
-                }
-            }
-        }
-        // --- PREMIUM TESTER TOGGLE ---
-        val tvCurrentPremiumStatus = view.findViewById<TextView>(R.id.tvCurrentPremiumStatus)
-        val rowTogglePremium = view.findViewById<LinearLayout>(R.id.rowTogglePremium)
-        if (tvCurrentPremiumStatus != null && rowTogglePremium != null) {
-            fun updateStatusUI() {
-                val isPremium = requireContext().getSharedPreferences("Settings", Context.MODE_PRIVATE)
-                    .getBoolean("is_premium_active", false)
-                val activeLang = LocaleHelper.getActiveLanguage(requireContext())
-                tvCurrentPremiumStatus.text = if (isPremium) {
-                    if (activeLang == "tr") "Aktif" else "Active"
-                } else {
-                    if (activeLang == "tr") "Pasif" else "Inactive"
-                }
-                tvCurrentPremiumStatus.setTextColor(
-                    if (isPremium) androidx.core.content.ContextCompat.getColor(requireContext(), R.color.primary_indigo)
-                    else androidx.core.content.ContextCompat.getColor(requireContext(), R.color.text_secondary)
-                )
-            }
-            
-            updateStatusUI()
-            
-            rowTogglePremium.setOnClickListener {
-                val prefs = requireContext().getSharedPreferences("Settings", Context.MODE_PRIVATE)
-                val isPremium = prefs.getBoolean("is_premium_active", false)
-                val newStatus = !isPremium
-                
-                prefs.edit().putBoolean("is_premium_active", newStatus).apply()
-                CurrencyService.isPremiumActive = newStatus
-                
-                Toast.makeText(
-                    requireContext(),
-                    if (newStatus) {
-                        if (LocaleHelper.getActiveLanguage(requireContext()) == "tr") "Premium Aktif Edildi! 💎" else "Premium Activated! 💎"
-                    } else {
-                        if (LocaleHelper.getActiveLanguage(requireContext()) == "tr") "Premium Devre Dışı Bırakıldı!" else "Premium Deactivated!"
-                    },
-                    Toast.LENGTH_SHORT
-                ).show()
-                
-                updateStatusUI()
-                updatePremiumOverlay(view)
-                updateUserInfo(view)
-                
-                // Recreate activity so all other fragments refresh instantly!
-                requireActivity().recreate()
-            }
-        }
-
         setupCurrencyConverter(view)
-        setupStreamingPrices(view)
+        setupNewsSection(view)
         updatePremiumOverlay(view)
     }
 
@@ -374,33 +355,15 @@ class MoreFragment : Fragment() {
         val ctx = context ?: return
         val prefs = ctx.getSharedPreferences("Settings", Context.MODE_PRIVATE)
         val isPremium = prefs.getBoolean("is_premium_active", false)
-        val overlay = view.findViewById<View>(R.id.layoutConverterPremiumOverlay)
-        if (!isPremium) {
-            overlay?.visibility = View.VISIBLE
-            overlay?.setOnClickListener {
-                startActivity(Intent(ctx, PremiumActivity::class.java))
-            }
-        } else {
-            overlay?.visibility = View.GONE
-        }
 
         val ivGuestLock = view.findViewById<View>(R.id.ivGuestLock)
         val tvGuestArrow = view.findViewById<View>(R.id.tvGuestArrow)
-        val streamingOverlay = view.findViewById<View>(R.id.layoutStreamingPremiumOverlay)
-        
         if (!isPremium) {
             ivGuestLock?.visibility = View.VISIBLE
             tvGuestArrow?.visibility = View.GONE
-            
-            streamingOverlay?.visibility = View.VISIBLE
-            streamingOverlay?.setOnClickListener {
-                startActivity(Intent(ctx, PremiumActivity::class.java))
-            }
         } else {
             ivGuestLock?.visibility = View.GONE
             tvGuestArrow?.visibility = View.VISIBLE
-            
-            streamingOverlay?.visibility = View.GONE
         }
     }
 
@@ -524,32 +487,6 @@ class MoreFragment : Fragment() {
         }.show()
     }
 
-    private fun updateDefaultCurrencyUI() {
-        val view = view ?: return
-        val prefs = requireContext().getSharedPreferences("Settings", Context.MODE_PRIVATE)
-        val activeLang = LocaleHelper.getActiveLanguage(requireContext())
-        val defaultCurrency = prefs.getString("default_currency", CurrencyHelper.getDefaultCurrencyBasedOnLanguage(activeLang)) ?: "TRY"
-        view.findViewById<TextView>(R.id.tvCurrentDefaultCurrency).text = defaultCurrency
-    }
-
-    private fun showDefaultCurrencySelector() {
-        val currencies = CurrencyHelper.getCurrencies(requireContext())
-        val names = currencies.map { "${it.flag} ${it.name} (${it.code})" }.toTypedArray()
-        val prefs = requireContext().getSharedPreferences("Settings", Context.MODE_PRIVATE)
-        val activeLang = LocaleHelper.getActiveLanguage(requireContext())
-        val currentCurrency = prefs.getString("default_currency", CurrencyHelper.getDefaultCurrencyBasedOnLanguage(activeLang)) ?: "TRY"
-        val checkedItem = currencies.indexOfFirst { it.code == currentCurrency }.coerceAtLeast(0)
-
-        androidx.appcompat.app.AlertDialog.Builder(requireContext(), R.style.Theme_Aboneliklerim_Dialog)
-            .setTitle(getString(R.string.default_currency))
-            .setSingleChoiceItems(names, checkedItem) { dialog, which ->
-                prefs.edit().putString("default_currency", currencies[which].code).apply()
-                updateDefaultCurrencyUI()
-                dialog.dismiss()
-            }
-            .show()
-    }
-
     private fun updateDateFormatUI() {
         val view = view ?: return
         val currentFormat = DateFormatHelper.getSelectedFormat(requireContext())
@@ -565,6 +502,35 @@ class MoreFragment : Fragment() {
             updateDateFormatUI()
             dialog.dismiss()
         }.show()
+    }
+
+    private fun updateDefaultCurrencyUI() {
+        val view = view ?: return
+        val prefs = requireContext().getSharedPreferences("Settings", Context.MODE_PRIVATE)
+        val activeLang = LocaleHelper.getActiveLanguage(requireContext())
+        val currentCurrency = prefs.getString("default_currency", CurrencyHelper.getDefaultCurrencyBasedOnLanguage(activeLang)) ?: "USD"
+        view.findViewById<TextView>(R.id.tvCurrentDefaultCurrency)?.text = currentCurrency
+    }
+
+    private fun showDefaultCurrencySelector() {
+        val currencies = CurrencyHelper.getCurrencies(requireContext())
+        val names = currencies.map { "${it.flag} ${it.name} (${it.code})" }.toTypedArray()
+        
+        val prefs = requireContext().getSharedPreferences("Settings", Context.MODE_PRIVATE)
+        val activeLang = LocaleHelper.getActiveLanguage(requireContext())
+        val currentCurrency = prefs.getString("default_currency", CurrencyHelper.getDefaultCurrencyBasedOnLanguage(activeLang)) ?: "USD"
+        
+        val checkedItem = currencies.indexOfFirst { it.code == currentCurrency }.coerceAtLeast(0)
+
+        androidx.appcompat.app.AlertDialog.Builder(requireContext(), R.style.Theme_Aboneliklerim_Dialog)
+            .setTitle(getString(R.string.default_currency))
+            .setSingleChoiceItems(names, checkedItem) { dialog, which ->
+                val selected = currencies[which].code
+                prefs.edit().putString("default_currency", selected).apply()
+                updateDefaultCurrencyUI()
+                dialog.dismiss()
+            }
+            .show()
     }
 
     private fun setupCurrencyConverter(view: View) {
@@ -648,160 +614,597 @@ class MoreFragment : Fragment() {
         return if (json != null) Gson().fromJson(json, object : TypeToken<List<Subscription>>() {}.type) else emptyList()
     }
 
-    private fun setupStreamingPrices(view: View) {
-        val cardStreamingPrices = view.findViewById<View>(R.id.cardStreamingPrices) ?: return
-        val spinner = view.findViewById<Spinner>(R.id.spinnerStreamingPlatforms) ?: return
-        
-        lifecycleScope.launch {
-            try {
-                val rates = CurrencyService.getExchangeRates(requireContext())
-                val platforms = StreamingPriceService.fetchAndSyncPrices(requireContext(), forceRefresh = false)
+    private suspend fun translateText(text: String, targetLang: String): String = withContext(Dispatchers.IO) {
+        val cleanLang = targetLang.substringBefore('-').lowercase().trim()
+        if (cleanLang == "en" || text.isBlank()) {
+            return@withContext text
+        }
+        try {
+            val client = OkHttpClient.Builder()
+                .connectTimeout(5, java.util.concurrent.TimeUnit.SECONDS)
+                .readTimeout(5, java.util.concurrent.TimeUnit.SECONDS)
+                .build()
                 
-                if (platforms.isNotEmpty()) {
-                    val platformNames = mutableListOf(getString(R.string.select_platform))
-                    platformNames.addAll(platforms.map { it.name })
-                    
-                    val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, platformNames)
-                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-                    spinner.adapter = adapter
-                    
-                    spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                        override fun onItemSelected(parent: AdapterView<*>?, v: View?, position: Int, id: Long) {
-                            if (position == 0) {
-                                view.findViewById<ImageView>(R.id.imgSelectedStreamingLogo).visibility = View.GONE
-                                view.findViewById<TextView>(R.id.tvStreamingSelectedTrend).visibility = View.GONE
-                                view.findViewById<LinearLayout>(R.id.layoutStreamingDetails).visibility = View.GONE
-                                view.findViewById<ImageView>(R.id.imgSelectedStreamingBell).visibility = View.GONE
+            val encodedText = java.net.URLEncoder.encode(text, "UTF-8")
+            val url = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=$cleanLang&dt=t&q=$encodedText"
+            val request = Request.Builder()
+                .url(url)
+                .header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")
+                .build()
+                
+            client.newCall(request).execute().use { response ->
+                if (response.isSuccessful) {
+                    val body = response.body?.string() ?: ""
+                    if (body.isNotEmpty()) {
+                        val jsonArray = JsonParser.parseString(body).asJsonArray
+                        val segments = jsonArray.get(0).asJsonArray
+                        val sb = StringBuilder()
+                        for (i in 0 until segments.size()) {
+                            val segment = segments.get(i).asJsonArray
+                            sb.append(segment.get(0).asString)
+                        }
+                        return@withContext sb.toString().trim()
+                    }
+                }
+            }
+        } catch (e: Exception) {
+            Log.e("MoreFragment", "Translation failed for language $cleanLang: $text", e)
+        }
+        return@withContext text
+    }
+
+    private suspend fun translateNewsItem(item: NewsItem, targetLang: String): NewsItem = kotlinx.coroutines.coroutineScope {
+        val cleanLang = targetLang.substringBefore('-').lowercase().trim()
+        if (cleanLang == "en" || item.type == "placeholder") return@coroutineScope item
+        
+        val isCurated = item.link == "https://www.playstation.com" ||
+                        item.link == "https://www.netflix.com" ||
+                        item.link == "https://www.spotify.com" ||
+                        item.link == "https://www.primevideo.com"
+        
+        if (cleanLang == "tr" && isCurated) return@coroutineScope item
+        
+        val translatedTitleJob = async(Dispatchers.IO) { translateText(item.title, cleanLang) }
+        val translatedDescJob = async(Dispatchers.IO) { translateText(item.description, cleanLang) }
+        
+        item.copy(
+            title = translatedTitleJob.await(),
+            description = translatedDescJob.await()
+        )
+    }
+
+    private fun setupNewsSection(view: View) {
+        val rvNews = view.findViewById<RecyclerView>(R.id.rvNews) ?: return
+        val pbLoading = view.findViewById<ProgressBar>(R.id.pbNewsLoading)
+        val tvRefresh = view.findViewById<TextView>(R.id.tvRefreshNews)
+        val etNewsSearch = view.findViewById<EditText>(R.id.etNewsSearch)
+        val ivClearNewsSearch = view.findViewById<ImageView>(R.id.ivClearNewsSearch)
+        
+        rvNews.layoutManager = LinearLayoutManager(context)
+        
+        var currentSearchQuery = ""
+        var searchJob: kotlinx.coroutines.Job? = null
+        
+        fun loadNews() {
+            val query = currentSearchQuery.trim()
+            val context = context ?: return
+            val activeLang = LocaleHelper.getActiveLanguage(context)
+            val targetLang = activeLang.substringBefore('-').lowercase().trim()
+            val isTr = targetLang.startsWith("tr", ignoreCase = true)
+
+            pbLoading?.visibility = View.VISIBLE
+            tvRefresh?.visibility = View.GONE
+            
+            lifecycleScope.launch {
+                val liveItems = mutableListOf<NewsItem>()
+                
+                withContext(Dispatchers.IO) {
+                    try {
+                        val client = OkHttpClient.Builder()
+                            .connectTimeout(5, java.util.concurrent.TimeUnit.SECONDS)
+                            .readTimeout(5, java.util.concurrent.TimeUnit.SECONDS)
+                            .build()
+                            
+                        val githubUrl = "https://raw.githubusercontent.com/sahinasansorkaansahin-pixel/Aboneliklerim/main/news.json"
+                        val request = Request.Builder()
+                            .url(githubUrl)
+                            .header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")
+                            .build()
+                            
+                        client.newCall(request).execute().use { response ->
+                            if (response.isSuccessful) {
+                                val body = response.body?.string() ?: ""
+                                if (body.isNotEmpty()) {
+                                    val items: List<NewsItem> = Gson().fromJson(
+                                        body,
+                                        object : TypeToken<List<NewsItem>>() {}.type
+                                    )
+                                    Log.d("MoreFragment", "Fetched ${items.size} items from GitHub")
+                                    liveItems.addAll(items)
+                                } else {
+                                    Log.w("MoreFragment", "Empty body from GitHub news")
+                                }
                             } else {
-                                val selectedPlatform = platforms[position - 1]
-                                updateSelectedPlatformUI(view, selectedPlatform, rates)
+                                Log.w("MoreFragment", "Unsuccessful response from GitHub news: ${response.code}")
                             }
                         }
-                        override fun onNothingSelected(parent: AdapterView<*>?) {}
+                    } catch (e: Exception) {
+                        Log.e("MoreFragment", "Error fetching news from GitHub, using local fallback", e)
                     }
                     
-                    // Initial selection: Placeholder
-                    spinner.setSelection(0)
+                    if (liveItems.isEmpty()) {
+                        liveItems.addAll(getCuratedFallbackNews(false))
+                    }
+                }
+                
+                // Filter duplicates in live fetched items by lowercase title.
+                val distinctLive = liveItems.distinctBy { it.title.lowercase().trim().replace(Regex("[^a-z0-9]"), "") }
+                Log.d("MoreFragment", "Total live: ${liveItems.size}, distinct: ${distinctLive.size}")
+                
+                val selectedItems = mutableListOf<NewsItem>()
+                val activeQueryTerms = mutableListOf<String>()
+                
+                if (query.isEmpty()) {
+                    // No search query: filter only targeted/relevant news about digital subscription/streaming/gaming
+                    val matchingLive = distinctLive.filter { item ->
+                        isTargetedNews(item.title, item.description, isTr)
+                    }
+                    Log.d("MoreFragment", "Matching live for empty query (targeted): ${matchingLive.size}")
+                    
+                    // Score and sort matching live items by regression model
+                    val scoredMatches = matchingLive.mapIndexed { index, item ->
+                        val baseScore = calculateNewsScore(item, index)
+                        Pair(item, baseScore)
+                    }.sortedByDescending { it.second }.map { it.first }
+                    
+                    selectedItems.addAll(scoredMatches)
+                    
+                    if (selectedItems.size < 4) {
+                        val curatedList = getCuratedFallbackNews(isTr)
+                        for (curated in curatedList) {
+                            if (selectedItems.size >= 4) break
+                            val isDuplicate = selectedItems.any { 
+                                it.link == curated.link || 
+                                it.title.lowercase().trim().replace(Regex("[^a-z0-9]"), "") == 
+                                curated.title.lowercase().trim().replace(Regex("[^a-z0-9]"), "")
+                            }
+                            if (!isDuplicate) {
+                                selectedItems.add(curated)
+                            }
+                        }
+                    }
                 } else {
-                    cardStreamingPrices.visibility = View.GONE
-                }
-            } catch (e: Exception) {
-                e.printStackTrace()
-                cardStreamingPrices.visibility = View.GONE
-            }
-        }
-    }
-
-    private fun updateSelectedPlatformUI(viewParent: View, platform: StreamingPriceService.StreamingPlatform, rates: Map<String, Double>) {
-        val imgLogo = viewParent.findViewById<ImageView>(R.id.imgSelectedStreamingLogo)
-        val tvTrend = viewParent.findViewById<TextView>(R.id.tvStreamingSelectedTrend)
-        val plansContainer = viewParent.findViewById<LinearLayout>(R.id.layoutStreamingSelectedPlans)
-        val btnWeb = viewParent.findViewById<View>(R.id.btnOpenStreamingWeb)
-        val imgBell = viewParent.findViewById<ImageView>(R.id.imgSelectedStreamingBell)
-        
-        // Show details container and logo
-        viewParent.findViewById<LinearLayout>(R.id.layoutStreamingDetails).visibility = View.VISIBLE
-        imgLogo.visibility = View.VISIBLE
-        imgBell.visibility = View.VISIBLE
-        
-        val isNotifEnabled = StreamingPriceService.isNotificationEnabledForPlatform(requireContext(), platform.id)
-        updateBellIcon(imgBell, isNotifEnabled)
-
-        imgBell.setOnClickListener {
-            val newState = !StreamingPriceService.isNotificationEnabledForPlatform(requireContext(), platform.id)
-            StreamingPriceService.setNotificationEnabledForPlatform(requireContext(), platform.id, newState)
-            updateBellIcon(imgBell, newState)
-            val msg = if (newState) {
-                getString(R.string.notif_platform_enabled_toast, platform.name)
-            } else {
-                getString(R.string.notif_platform_disabled_toast, platform.name)
-            }
-            Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
-        }
-        
-        // Load Logo
-        val logoResId = requireContext().resources.getIdentifier(platform.logo_res, "drawable", requireContext().packageName)
-        if (logoResId != 0) {
-            imgLogo.setImageResource(logoResId)
-        } else {
-            imgLogo.setImageResource(android.R.drawable.ic_menu_slideshow)
-        }
-        
-        // Calculate Trend
-        val prevPrice = StreamingPriceService.getPreviousPrice(requireContext(), platform.id)
-        if (prevPrice != null && prevPrice > 0.0) {
-            val changePercent = ((platform.base_price - prevPrice) / prevPrice) * 100
-            if (changePercent > 0.05) {
-                tvTrend.text = getString(R.string.price_increased, String.format(java.util.Locale.US, "%.0f%%", changePercent))
-                tvTrend.setBackgroundResource(R.drawable.bg_shared_contact_pill)
-                tvTrend.backgroundTintList = android.content.res.ColorStateList.valueOf(android.graphics.Color.parseColor("#FFEAEA"))
-                tvTrend.setTextColor(android.graphics.Color.parseColor("#FF5252"))
-                tvTrend.visibility = View.VISIBLE
-            } else if (changePercent < -0.05) {
-                tvTrend.text = getString(R.string.price_decreased, String.format(java.util.Locale.US, "%.0f%%", Math.abs(changePercent)))
-                tvTrend.setBackgroundResource(R.drawable.bg_shared_contact_pill)
-                tvTrend.backgroundTintList = android.content.res.ColorStateList.valueOf(android.graphics.Color.parseColor("#EAFBEA"))
-                tvTrend.setTextColor(android.graphics.Color.parseColor("#4CAF50"))
-                tvTrend.visibility = View.VISIBLE
-            } else {
-                tvTrend.visibility = View.GONE
-            }
-        } else {
-            tvTrend.visibility = View.GONE
-        }
-        
-        val activeLang = LocaleHelper.getActiveLanguage(requireContext())
-        
-        // Populate plans
-        plansContainer.removeAllViews()
-        val inflater = LayoutInflater.from(requireContext())
-        for (plan in platform.plans) {
-            val planRow = inflater.inflate(R.layout.item_streaming_plan_row, plansContainer, false)
-            val tvPlanName = planRow.findViewById<TextView>(R.id.tvPlanName)
-            val tvPlanPrice = planRow.findViewById<TextView>(R.id.tvPlanPrice)
-            val tvPlanPeriod = planRow.findViewById<TextView>(R.id.tvPlanPeriod)
-            
-            tvPlanName.text = plan.name
-            
-            // Display local price directly from JSON
-            val planSymbol = CurrencyHelper.getLocalizedSymbol(plan.currency, requireContext())
-            val formattedPrice = String.format(java.util.Locale.US, "%,.2f", plan.price)
-            tvPlanPrice.text = "$formattedPrice $planSymbol"
-            
-            tvPlanPeriod.text = when (plan.period) {
-                "monthly" -> getString(R.string.period_monthly_short)
-                "yearly" -> getString(R.string.period_yearly_short)
-                else -> "/${plan.period}"
-            }
-            plansContainer.addView(planRow)
-        }
-        
-        // Web Link Button Dynamic Country URL
-        btnWeb.setOnClickListener {
-            try {
-                val countryCode = activeLang.split("-").last().lowercase()
-                var finalUrl = platform.official_url
-                
-                when (platform.id) {
-                    "spotify" -> finalUrl = "https://www.spotify.com/$countryCode/premium/"
-                    "apple_music" -> finalUrl = if (countryCode == "us") "https://www.apple.com/apple-music/" else "https://www.apple.com/$countryCode/apple-music/"
-                    "prime_video" -> finalUrl = "https://www.primevideo.com/"
-                    "netflix" -> finalUrl = "https://www.netflix.com/"
-                    "microsoft_onedrive" -> finalUrl = "https://www.microsoft.com/${activeLang.lowercase()}/microsoft-365"
-                    "google_one" -> finalUrl = "https://one.google.com/"
+                    // Search query is active: filter matching search terms
+                    // Smart Query Translation: translate query to English first to search English feeds effectively!
+                    val englishQuery = if (targetLang != "en") {
+                        translateText(query, "en")
+                    } else {
+                        query
+                    }
+                    
+                    val queryTerms = (getQueryTerms(query) + getQueryTerms(englishQuery))
+                        .map { it.lowercase().trim() }
+                        .filter { it.isNotEmpty() }
+                        .distinct()
+                    
+                    activeQueryTerms.addAll(queryTerms)
+                    
+                    // Compile regexes for short terms once outside the loop for maximum performance
+                    val queryRegexes = queryTerms.map { term ->
+                        if (term.length < 4) {
+                            Pair(term, Regex("\\b${Regex.escape(term)}\\b", RegexOption.IGNORE_CASE))
+                        } else {
+                            Pair(term, null)
+                        }
+                    }
+                    
+                    val matchingLive = distinctLive.filter { item ->
+                        val text = "${item.title} ${item.description}".lowercase()
+                        queryRegexes.any { (term, regex) ->
+                            if (regex != null) {
+                                regex.containsMatchIn(text)
+                            } else {
+                                text.contains(term)
+                            }
+                        }
+                    }
+                    Log.d("MoreFragment", "Matching live for query '$query': ${matchingLive.size}")
+                    
+                    // Score and sort matching live items by regression model (adding extra query match weight)
+                    val scoredMatches = matchingLive.mapIndexed { index, item ->
+                        val baseScore = calculateNewsScore(item, index)
+                        val boost = if (queryTerms.any { item.title.lowercase().contains(it) }) 50.0 else 20.0
+                        Pair(item, baseScore + boost)
+                    }.sortedByDescending { it.second }.map { it.first }
+                    
+                    selectedItems.addAll(scoredMatches)
                 }
                 
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(finalUrl))
-                startActivity(intent)
-            } catch (e: Exception) {
-                e.printStackTrace()
+                // Add highly-polished empty-state placeholder if no matching news articles are found
+                if (selectedItems.isEmpty()) {
+                    val placeholderTitle = if (isTr) "Eşleşen Haber Bulunamadı" else "No Matching News Found"
+                    val placeholderDesc = if (isTr) {
+                        if (query.isEmpty()) "Şu an için güncel bir haber bulunamadı. Lütfen daha sonra tekrar deneyin."
+                        else "'$query' ile ilgili herhangi bir güncel haber bulunamadı. Lütfen başka bir arama yapın."
+                    } else {
+                        if (query.isEmpty()) "No active news found at the moment. Please try again later."
+                        else "No active news found matching '$query'. Please try a different query."
+                    }
+                    
+                    selectedItems.add(
+                        NewsItem(
+                            title = placeholderTitle,
+                            description = placeholderDesc,
+                            link = "",
+                            source = "Aboneliklerim",
+                            date = "",
+                            type = "placeholder"
+                        )
+                    )
+                }
+                
+                // Final selection of exactly max 4 items
+                val finalNewsList = selectedItems.take(4)
+                
+                // Dynamically translate the selected news items in parallel!
+                val translatedNewsList = finalNewsList.map { item ->
+                    async { translateNewsItem(item, targetLang) }
+                }.awaitAll()
+                
+                rvNews.adapter = NewsAdapter(translatedNewsList, activeQueryTerms)
+                
+                pbLoading?.visibility = View.GONE
+                tvRefresh?.visibility = View.VISIBLE
             }
+        }
+        
+        tvRefresh?.setOnClickListener {
+            loadNews()
+        }
+        
+        // Search Input TextWatcher with 400ms Debounce
+        etNewsSearch?.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                val input = s?.toString() ?: ""
+                ivClearNewsSearch?.visibility = if (input.isNotEmpty()) View.VISIBLE else View.GONE
+                
+                searchJob?.cancel()
+                searchJob = lifecycleScope.launch {
+                    kotlinx.coroutines.delay(400)
+                    if (input != currentSearchQuery) {
+                        currentSearchQuery = input
+                        loadNews()
+                    }
+                }
+            }
+            override fun afterTextChanged(s: Editable?) {}
+        })
+        
+        // Clear Search Box click listener
+        ivClearNewsSearch?.setOnClickListener {
+            etNewsSearch?.setText("")
+            ivClearNewsSearch.visibility = View.GONE
+            currentSearchQuery = ""
+            loadNews()
+        }
+        
+        loadNews()
+    }
+
+
+    private fun calculateNewsScore(item: NewsItem, feedPosition: Int): Double {
+        val text = "${item.title} ${item.description}".lowercase()
+        
+        // Feature 1: Platform mentions count
+        val platforms = listOf(
+            "netflix", "spotify", "disney", "hulu", "youtube", "hbo", "max", "prime", "amazon", "paramount", "apple tv",
+            "apple music", "tidal", "deezer", "peacock", "crunchyroll", "audible", "exxen", "blutv", "gain", "tod",
+            "playstation", "xbox", "game pass", "nintendo", "geforce now", "steam", "openai", "chatgpt"
+        )
+        val uniquePlatformsCount = platforms.count { text.contains(it) }
+        val fPlatform = uniquePlatformsCount.toDouble()
+        
+        // Feature 2: Subscription keyword matches
+        val subKeywords = listOf(
+            "subscription", "membership", "premium", "digital platform", "streaming", "stream", "live", "service",
+            "abonelik", "üye", "yayın platformu", "dijital platform", "paket", "hesap", "hesabı", "plan", "servis"
+        )
+        val subTermsCount = subKeywords.count { text.contains(it) }
+        val fSubTerm = subTermsCount.toDouble()
+        
+        // Feature 3: Recency Score based on feed position (valuing new parsed news higher than fallback curated items)
+        val fRecency = if (feedPosition >= 0) {
+            Math.max(0.0, 1.0 - (feedPosition.toDouble() / 25.0))
+        } else {
+            0.5
+        }
+        
+        // Feature 4: Title quality
+        val fTitleLength = item.title.length.toDouble() / 100.0
+        
+        // Linear regression weights/coefficients for scoring model
+        val w0 = 10.0
+        val wPlatform = 30.0
+        val wSubTerm = 15.0
+        val wRecency = 15.0
+        val wTitleLength = 5.0
+        
+        return w0 + (wPlatform * fPlatform) + (wSubTerm * fSubTerm) + (wRecency * fRecency) + (wTitleLength * fTitleLength)
+    }
+
+    private fun getArticleCategory(title: String, desc: String): String {
+        val text = "$title $desc".lowercase()
+        
+        val videoKeywords = listOf("netflix", "disney", "hbo", "max", "prime video", "hulu", "peacock", "apple tv", "blutv", "exxen", "gain", "tod", "film", "dizi", "sinema", "movie", "series", "show")
+        val musicKeywords = listOf("spotify", "apple music", "youtube music", "music", "müzik", "podcast", "tidal", "deezer", "audible", "song", "şarkı", "albüm")
+        val gamingKeywords = listOf("playstation", "xbox", "game pass", "nintendo", "geforce now", "switch", "ea play", "game", "oyun", "steam")
+        
+        return when {
+            videoKeywords.any { text.contains(it) } -> "video_streaming"
+            musicKeywords.any { text.contains(it) } -> "music_audio"
+            gamingKeywords.any { text.contains(it) } -> "gaming_interactive"
+            else -> "general_digital"
         }
     }
 
-    private fun updateBellIcon(imageView: ImageView, enabled: Boolean) {
-        imageView.setImageResource(R.drawable.ic_bell)
-        val colorStr = if (enabled) "#4CAF50" else "#FF5252"
-        imageView.setColorFilter(android.graphics.Color.parseColor(colorStr))
+    private fun getQueryTerms(query: String): List<String> {
+        val q = query.lowercase().trim()
+        val terms = mutableListOf(q)
+        when (q) {
+            "playstation", "ps", "ps5", "ps4" -> {
+                terms.addAll(listOf("playstation", "ps5", "ps4", "ps plus", "playstation plus", "sony interactive", "dualsense", "dualshock"))
+            }
+            "xbox", "game pass", "gamepass" -> {
+                terms.addAll(listOf("xbox", "game pass", "gamepass", "series x", "series s", "microsoft gaming", "xbox live"))
+            }
+            "spotify" -> {
+                terms.addAll(listOf("spotify", "music streaming", "playlist", "daniel ek"))
+            }
+            "netflix" -> {
+                terms.addAll(listOf("netflix", "streaming giant", "squid game", "netflix premium"))
+            }
+            "chatgpt", "openai", "gpt" -> {
+                terms.addAll(listOf("chatgpt", "openai", "gpt-4", "gpt-4o", "sam altman", "generative ai"))
+            }
+        }
+        return terms.distinct()
     }
+
+    private fun highlightText(text: String, searchTerms: List<String>): android.text.Spannable {
+        val spannable = android.text.SpannableStringBuilder(text)
+        if (searchTerms.isEmpty()) return spannable
+        
+        val lowerText = text.lowercase()
+        for (term in searchTerms) {
+            if (term.length < 3) continue // Avoid highlighting short words
+            var startIdx = lowerText.indexOf(term)
+            while (startIdx != -1) {
+                val endIdx = startIdx + term.length
+                
+                spannable.setSpan(
+                    android.text.style.StyleSpan(android.graphics.Typeface.BOLD),
+                    startIdx,
+                    endIdx,
+                    android.text.Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+                
+                startIdx = lowerText.indexOf(term, endIdx)
+            }
+        }
+        return spannable
+    }
+
+    private fun determineNewsType(title: String, desc: String): String {
+        val fullText = "$title $desc".lowercase()
+        return when {
+            fullText.contains("hike") || fullText.contains("increase") || fullText.contains("raise") || fullText.contains("price") || fullText.contains("zam") || fullText.contains("fiyat") || fullText.contains("güncelleme") || fullText.contains("artış") -> "hike"
+            fullText.contains("discount") || fullText.contains("save") || fullText.contains("deal") || fullText.contains("sale") || fullText.contains("off") || fullText.contains("indirim") || fullText.contains("ucuz") || fullText.contains("fırsat") -> "discount"
+            else -> "campaign"
+        }
+    }
+
+    private fun isTargetedNews(title: String, desc: String, isTr: Boolean): Boolean {
+        val fullText = "$title $desc".lowercase()
+        val platforms = listOf(
+            "netflix", "spotify", "disney", "hulu", "youtube", "hbo", "max", "prime", "amazon", "paramount", "apple tv",
+            "apple music", "tidal", "deezer", "peacock", "crunchyroll", "audible", "premium", "subscription", "abonelik",
+            "exxen", "blutv", "gain", "tod", "playstation", "xbox", "game pass", "nintendo", "geforce now", "steam", "openai", "chatgpt"
+        )
+        
+        val matchesPlatform = platforms.any { fullText.contains(it) }
+        if (!matchesPlatform) return false
+        
+        // Blocklist to avoid general hardware, device, and retail product deals
+        val blocklist = if (isTr) {
+            listOf("telefon", "akıllı telefon", "xiaomi", "oppo", "samsung", "iphone", "huawei", "realme", "redmi", "vivo", "ekran kartı", "pc", "laptop", "bilgisayar", "araba", "otomobil", "motor", "ppf", "kaplama", "saat", "akıllı saat", "süpürge", "kulaklık", "donanım", "2. el", "akıllı ev", "akıllı süpürge", "kulaklığı")
+        } else {
+            listOf("phone", "smartphone", "xiaomi", "samsung", "iphone", "laptop", "monitor", "gpu", "nvidia", "intel", "amd", "macbook", "grill", "patio", "lawn", "watch", "drone", "vacuum", "headphone", "earbud", "charger", "soundbar", "speaker", "fitness tracker", "smart home")
+        }
+        
+        val matchesBlock = blocklist.any { fullText.contains(it) }
+        return !matchesBlock
+    }
+
+    private fun getCuratedFallbackNews(isTr: Boolean): List<NewsItem> {
+        return if (isTr) {
+            listOf(
+                NewsItem(
+                    title = "PlayStation Plus Abonelik Ücretlerinde Yeni Düzenleme Yapıldı",
+                    description = "Sony, PlayStation Plus üyelik paketlerinin fiyatlarında ve kütüphanesinde yeni bir güncellemeye gitti. Güncel oyun katalogları aboneleri bekliyor.",
+                    link = "https://www.playstation.com",
+                    source = "PlayStation",
+                    date = "Mayıs 2026",
+                    type = "campaign"
+                ),
+                NewsItem(
+                    title = "Netflix, Premium Paketine Yeni Yapay Zeka Özellikleri Ekliyor",
+                    description = "Dijital yayın devi Netflix, abonelerinin içerikleri daha kolay keşfetmesini sağlayacak akıllı kişiselleştirme özelliklerini duyurdu.",
+                    link = "https://www.netflix.com",
+                    source = "Netflix",
+                    date = "Mayıs 2026",
+                    type = "campaign"
+                ),
+                NewsItem(
+                    title = "Spotify Premium için Akıllı Çalma Listesi Özelliği Geliyor",
+                    description = "Spotify, Premium kullanıcılarına özel yapay zeka destekli akıllı çalma listesi oluşturma özelliğini dünya genelinde yaygınlaştırıyor.",
+                    link = "https://www.spotify.com",
+                    source = "Spotify",
+                    date = "Mayıs 2026",
+                    type = "campaign"
+                ),
+                NewsItem(
+                    title = "Amazon Prime Video Yeni Popüler Dizilerini ve Fırsatlarını Açıkladı",
+                    description = "Amazon Prime Video, önümüzdeki dönemde kütüphanesine eklenecek yeni orijinal yapımlarının takvimini ve üyelik avantajlarını paylaştı.",
+                    link = "https://www.primevideo.com",
+                    source = "Prime Video",
+                    date = "Mayıs 2026",
+                    type = "campaign"
+                )
+            )
+        } else {
+            listOf(
+                NewsItem(
+                    title = "PlayStation Plus Subscription Plans Receive Pricing and Catalog Updates",
+                    description = "Sony has announced new updates for PlayStation Plus plans. A rich catalog of newly added games and exclusive member benefits awaits active subscribers.",
+                    link = "https://www.playstation.com",
+                    source = "PlayStation",
+                    date = "May 2026",
+                    type = "campaign"
+                ),
+                NewsItem(
+                    title = "Netflix Enhances Premium Experience with New Smart Recommendation Tools",
+                    description = "Streaming giant Netflix is rolling out brand new personalized features designed to help Premium members discover content more intuitively.",
+                    link = "https://www.netflix.com",
+                    source = "Netflix",
+                    date = "May 2026",
+                    type = "campaign"
+                ),
+                NewsItem(
+                    title = "Spotify Premium Expands AI-Powered Smart Playlist Tool to More Users",
+                    description = "Spotify is widely expanding its text-prompted AI playlist generator tool, allowing Premium users to instantly build tailored music lists.",
+                    link = "https://www.spotify.com",
+                    source = "Spotify",
+                    date = "May 2026",
+                    type = "campaign"
+                ),
+                NewsItem(
+                    title = "Amazon Prime Video Showcases Upcoming Premium Original Series and Deals",
+                    description = "Amazon Prime Video has officially announced dates and preview details for its highly anticipated list of original series and platform benefits.",
+                    link = "https://www.primevideo.com",
+                    source = "Prime Video",
+                    date = "May 2026",
+                    type = "campaign"
+                )
+            )
+        }
+    }
+
+    inner class NewsAdapter(
+        private val items: List<NewsItem>,
+        private val searchTerms: List<String> = emptyList()
+    ) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
+        
+        inner class NewsViewHolder(val itemView: View) : RecyclerView.ViewHolder(itemView) {
+            val tvSource: TextView = itemView.findViewById(R.id.tvNewsSource)
+            val tvCategory: TextView = itemView.findViewById(R.id.tvNewsCategory)
+            val tvDate: TextView = itemView.findViewById(R.id.tvNewsDate)
+            val tvTitle: TextView = itemView.findViewById(R.id.tvNewsTitle)
+            val tvDesc: TextView = itemView.findViewById(R.id.tvNewsDesc)
+            val divider: View = itemView.findViewById(R.id.vNewsDivider)
+        }
+
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
+            val view = LayoutInflater.from(parent.context).inflate(R.layout.item_news, parent, false)
+            return NewsViewHolder(view)
+        }
+
+        override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
+            val item = items[position]
+            val context = holder.itemView.context
+            
+            if (item.type == "placeholder") {
+                holder.tvTitle.text = item.title
+                holder.tvDesc.text = item.description
+                holder.tvDate.text = ""
+                holder.tvSource.text = ""
+                
+                holder.tvSource.visibility = View.GONE
+                holder.tvDate.visibility = View.GONE
+                holder.tvCategory.visibility = View.GONE
+                holder.divider.visibility = View.GONE
+                
+                holder.tvTitle.setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.text_secondary))
+                holder.tvDesc.setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.text_secondary))
+                
+                holder.tvTitle.setTypeface(null, android.graphics.Typeface.NORMAL)
+                holder.tvTitle.gravity = android.view.Gravity.CENTER
+                holder.tvDesc.gravity = android.view.Gravity.CENTER
+                
+                holder.itemView.isClickable = false
+                holder.itemView.isFocusable = false
+                holder.itemView.background = null
+                holder.itemView.setOnClickListener(null)
+            } else {
+                holder.tvTitle.text = highlightText(item.title, searchTerms)
+                holder.tvDesc.text = highlightText(item.description, searchTerms)
+                holder.tvDate.text = item.date
+                holder.tvSource.text = item.source
+                
+                holder.tvSource.visibility = View.VISIBLE
+                holder.tvDate.visibility = View.VISIBLE
+                holder.tvCategory.visibility = View.GONE
+                holder.divider.visibility = if (position == items.size - 1) View.GONE else View.VISIBLE
+                
+                holder.tvTitle.setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.text_main))
+                holder.tvDesc.setTextColor(androidx.core.content.ContextCompat.getColor(context, R.color.text_secondary))
+                holder.tvTitle.setTypeface(null, android.graphics.Typeface.BOLD)
+                holder.tvTitle.gravity = android.view.Gravity.START
+                holder.tvDesc.gravity = android.view.Gravity.START
+                
+                val sourceBgColor = android.graphics.Color.parseColor("#1A730692")
+                val sourceTextColor = android.graphics.Color.parseColor("#730692")
+                holder.tvSource.background = createBadgeDrawable(sourceBgColor, 6f, context)
+                holder.tvSource.setTextColor(sourceTextColor)
+                
+                holder.itemView.isClickable = true
+                holder.itemView.isFocusable = true
+                
+                val attrs = intArrayOf(android.R.attr.selectableItemBackground)
+                val typedArray = context.obtainStyledAttributes(attrs)
+                val backgroundResource = typedArray.getDrawable(0)
+                holder.itemView.background = backgroundResource
+                typedArray.recycle()
+                
+                holder.itemView.setOnClickListener {
+                    try {
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(item.link))
+                        context.startActivity(intent)
+                    } catch (e: Exception) {
+                        Toast.makeText(context, "Link cannot be opened", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+        }
+
+        override fun getItemCount(): Int = items.size
+        
+        private fun createBadgeDrawable(backgroundColor: Int, cornerRadiusDp: Float, context: Context): GradientDrawable {
+            val gd = GradientDrawable()
+            gd.setColor(backgroundColor)
+            val density = context.resources.displayMetrics.density
+            gd.cornerRadius = cornerRadiusDp * density
+            return gd
+        }
+    }
+
 }
+
+data class NewsItem(
+    val title: String,
+    val description: String,
+    val link: String,
+    val source: String,
+    val date: String,
+    val type: String
+)

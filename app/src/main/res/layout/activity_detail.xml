@@ -66,11 +66,37 @@
     <!-- Icon + Name -->
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
         android:orientation="vertical" android:gravity="center" android:padding="24dp">
-        <View android:id="@+id/viewDetailColor" android:layout_width="72dp" android:layout_height="72dp"
-            android:background="@drawable/circle_color" android:layout_marginBottom="4dp"/>
-        <TextView android:id="@+id/tvDetailIcon" android:layout_width="72dp" android:layout_height="72dp"
-            android:layout_marginTop="-76dp" android:gravity="center"
-            android:text="N" android:textColor="@color/text_main" android:textSize="22sp" android:textStyle="bold" />
+
+        <FrameLayout
+            android:id="@+id/cardDetailIcon"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginBottom="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground">
+
+            <TextView android:id="@+id/tvDetailIcon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@drawable/circle_color"
+                android:text="N"
+                android:textColor="@color/text_main"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivDetailLogo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:padding="0dp"
+                android:visibility="gone"
+                android:contentDescription="@string/subscription_detail"
+                app:shapeAppearanceOverlay="@style/CircleImage" />
+        </FrameLayout>
+
         <TextView android:id="@+id/tvDetailName" android:layout_width="match_parent" android:layout_height="wrap_content"
             android:layout_marginTop="12dp" android:text="-" android:textColor="@color/text_main"
             android:textSize="20sp" android:textStyle="bold" android:gravity="center"

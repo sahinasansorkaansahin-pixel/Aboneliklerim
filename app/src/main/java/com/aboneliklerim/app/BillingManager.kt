@@ -15,6 +15,7 @@ class BillingManager private constructor(private val context: Context) : Purchas
         fun onBillingSetupFinished()
         fun onPremiumStatusChanged(isPremium: Boolean)
         fun onProductsLoaded(monthly: ProductDetails?, yearly: ProductDetails?, lifetime: ProductDetails?)
+        fun onRestoreFinished(found: Boolean)
         fun onError(message: String)
     }
 
@@ -31,9 +32,9 @@ class BillingManager private constructor(private val context: Context) : Purchas
 
     companion object {
         private const val TAG = "BillingManager"
-        const val SKU_MONTHLY = "premium_monthly"
-        const val SKU_YEARLY = "premium_yearly"
-        const val SKU_LIFETIME = "premium_lifetime"
+        const val SKU_MONTHLY = "monthly_premium"
+        const val SKU_YEARLY = "yearly_premium"
+        const val SKU_LIFETIME = "yearlypremium"
 
         @Volatile
         private var INSTANCE: BillingManager? = null
@@ -83,10 +84,13 @@ class BillingManager private constructor(private val context: Context) : Purchas
                 val hasActiveSub = purchases.any { it.purchaseState == Purchase.PurchaseState.PURCHASED }
                 if (hasActiveSub) {
                     updatePremiumStatus(true)
+                    listener?.onRestoreFinished(true)
                 } else {
                     // If no active sub, check one-time purchase (lifetime)
                     checkLifetimePurchase()
                 }
+            } else {
+                listener?.onRestoreFinished(false)
             }
         }
     }
@@ -99,7 +103,15 @@ class BillingManager private constructor(private val context: Context) : Purchas
                 val hasLifetime = purchases.any {
                     it.products.contains(SKU_LIFETIME) && it.purchaseState == Purchase.PurchaseState.PURCHASED
                 }
-                updatePremiumStatus(hasLifetime)
+                if (hasLifetime) {
+                    updatePremiumStatus(true)
+                    listener?.onRestoreFinished(true)
+                } else {
+                    updatePremiumStatus(false)
+                    listener?.onRestoreFinished(false)
+                }
+            } else {
+                listener?.onRestoreFinished(false)
             }
         }
     }

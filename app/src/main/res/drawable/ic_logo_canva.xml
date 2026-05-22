@@ -1,0 +1,26 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.aapt.org/aapt"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Canva Turquoise to Purple Gradient Circle Background -->
+    <path android:pathData="M24,24m-22,0a22,22 0,1,1 44,0a22,22 0,1,1 -44,0">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="4"
+                android:startY="4"
+                android:endX="44"
+                android:endY="44"
+                android:type="linear">
+                <item android:offset="0.0" android:color="#00C4CC"/>
+                <item android:offset="1.0" android:color="#7D2AE8"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+    
+    <!-- Stylized Canva 'C' Monogram (White) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M31,18 C28,15 22,15 19,18.5 C15.5,22 15.5,28 19,31.5 C22,35 28,35 31,32 L29,29 C27,30.5 24,30.5 22,28.5 C20,26.5 20,23.5 22,21.5 C24,19.5 27,19.5 29,21 Z" />
+</vector>

@@ -24,4 +24,12 @@ open class BaseActivity : AppCompatActivity() {
         // Apply Brightness and Eye Protection Overlay
         DisplayHelper.applyDisplaySettings(this)
     }
+
+    fun showBlueLightFilter() {
+        DisplayHelper.toggleBlueLightFilter(this, true)
+    }
+
+    fun hideBlueLightFilter() {
+        DisplayHelper.toggleBlueLightFilter(this, false)
+    }
 }

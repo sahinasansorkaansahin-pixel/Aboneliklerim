@@ -35,7 +35,7 @@ class UpcomingActivity : BaseActivity() {
         rv.layoutManager = LinearLayoutManager(this)
 
         val upcoming = subs.map { sub ->
-            val daysUntil = calculateDaysRemaining(sub.startDate, sub.period)
+            val daysUntil = calculateDaysRemaining(sub.startDate, sub.period, sub.periodValue)
             Pair(sub, daysUntil)
         }.sortedBy { it.second }
 

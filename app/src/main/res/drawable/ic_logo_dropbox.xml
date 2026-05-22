@@ -1,0 +1,36 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Dropbox Blue Circle Background -->
+    <path
+        android:fillColor="#0061FE"
+        android:pathData="M24,24m-22,0a22,22 0,1,1 44,0a22,22 0,1,1 -44,0" />
+    
+    <!-- Dropbox Open Box (Pure White) -->
+    <!-- Top-Left Flap -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M16,19.5 L24,14.5 L24,20 L16,25 Z" />
+        
+    <!-- Top-Right Flap -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,19.5 L24,14.5 L24,20 L32,25 Z" />
+        
+    <!-- Bottom-Left Flap -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M16,25.5 L24,21 L24,26.5 L16,31 Z" />
+        
+    <!-- Bottom-Right Flap -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,25.5 L24,21 L24,26.5 L32,31 Z" />
+        
+    <!-- Bottom Box Base -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M24,27.5 L18,31 L24,35 L30,31 Z" />
+</vector>

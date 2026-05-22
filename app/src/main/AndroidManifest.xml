@@ -11,6 +11,9 @@
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
     <uses-permission android:name="com.android.vending.BILLING" />
 
+    <uses-feature android:name="android.hardware.fingerprint" android:required="false" />
+    <uses-feature android:name="android.hardware.biometrics" android:required="false" />
+
     <application
         android:name=".AbonelikApp"
         android:allowBackup="true"
@@ -75,14 +78,26 @@
             android:theme="@style/Theme.Aboneliklerim.NoActionBar" />
         <activity android:name=".PremiumActivity"
             android:theme="@style/Theme.Aboneliklerim.NoActionBar" />
-        <activity android:name=".StreamingPricesActivity"
-            android:theme="@style/Theme.Aboneliklerim.NoActionBar" />
 
         <receiver android:name=".NotificationReceiver" android:exported="true" />
         <receiver android:name=".BootReceiver" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
+        </receiver>
+
+        <receiver android:name=".SubscriptionWidget" android:exported="true" android:label="@string/regular">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_upcoming_info" />
+        </receiver>
+
+        <receiver android:name=".SubscriptionOneTimeWidget" android:exported="true" android:label="@string/one_time">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_upcoming_one_time_info" />
         </receiver>
     </application>
 

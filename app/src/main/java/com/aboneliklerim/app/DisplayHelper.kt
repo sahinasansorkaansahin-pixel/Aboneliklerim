@@ -12,14 +12,13 @@ object DisplayHelper {
     fun applyDisplaySettings(activity: Activity) {
         val prefs = activity.getSharedPreferences("Settings", Context.MODE_PRIVATE)
         
-        // 1. Eye Protection Overlay (App-scoped)
-        val eyeActive = prefs.getBoolean("eye_protection_active", false)
-        toggleEyeProtection(activity, eyeActive)
+        // 1. Eye Protection / Blue Light Overlay (App-scoped)
+        val blueLightActive = prefs.getBoolean("blue_light_filter_enabled", false)
+        toggleBlueLightFilter(activity, blueLightActive)
     }
 
-    private fun toggleEyeProtection(activity: Activity, active: Boolean) {
+    fun toggleBlueLightFilter(activity: Activity, active: Boolean) {
         val rootView = activity.findViewById<ViewGroup>(android.R.id.content)
-        val overlayId = View.generateViewId()
         var overlay = activity.findViewById<View>(R.id.eye_protection_overlay)
 
         if (active) {
@@ -30,7 +29,8 @@ object DisplayHelper {
                         ViewGroup.LayoutParams.MATCH_PARENT,
                         ViewGroup.LayoutParams.MATCH_PARENT
                     )
-                    setBackgroundColor(Color.parseColor("#1AFFB74D")) // Very subtle light orange tint (10%)
+                    // Very subtle amber/orange tint (approx 8% intensity)
+                    setBackgroundColor(Color.parseColor("#14FF9800")) 
                     isClickable = false
                     isFocusable = false
                     elevation = 999f
@@ -38,6 +38,7 @@ object DisplayHelper {
                 rootView.addView(overlay)
             }
             overlay.visibility = View.VISIBLE
+            overlay.bringToFront()
         } else {
             overlay?.visibility = View.GONE
         }

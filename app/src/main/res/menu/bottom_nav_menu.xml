@@ -10,7 +10,7 @@
         android:title="@string/upcoming" />
     <item
         android:id="@+id/nav_placeholder"
-        android:title=""
+        android:title=" "
         android:enabled="false" />
     <item
         android:id="@+id/nav_reports"

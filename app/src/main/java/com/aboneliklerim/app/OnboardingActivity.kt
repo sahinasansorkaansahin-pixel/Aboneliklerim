@@ -56,7 +56,7 @@ class OnboardingActivity : BaseActivity() {
                         hintView.animate()
                             .alpha(0.6f)
                             .translationY(-40f)
-                            .setDuration(1200)
+                            .setDuration(2200)
                             .withEndAction {
                                 hintView.animate()
                                     .alpha(0f)

@@ -8,17 +8,22 @@ object CurrencyHelper {
     fun getCurrencies(context: Context): List<CurrencyItem> {
         val activeLang = LocaleHelper.getActiveLanguage(context)
         val currentLocale = Locale.forLanguageTag(activeLang)
-        return listOf("TRY", "USD", "EUR", "JPY", "GBP", "AZN", "KRW", "UAH", "SEK", "NOK", "DKK", "CAD", "AUD", "SGD", "AED", "SAR", "THB", "PLN", "CZK")
-            .map { code ->
-                try {
-                    val curr = java.util.Currency.getInstance(code)
-                    val flag = getFlagEmoji(code)
-                    val symbol = getLocalizedSymbol(code, currentLocale)
-                    CurrencyItem(flag, curr.getDisplayName(currentLocale), code, symbol)
-                } catch (e: Exception) {
-                    CurrencyItem("🏳️", code, code, "")
-                }
+        val rawCodes = listOf(
+            "TRY", "USD", "EUR", "GBP", "CHF", "KWD", "BHD", "OMR", "JOD", "CAD", "AUD", "JPY", "KRW", "AZN", "UAH", "NOK", "SEK", "DKK", "SAR", "AED", "PLN", "CZK", "THB", "SGD", "AFN", "ALL", "ANG", "AOA", "ARS", "AWG", "BAM", "BBD", "BDT", "BIF", "BMD", "BND", "BOB", "BRL", "BSD", "BTN", "BWP", "BYN", "BZD", "CDF", "CLF", "CLP", "CNH", "CNY", "COP", "CRC", "CUP", "CVE", "DJF", "DOP", "DZD", "EGP", "ERN", "ETB", "FJD", "FKP", "FOK", "GEL", "GGP", "GHS", "GIP", "GMD", "GNF", "GTQ", "GYD", "HKD", "HNL", "HRK", "HTG", "HUF", "IDR", "IMP", "INR", "IQD", "IRR", "ISK", "JEP", "JMD", "KES", "KGS", "KHR", "KID", "KMF", "KYD", "KZT", "LAK", "LBP", "LKR", "LRD", "LSL", "LYD", "MAD", "MDL", "MGA", "MKD", "MMK", "MNT", "MOP", "MRU", "MUR", "MVR", "MWK", "MXN", "MYR", "MZN", "NAD", "NGN", "NIO", "NPR", "NZD", "PAB", "PEN", "PGK", "PHP", "PKR", "PYG", "QAR", "RON", "RSD", "RUB", "RWF", "SBD", "SCR", "SDG", "SHP", "SLE", "SLL", "SOS", "SRD", "SSP", "STN", "SYP", "SZL", "TJS", "TMT", "TND", "TOP", "TTD", "TVD", "TWD", "TZS", "UGX", "UYU", "UZS", "VES", "VND", "VUV", "WST", "XAF", "XCD", "XCG", "XDR", "XOF", "XPF", "YER", "ZAR", "ZMW"
+        )
+        val sortedCodes = rawCodes.sortedBy { code ->
+            CurrencyService.getRate(code, context)
+        }
+        return sortedCodes.map { code ->
+            try {
+                val curr = java.util.Currency.getInstance(code)
+                val flag = getFlagEmoji(code)
+                val symbol = getLocalizedSymbol(code, currentLocale)
+                CurrencyItem(flag, curr.getDisplayName(currentLocale), code, symbol)
+            } catch (e: Exception) {
+                CurrencyItem("🏳️", code, code, "")
             }
+        }
     }
 
     fun getLocalizedSymbol(currencyCode: String, locale: Locale): String {
@@ -42,13 +47,40 @@ object CurrencyHelper {
     }
 
     private fun getFlagEmoji(currencyCode: String): String {
-        return when(currencyCode) {
-            "USD" -> "🇺🇸"; "EUR" -> "🇪🇺"; "GBP" -> "🇬🇧"; "TRY" -> "🇹🇷"; "AZN" -> "🇦🇿"
-            "NOK" -> "🇳🇴"; "SGD" -> "🇸🇬"; "DKK" -> "🇩🇰"; "AUD" -> "🇦🇺"; "SEK" -> "🇸🇪"
-            "CAD" -> "🇨🇦"; "AED" -> "🇦🇪"; "JPY" -> "🇯🇵"; "KRW" -> "🇰🇷"; "SAR" -> "🇸🇦"
-            "CZK" -> "🇨🇿"; "PLN" -> "🇵🇱"; "THB" -> "🇹🇭"; "UAH" -> "🇺🇦"
-            else -> "🏳️"
+        if (currencyCode.length < 2) return "🏳️"
+        
+        when (currencyCode) {
+            "EUR" -> return "🇪🇺"
+            "BTC" -> return "🪙"
+            "ETH" -> return "🪙"
+            "XOF" -> return "🏳️"
+            "XAF" -> return "🏳️"
+            "XPF" -> return "🇵🇫"
+            "XCD" -> return "🏳️"
+            "XDR" -> return "🏳️"
+            "ANG" -> return "🇨🇼"
+            "AWG" -> return "🇦🇼"
+            "FOK" -> return "🇫🇴"
+            "GGP" -> return "🇬🇬"
+            "GIP" -> return "🇬🇮"
+            "IMP" -> return "🇮🇲"
+            "JEP" -> return "🇯🇪"
+            "KID" -> return "🇰🇮"
+            "TVD" -> return "🇹🇻"
         }
+
+        val countryCode = currencyCode.substring(0, 2).uppercase()
+        val firstChar = countryCode[0]
+        val secondChar = countryCode[1]
+        
+        if (firstChar in 'A'..'Z' && secondChar in 'A'..'Z') {
+            val firstCodePoint = 0x1F1E6 + (firstChar - 'A')
+            val secondCodePoint = 0x1F1E6 + (secondChar - 'A')
+            val firstChars = Character.toChars(firstCodePoint)
+            val secondChars = Character.toChars(secondCodePoint)
+            return String(firstChars) + String(secondChars)
+        }
+        return "🏳️"
     }
 
     fun getManualSymbol(currencyCode: String): String? {

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Aboneliklerim</string>
     <string name="my_subscriptions">Meine Abonnements</string>
@@ -120,9 +120,9 @@
     <string name="onboarding_desc_6">Kategorisieren Sie Ihre Abonnements, um Ihre Ausgaben besser verwalten zu können.</string>
     <string name="onboarding_title_7">Lokales und Cloud-Backup</string>
     <string name="onboarding_desc_7">Sichern Sie Ihre Daten sowohl lokal auf Ihrem Gerät als auch in der Cloud, um von allen Ihren Geräten darauf zugreifen zu können.</string>
-    <string name="onboarding_title_8">Starten Sie jetzt!</string>
+    <string name="onboarding_title_8">Jetzt starten!</string>
     <string name="onboarding_desc_8">Kontrollieren Sie jetzt Ihre Abonnements, indem Sie Ihr erstes hinzufügen.</string>
-    <string name="onboarding_title_9">Kostenaufteilung</string>
+    <string name="onboarding_title_9">Kostenbeteiligung</string>
     <string name="onboarding_desc_9">Teilen Sie die Abonnementkosten mit Freunden oder der Familie und senden Sie mit einem Klick schnelle Zahlungserinnerungen!</string>
     <string name="onboarding_title_10">Werden Sie Premium und werbefrei</string>
     <string name="onboarding_desc_10">Genießen Sie unbegrenzte Backups, Live-Wechselkurse in Echtzeit, erweiterte Kostenaufteilung und ein völlig werbefreies Premium-Erlebnis.</string>
@@ -168,6 +168,7 @@
     <string name="filter_tags">Schlagworte</string>
     <string name="filter_archived">Archiviert</string>
     <string name="default_currency">Standardwährung</string>
+    <string name="display_currency">Währung anzeigen</string>
     <string name="date_format">Datumsformat</string>
     <string name="select_date_format">Wählen Sie Datumsformat</string>
     <string name="no_subs_to_backup">Sie haben keine Abonnements zum Sichern.</string>
@@ -202,7 +203,7 @@
     <string name="delete_cloud_success">Cloud-Pläne erfolgreich gelöscht!</string>
     <string name="delete_cloud_error">Fehler beim Löschen der Cloud-Daten!</string>
     <string name="no_cloud_data_found">In der Cloud wurden keine wiederherzustellenden Daten gefunden.</string>
-    <string name="logging_in">Einloggen...</string>
+    <string name="logging_in">Anmelden...</string>
     <string name="syncing_data">Daten werden synchronisiert...</string>
     <string name="login_done">Eingeloggt!</string>
     <string name="local_backup">Lokales Backup</string>
@@ -216,19 +217,14 @@
     <string name="no_local_backup">Kein lokales Backup gefunden.</string>
     <string name="local_delete_confirm">Sind Sie sicher, dass Sie das lokale Backup löschen möchten?</string>
     <string name="local_restore_confirm">Wenn die lokale Sicherung wiederhergestellt wird, werden Ihre aktuellen Daten überschrieben. Möchten Sie fortfahren?</string>
-    <string name="tester_tools">TESTERWERKZEUGE</string>
-    <string name="show_ad_id">Meine Werbe-ID anzeigen</string>
     <string name="account">Konto</string>
     <string name="made_by">Hergestellt von FALCON ANDROİD STUDİO</string>
     <string name="msg_archived">Archiviert</string>
     <string name="msg_unarchived">Restauriert</string>
     <string name="google_login_failed">Google-Anmeldung fehlgeschlagen: %s</string>
     <string name="google_login_cancelled">Google-Anmeldung abgebrochen. Code: %s</string>
-    <string name="ad_id_copied">Werbe-ID kopiert:\n%s</string>
-    <string name="ad_id_failed">ID konnte nicht abgerufen werden: %s</string>
     <string name="error_general">Fehler: %s</string>
     <string name="play_services_update">Bitte aktualisieren Sie die Google Play-Dienste</string>
-    <string name="ad_inspector_preparing">Ad Inspector wird vorbereitet...</string>
     <string name="duplicate_contact_warning">Dieser Kontakt wurde bereits hinzugefügt</string>
     <string name="legal_and_privacy">Rechtliches und Datenschutz</string>
     <string name="policy_privacy_title">Datenschutzrichtlinie</string>
@@ -267,5 +263,23 @@
     <string name="premium_active_toast">Premium Aktiv! 🎉</string>
     <string name="billing_connection_failed">Es konnte keine Verbindung mit Google Play hergestellt werden. Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.</string>
     <string name="ok">OK</string>
-    <string name="tester_premium_toggle">Premium-Status umschalten (Test)</string>
-</resources>
+    <string name="blue_light_filter">Blaulichtfilter</string>
+    <string name="add_photo">Foto hinzufügen</string>
+    <string name="change_photo">Foto ändern</string>
+    <string name="choose_from_gallery">Wählen Sie aus der Galerie</string>
+    <string name="remove_photo">Foto entfernen</string>
+    <string name="payment_today">Zahlung noch heute!</string>
+    <string name="upcoming_widget">Widget „Bevorstehende Zahlungen“.</string>
+    <string name="widget_status_off">Widget deaktiviert</string>
+    <string name="no_upcoming_subs">Keine bevorstehenden Abonnements</string>
+    <string name="no_subs_at_all">Noch keine Abonnements hinzugefügt</string>
+    <string name="widget_instructions_title">So fügen Sie ein Widget hinzu</string>
+    <string name="widget_instructions_text">1. Gehen Sie zum Startbildschirm Ihres Telefons.\n2. Drücken Sie lange auf einen leeren Bereich oder das App-Symbol.\n3. Wählen Sie „Widgets“.\n4. Suchen Sie „Aboneliklerim“ und ziehen Sie es auf Ihren Bildschirm.</string>
+    <string name="biometric_title">App-Sicherheit</string>
+    <string name="biometric_subtitle">Schalte Aboneliklerim frei, um fortzufahren</string>
+    <string name="app_lock">App-Sperre</string>
+    <string name="default_currency_view">Standardwährung (Plan)</string>
+    <string name="active_users_loading">Online-Benutzer: ...</string>
+    <string name="active_users_count">Aktuelle aktive Benutzer: %d</string>
+    <string name="currency_info_msg">Mit dieser Option können Sie die Währung festlegen, die Sie beim Erstellen eines neuen Plans verwenden möchten.</string>
+<string name="no_plans_found">Keine Pläne gefunden</string></resources>

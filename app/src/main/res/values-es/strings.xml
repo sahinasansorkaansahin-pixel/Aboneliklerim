@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Aboneliklerim</string>
+    <string name="app_name">aboneliklerim</string>
     <string name="my_subscriptions">Mis suscripciones</string>
     <string name="total_expense">Gasto Total Mensual</string>
     <string name="shared_with">Compartido con (división de costos)</string>
@@ -115,14 +115,14 @@
     <string name="onboarding_title_4">Estadísticas detalladas</string>
     <string name="onboarding_desc_4">Analice sus gastos con gráficos mensuales y anuales para ahorrar dinero.</string>
     <string name="onboarding_title_5">Soporte global y seguimiento de divisas</string>
-    <string name="onboarding_desc_5">Administre suscripciones en numerosos idiomas y monedas. Realice un seguimiento de los tipos de cambio en tiempo real integrados para todos los países compatibles.</string>
+    <string name="onboarding_desc_5">Gestione suscripciones en numerosos idiomas y monedas. Realice un seguimiento de los tipos de cambio integrados en tiempo real para todos los países admitidos.</string>
     <string name="onboarding_title_6">Etiquetado avanzado</string>
     <string name="onboarding_desc_6">Clasifique sus suscripciones para administrar mejor sus gastos.</string>
     <string name="onboarding_title_7">Copia de seguridad local y en la nube</string>
     <string name="onboarding_desc_7">Haga una copia de seguridad de sus datos tanto localmente en su dispositivo como en la nube para acceder a ellos desde todos sus dispositivos.</string>
     <string name="onboarding_title_8">¡Empiece ahora!</string>
     <string name="onboarding_desc_8">Controla tus suscripciones ahora agregando la primera.</string>
-    <string name="onboarding_title_9">Compartir Costos</string>
+    <string name="onboarding_title_9">Costo compartido</string>
     <string name="onboarding_desc_9">¡Divida los costos de suscripción con amigos o familiares y envíe recordatorios de pago rápidos con un solo clic!</string>
     <string name="onboarding_title_10">Vaya Premium y sin publicidad</string>
     <string name="onboarding_desc_10">Disfrute de copias de seguridad ilimitadas, tipos de cambio en vivo en tiempo real, división de costos avanzada y una experiencia premium completamente sin publicidad.</string>
@@ -152,7 +152,7 @@
     <string name="theme_smart_desc">Inteligente (basado en el tiempo)</string>
     <string name="select_dark_mode">Seleccione el modo oscuro</string>
     <string name="language">Idioma</string>
-    <string name="select_language">Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.</string>
+    <string name="select_language">Seleccionar idioma</string>
     <string name="subscription">Suscripción</string>
     <string name="general_cat">General</string>
     <string name="days_before_plural">%d días antes</string>
@@ -168,6 +168,7 @@
     <string name="filter_tags">Etiquetas</string>
     <string name="filter_archived">Archivado</string>
     <string name="default_currency">Moneda predeterminada</string>
+    <string name="display_currency">Moneda de visualización</string>
     <string name="date_format">Formato de fecha</string>
     <string name="select_date_format">Seleccionar formato de fecha</string>
     <string name="no_subs_to_backup">No tienes ninguna suscripción para realizar copias de seguridad.</string>
@@ -216,19 +217,14 @@
     <string name="no_local_backup">No se encontró ninguna copia de seguridad local.</string>
     <string name="local_delete_confirm">¿Está seguro de que desea eliminar la copia de seguridad local?</string>
     <string name="local_restore_confirm">Cuando se restablezca la copia de seguridad local, sobrescribirá sus datos actuales. ¿Quieres continuar?</string>
-    <string name="tester_tools">HERRAMIENTAS DE PROBADOR</string>
-    <string name="show_ad_id">Mostrar mi ID de publicidad</string>
     <string name="account">Cuenta</string>
     <string name="made_by">Hecho por FALCON ANDROİD STUDİO</string>
     <string name="msg_archived">Archivado</string>
     <string name="msg_unarchived">Restaurado</string>
     <string name="google_login_failed">Error al iniciar sesión en Google: %s</string>
     <string name="google_login_cancelled">Inicio de sesión de Google cancelado. Código: %s</string>
-    <string name="ad_id_copied">ID de publicidad copiado:\n%s</string>
-    <string name="ad_id_failed">No se pudo obtener la identificación: %s</string>
     <string name="error_general">Error: %s</string>
     <string name="play_services_update">Actualice los servicios de Google Play</string>
-    <string name="ad_inspector_preparing">Preparando el inspector de anuncios...</string>
     <string name="duplicate_contact_warning">Este contacto ya está agregado</string>
     <string name="legal_and_privacy">Legal y Privacidad</string>
     <string name="policy_privacy_title">política de privacidad</string>
@@ -267,5 +263,23 @@
     <string name="premium_active_toast">Premium Activo! 🎉</string>
     <string name="billing_connection_failed">No se pudo establecer conexión con Google Play. Por favor verifique su conexión a Internet e inténtelo nuevamente.</string>
     <string name="ok">DE ACUERDO</string>
-    <string name="tester_premium_toggle">Alternar estado premium (prueba)</string>
-</resources>
+    <string name="blue_light_filter">Filtro de luz azul</string>
+    <string name="add_photo">Agregar foto</string>
+    <string name="change_photo">Cambiar foto</string>
+    <string name="choose_from_gallery">Elige de la galería</string>
+    <string name="remove_photo">Quitar foto</string>
+    <string name="payment_today">¡Pago hoy!</string>
+    <string name="upcoming_widget">Próximo widget de pago</string>
+    <string name="widget_status_off">Widget deshabilitado</string>
+    <string name="no_upcoming_subs">No hay próximas suscripciones</string>
+    <string name="no_subs_at_all">Aún no se han agregado suscripciones</string>
+    <string name="widget_instructions_title">Cómo agregar un widget</string>
+    <string name="widget_instructions_text">1. Vaya a la pantalla de inicio de su teléfono.\n2. Mantenga presionado un área vacía o el ícono de la aplicación.\n3. Seleccione \"Widgets\".\n4. Busque \"Aboneliklerim\" y arrástrelo a su pantalla.</string>
+    <string name="biometric_title">Seguridad de la aplicación</string>
+    <string name="biometric_subtitle">Desbloquea Aboneliklerim para continuar</string>
+    <string name="app_lock">Bloqueo de aplicaciones</string>
+    <string name="default_currency_view">Moneda predeterminada (plan)</string>
+    <string name="active_users_loading">Usuarios en línea: ...</string>
+    <string name="active_users_count">Usuarios activos actuales: %d</string>
+    <string name="currency_info_msg">Esta opción le permite configurar la moneda que desea utilizar al crear un nuevo plan.</string>
+<string name="no_plans_found">No se encontraron planes</string></resources>

@@ -1,0 +1,59 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Deezer Dark Grey Circle Background -->
+    <path
+        android:fillColor="#121216"
+        android:pathData="M24,24m-22,0a22,22 0,1,1 44,0a22,22 0,1,1 -44,0" />
+    
+    <!-- Colored Equalizer Blocks -->
+    <!-- Column 1 (Left-most) -->
+    <!-- Yellow block -->
+    <path
+        android:fillColor="#FFD300"
+        android:pathData="M14,30 H18 V32 H14 Z" />
+        
+    <!-- Column 2 -->
+    <!-- Orange block -->
+    <path
+        android:fillColor="#FF9000"
+        android:pathData="M20,26 H24 V28 H20 Z" />
+    <!-- Red-Orange block -->
+    <path
+        android:fillColor="#FF5000"
+        android:pathData="M20,30 H24 V32 H20 Z" />
+        
+    <!-- Column 3 (Center) -->
+    <!-- Pink block -->
+    <path
+        android:fillColor="#FF2D55"
+        android:pathData="M26,22 H30 V24 H26 Z" />
+    <!-- Purple block -->
+    <path
+        android:fillColor="#E02490"
+        android:pathData="M26,26 H30 V28 H26 Z" />
+    <!-- Dark Purple block -->
+    <path
+        android:fillColor="#9B30FF"
+        android:pathData="M26,30 H30 V32 H26 Z" />
+        
+    <!-- Column 4 (Right-most) -->
+    <!-- Cyan block -->
+    <path
+        android:fillColor="#00C6FF"
+        android:pathData="M32,18 H36 V20 H32 Z" />
+    <!-- Light Blue block -->
+    <path
+        android:fillColor="#0072CE"
+        android:pathData="M32,22 H36 V24 H32 Z" />
+    <!-- Dark Blue block -->
+    <path
+        android:fillColor="#003797"
+        android:pathData="M32,26 H36 V28 H32 Z" />
+    <!-- Teal block -->
+    <path
+        android:fillColor="#00F5D4"
+        android:pathData="M32,30 H36 V32 H32 Z" />
+</vector>

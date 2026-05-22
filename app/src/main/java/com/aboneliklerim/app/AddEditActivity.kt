@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,10 +17,12 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.util.*
-
-
-
-
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
+import androidx.activity.result.contract.ActivityResultContracts
+import com.aboneliklerim.app.Subscription
+import com.aboneliklerim.app.SharedContact
+import com.bumptech.glide.Glide
 
 class ColorPickerAdapter(
     private val colors: List<String>,
@@ -62,9 +65,11 @@ class AddEditActivity : BaseActivity() {
 
     private var selectedCurrency = "TRY"
     private var selectedColor = "#6366f1"
+    private var selectedImagePath: String? = null
     private var isRegularMode = true
     private var selectedCategory = ""
     private lateinit var tagsLauncher: androidx.activity.result.ActivityResultLauncher<Intent>
+    private lateinit var imagePickerLauncher: androidx.activity.result.ActivityResultLauncher<Intent>
     private var isInitialLoad = true 
     
     // Sekmeler arası bildirim hafızası
@@ -93,7 +98,7 @@ class AddEditActivity : BaseActivity() {
 
         editId = intent.getStringExtra("sub_id")
         
-        tagsLauncher = registerForActivityResult(androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult()) { result: androidx.activity.result.ActivityResult ->
+        tagsLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: androidx.activity.result.ActivityResult ->
             if (result.resultCode == RESULT_OK) {
                 val tag = result.data?.getStringExtra("selected_tag")
                 if (tag != null) {
@@ -103,8 +108,31 @@ class AddEditActivity : BaseActivity() {
             }
         }
 
-        loadData()
-        
+        imagePickerLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: androidx.activity.result.ActivityResult ->
+            if (result.resultCode == RESULT_OK) {
+                val uri = result.data?.data
+                if (uri != null) {
+                    try {
+                        contentResolver.takePersistableUriPermission(
+                            uri,
+                            Intent.FLAG_GRANT_READ_URI_PERMISSION
+                        )
+                    } catch (e: Exception) {}
+                    selectedImagePath = uri.toString()
+                    updateImagePreview()
+                }
+            }
+        }
+
+        lifecycleScope.launch {
+            loadData()
+            initUI()
+        }
+    }
+
+    private fun initUI() {
+        val prefs = getSharedPreferences("Settings", Context.MODE_PRIVATE)
+
         if (editId == null) {
             val isPremium = prefs.getBoolean("is_premium_active", false)
             val limit = if (isPremium) 100 else 8
@@ -119,11 +147,42 @@ class AddEditActivity : BaseActivity() {
             }
         }
 
-        val etName = findViewById<EditText>(R.id.etName)
         val etPrice = findViewById<EditText>(R.id.etPrice)
         val spinnerPeriod = findViewById<Spinner>(R.id.spinnerPeriod)
-        val etPaymentMethod = findViewById<EditText>(R.id.etPaymentMethod)
         val etNote = findViewById<EditText>(R.id.etNote)
+        val tvNoteCharCount = findViewById<TextView>(R.id.tvNoteCharCount)
+        val etName = findViewById<EditText>(R.id.etName)
+        val tvNameCharCount = findViewById<TextView>(R.id.tvNameCharCount)
+        val etPaymentMethod = findViewById<EditText>(R.id.etPaymentMethod)
+        val tvPaymentCharCount = findViewById<TextView>(R.id.tvPaymentCharCount)
+
+        etNote.addTextChangedListener(object : android.text.TextWatcher {
+            override fun afterTextChanged(s: android.text.Editable?) {
+                tvNoteCharCount.text = "${s?.length ?: 0}/35"
+            }
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+        })
+
+        val tvAddEditIcon = findViewById<TextView>(R.id.tvAddEditIcon)
+        etName.addTextChangedListener(object : android.text.TextWatcher {
+            override fun afterTextChanged(s: android.text.Editable?) {
+                tvNameCharCount.text = "${s?.length ?: 0}/20"
+                val text = s?.toString()?.trim() ?: ""
+                tvAddEditIcon?.text = if (text.isEmpty()) "A" else text.take(1).uppercase()
+            }
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+        })
+
+        etPaymentMethod.addTextChangedListener(object : android.text.TextWatcher {
+            override fun afterTextChanged(s: android.text.Editable?) {
+                tvPaymentCharCount.text = "${s?.length ?: 0}/20"
+            }
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+        })
+
         val btnSave = findViewById<Button>(R.id.btnSave)
         val btnBack = findViewById<ImageButton>(R.id.btnBack)
         val tvCurrencyLabel = findViewById<TextView>(R.id.tvCurrencyLabel)
@@ -162,6 +221,13 @@ class AddEditActivity : BaseActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
         
+        if (editId == null) {
+            // Keep default "Yeni Abonelik" title
+        } else {
+            // Bug 3 fix: change title in edit mode
+            val titleView = findViewById<TextView>(R.id.tvAddEditTitle)
+            titleView?.text = getString(R.string.edit_subscription)
+        }
         val tvTabRegular = findViewById<TextView>(R.id.tvTabRegular)
         val tvTabOneTime = findViewById<TextView>(R.id.tvTabOneTime)
         val tabIndicator = findViewById<View>(R.id.tabIndicator)
@@ -169,7 +235,6 @@ class AddEditActivity : BaseActivity() {
         val tvDateLabel = findViewById<TextView>(R.id.tvDateLabel)
         val tvDateValue = findViewById<TextView>(R.id.tvDateValue)
         val btnTagsTrigger = findViewById<View>(R.id.btnTagsTrigger)
-        val tvColorPickerTrigger = findViewById<TextView>(R.id.tvColorPickerTrigger)
         val etPeriodValue = findViewById<EditText>(R.id.etPeriodValue)
 
         val spinnerNotify = findViewById<Spinner>(R.id.spinnerNotify)
@@ -208,18 +273,20 @@ class AddEditActivity : BaseActivity() {
         }
 
         // Custom Tab Logic
+        fun getMaxDaysForPeriod(periodPos: Int, pv: Int): Int {
+            val baseDays = when (periodPos) { 0 -> 1; 1 -> 7; 2 -> 28; else -> 360 }
+            return baseDays * pv
+        }
+
         fun updateTabs(regular: Boolean) {
-            // Geçerli modu değiştirmeden ÖNCE mevcut seçimi kaydet
+            // Save current notify selection before switching
             val currentNotifyDays = spinnerNotify.tag as? List<Int>
             val currentSelection = if (currentNotifyDays != null && spinnerNotify.selectedItemPosition < currentNotifyDays.size) {
                 currentNotifyDays[spinnerNotify.selectedItemPosition]
             } else -1
 
-            if (isRegularMode) {
-                lastRegularNotifyDays = currentSelection
-            } else {
-                lastOneTimeNotifyDays = currentSelection
-            }
+            if (isRegularMode) lastRegularNotifyDays = currentSelection
+            else lastOneTimeNotifyDays = currentSelection
 
             isRegularMode = regular
             if (regular) {
@@ -227,30 +294,26 @@ class AddEditActivity : BaseActivity() {
                 tvTabOneTime.setTextColor(Color.parseColor("#88730692"))
                 layoutPeriodSection.visibility = View.VISIBLE
                 tvDateLabel.text = getString(R.string.first_payment)
-                
+
                 val params = tabIndicator.layoutParams as RelativeLayout.LayoutParams
                 params.addRule(RelativeLayout.ALIGN_START, R.id.tvTabRegular)
                 params.addRule(RelativeLayout.ALIGN_END, R.id.tvTabRegular)
                 tabIndicator.layoutParams = params
-                
-                val currentPos = findViewById<Spinner>(R.id.spinnerPeriod).selectedItemPosition
-                val maxDays = when (currentPos) {
-                    0 -> 1; 1 -> 7; 2 -> 28; else -> 360
-                }
-                // Hafızadaki değeri geri yükle
+
+                val pv = etPeriodValue.text.toString().toIntOrNull() ?: 1
+                val maxDays = getMaxDaysForPeriod(spinnerPeriod.selectedItemPosition, pv)
                 updateNotifySpinner(maxDays, lastRegularNotifyDays)
             } else {
                 tvTabRegular.setTextColor(Color.parseColor("#88730692"))
                 tvTabOneTime.setTextColor(Color.parseColor("#730692"))
                 layoutPeriodSection.visibility = View.GONE
                 tvDateLabel.text = getString(R.string.first_payment_date)
-                
+
                 val params = tabIndicator.layoutParams as RelativeLayout.LayoutParams
                 params.addRule(RelativeLayout.ALIGN_START, R.id.tvTabOneTime)
                 params.addRule(RelativeLayout.ALIGN_END, R.id.tvTabOneTime)
                 tabIndicator.layoutParams = params
-                
-                // Hafızadaki değeri geri yükle
+
                 updateNotifySpinner(365, lastOneTimeNotifyDays)
             }
         }
@@ -263,7 +326,10 @@ class AddEditActivity : BaseActivity() {
             tagsLauncher.launch(intent)
         }
 
-        tvColorPickerTrigger.setOnClickListener { showColorPicker() }
+        val cardAddEditIcon = findViewById<View>(R.id.cardAddEditIcon)
+        val cardAddEditColor = findViewById<View>(R.id.cardAddEditColor)
+        cardAddEditIcon?.setOnClickListener { showImageOptionsDialog() }
+        cardAddEditColor?.setOnClickListener { showColorPicker() }
 
         // Initial tab state - ONLY for new subscriptions
         if (editId == null) {
@@ -279,14 +345,15 @@ class AddEditActivity : BaseActivity() {
 
         spinnerPeriod.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                if (!isInitialLoad) { // Only update if user manually changes period
+                // Bug 4 fix: only update notify spinner when in Regular mode
+                if (!isInitialLoad && isRegularMode) {
+                    val pv = etPeriodValue.text.toString().toIntOrNull() ?: 1
                     val maxDays = when (position) {
-                        0 -> 1 // Gün
-                        1 -> 7 // Hafta
-                        2 -> 28 // Ay (safe limit)
-                        else -> 360 // Yıl
+                        0 -> 1 * pv
+                        1 -> 7 * pv
+                        2 -> 28 * pv
+                        else -> 360 * pv
                     }
-                    // Düzenli moddayken periyot değişirse mevcut seçimi korumaya çalışarak güncelle
                     updateNotifySpinner(maxDays, lastRegularNotifyDays)
                 }
             }
@@ -313,8 +380,23 @@ class AddEditActivity : BaseActivity() {
         }
         // Trigger initial state only for NEW subscriptions
         if (editId == null) {
-            updateNotifySpinner(28) 
+            updateNotifySpinner(28)
         }
+
+        // Also update notify when periodValue text changes
+        etPeriodValue.addTextChangedListener(object : android.text.TextWatcher {
+            override fun afterTextChanged(s: android.text.Editable?) {
+                if (!isInitialLoad && isRegularMode) {
+                    val pv = s.toString().toIntOrNull() ?: 1
+                    val maxDays = when (spinnerPeriod.selectedItemPosition) {
+                        0 -> 1 * pv; 1 -> 7 * pv; 2 -> 28 * pv; else -> 360 * pv
+                    }
+                    updateNotifySpinner(maxDays, lastRegularNotifyDays)
+                }
+            }
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+        })
 
         // Currency Picker — tap the label to open picker
         tvCurrencyLabel.setOnClickListener { showCurrencyPicker() }
@@ -403,8 +485,11 @@ class AddEditActivity : BaseActivity() {
                 updateSharedUI()
                 
                 etName.setText(it.name)
+                tvNameCharCount.text = "${it.name.length}/20"
                 etNote.setText(it.note) 
+                tvNoteCharCount.text = "${it.note?.length ?: 0}/35"
                 etPaymentMethod.setText(it.paymentMethod)
+                tvPaymentCharCount.text = "${it.paymentMethod?.length ?: 0}/20"
                 
                 // Format price for the text watcher
                 val priceCents = (it.price * 100).toLong().toString()
@@ -437,11 +522,13 @@ class AddEditActivity : BaseActivity() {
                     isRegularMode = true
                     findViewById<LinearLayout>(R.id.layoutPeriodSection).visibility = View.VISIBLE
                     findViewById<TextView>(R.id.tvDateLabel).text = getString(R.string.first_payment)
-                    
+
                     val pos = when(it.period) {
                         "daily" -> 0; "weekly" -> 1; "monthly" -> 2; "yearly" -> 3; else -> 2
                     }
                     spinnerPeriod.setSelection(pos)
+                    // Bug 2 fix: restore periodValue
+                    etPeriodValue.setText(it.periodValue.toString())
 
                     tvTabRegular.setTextColor(Color.parseColor("#730692"))
                     tvTabOneTime.setTextColor(Color.parseColor("#88730692"))
@@ -452,8 +539,9 @@ class AddEditActivity : BaseActivity() {
                         params.addRule(RelativeLayout.ALIGN_END, R.id.tvTabRegular)
                         tabIndicator.layoutParams = params
                     }
+                    val pv = it.periodValue
                     val maxDays = when(it.period) {
-                        "daily" -> 1; "weekly" -> 7; "monthly" -> 28; else -> 360
+                        "daily" -> 1 * pv; "weekly" -> 7 * pv; "monthly" -> 28 * pv; else -> 360 * pv
                     }
                     updateNotifySpinner(maxDays, it.notifyDaysBefore)
                 }
@@ -472,18 +560,25 @@ class AddEditActivity : BaseActivity() {
 
                 selectedCategory = it.category
                 findViewById<TextView>(R.id.btnTagsTriggerText).text = it.category
+
+                selectedImagePath = it.imagePath
+                selectedColor = it.color
+                updateColorTriggerUI()
+                updateImagePreview()
                 
                 // End initial load after a delay to ensure spinner listeners don't fire prematurely
                 spinnerNotify.postDelayed({ isInitialLoad = false }, 200)
             }
         } else {
             isInitialLoad = false
+            updateColorTriggerUI()
+            updateImagePreview()
         }
 
         btnBack.setOnClickListener { finish() }
 
         btnSave.setOnClickListener {
-            val name = etName.text.toString().trim()
+            var name = etName.text.toString().trim()
             val cleanString = etPrice.text.toString().replace("[^\\d]".toRegex(), "")
             val price = cleanString.toDoubleOrNull()?.div(100.0)
 
@@ -504,30 +599,70 @@ class AddEditActivity : BaseActivity() {
             val pType = if (isRegularMode) {
                 when (spinnerPeriod.selectedItemPosition) { 0 -> "daily"; 1 -> "weekly"; 2 -> "monthly"; else -> "yearly" }
             } else "one-time"
+            // Bug 2 fix: read periodValue from input
+            val pValue = etPeriodValue.text.toString().toIntOrNull()?.coerceIn(1, 99) ?: 1
 
-            val currentNotifyDays = spinnerNotify.tag as? List<Int> ?: listOf(-1, 0, 1, 3, 7)
+            val currentNotifyDaysList = spinnerNotify.tag as? List<Int> ?: listOf(-1, 0, 1, 3, 7)
+            val notifyDays = currentNotifyDaysList[spinnerNotify.selectedItemPosition]
+            
+            var finalNotifyTime = selectedNotifyTime
+
+            // --- CONFLICT CHECK LOGIC ---
+            if (notifyDays >= 0) {
+                val existingTriggerTimes = subscriptions
+                    .filter { it.id != editId && !it.isArchived && it.notifyDaysBefore >= 0 }
+                    .mapNotNull { NotificationScheduler.calculateNextTriggerTime(it) }
+
+                fun checkConflict(timeStr: String): Long? {
+                    val testSub = Subscription(
+                        id = "temp", name = name, price = price, period = pType, category = selectedCategory,
+                        startDate = java.text.SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(selectedDate.time),
+                        notifyDaysBefore = notifyDays, notifyTime = timeStr
+                    )
+                    return NotificationScheduler.calculateNextTriggerTime(testSub)
+                }
+
+                var currentTrigger = checkConflict(finalNotifyTime)
+                
+                while (currentTrigger != null && existingTriggerTimes.contains(currentTrigger)) {
+                    // Add 1 minute
+                    val parts = finalNotifyTime.split(":")
+                    var h = parts[0].toInt()
+                    var m = parts[1].toInt()
+                    m++
+                    if (m >= 60) { m = 0; h++ }
+                    if (h >= 24) { h = 0 }
+                    finalNotifyTime = String.format(Locale.getDefault(), "%02d:%02d", h, m)
+                    currentTrigger = checkConflict(finalNotifyTime)
+                }
+            }
+
             val sub = Subscription(
                 id = editId ?: System.currentTimeMillis().toString(),
                 name = name,
                 price = price,
                 period = pType,
+                periodValue = pValue,
                 category = selectedCategory,
                 startDate = java.text.SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(selectedDate.time),
                 currency = selectedCurrency,
                 color = selectedColor,
-                notifyDaysBefore = currentNotifyDays[spinnerNotify.selectedItemPosition],
-                notifyTime = selectedNotifyTime,
+                notifyDaysBefore = notifyDays,
+                notifyTime = finalNotifyTime,
                 paymentMethod = etPaymentMethod.text.toString().trim(),
                 note = etNote.text.toString(),
                 isArchived = if (editId != null) subscriptions.find { it.id == editId }?.isArchived ?: false else false,
                 sharedWith = currentSharedCount,
-                sharedContacts = currentSharedContacts.toList()
+                sharedContacts = currentSharedContacts.toList(),
+                imagePath = selectedImagePath
             )
 
             if (editId != null) subscriptions.removeAll { it.id == editId }
             subscriptions.add(sub)
             saveData()
             NotificationScheduler.scheduleAlarms(this)
+            SubscriptionWidget.updateWidget(this)
+            SubscriptionOneTimeWidget.updateWidget(this)
             setResult(RESULT_OK)
             finish()
         }
@@ -587,11 +722,69 @@ class AddEditActivity : BaseActivity() {
     }
 
     private fun updateColorTriggerUI() {
-        val trigger = findViewById<TextView>(R.id.tvColorPickerTrigger)
-        trigger.setBackgroundColor(Color.parseColor(selectedColor))
-        // Contrast check
-        val darkness = 1 - (0.299 * Color.red(Color.parseColor(selectedColor)) + 0.587 * Color.green(Color.parseColor(selectedColor)) + 0.114 * Color.blue(Color.parseColor(selectedColor))) / 255
-        trigger.setTextColor(if (darkness < 0.5) Color.BLACK else Color.WHITE)
+        val viewCircle = findViewById<View>(R.id.viewSelectedColorCircle)
+        val tvIcon = findViewById<TextView>(R.id.tvAddEditIcon)
+        
+        try {
+            val colorInt = Color.parseColor(selectedColor)
+            val csl = android.content.res.ColorStateList.valueOf(colorInt)
+            
+            viewCircle?.backgroundTintList = csl
+            tvIcon?.backgroundTintList = csl
+            
+            // Contrast check for tvIcon's text color
+            val darkness = 1 - (0.299 * Color.red(colorInt) + 0.587 * Color.green(colorInt) + 0.114 * Color.blue(colorInt)) / 255
+            tvIcon?.setTextColor(if (darkness < 0.5) Color.BLACK else Color.WHITE)
+        } catch (e: Exception) {}
+    }
+
+    private fun updateImagePreview() {
+        val ivAddEditLogo = findViewById<com.google.android.material.imageview.ShapeableImageView>(R.id.ivAddEditLogo)
+        val tvAddEditIcon = findViewById<TextView>(R.id.tvAddEditIcon)
+        
+        if (!selectedImagePath.isNullOrEmpty()) {
+            ivAddEditLogo?.visibility = View.VISIBLE
+            tvAddEditIcon?.visibility = View.GONE
+            try {
+                Glide.with(this)
+                    .load(android.net.Uri.parse(selectedImagePath))
+                    .circleCrop()
+                    .placeholder(R.drawable.circle_color)
+                    .into(ivAddEditLogo)
+            } catch (e: Exception) {
+                ivAddEditLogo?.visibility = View.GONE
+                tvAddEditIcon?.visibility = View.VISIBLE
+            }
+        } else {
+            ivAddEditLogo?.visibility = View.GONE
+            tvAddEditIcon?.visibility = View.VISIBLE
+        }
+    }
+
+    private fun showImageOptionsDialog() {
+        val options = if (selectedImagePath.isNullOrEmpty()) {
+            arrayOf(getString(R.string.add_photo))
+        } else {
+            arrayOf(getString(R.string.change_photo), getString(R.string.remove_photo))
+        }
+        
+        AlertDialog.Builder(this)
+            .setTitle(getString(R.string.add_photo))
+            .setItems(options) { dialog, which ->
+                if (options[which] == getString(R.string.add_photo) || options[which] == getString(R.string.change_photo)) {
+                    val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+                        addCategory(Intent.CATEGORY_OPENABLE)
+                        type = "image/*"
+                        addFlags(Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION)
+                        addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                    }
+                    imagePickerLauncher.launch(intent)
+                } else if (options[which] == getString(R.string.remove_photo)) {
+                    selectedImagePath = null
+                    updateImagePreview()
+                }
+            }
+            .show()
     }
 
     private fun showCurrencyPicker() {
@@ -711,14 +904,16 @@ class AddEditActivity : BaseActivity() {
 
     private fun saveData() {
         getSharedPreferences("AboneliklerimData", Context.MODE_PRIVATE)
-            .edit().putString("subs_list", Gson().toJson(subscriptions)).apply()
+            .edit().putString("subs_list", Gson().toJson(subscriptions)).commit()
     }
 
-    private fun loadData() {
-        val json = getSharedPreferences("AboneliklerimData", Context.MODE_PRIVATE).getString("subs_list", null)
-        if (json != null) {
-            val type = object : TypeToken<MutableList<Subscription>>() {}.type
-            subscriptions = Gson().fromJson(json, type)
+    private suspend fun loadData() {
+        kotlinx.coroutines.withContext(kotlinx.coroutines.Dispatchers.IO) {
+            val json = getSharedPreferences("AboneliklerimData", Context.MODE_PRIVATE).getString("subs_list", null)
+            if (json != null) {
+                val type = object : TypeToken<MutableList<Subscription>>() {}.type
+                subscriptions = Gson().fromJson(json, type)
+            }
         }
     }
 }

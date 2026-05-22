@@ -67,12 +67,13 @@ class ReportsActivity : BaseActivity() {
         monthlyTotal = 0.0
         subscriptions.forEach { sub ->
             val price = sub.price
+            val pv = sub.periodValue.coerceAtLeast(1).toDouble()
             val monthly = when (sub.period) {
-                "yearly" -> price / 12.0
-                "weekly" -> price * 4.33
-                "daily" -> price * 30.0
+                "yearly"   -> price / (12.0 * pv)
+                "weekly"   -> price * (4.33 / pv)
+                "daily"    -> price * (30.0 / pv)
                 "one-time" -> 0.0
-                else -> price
+                else       -> price / pv  // monthly
             }
             if (monthly > 0) {
                 val amountInTry = CurrencyService.convertToTry(monthly, sub.currency ?: "TRY", currentRates)
@@ -134,12 +135,13 @@ class ReportsActivity : BaseActivity() {
         val categoryMap = mutableMapOf<String, Double>()
         subscriptions.forEach { sub ->
             val price = sub.price
+            val pv = sub.periodValue.coerceAtLeast(1).toDouble()
             val monthly = when (sub.period) {
-                "yearly" -> price / 12.0
-                "weekly" -> price * 4.33
-                "daily" -> price * 30.0
+                "yearly"   -> price / (12.0 * pv)
+                "weekly"   -> price * (4.33 / pv)
+                "daily"    -> price * (30.0 / pv)
                 "one-time" -> 0.0
-                else -> price
+                else       -> price / pv  // monthly
             }
             if (monthly > 0) {
                 val amountInTry = CurrencyService.convertToTry(monthly, sub.currency ?: "TRY", currentRates)

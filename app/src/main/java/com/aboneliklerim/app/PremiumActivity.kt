@@ -10,7 +10,7 @@ import com.android.billingclient.api.ProductDetails
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class PremiumActivity : AppCompatActivity() {
+class PremiumActivity : BaseActivity() {
 
     private lateinit var billingManager: BillingManager
     private val prefs by lazy { getSharedPreferences("Settings", Context.MODE_PRIVATE) }
@@ -43,6 +43,16 @@ class PremiumActivity : AppCompatActivity() {
 
             override fun onProductsLoaded(monthly: ProductDetails?, yearly: ProductDetails?, lifetime: ProductDetails?) {
                 updateUI()
+            }
+
+            override fun onRestoreFinished(found: Boolean) {
+                if (!found) {
+                    AlertDialog.Builder(this@PremiumActivity, R.style.Theme_Aboneliklerim_Dialog)
+                        .setTitle(R.string.restore_purchases)
+                        .setMessage(R.string.no_cloud_data_found) // Using existing string for consistency
+                        .setPositiveButton(R.string.ok, null)
+                        .show()
+                }
             }
 
             override fun onError(message: String) {

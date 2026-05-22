@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Aboneliklerim</string>
     <string name="my_subscriptions">Aboneliklerim</string>
@@ -29,9 +29,9 @@
     <string name="yearly">Yıllık</string>
     <string name="one_time">Tek Seferlik</string>
     <string name="days_remaining">%d gün kaldı</string>
-    <string name="today_payment">Bugün ödeme! 🔴</string>
+    <string name="today_payment">Ödeme Bugün!</string>
     <string name="tomorrow_payment">Yarın ödeme ⚠️</string>
-    <string name="expired">Süresi Doldu</string>
+    <string name="expired">Günü geçmiş</string>
     <string name="back">Geri</string>
     <string name="edit">Düzenle</string>
     <string name="delete">Sil</string>
@@ -168,6 +168,8 @@
     <string name="filter_tags">Etiketler</string>
     <string name="filter_archived">Arşivlenmiş</string>
     <string name="default_currency">Varsayılan Para Birimi</string>
+    <string name="default_currency_view">Varsayılan Para Birimi (Plan)</string>
+    <string name="display_currency">Görüntüleme Birimi</string>
     <string name="date_format">Tarih Formatı</string>
     <string name="select_date_format">Tarih Formatı Seçin</string>
     <string name="no_subs_to_backup">Yedeklenecek herhangi bir aboneliğiniz bulunmamaktadır.</string>
@@ -216,19 +218,14 @@
     <string name="no_local_backup">Yerel yedek bulunamadı.</string>
     <string name="local_delete_confirm">Yerel yedeği silmek istediğinize emin misiniz?</string>
     <string name="local_restore_confirm">Yerel yedek geri yüklendiğinde mevcut verilerinizin üzerine yazılacaktır. Devam etmek istiyor musunuz?</string>
-    <string name="tester_tools">TESTER ARAÇLARI</string>
-    <string name="show_ad_id">Reklam Kimliğimi Göster</string>
     <string name="account">Hesap</string>
     <string name="made_by">FALCON ANDROİD STUDİO tarafından geliştirildi</string>
     <string name="msg_archived">Arşivlendi</string>
     <string name="msg_unarchived">Arşivden çıkarıldı</string>
     <string name="google_login_failed">Google ile giriş başarısız: %s</string>
     <string name="google_login_cancelled">Google ile giriş iptal edildi. Kod: %s</string>
-    <string name="ad_id_copied">Reklam Kimliği Kopyalandı:\n%s</string>
-    <string name="ad_id_failed">Kimlik alınamadı: %s</string>
     <string name="error_general">Hata: %s</string>
     <string name="play_services_update">Lütfen Google Play Hizmetlerini güncelleyin</string>
-    <string name="ad_inspector_preparing">Ad Inspector hazırlanıyor...</string>
     <string name="duplicate_contact_warning">Bu kişi zaten eklenmiş</string>
     <string name="legal_and_privacy">Yasal &amp; Gizlilik</string>
     <string name="policy_privacy_title">Gizlilik Sözleşmesi</string>
@@ -240,7 +237,7 @@
     <string name="policy_copyright_content">© 2026 FALCON ANDROİD STUDİO. Her hakkı saklıdır. Aboneliklerim abonelik takip hizmeti olarak verilmektedir. Tüm grafikler, markalama, varlıklar, kaynak kodu ve tasarım bileşenleri FALCON ANDROİD STUDİO\'un fikri mülkiyetindedir. Bu yazılımın önceden izin alınmadan izinsiz çoğaltılması, tersine mühendislik yapılması veya yeniden dağıtılması kesinlikle yasaktır.</string>
     <string name="policy_adpartners_content">Uygulama geliştirmeyi desteklemek amacıyla kişiselleştirilmiş veya kişiselleştirilmemiş reklamlar görüntülemek için Google AdMob\'u kullanıyoruz. Google AdMob, alakalı reklamlar sunmak için cihaz reklam tanımlayıcılarını (GAID), ağ ayrıntılarını ve çerezleri toplayabilir. Daha fazla bilgi edinmek veya reklam kişiselleştirmenizi yönetmek için lütfen Android sistem ayarlarınızdaki Google Reklam Kişiselleştirme Ayarlarını ziyaret edin.</string>
     <string name="premium_title">Premium Hizmet</string>
-    <string name="premium_subtitle">Aboneliklerinizi uçurun!</string>
+    <string name="premium_subtitle">Aboneliklerinizi uçuran özelliklere sahip olun!</string>
     <string name="premium_get_service">Premium Hizmeti Al</string>
     <string name="plan_monthly">Aylık Plan</string>
     <string name="plan_yearly">Yıllık Plan</string>
@@ -267,22 +264,29 @@
     <string name="premium_active_toast">Premium Aktif! 🎉</string>
     <string name="billing_connection_failed">Google Play bağlantısı kurulamadı. Lütfen internet bağlantınızı kontrol edip tekrar deneyin.</string>
     <string name="ok">Tamam</string>
-    <string name="tester_premium_toggle">Premium Durumunu Değiştir (Test)</string>
-    <string name="streaming_prices">Platform Fiyatları Takibi</string>
-    <string name="last_update">Son Güncelleme: %s</string>
-    <string name="stable">Sabit</string>
-    <string name="price_increased">▲ %s Artış</string>
-    <string name="price_decreased">▼ %s Düşüş</string>
-    <string name="open_website">Resmi Web Sitesi</string>
-    <string name="loading_prices">Fiyatlar güncelleniyor...</string>
-    <string name="update_prices_success">Platform fiyatları güncellendi!</string>
-    <string name="update_prices_error">Fiyatlar güncellenemedi.</string>
-    <string name="select_platform">Herhangi bir platform seç</string>
-    <string name="period_monthly_short">/ay</string>
-    <string name="period_yearly_short">/yıl</string>
-    <string name="notif_platform_enabled_toast">%1$s için fiyat takip bildirimleri açıldı.</string>
-    <string name="notif_platform_disabled_toast">%1$s için fiyat takip bildirimleri kapatıldı.</string>
-    <string name="platform_price_change_title">%1$s Fiyat Değişikliği!</string>
-    <string name="platform_price_increased_msg">%1$s fiyatı arttı! Eski: %2$s, Yeni: %3$s</string>
-    <string name="platform_price_decreased_msg">%1$s fiyatı düştü! Eski: %2$s, Yeni: %3$s</string>
+    <string name="blue_light_filter">Mavi Ekran Filtresi</string>
+    <string name="add_photo">Fotoğraf Ekle</string>
+    <string name="change_photo">Fotoğrafı Değiştir</string>
+    <string name="choose_from_gallery">Galeriden Seç</string>
+    <string name="remove_photo">Fotoğrafı Kaldır</string>
+    <string name="payment_today">Ödeme Bugün!</string>
+    <string name="upcoming_widget">Yaklaşan Ödeme Widgetı</string>
+    <string name="widget_status_off">Widget Devre Dışı</string>
+    <string name="no_upcoming_subs">Yaklaşan Aboneliğiniz Bulunmamaktadır</string>
+    <string name="no_subs_at_all">Henüz Aboneliğiniz Bulunmamaktadır</string>
+    <string name="widget_instructions_title">Widget Nasıl Eklenir?</string>
+    <string name="widget_instructions_text">1. Telefonunuzun ana ekranına gidin.\n2. Boş bir alana veya uygulama ikonuna basılı tutun.\n3. \"Widgetlar\" seçeneğine dokunun.\n4. \"Aboneliklerim\" widget\'ını bulup ekrana sürükleyin.</string>
+    <string name="biometric_title">Uygulama Güvenliği</string>
+    <string name="biometric_subtitle">Devam etmek için Aboneliklerim kilidini açın</string>
+    <string name="app_lock">Uygulama Kilidi</string>
+    <string name="active_users_loading">Aktif Kullanıcılar: ...</string>
+    <string name="active_users_count">Anlık Aktif Kullanıcı Sayısı: %d</string>
+    <string name="currency_info_msg">Bu seçenek, yeni bir plan oluştururken varsayılan olarak kullanılacak para birimini belirlemenizi sağlar.</string>
+<string name="no_plans_found">Plan bulunamadı</string>
+    <string name="news_title">Güncel Haberler</string>
+    <string name="news_tag_hike">Zam</string>
+    <string name="news_tag_discount">İndirim</string>
+    <string name="news_tag_campaign">Kampanya</string>
+    <string name="refresh">Yenile</string>
+    <string name="search_news_hint">Dijital haberlerde ara...</string>
 </resources>

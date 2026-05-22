@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Aboneliklerim</string>
+    <string name="app_name">アボネクレリム</string>
     <string name="my_subscriptions">私の定期購入</string>
     <string name="total_expense">毎月の総支出</string>
     <string name="shared_with">共有相手（コスト分割）</string>
@@ -115,7 +115,7 @@
     <string name="onboarding_title_4">詳細な統計</string>
     <string name="onboarding_desc_4">月次および年次グラフで支出を分析し、お金を節約します。</string>
     <string name="onboarding_title_5">グローバルサポートと通貨追跡</string>
-    <string name="onboarding_desc_5">多数の言語と通貨でサブスクリプションを管理します。サポートされているすべての国のリアルタイムの為替レートを追跡します。</string>
+    <string name="onboarding_desc_5">さまざまな言語と通貨でのサブスクリプションを管理します。サポートされているすべての国の統合リアルタイム為替レートを追跡します。</string>
     <string name="onboarding_title_6">高度なタグ付け</string>
     <string name="onboarding_desc_6">サブスクリプションを分類して支出をより適切に管理します。</string>
     <string name="onboarding_title_7">ローカルおよびクラウドのバックアップ</string>
@@ -168,6 +168,7 @@
     <string name="filter_tags">タグ</string>
     <string name="filter_archived">アーカイブ済み</string>
     <string name="default_currency">デフォルトの通貨</string>
+    <string name="display_currency">表示通貨</string>
     <string name="date_format">日付形式</string>
     <string name="select_date_format">日付形式の選択</string>
     <string name="no_subs_to_backup">バックアップするサブスクリプションがありません。</string>
@@ -216,28 +217,23 @@
     <string name="no_local_backup">ローカルバックアップが見つかりませんでした。</string>
     <string name="local_delete_confirm">ローカル バックアップを削除してもよろしいですか?</string>
     <string name="local_restore_confirm">ローカル バックアップが復元されると、現在のデータが上書きされます。続けますか?</string>
-    <string name="tester_tools">テスターツール</string>
-    <string name="show_ad_id">私の広告IDを表示</string>
     <string name="account">アカウント</string>
     <string name="made_by">ファルコンアンドロイドスタジオ製</string>
     <string name="msg_archived">アーカイブ済み</string>
     <string name="msg_unarchived">復元されました</string>
     <string name="google_login_failed">Google サインインに失敗しました: %s</string>
     <string name="google_login_cancelled">Google サインインがキャンセルされました。コード: %s</string>
-    <string name="ad_id_copied">広告 ID がコピーされました:\n%s</string>
-    <string name="ad_id_failed">ID の取得に失敗しました: %s</string>
     <string name="error_general">エラー: %s</string>
     <string name="play_services_update">Google Play サービスを更新してください</string>
-    <string name="ad_inspector_preparing">広告インスペクタを準備しています...</string>
     <string name="duplicate_contact_warning">この連絡先はすでに追加されています</string>
     <string name="legal_and_privacy">法務とプライバシー</string>
     <string name="policy_privacy_title">プライバシーポリシー</string>
     <string name="policy_deletion_title">クラウドデータとプライバシー</string>
     <string name="policy_copyright_title">著作権と規約</string>
     <string name="policy_adpartners_title">広告パートナーのプライバシー</string>
-    <string name="policy_privacy_content">あなたのプライバシーは私たちにとって重要です。 Aboneliklerim は、お客様の個人的なサブスクリプションの詳細を収集、販売、共有しません。すべてのサブスクリプション データ、料金、連絡先リストは、デバイス上でローカルに保存されるか、オプションで認証されたセッションのプライベート Google Firebase アカウントに安全にバックアップされます。私たちはあなたの支払い方法や認証情報を追跡しません。</string>
+    <string name="policy_privacy_content">あなたのプライバシーは私たちにとって重要です。 Aboneliklerim は、お客様の個人的なサブスクリプションの詳細を収集、販売、共有しません。すべてのサブスクリプション データ、コスト、連絡先リストはデバイス上でローカルに保存されるか、オプションで認証されたセッションのプライベート Google Firebase アカウントに安全にバックアップされます。私たちはあなたの支払い方法や認証情報を追跡しません。</string>
     <string name="policy_deletion_content">GDPR と Google Play のポリシーに基づいて、お客様は自分のデータを完全に制御できます。ローカルに保存されているサブスクリプション データを完全に削除するには、アプリ設定に移動し、アプリケーション キャッシュをクリアします。データをクラウドに同期している場合は、「クラウド データの削除」をクリックすると、すべてのサブスクリプション プランをクラウドから完全に削除できます。当社は個人プロフィールを収集または保存しないことに注意してください。ログインは認証のみに使用されるため、削除するアカウントはなく、サブスクリプション データのみを削除できます。</string>
-    <string name="policy_copyright_content">© 2026 ファルコンアンドロイドスタジオ。無断転載を禁じます。 Aboneliklerim は、サブスクリプション追跡サービスとして提供されます。すべてのグラフィックス、ブランディング、アセット、ソース コード、およびデザイン コンポーネントは FALCON ANDROİD STUDİO の知的財産です。事前の承諾なしに、本ソフトウェアを無断で複製、リバースエンジニアリング、再配布することは固く禁じられています。</string>
+    <string name="policy_copyright_content">© 2026 ファルコンアンドロイドスタジオ。無断転載を禁じます。 Aboneliklerim は、サブスクリプション追跡サービスとして提供されます。すべてのグラフィックス、ブランディング、アセット、ソース コード、およびデザイン コンポーネントは、FALCON ANDROİD STUDİO の知的財産です。事前の承諾なしに、本ソフトウェアを無断で複製、リバースエンジニアリング、再配布することは固く禁じられています。</string>
     <string name="policy_adpartners_content">当社は Google AdMob を利用してパーソナライズされた広告または非パーソナライズされた広告を表示し、アプリケーション開発をサポートします。 Google AdMob は、関連する広告を配信するために、デバイス広告識別子 (GAID)、ネットワークの詳細、Cookie を収集する場合があります。詳細または広告のカスタマイズを管理するには、Android システム設定内の Google 広告のカスタマイズ設定にアクセスしてください。</string>
     <string name="premium_title">プレミアムサービス</string>
     <string name="premium_subtitle">サブスクリプションを大幅に強化しましょう!</string>
@@ -251,7 +247,7 @@
     <string name="premium_feature_no_ads">広告を削除する</string>
     <string name="premium_feature_currency">為替レート機能</string>
     <string name="premium_feature_shared_cost">共有コスト分割</string>
-    <string name="premium_feature_limit">最大 100 のサブスクリプション (無料: 8)</string>
+    <string name="premium_feature_limit">最大 100 サブスクリプション (無料: 8)</string>
     <string name="premium_feature_trend">月々の支出傾向</string>
     <string name="premium_info_no_ads">アプリ全体からすべてのバナー広告とインタースティシャル広告を削除します。広告のない、クリーンで気を散らすことのないエクスペリエンスをお楽しみください。</string>
     <string name="premium_info_currency">完全な複数通貨サポートにアクセスします。世界中の通貨でサブスクリプションを追加し、ライブ為替レートを表示します。希望する現地通貨でコストを追跡します。</string>
@@ -267,5 +263,23 @@
     <string name="premium_active_toast">プレミアムアクティブ！ 🎉</string>
     <string name="billing_connection_failed">Google Playとの接続を確立できませんでした。インターネット接続を確認して、もう一度試してください。</string>
     <string name="ok">わかりました</string>
-    <string name="tester_premium_toggle">プレミアムステータスの切り替え (テスト)</string>
-</resources>
+    <string name="blue_light_filter">ブルーライトフィルター</string>
+    <string name="add_photo">写真を追加</string>
+    <string name="change_photo">写真を変更する</string>
+    <string name="choose_from_gallery">ギャラリーから選ぶ</string>
+    <string name="remove_photo">写真を削除</string>
+    <string name="payment_today">今日のお支払い!</string>
+    <string name="upcoming_widget">今後の支払いウィジェット</string>
+    <string name="widget_status_off">ウィジェットが無効になっています</string>
+    <string name="no_upcoming_subs">今後の定期購入はありません</string>
+    <string name="no_subs_at_all">まだ追加されたサブスクリプションはありません</string>
+    <string name="widget_instructions_title">ウィジェットの追加方法</string>
+    <string name="widget_instructions_text">1. 携帯電話のホーム画面に移動します。\n2.空の領域またはアプリのアイコンを長押しします。\n3. 「ウィジェット」を選択します。\n4. 「Aboneliklerim」を見つけて画面にドラッグします。</string>
+    <string name="biometric_title">アプリのセキュリティ</string>
+    <string name="biometric_subtitle">アボネリクレリムのロックを解除して続行します</string>
+    <string name="app_lock">アプリロック</string>
+    <string name="default_currency_view">デフォルト通貨(計画)</string>
+    <string name="active_users_loading">オンライン ユーザー: ...</string>
+    <string name="active_users_count">現在のアクティブ ユーザー: %d</string>
+    <string name="currency_info_msg">このオプションを使用すると、新しいプランを作成するときに使用する通貨を設定できます。</string>
+<string name="no_plans_found">計画が見つかりません</string></resources>

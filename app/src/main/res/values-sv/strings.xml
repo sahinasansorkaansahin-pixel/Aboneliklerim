@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Aboneliklerim</string>
     <string name="my_subscriptions">Mina prenumerationer</string>
@@ -100,7 +100,7 @@
     <string name="home">Hem</string>
     <string name="upcoming">Kommande</string>
     <string name="reports">Rapporter</string>
-    <string name="cloud_sync">Molnsynkronisering</string>
+    <string name="cloud_sync">Cloud Sync</string>
     <string name="cloud_sync_desc">Överför dina data till en annan enhet.</string>
     <string name="restore">Återställa</string>
     <string name="skip">Hoppa</string>
@@ -109,13 +109,13 @@
     <string name="onboarding_title_1">Välkommen till Mina prenumerationer</string>
     <string name="onboarding_desc_1">Hantera alla dina digitala och fysiska abonnemang under ett tak.</string>
     <string name="onboarding_title_2">Missa aldrig en betalning</string>
-    <string name="onboarding_desc_2">Få aviseringar före betalningsdagar med automatiska påminnelser.</string>
+    <string name="onboarding_desc_2">Få aviseringar innan betalningsdagar med automatiska påminnelser.</string>
     <string name="onboarding_title_3">Smart mörkt läge</string>
     <string name="onboarding_desc_3">Ett modernt gränssnitt som anpassar sig till tiden på dagen eller dina önskemål.</string>
     <string name="onboarding_title_4">Detaljerad statistik</string>
     <string name="onboarding_desc_4">Analysera dina utgifter med månads- och årsdiagram för att spara pengar.</string>
     <string name="onboarding_title_5">Global support och valutaspårning</string>
-    <string name="onboarding_desc_5">Hantera prenumerationer på många språk och valutor. Spåra realtidsväxelkurser integrerade för alla länder som stöds.</string>
+    <string name="onboarding_desc_5">Hantera prenumerationer på många språk och valutor. Spåra integrerade växelkurser i realtid för alla länder som stöds.</string>
     <string name="onboarding_title_6">Avancerad taggning</string>
     <string name="onboarding_desc_6">Kategorisera dina prenumerationer för att bättre hantera dina utgifter.</string>
     <string name="onboarding_title_7">Lokal och molnsäkerhetskopiering</string>
@@ -164,10 +164,11 @@
     <string name="sort_date">Nästa faktureringsdatum</string>
     <string name="sort_color">Färg</string>
     <string name="view_options">Visa alternativ</string>
-    <string name="filter_time_remaining">Återstående tid</string>
+    <string name="filter_time_remaining">Tid som återstår</string>
     <string name="filter_tags">Taggar</string>
     <string name="filter_archived">Arkiverad</string>
     <string name="default_currency">Standardvaluta</string>
+    <string name="display_currency">Visa valuta</string>
     <string name="date_format">Datumformat</string>
     <string name="select_date_format">Välj Datumformat</string>
     <string name="no_subs_to_backup">Du har inga prenumerationer att säkerhetskopiera.</string>
@@ -216,19 +217,14 @@
     <string name="no_local_backup">Ingen lokal säkerhetskopia hittades.</string>
     <string name="local_delete_confirm">Är du säker på att du vill ta bort den lokala säkerhetskopian?</string>
     <string name="local_restore_confirm">När den lokala säkerhetskopian återställs kommer den att skriva över dina aktuella data. Vill du fortsätta?</string>
-    <string name="tester_tools">TESTERVERKTYG</string>
-    <string name="show_ad_id">Visa mitt reklam-ID</string>
     <string name="account">Konto</string>
     <string name="made_by">Tillverkad av FALCON ANDROİD STUDİO</string>
     <string name="msg_archived">Arkiverad</string>
     <string name="msg_unarchived">Återställd</string>
     <string name="google_login_failed">Google-inloggning misslyckades: %s</string>
     <string name="google_login_cancelled">Google-inloggning avbröts. Kod: %s</string>
-    <string name="ad_id_copied">Annons-ID kopierat:\n%s</string>
-    <string name="ad_id_failed">Det gick inte att få ID: %s</string>
     <string name="error_general">Fel: %s</string>
     <string name="play_services_update">Uppdatera Google Play Services</string>
-    <string name="ad_inspector_preparing">Förbereder Ad Inspector...</string>
     <string name="duplicate_contact_warning">Den här kontakten har redan lagts till</string>
     <string name="legal_and_privacy">Juridik och integritet</string>
     <string name="policy_privacy_title">Sekretesspolicy</string>
@@ -239,7 +235,7 @@
     <string name="policy_deletion_content">Enligt GDPR och Google Plays policyer har du fullständig kontroll över din data. För att permanent radera din lokalt lagrade prenumerationsdata, gå till appinställningar och rensa appcachen. Om du har synkroniserat din data till molnet kan du permanent ta bort alla dina prenumerationsplaner från molnet genom att klicka på \'Ta bort molndata\'. Observera att vi inte samlar in eller lagrar personliga profiler; din inloggning används endast för autentisering, så det finns inget konto att radera, bara dina prenumerationsdata kan raderas.</string>
     <string name="policy_copyright_content">© 2026 FALCON ANDROİD STUDİO. Alla rättigheter reserverade. Aboneliklerim tillhandahålls som en prenumerationsspårningstjänst. All grafik, varumärke, tillgångar, källkod och designkomponenter är FALCON ANDROİD STUDİOs immateriella egendom. All otillåten reproduktion, reverse engineering eller omdistribution av denna programvara utan föregående medgivande är strängt förbjuden.</string>
     <string name="policy_adpartners_content">Vi använder Google AdMob för att visa personliga eller icke-anpassade annonser för att stödja applikationsutveckling. Google AdMob kan samla in enhetsannonseringsidentifierare (GAID), nätverksdetaljer och cookies för att visa relevanta annonser. För mer information eller för att hantera din annonsanpassning, besök Googles inställningar för annonsanpassning i dina Android-systeminställningar.</string>
-    <string name="premium_title">Premium Service</string>
+    <string name="premium_title">Premiumtjänst</string>
     <string name="premium_subtitle">Överladda dina prenumerationer!</string>
     <string name="premium_get_service">Få premiumservice</string>
     <string name="plan_monthly">Månadsplan</string>
@@ -257,7 +253,7 @@
     <string name="premium_info_currency">Få tillgång till fullständigt stöd för flera valutor. Lägg till prenumerationer i valfri global valuta och se live växelkurser. Spåra dina kostnader i din föredragna lokala valuta.</string>
     <string name="premium_info_shared_cost">Dela abonnemang kostar rättvist mellan flera personer. Lägg till kontakter, se belopp per person och skicka WhatsApp-påminnelser till delade medlemmar.</string>
     <string name="premium_info_limit">Skapa upp till 100 prenumerationer (gratis plan är begränsad till 8). Hantera alla dina tjänster utan några begränsningar.</string>
-    <string name="premium_info_trend">Se din månatliga utgiftstrend som ett stapeldiagram. Se hur dina utgifter har förändrats under de senaste 12 månaderna med ett ögonkast.</string>
+    <string name="premium_info_trend">Visa din månatliga utgiftstrend som ett stapeldiagram. Se hur dina utgifter har förändrats under de senaste 12 månaderna med ett ögonkast.</string>
     <string name="restore_purchases">Återställ inköp</string>
     <string name="premium_feature_guest_login">Lokal gästinloggning</string>
     <string name="premium_info_guest_login">Aktivera gästinloggning för lokal offlineanvändning utan ett Google-konto. Håll all din prenumerationsdata säkert sparad på din enhet offline.</string>
@@ -267,5 +263,23 @@
     <string name="premium_active_toast">Premium Active! 🎉</string>
     <string name="billing_connection_failed">Det gick inte att upprätta anslutning till Google Play. Kontrollera din internetanslutning och försök igen.</string>
     <string name="ok">OK</string>
-    <string name="tester_premium_toggle">Växla Premium Status (Test)</string>
-</resources>
+    <string name="blue_light_filter">Blåljusfilter</string>
+    <string name="add_photo">Lägg till foto</string>
+    <string name="change_photo">Byt foto</string>
+    <string name="choose_from_gallery">Välj från Galleri</string>
+    <string name="remove_photo">Ta bort foto</string>
+    <string name="payment_today">Betalning idag!</string>
+    <string name="upcoming_widget">Kommande betalningswidget</string>
+    <string name="widget_status_off">Widget inaktiverad</string>
+    <string name="no_upcoming_subs">Inga kommande prenumerationer</string>
+    <string name="no_subs_at_all">Inga prenumerationer har lagts till ännu</string>
+    <string name="widget_instructions_title">Hur man lägger till widget</string>
+    <string name="widget_instructions_text">1. Gå till telefonens startskärm.\n2. Tryck länge på ett tomt område eller appikonen.\n3. Välj \"Widgets\".\n4. Hitta \"Aboneliklerim\" och dra den till din skärm.</string>
+    <string name="biometric_title">Appsäkerhet</string>
+    <string name="biometric_subtitle">Lås upp Aboneliklerim för att fortsätta</string>
+    <string name="app_lock">Applås</string>
+    <string name="default_currency_view">Standardvaluta (plan)</string>
+    <string name="active_users_loading">Onlineanvändare: ...</string>
+    <string name="active_users_count">Aktuella aktiva användare: %d</string>
+    <string name="currency_info_msg">Det här alternativet låter dig ställa in den valuta du vill använda när du skapar en ny plan.</string>
+<string name="no_plans_found">Inga planer hittades</string></resources>

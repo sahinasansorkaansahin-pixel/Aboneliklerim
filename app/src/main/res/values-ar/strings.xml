@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Aboneliklerim</string>
+    <string name="app_name">أبونيليكليريم</string>
     <string name="my_subscriptions">اشتراكاتي</string>
     <string name="total_expense">إجمالي النفقات الشهرية</string>
     <string name="shared_with">مشترك مع (تقسيم التكلفة)</string>
@@ -28,7 +28,7 @@
     <string name="monthly">شهريا</string>
     <string name="yearly">سنوي</string>
     <string name="one_time">لمرة واحدة</string>
-    <string name="days_remaining">%dيوم متبقي</string>
+    <string name="days_remaining">متبقي %d يوم</string>
     <string name="today_payment">الدفع اليوم! 🔴</string>
     <string name="tomorrow_payment">الدفع غدا ⚠️</string>
     <string name="expired">منتهي الصلاحية</string>
@@ -45,7 +45,7 @@
     <string name="one_day_before">قبل يوم واحد</string>
     <string name="three_days_before">قبل 3 أيام</string>
     <string name="seven_days_before">قبل 7 أيام</string>
-    <string name="custom_days_before">%dقبل أيام</string>
+    <string name="custom_days_before">قبل %d يومًا</string>
     <string name="total_spent_label">إجمالي الإنفاق</string>
     <string name="subscription_detail">تفاصيل الاشتراك</string>
     <string name="search">يبحث</string>
@@ -70,8 +70,8 @@
     <string name="hide_tags">إخفاء العلامات</string>
     <string name="show_active_only">إظهار النشطة فقط</string>
     <string name="show_archived_only">عرض المؤرشفة فقط</string>
-    <string name="active_count">%dالاشتراكات النشطة</string>
-    <string name="archived_count">%dالاشتراكات المؤرشفة</string>
+    <string name="active_count">%d اشتراكات نشطة</string>
+    <string name="archived_count">%d اشتراكات مؤرشفة</string>
     <string name="spending_reports">تقارير الإنفاق</string>
     <string name="spending_analysis">تحليل الإنفاق الخاص بك</string>
     <string name="tap_to_change">انقر للتغيير</string>
@@ -115,7 +115,7 @@
     <string name="onboarding_title_4">إحصائيات مفصلة</string>
     <string name="onboarding_desc_4">قم بتحليل إنفاقك باستخدام الرسوم البيانية الشهرية والسنوية لتوفير المال.</string>
     <string name="onboarding_title_5">الدعم العالمي وتتبع العملات</string>
-    <string name="onboarding_desc_5">إدارة الاشتراكات بلغات وعملات عديدة. تتبع أسعار الصرف في الوقت الفعلي المتكاملة لجميع البلدان المدعومة.</string>
+    <string name="onboarding_desc_5">إدارة الاشتراكات بالعديد من اللغات والعملات. تتبع أسعار الصرف المتكاملة في الوقت الحقيقي لجميع البلدان المدعومة.</string>
     <string name="onboarding_title_6">العلامات المتقدمة</string>
     <string name="onboarding_desc_6">قم بتصنيف اشتراكاتك لإدارة إنفاقك بشكل أفضل.</string>
     <string name="onboarding_title_7">النسخ الاحتياطي المحلي والسحابي</string>
@@ -128,8 +128,8 @@
     <string name="onboarding_desc_10">استمتع بنسخ احتياطية غير محدودة، وأسعار الصرف المباشرة في الوقت الفعلي، وتقسيم التكاليف المتقدم، وتجربة متميزة خالية تمامًا من الإعلانات.</string>
     <string name="notif_channel_name">تذكيرات الاشتراك</string>
     <string name="notif_channel_desc">الإخطارات الصوتية لدفعات الاشتراك</string>
-    <string name="payment_today_msg">اليوم هو الدفع%sالخاص بك!</string>
-    <string name="payment_days_left_msg">%1$sالدفع خلال%2$dيوم.</string>
+    <string name="payment_today_msg">اليوم هو دفع %s الخاص بك!</string>
+    <string name="payment_days_left_msg">%1$s دفعة خلال %2$d يوم.</string>
     <string name="payment_reminder">تذكير بالدفع</string>
     <string name="tag_entertainment">ترفيه</string>
     <string name="tag_education">تعليم</string>
@@ -155,7 +155,7 @@
     <string name="select_language">اختر اللغة</string>
     <string name="subscription">الاشتراك</string>
     <string name="general_cat">عام</string>
-    <string name="days_before_plural">%dقبل أيام</string>
+    <string name="days_before_plural">قبل %d يومًا</string>
     <string name="error_name_required">الاسم مطلوب</string>
     <string name="error_invalid_amount">أدخل مبلغًا صالحًا</string>
     <string name="sort_by">الترتيب حسب</string>
@@ -168,13 +168,14 @@
     <string name="filter_tags">العلامات</string>
     <string name="filter_archived">مؤرشف</string>
     <string name="default_currency">العملة الافتراضية</string>
+    <string name="display_currency">عرض العملة</string>
     <string name="date_format">تنسيق التاريخ</string>
     <string name="select_date_format">حدد تنسيق التاريخ</string>
-    <string name="no_subs_to_backup">ليس لديك أي اشتراكات للاحتفاظ بنسخة احتياطية منها.</string>
-    <string name="current_subs_count">عدد الاشتراكات الحالي:%d</string>
+    <string name="no_subs_to_backup">ليس لديك أي اشتراكات لإجراء نسخ احتياطي لها.</string>
+    <string name="current_subs_count">عدد الاشتراكات الحالي: %d</string>
     <string name="no_subs_found">ليس لديك أي اشتراكات حتى الآن.</string>
     <string name="limit_reached_250">تم الوصول إلى حد الاشتراك (الحد الأقصى 250). يرجى حذف بعضها لإضافة واحدة جديدة.</string>
-    <string name="upcoming_count_simple">%dالدفعات القادمة</string>
+    <string name="upcoming_count_simple">%d دفعات قادمة</string>
     <string name="archive">أرشيف</string>
     <string name="unarchive">يعيد</string>
     <string name="filter_all">الجميع</string>
@@ -186,7 +187,7 @@
     <string name="backup_to_cloud">النسخ الاحتياطي إلى السحابة</string>
     <string name="restore_from_cloud">استعادة من السحابة</string>
     <string name="restore_desc_cloud">قم باستعادة بياناتك من السحابة إلى هذا الجهاز.</string>
-    <string name="logged_in_as">تم تسجيل الدخول كـ:%s</string>
+    <string name="logged_in_as">تم تسجيل الدخول باسم: %s</string>
     <string name="login_success">تم تسجيل الدخول بنجاح!</string>
     <string name="no_cloud_data">لم يتم العثور على بيانات في السحابة.</string>
     <string name="login_with_google">قم بتسجيل الدخول باستخدام جوجل</string>
@@ -194,7 +195,7 @@
     <string name="guest_user">مستخدم ضيف</string>
     <string name="default_web_client_id">553232665382-lqpponvclthg3d8p8d7dvmrs8um8g6t7.apps.googleusercontent.com</string>
     <string name="account_info">معلومات الحساب</string>
-    <string name="welcome_user">مرحبًا%s!</string>
+    <string name="welcome_user">مرحبًا %s!</string>
     <string name="welcome_simple">مرحباً!</string>
     <string name="delete_cloud_data">حذف البيانات السحابية (الخطط)</string>
     <string name="delete_cloud_confirm_title">حذف الخطط السحابية</string>
@@ -216,19 +217,14 @@
     <string name="no_local_backup">لم يتم العثور على نسخة احتياطية محلية.</string>
     <string name="local_delete_confirm">هل أنت متأكد أنك تريد حذف النسخة الاحتياطية المحلية؟</string>
     <string name="local_restore_confirm">عند استعادة النسخة الاحتياطية المحلية، ستحل محل بياناتك الحالية. هل تريد الاستمرار؟</string>
-    <string name="tester_tools">أدوات الاختبار</string>
-    <string name="show_ad_id">إظهار معرف الإعلان الخاص بي</string>
     <string name="account">حساب</string>
-    <string name="made_by">صُنع بواسطة FALCON ANDROİD STUDİO</string>
+    <string name="made_by">تم إنتاجه بواسطة FALCON ANDROID STUDIO</string>
     <string name="msg_archived">مؤرشف</string>
     <string name="msg_unarchived">المستعادة</string>
-    <string name="google_login_failed">فشل تسجيل الدخول إلى Google:%s</string>
-    <string name="google_login_cancelled">تم إلغاء تسجيل الدخول إلى Google. الرمز:%s</string>
-    <string name="ad_id_copied">تم نسخ معرّف الإعلان:\n%s</string>
-    <string name="ad_id_failed">فشل الحصول على المعرف:%s</string>
-    <string name="error_general">خطأ:%s</string>
+    <string name="google_login_failed">فشل تسجيل الدخول إلى Google: %s</string>
+    <string name="google_login_cancelled">تم إلغاء تسجيل الدخول إلى Google. الرمز: %s</string>
+    <string name="error_general">الخطأ: %s</string>
     <string name="play_services_update">يرجى تحديث خدمات Google Play</string>
-    <string name="ad_inspector_preparing">جارٍ إعداد مفتش الإعلانات...</string>
     <string name="duplicate_contact_warning">تمت إضافة جهة الاتصال هذه بالفعل</string>
     <string name="legal_and_privacy">القانونية والخصوصية</string>
     <string name="policy_privacy_title">سياسة الخصوصية</string>
@@ -237,7 +233,7 @@
     <string name="policy_adpartners_title">خصوصية شركاء الإعلانات</string>
     <string name="policy_privacy_content">خصوصيتك مهمة بالنسبة لنا. لا يقوم Aboneliklerim بجمع أو بيع أو مشاركة تفاصيل الاشتراك الشخصية الخاصة بك. يتم تخزين جميع بيانات الاشتراك والتكاليف وقوائم جهات الاتصال محليًا على جهازك أو يتم نسخها احتياطيًا بشكل آمن بشكل اختياري في حساب Google Firebase الخاص بك ضمن جلستك المصادق عليها. نحن لا نتتبع طرق الدفع أو بيانات الاعتماد الخاصة بك.</string>
     <string name="policy_deletion_content">بموجب اللائحة العامة لحماية البيانات وسياسات Google Play، لديك سيطرة كاملة على بياناتك. لحذف بيانات الاشتراك المخزنة محليًا نهائيًا، انتقل إلى إعدادات التطبيق وامسح ذاكرة التخزين المؤقت للتطبيق. إذا قمت بمزامنة بياناتك مع السحابة، فيمكنك حذف جميع خطط الاشتراك الخاصة بك بشكل دائم من السحابة عن طريق النقر فوق \'حذف بيانات السحابة\'. يرجى ملاحظة أننا لا نجمع أو نخزن الملفات الشخصية؛ يتم استخدام تسجيل الدخول الخاص بك فقط للمصادقة، لذلك لا يوجد حساب لحذفه، فقط يمكن حذف بيانات الاشتراك الخاصة بك.</string>
-    <string name="policy_copyright_content">© 2026 FALCON ANDROİD STUDİO. جميع الحقوق محفوظة. يتم توفير Aboneliklerim كخدمة تتبع الاشتراكات. جميع الرسومات والعلامات التجارية والأصول وكود المصدر ومكونات التصميم هي ملكية فكرية لشركة FALCON ANDROİD STUDİO. يُحظر تمامًا أي نسخ غير مصرح به أو هندسة عكسية أو إعادة توزيع لهذا البرنامج دون موافقة مسبقة.</string>
+    <string name="policy_copyright_content">© 2026 فالكون أندرويد ستوديو. جميع الحقوق محفوظة. يتم توفير Aboneliklerim كخدمة تتبع الاشتراكات. جميع الرسومات والعلامات التجارية والأصول وكود المصدر ومكونات التصميم هي ملكية فكرية لشركة FALCON ANDROID STUDIO. يُحظر تمامًا أي نسخ غير مصرح به أو هندسة عكسية أو إعادة توزيع لهذا البرنامج دون موافقة مسبقة.</string>
     <string name="policy_adpartners_content">نحن نستخدم Google AdMob لعرض إعلانات مخصصة أو غير مخصصة لدعم تطوير التطبيقات. قد يقوم Google AdMob بجمع معرفات إعلانات الأجهزة (GAID) وتفاصيل الشبكة وملفات تعريف الارتباط لعرض الإعلانات ذات الصلة. لمزيد من المعلومات أو لإدارة تخصيص إعلانك، يرجى زيارة إعدادات تخصيص إعلانات Google داخل إعدادات نظام Android لديك.</string>
     <string name="premium_title">خدمة متميزة</string>
     <string name="premium_subtitle">اشحن اشتراكاتك!</string>
@@ -267,5 +263,23 @@
     <string name="premium_active_toast">قسط نشط! 🎉</string>
     <string name="billing_connection_failed">تعذر إنشاء اتصال مع Google Play. يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى.</string>
     <string name="ok">نعم</string>
-    <string name="tester_premium_toggle">تبديل الحالة المميزة (اختبار)</string>
+    <string name="blue_light_filter">مرشح الضوء الأزرق</string>
+    <string name="add_photo">إضافة صورة</string>
+    <string name="change_photo">تغيير الصورة</string>
+    <string name="choose_from_gallery">اختر من المعرض</string>
+    <string name="remove_photo">إزالة الصورة</string>
+    <string name="payment_today">الدفع اليوم!</string>
+    <string name="upcoming_widget">القطعة الدفع القادمة</string>
+    <string name="widget_status_off">القطعة معطلة</string>
+    <string name="no_upcoming_subs">لا توجد اشتراكات قادمة</string>
+    <string name="no_subs_at_all">لم تتم إضافة أي اشتراكات حتى الآن</string>
+    <string name="widget_instructions_title">كيفية إضافة القطعة</string>
+    <string name="widget_instructions_text">1. انتقل إلى الشاشة الرئيسية لهاتفك.\n2. اضغط مع الاستمرار على منطقة فارغة أو على رمز التطبيق.\n3. حدد \"الأدوات\".\n4. ابحث عن \"Aboneliklerim\" واسحبه إلى شاشتك.</string>
+    <string name="biometric_title">أمان التطبيق</string>
+    <string name="biometric_subtitle">قم بفتح Aboneliklerim للمتابعة</string>
+    <string name="app_lock">قفل التطبيق</string>
+    <string name="default_currency_view">العملة الافتراضية (الخطة)</string>
+    <string name="active_users_loading">المستخدمون عبر الإنترنت: ...</string>
+    <string name="active_users_count">المستخدمون النشطون الحاليون: %d</string>
+    <string name="currency_info_msg">يتيح لك هذا الخيار تحديد العملة التي تريد استخدامها عند إنشاء خطة جديدة.</string>
 </resources>

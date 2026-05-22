@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Aboneliklerim</string>
+    <string name="app_name">아본리클레림</string>
     <string name="my_subscriptions">내 구독</string>
     <string name="total_expense">월별 총 비용</string>
     <string name="shared_with">공유 대상(비용 분할)</string>
@@ -115,7 +115,7 @@
     <string name="onboarding_title_4">상세한 통계</string>
     <string name="onboarding_desc_4">월간 및 연간 차트로 지출을 분석하여 비용을 절약하세요.</string>
     <string name="onboarding_title_5">글로벌 지원 및 통화 추적</string>
-    <string name="onboarding_desc_5">다양한 언어와 통화로 구독을 관리하세요. 지원되는 모든 국가의 통합된 실시간 환율을 추적하세요.</string>
+    <string name="onboarding_desc_5">다양한 언어와 통화로 구독을 관리하세요. 지원되는 모든 국가의 통합 실시간 환율을 추적하세요.</string>
     <string name="onboarding_title_6">고급 태그 지정</string>
     <string name="onboarding_desc_6">지출을 더 잘 관리하려면 구독을 분류하세요.</string>
     <string name="onboarding_title_7">로컬 및 클라우드 백업</string>
@@ -124,7 +124,7 @@
     <string name="onboarding_desc_8">지금 첫 번째 구독을 추가하여 구독을 관리하세요.</string>
     <string name="onboarding_title_9">비용 분담</string>
     <string name="onboarding_desc_9">친구나 가족과 구독 비용을 나누고 한 번의 클릭으로 빠른 결제 알림을 보내세요!</string>
-    <string name="onboarding_title_10">프리미엄 &amp; 광고 없음 이용</string>
+    <string name="onboarding_title_10">프리미엄 및 광고 없는 이용</string>
     <string name="onboarding_desc_10">무제한 백업, 실시간 실시간 환율, 고급 비용 분할 및 완전히 광고 없는 프리미엄 환경을 즐겨보세요.</string>
     <string name="notif_channel_name">구독 알림</string>
     <string name="notif_channel_desc">구독 결제에 대한 소리 알림</string>
@@ -168,6 +168,7 @@
     <string name="filter_tags">태그</string>
     <string name="filter_archived">보관됨</string>
     <string name="default_currency">기본 통화</string>
+    <string name="display_currency">표시 통화</string>
     <string name="date_format">날짜 형식</string>
     <string name="select_date_format">날짜 형식 선택</string>
     <string name="no_subs_to_backup">백업할 구독이 없습니다.</string>
@@ -200,7 +201,7 @@
     <string name="delete_cloud_confirm_title">클라우드 계획 삭제</string>
     <string name="delete_cloud_confirm_msg">클라우드에서 모든 구독 계획을 삭제하시겠습니까? 이 작업은 취소할 수 없습니다. 참고: 당사 서버에는 개인 계정 프로필이 저장되어 있지 않습니다.</string>
     <string name="delete_cloud_success">클라우드 계획이 삭제되었습니다!</string>
-    <string name="delete_cloud_error">클라우드 데이터를 삭제하는 중 오류가 발생했습니다.</string>
+    <string name="delete_cloud_error">클라우드 데이터를 삭제하는 중에 오류가 발생했습니다.</string>
     <string name="no_cloud_data_found">복원할 데이터가 클라우드에 없습니다.</string>
     <string name="logging_in">로그인 중...</string>
     <string name="syncing_data">데이터를 동기화하는 중입니다...</string>
@@ -216,19 +217,14 @@
     <string name="no_local_backup">로컬 백업을 찾을 수 없습니다.</string>
     <string name="local_delete_confirm">로컬 백업을 삭제하시겠습니까?</string>
     <string name="local_restore_confirm">로컬 백업이 복원되면 현재 데이터를 덮어쓰게 됩니다. 계속하시겠습니까?</string>
-    <string name="tester_tools">테스터 도구</string>
-    <string name="show_ad_id">내 광고 ID 표시</string>
     <string name="account">계정</string>
     <string name="made_by">FALCON ANDROİD STUDİO 제작</string>
     <string name="msg_archived">보관됨</string>
     <string name="msg_unarchived">복원됨</string>
     <string name="google_login_failed">Google 로그인 실패: %s</string>
     <string name="google_login_cancelled">Google 로그인이 취소되었습니다. 코드: %s</string>
-    <string name="ad_id_copied">광고 ID 복사됨:\n%s</string>
-    <string name="ad_id_failed">ID를 가져오지 못했습니다: %s</string>
     <string name="error_general">오류: %s</string>
     <string name="play_services_update">Google Play 서비스를 업데이트해 주세요</string>
-    <string name="ad_inspector_preparing">광고 검사기 준비 중...</string>
     <string name="duplicate_contact_warning">이 연락처는 이미 추가되었습니다.</string>
     <string name="legal_and_privacy">법률 및 개인정보 보호</string>
     <string name="policy_privacy_title">개인 정보 보호 정책</string>
@@ -267,5 +263,23 @@
     <string name="premium_active_toast">프리미엄 액티브! 🎉</string>
     <string name="billing_connection_failed">Google Play와 연결을 설정할 수 없습니다. 인터넷 연결을 확인하고 다시 시도해 주세요.</string>
     <string name="ok">좋아요</string>
-    <string name="tester_premium_toggle">Toggle 프리미엄 상태(테스트)</string>
-</resources>
+    <string name="blue_light_filter">블루라이트 필터</string>
+    <string name="add_photo">사진 추가</string>
+    <string name="change_photo">사진 변경</string>
+    <string name="choose_from_gallery">갤러리에서 선택</string>
+    <string name="remove_photo">사진 삭제</string>
+    <string name="payment_today">오늘 결제하세요!</string>
+    <string name="upcoming_widget">예정된 결제 위젯</string>
+    <string name="widget_status_off">위젯 비활성화됨</string>
+    <string name="no_upcoming_subs">다가오는 구독이 없습니다</string>
+    <string name="no_subs_at_all">아직 추가된 구독이 없습니다.</string>
+    <string name="widget_instructions_title">위젯을 추가하는 방법</string>
+    <string name="widget_instructions_text">1. 휴대폰의 홈 화면으로 이동합니다.\n2. 빈 공간이나 앱 아이콘을 길게 누르세요.\n3. \"위젯\"을 선택합니다.\n4. \"Aboneliklerim\"을 찾아서 화면으로 드래그하세요.</string>
+    <string name="biometric_title">앱 보안</string>
+    <string name="biometric_subtitle">계속하려면 Aboneliklerim을 잠금 해제하세요.</string>
+    <string name="app_lock">앱 잠금</string>
+    <string name="default_currency_view">기본 통화(계획)</string>
+    <string name="active_users_loading">온라인 사용자: ...</string>
+    <string name="active_users_count">현재 활성 사용자: %d</string>
+    <string name="currency_info_msg">이 옵션을 사용하면 새 계획을 만들 때 사용할 통화를 설정할 수 있습니다.</string>
+<string name="no_plans_found">계획을 찾을 수 없습니다.</string></resources>

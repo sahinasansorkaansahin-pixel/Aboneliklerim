@@ -30,6 +30,8 @@ class HomeFragment : Fragment() {
     private lateinit var adapter: SubAdapter
     private var currentSortType = "Name"
     private var isSortAscending = true
+    private var pulseHandler: android.os.Handler? = null
+    private var pulseRunnable: Runnable? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_home, container, false)
@@ -63,6 +65,8 @@ class HomeFragment : Fragment() {
         
         updateSummary()
     }
+
+
 
     private fun showFilterDialog() {
         val dialog = BottomSheetDialog(requireContext(), R.style.BottomSheetDialogTheme)
@@ -187,7 +191,7 @@ class HomeFragment : Fragment() {
                     // Convert each subscription's price to TRY for accurate, normalized sorting
                     CurrencyService.convertToTry(sub.price, sub.currency ?: "TRY", rates)
                 }
-                "Date" -> baseList.sortedBy { calculateDaysRemaining(it.startDate, it.period) }
+                "Date" -> baseList.sortedBy { calculateDaysRemaining(it.startDate, it.period, it.periodValue) }
                 "Color" -> baseList.sortedBy { it.color }
                 "PaymentType" -> baseList.sortedBy { if (it.period == "one-time") 1 else 0 }
                 else -> baseList.sortedBy { it.name.lowercase(java.util.Locale.getDefault()) }
@@ -220,12 +224,13 @@ class HomeFragment : Fragment() {
             var monthlyTotal = 0.0
             filteredList.forEach { sub ->
                 val price = sub.price
+                val pv = sub.periodValue.coerceAtLeast(1).toDouble()
                 val monthlyPrice = when (sub.period) {
-                    "yearly" -> price / 12.0
-                    "weekly" -> price * 4.33
-                    "daily" -> price * 30.0
-                    "one-time" -> 0.0 // One-time does not count in recurring monthly totals
-                    else -> price
+                    "yearly"  -> price / (12.0 * pv)
+                    "weekly"  -> price * (4.33 / pv)
+                    "daily"   -> price * (30.0 / pv)
+                    "one-time" -> 0.0
+                    else      -> price / pv  // monthly
                 }
                 if (monthlyPrice > 0) {
                     val amountInTry = CurrencyService.convertToTry(monthlyPrice, sub.currency ?: "TRY", rates)

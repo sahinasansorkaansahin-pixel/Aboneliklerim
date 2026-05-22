@@ -1,0 +1,36 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Xbox Green Circle Background -->
+    <path
+        android:fillColor="#107C11"
+        android:pathData="M24,24m-22,0a22,22 0,1,1 44,0a22,22 0,1,1 -44,0" />
+    
+    <!-- White Inner Sphere Base -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M24,24m-11,0a11,11 0,1,1 22,0a11,11 0,1,1 -22,0" />
+        
+    <!-- Xbox X Cutouts (Green overlay to form the iconic X sphere shape) -->
+    <!-- Top-Center Cutout -->
+    <path
+        android:fillColor="#107C11"
+        android:pathData="M24,24 L16,16.5 C20.5,13.5 27.5,13.5 32,16.5 Z" />
+        
+    <!-- Bottom-Left Wing Cutout -->
+    <path
+        android:fillColor="#107C11"
+        android:pathData="M24,24 L13.5,21.5 C13.0,26.5 16.5,32 21.5,33.5 Z" />
+        
+    <!-- Bottom-Right Wing Cutout -->
+    <path
+        android:fillColor="#107C11"
+        android:pathData="M24,24 L34.5,21.5 C35.0,26.5 31.5,32 26.5,33.5 Z" />
+        
+    <!-- Center-Bottom Vertical Line Shadow -->
+    <path
+        android:fillColor="#107C11"
+        android:pathData="M23,24 H25 V34 H23 Z" />
+</vector>

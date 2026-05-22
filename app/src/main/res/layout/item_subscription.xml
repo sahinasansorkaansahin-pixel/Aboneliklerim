@@ -24,18 +24,31 @@
             android:layout_marginEnd="12dp"
             android:background="#6366f1" />
 
-        <!-- Icon Circle -->
-        <TextView
-            android:id="@+id/tvSubIcon"
+        <!-- Icon Circle Container -->
+        <FrameLayout
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/circle_color"
-            android:gravity="center"
-            android:text="N"
-            android:textColor="@color/text_main"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_marginEnd="16dp">
+
+            <TextView
+                android:id="@+id/tvSubIcon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/circle_color"
+                android:gravity="center"
+                android:text="N"
+                android:textColor="@color/text_main"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivSubLogo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:visibility="gone"
+                app:shapeAppearanceOverlay="@style/CircleImage" />
+        </FrameLayout>
 
         <!-- Info -->
         <LinearLayout
@@ -82,11 +95,11 @@
                     android:text="Aylık • Eğlence"
                     android:textColor="@color/text_secondary"
                     android:textSize="13sp"
-                    android:maxLines="1"
-                    app:autoSizeTextType="uniform"
-                    app:autoSizeMinTextSize="11sp"
-                    app:autoSizeMaxTextSize="13sp"
-                    app:autoSizeStepGranularity="1sp" />
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true" />
 
             <TextView
                 android:id="@+id/tvSubTags"

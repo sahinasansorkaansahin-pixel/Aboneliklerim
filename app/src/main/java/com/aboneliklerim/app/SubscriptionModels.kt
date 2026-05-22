@@ -1,5 +1,6 @@
 package com.aboneliklerim.app
 
+import android.content.Context
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -21,6 +23,7 @@ data class Subscription(
     val name: String,
     val price: Double,
     val period: String,
+    val periodValue: Int = 1,
     val category: String,
     val startDate: String,
     val currency: String = "TRY",
@@ -31,11 +34,14 @@ data class Subscription(
     val paymentMethod: String = "",
     var isArchived: Boolean = false,
     var sharedWith: Int = 1,
-    var sharedContacts: List<SharedContact>? = emptyList()
+    var sharedContacts: List<SharedContact>? = emptyList(),
+    var imagePath: String? = null
 )
 
 class SubAdapter(
     private var subs: List<Subscription>,
+    private var displayCurrency: String? = null,
+    private var rates: Map<String, Double> = emptyMap(),
     private val onClick: (Subscription) -> Unit
 ) : RecyclerView.Adapter<SubAdapter.SubViewHolder>() {
 
@@ -47,6 +53,8 @@ class SubAdapter(
         val tvPeriod: TextView = view.findViewById(R.id.tvSubPeriod)
         val colorIndicator: View = view.findViewById(R.id.viewColor)
         val ivBell: ImageView = view.findViewById(R.id.ivNotificationBell)
+        val tvSubIcon: TextView = view.findViewById(R.id.tvSubIcon)
+        val ivSubLogo: ImageView = view.findViewById(R.id.ivSubLogo)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SubViewHolder {
@@ -63,24 +71,44 @@ class SubAdapter(
             maximumFractionDigits = 2
         }
         val ctx = holder.itemView.context
-        val currencySymbol = CurrencyHelper.getLocalizedSymbol(sub.currency ?: "TRY", ctx)
         
-        // Dinamik Kur Karşılığı (Sağ taraftaki sembollü fiyat için)
-        val priceStr = "${numFmt.format(sub.price)} $currencySymbol"
+        val priceToShow: Double
+        val currencyToShow: String
+        
+        if (displayCurrency != null && rates.isNotEmpty()) {
+            val amountInTry = CurrencyService.convertToTry(sub.price, sub.currency ?: "TRY", rates)
+            priceToShow = CurrencyService.convertFromTry(amountInTry, displayCurrency!!, rates)
+            currencyToShow = displayCurrency!!
+        } else {
+            priceToShow = sub.price
+            currencyToShow = sub.currency ?: "TRY"
+        }
+
+        val currencySymbol = CurrencyHelper.getLocalizedSymbol(currencyToShow, ctx)
+        val priceStr = "${numFmt.format(priceToShow)} $currencySymbol"
         holder.tvPrice.text = priceStr
 
-        try {
-            val subColor = Color.parseColor(sub.color)
-            holder.colorIndicator.setBackgroundColor(subColor)
-        } catch (_: Exception) {
-            holder.colorIndicator.setBackgroundColor(Color.parseColor("#6366f1"))
-        }
+        // Fixed App Color for the indicator bar
+        holder.colorIndicator.setBackgroundColor(ctx.getColor(R.color.primary_indigo))
         
-        val tvSubIcon: TextView = holder.itemView.findViewById(R.id.tvSubIcon)
-        tvSubIcon.text = sub.name.firstOrNull()?.toString()?.uppercase() ?: "?"
-        try {
-            tvSubIcon.background.setTint(Color.parseColor(sub.color))
-        } catch (_: Exception) {}
+        if (!sub.imagePath.isNullOrEmpty()) {
+            holder.ivSubLogo.visibility = View.VISIBLE
+            holder.tvSubIcon.visibility = View.GONE
+            Glide.with(ctx)
+                .load(sub.imagePath)
+                .circleCrop()
+                .into(holder.ivSubLogo)
+        } else {
+            holder.ivSubLogo.visibility = View.GONE
+            holder.tvSubIcon.visibility = View.VISIBLE
+            holder.tvSubIcon.text = sub.name.firstOrNull()?.toString()?.uppercase() ?: "?"
+            try {
+                // Subscription color only for the circle
+                holder.tvSubIcon.background.setTint(Color.parseColor(sub.color))
+            } catch (_: Exception) {
+                holder.tvSubIcon.background.setTint(ctx.getColor(R.color.primary_indigo))
+            }
+        }
 
         if (sub.period == "one-time") {
             holder.tvPeriod.text = ctx.getString(R.string.one_time)
@@ -93,28 +121,29 @@ class SubAdapter(
                 else -> ctx.getString(R.string.one_time)
             }
             val typeText = ctx.getString(R.string.regular)
-            holder.tvPeriod.text = "$periodText • $typeText"
+            val prefix = if (sub.periodValue > 1) "${sub.periodValue}x " else ""
+            holder.tvPeriod.text = "$prefix$periodText • $typeText"
         }
 
-        val days = calculateDaysRemaining(sub.startDate, sub.period)
+        val days = calculateDaysRemaining(sub.startDate, sub.period, sub.periodValue)
         holder.tvDaysLeft.text = when { 
-            days == 0 -> ctx.getString(R.string.today_payment)
+            days == 0 -> ctx.getString(R.string.payment_today)
             days == 1 -> ctx.getString(R.string.tomorrow_payment)
             days < 0 -> ctx.getString(R.string.expired)
             else -> ctx.getString(R.string.days_remaining, days)
         }
         
         holder.tvTags.text = sub.category
-        try {
-            val subColor = Color.parseColor(sub.color)
-            holder.tvTags.setTextColor(subColor)
-            holder.tvTags.compoundDrawableTintList = android.content.res.ColorStateList.valueOf(subColor)
-        } catch (_: Exception) {
-            val fallback = Color.parseColor("#6366f1")
-            holder.tvTags.setTextColor(fallback)
-            holder.tvTags.compoundDrawableTintList = android.content.res.ColorStateList.valueOf(fallback)
-        }
+        // Fixed App Color for tags, bell and today text
+        val appColor = ctx.getColor(R.color.primary_indigo)
+        holder.tvTags.setTextColor(appColor)
+        holder.tvTags.compoundDrawableTintList = android.content.res.ColorStateList.valueOf(appColor)
+        holder.tvDaysLeft.setTextColor(appColor)
+        holder.ivBell.imageTintList = android.content.res.ColorStateList.valueOf(appColor)
         
+        // Also tint the category text (tvPeriod) if it's considered "tag" by user
+        holder.tvPeriod.setTextColor(ctx.getColor(R.color.text_secondary)) 
+
         holder.tvDaysLeft.visibility = if (MainActivity.showTimeRemainingGlobal) View.VISIBLE else View.GONE
         holder.tvTags.visibility = if (MainActivity.showTagsGlobal) View.VISIBLE else View.GONE
         holder.ivBell.visibility = if (sub.notifyDaysBefore >= 0) View.VISIBLE else View.GONE
@@ -124,13 +153,16 @@ class SubAdapter(
 
     override fun getItemCount() = subs.size
 
-    fun updateData(newSubs: List<Subscription>) {
+    fun updateData(newSubs: List<Subscription>, targetCurrency: String? = null, currentRates: Map<String, Double> = emptyMap()) {
         subs = newSubs
+        displayCurrency = targetCurrency
+        rates = currentRates
         notifyDataSetChanged()
     }
 }
 
-fun getNextPaymentDate(startDateStr: String, period: String, afterDate: Calendar? = null): Calendar? {
+fun getNextPaymentDate(startDateStr: String, period: String, periodValue: Int = 1, afterDate: Calendar? = null): Calendar? {
+    val pv = if (periodValue < 1) 1 else periodValue
     val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.US)
     val start = try { sdf.parse(startDateStr) } catch (e: Exception) { null } ?: return null
     
@@ -155,16 +187,16 @@ fun getNextPaymentDate(startDateStr: String, period: String, afterDate: Calendar
     if (period == "one-time") return payCal
     if (payCal.after(reference) || payCal.equals(reference)) return payCal
 
-    // Optimization: jump forward close to reference date, but keep safety margin to avoid overshoot
+    // Optimization: jump forward close to reference date
     val diffMillis = reference.timeInMillis - payCal.timeInMillis
     val diffDays = diffMillis / (24 * 60 * 60 * 1000)
 
     if (diffDays > 30) {
         when (period) {
-            "daily" -> payCal.add(Calendar.DAY_OF_YEAR, diffDays.toInt())
-            "weekly" -> payCal.add(Calendar.WEEK_OF_YEAR, (diffDays / 7).toInt())
+            "daily"  -> payCal.add(Calendar.DAY_OF_YEAR, (diffDays / pv).toInt() * pv)
+            "weekly" -> payCal.add(Calendar.WEEK_OF_YEAR, (diffDays / (7 * pv)).toInt() * pv)
             "monthly" -> {
-                val monthsToSkip = (diffDays / 30).toInt() - 1
+                val monthsToSkip = ((diffDays / 30) / pv).toInt() * pv - pv
                 if (monthsToSkip > 0) {
                     payCal.add(Calendar.MONTH, monthsToSkip)
                     val maxDay = payCal.getActualMaximum(Calendar.DAY_OF_MONTH)
@@ -172,7 +204,7 @@ fun getNextPaymentDate(startDateStr: String, period: String, afterDate: Calendar
                 }
             }
             "yearly" -> {
-                val yearsToSkip = (diffDays / 365).toInt() - 1
+                val yearsToSkip = ((diffDays / 365) / pv).toInt() * pv - pv
                 if (yearsToSkip > 0) {
                     payCal.add(Calendar.YEAR, yearsToSkip)
                     val maxDay = payCal.getActualMaximum(Calendar.DAY_OF_MONTH)
@@ -185,14 +217,14 @@ fun getNextPaymentDate(startDateStr: String, period: String, afterDate: Calendar
     while (payCal.before(reference)) {
         when (period) {
             "yearly" -> {
-                payCal.add(Calendar.YEAR, 1)
+                payCal.add(Calendar.YEAR, pv)
                 val maxDay = payCal.getActualMaximum(Calendar.DAY_OF_MONTH)
                 payCal.set(Calendar.DAY_OF_MONTH, Math.min(originalDay, maxDay))
             }
-            "weekly" -> payCal.add(Calendar.WEEK_OF_YEAR, 1)
-            "daily" -> payCal.add(Calendar.DAY_OF_YEAR, 1)
+            "weekly"  -> payCal.add(Calendar.WEEK_OF_YEAR, pv)
+            "daily"   -> payCal.add(Calendar.DAY_OF_YEAR, pv)
             else -> { // monthly
-                payCal.add(Calendar.MONTH, 1)
+                payCal.add(Calendar.MONTH, pv)
                 val maxDay = payCal.getActualMaximum(Calendar.DAY_OF_MONTH)
                 payCal.set(Calendar.DAY_OF_MONTH, Math.min(originalDay, maxDay))
             }
@@ -201,8 +233,8 @@ fun getNextPaymentDate(startDateStr: String, period: String, afterDate: Calendar
     return payCal
 }
 
-fun calculateDaysRemaining(startDate: String, period: String): Int {
-    val nextPay = getNextPaymentDate(startDate, period) ?: return 0
+fun calculateDaysRemaining(startDate: String, period: String, periodValue: Int = 1): Int {
+    val nextPay = getNextPaymentDate(startDate, period, periodValue) ?: return 0
     
     val utcNext = Calendar.getInstance(TimeZone.getTimeZone("UTC")).apply {
         set(Calendar.YEAR, nextPay.get(Calendar.YEAR))
@@ -229,12 +261,17 @@ fun calculateDaysRemaining(startDate: String, period: String): Int {
     return (diffMillis / (1000L * 60 * 60 * 24)).toInt()
 }
 
-class UpcomingAdapter(private val items: List<Pair<Subscription, Int>>, private val rates: Map<String, Double>) : RecyclerView.Adapter<UpcomingAdapter.UVH>() {
+class UpcomingAdapter(
+    private val items: List<Pair<Subscription, Int>>, 
+    private val rates: Map<String, Double>,
+    private var displayCurrency: String? = null
+) : RecyclerView.Adapter<UpcomingAdapter.UVH>() {
     class UVH(v: android.view.View) : RecyclerView.ViewHolder(v) {
         val tvName: TextView = v.findViewById(R.id.tvSubName)
         val tvPeriod: TextView = v.findViewById(R.id.tvSubPeriod)
         val tvPrice: TextView = v.findViewById(R.id.tvPrice)
         val tvIcon: TextView = v.findViewById(R.id.tvSubIcon)
+        val ivLogo: ImageView = v.findViewById(R.id.ivSubLogo)
         val viewColor: android.view.View = v.findViewById(R.id.viewColor)
         val tvDaysLeft: TextView = v.findViewById(R.id.tvRemainingDays)
         val ivBell: ImageView = v.findViewById(R.id.ivNotificationBell)
@@ -247,6 +284,19 @@ class UpcomingAdapter(private val items: List<Pair<Subscription, Int>>, private 
         holder.tvName.text = sub.name
         holder.tvName.isSelected = true
         val ctx = holder.itemView.context
+        
+        val priceToShow: Double
+        val currencyToShow: String
+        
+        if (displayCurrency != null && rates.isNotEmpty()) {
+            val amountInTry = CurrencyService.convertToTry(sub.price, sub.currency ?: "TRY", rates)
+            priceToShow = CurrencyService.convertFromTry(amountInTry, displayCurrency!!, rates)
+            currencyToShow = displayCurrency!!
+        } else {
+            priceToShow = sub.price
+            currencyToShow = sub.currency ?: "TRY"
+        }
+
         if (sub.period == "one-time") {
             holder.tvPeriod.text = ctx.getString(R.string.one_time)
         } else {
@@ -258,12 +308,13 @@ class UpcomingAdapter(private val items: List<Pair<Subscription, Int>>, private 
                 else -> ctx.getString(R.string.one_time)
             }
             val typeText = ctx.getString(R.string.regular)
-            holder.tvPeriod.text = "$periodText • $typeText"
+            val prefix = if (sub.periodValue > 1) "${sub.periodValue}x " else ""
+            holder.tvPeriod.text = "$prefix$periodText • $typeText"
         }
         
         holder.tvDaysLeft.visibility = android.view.View.VISIBLE
         holder.tvDaysLeft.text = when { 
-            days == 0 -> ctx.getString(R.string.today_payment)
+            days == 0 -> ctx.getString(R.string.payment_today)
             days == 1 -> ctx.getString(R.string.tomorrow_payment)
             else -> ctx.getString(R.string.days_remaining, days)
         }
@@ -271,34 +322,44 @@ class UpcomingAdapter(private val items: List<Pair<Subscription, Int>>, private 
         val tvTags: TextView = holder.itemView.findViewById(R.id.tvSubTags)
         tvTags.text = sub.category
         tvTags.visibility = if (MainActivity.showTagsGlobal) android.view.View.VISIBLE else android.view.View.GONE
-        try {
-            val subColor = android.graphics.Color.parseColor(sub.color)
-            tvTags.setTextColor(subColor)
-            tvTags.compoundDrawableTintList = android.content.res.ColorStateList.valueOf(subColor)
-        } catch (_: Exception) {
-            val fallback = android.graphics.Color.parseColor("#6366f1")
-            tvTags.setTextColor(fallback)
-            tvTags.compoundDrawableTintList = android.content.res.ColorStateList.valueOf(fallback)
-        }
+        
+        // Fixed App Color
+        val appColor = ctx.getColor(R.color.primary_indigo)
+        tvTags.setTextColor(appColor)
+        tvTags.compoundDrawableTintList = android.content.res.ColorStateList.valueOf(appColor)
+        holder.tvDaysLeft.setTextColor(appColor)
+        holder.viewColor.setBackgroundColor(appColor)
+        holder.ivBell.imageTintList = android.content.res.ColorStateList.valueOf(appColor)
         
         val numFmt = java.text.NumberFormat.getInstance(java.util.Locale.getDefault()).apply {
             minimumFractionDigits = 2
             maximumFractionDigits = 2
         }
-        val currencySymbol = CurrencyHelper.getLocalizedSymbol(sub.currency ?: "TRY", ctx)
+        val currencySymbol = CurrencyHelper.getLocalizedSymbol(currencyToShow, ctx)
         
-        val priceStr = "${numFmt.format(sub.price)} $currencySymbol"
+        val priceStr = "${numFmt.format(priceToShow)} $currencySymbol"
         holder.tvPrice.text = priceStr
 
-        holder.tvIcon.text = sub.name.take(1).uppercase()
-        try { 
-            val color = android.graphics.Color.parseColor(sub.color)
-            holder.viewColor.setBackgroundColor(color)
-            holder.tvIcon.background.setTint(color)
-            holder.tvDaysLeft.setTextColor(color)
-            holder.ivBell.visibility = if (sub.notifyDaysBefore >= 0) android.view.View.VISIBLE else android.view.View.GONE
-            holder.ivBell.imageTintList = android.content.res.ColorStateList.valueOf(color)
-        } catch (_: Exception) {}
+        if (!sub.imagePath.isNullOrEmpty()) {
+            holder.ivLogo.visibility = android.view.View.VISIBLE
+            holder.tvIcon.visibility = android.view.View.GONE
+            Glide.with(ctx)
+                .load(sub.imagePath)
+                .circleCrop()
+                .into(holder.ivLogo)
+        } else {
+            holder.ivLogo.visibility = android.view.View.GONE
+            holder.tvIcon.visibility = android.view.View.VISIBLE
+            holder.tvIcon.text = sub.name.take(1).uppercase()
+            try {
+                // Subscription color for circle
+                holder.tvIcon.background.setTint(android.graphics.Color.parseColor(sub.color))
+            } catch (_: Exception) {
+                holder.tvIcon.background.setTint(appColor)
+            }
+        }
+
+        holder.ivBell.visibility = if (sub.notifyDaysBefore >= 0) android.view.View.VISIBLE else android.view.View.GONE
 
         holder.itemView.setOnClickListener {
             val intent = android.content.Intent(ctx, DetailActivity::class.java)
@@ -315,7 +376,8 @@ class UpcomingAdapter(private val items: List<Pair<Subscription, Int>>, private 
 
 class CategoryReportAdapter(
     private var items: List<Map.Entry<String, Double>>,
-    private var total: Double
+    private var total: Double,
+    private var displayCurrency: String? = null
 ) : RecyclerView.Adapter<CategoryReportAdapter.CVH>() {
 
     class CVH(v: android.view.View) : RecyclerView.ViewHolder(v) {
@@ -339,10 +401,12 @@ class CategoryReportAdapter(
             minimumFractionDigits = 2
             maximumFractionDigits = 2
         }
-        val lang = holder.itemView.context.resources.configuration.locales.get(0).toLanguageTag()
-        val defaultCurrency = holder.itemView.context.getSharedPreferences("Settings", android.content.Context.MODE_PRIVATE)
+        val ctx = holder.itemView.context
+        val lang = ctx.resources.configuration.locales.get(0).toLanguageTag()
+        val defaultCurrency = ctx.getSharedPreferences("Settings", android.content.Context.MODE_PRIVATE)
             .getString("default_currency", CurrencyHelper.getDefaultCurrencyBasedOnLanguage(lang)) ?: "TRY"
-        val currencySymbol = CurrencyHelper.getLocalizedSymbol(defaultCurrency, holder.itemView.context)
+        
+        val currencySymbol = CurrencyHelper.getLocalizedSymbol(displayCurrency ?: defaultCurrency, ctx)
         
         holder.tvAmount.text = "${numFmt.format(item.value)} $currencySymbol"
         holder.progress.progress = percent
@@ -351,9 +415,10 @@ class CategoryReportAdapter(
 
     override fun getItemCount() = items.size
 
-    fun updateData(newItems: List<Map.Entry<String, Double>>, newTotal: Double) {
+    fun updateData(newItems: List<Map.Entry<String, Double>>, newTotal: Double, currency: String? = null) {
         items = newItems
         total = newTotal
+        displayCurrency = currency
         notifyDataSetChanged()
     }
 }

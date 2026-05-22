@@ -21,8 +21,6 @@ class ReportsFragment : Fragment() {
     private lateinit var categoryAdapter: CategoryReportAdapter
     private var monthlyTotal = 0.0
     private var currentRates = mapOf<String, Double>()
-    private var trendHandler: android.os.Handler? = null
-    private var trendRunnable: Runnable? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_reports, container, false)
@@ -75,13 +73,13 @@ class ReportsFragment : Fragment() {
         subscriptions.filter { !it.isArchived }.forEach { sub ->
             val amountInTry = CurrencyService.convertToTry(sub.price, sub.currency ?: "TRY", currentRates)
             val price = CurrencyService.convertFromTry(amountInTry, defaultCurrency, currentRates)
-            
+            val pv = sub.periodValue.coerceAtLeast(1).toDouble()
             val monthly = when (sub.period) {
-                "yearly" -> price / 12.0
-                "weekly" -> price * 4.33
-                "daily" -> price * 30.0
+                "yearly"   -> price / (12.0 * pv)
+                "weekly"   -> price * (4.33 / pv)
+                "daily"    -> price * (30.0 / pv)
                 "one-time" -> price
-                else -> price
+                else       -> price / pv
             }
             monthlyTotal += monthly
         }
@@ -124,12 +122,14 @@ class ReportsFragment : Fragment() {
         tvSubCount.text = activeSubs.size.toString()
 
         val most = activeSubs.maxByOrNull { sub ->
+            val pv = sub.periodValue.coerceAtLeast(1).toDouble()
+            val amountInTry = CurrencyService.convertToTry(sub.price, sub.currency ?: "TRY", currentRates)
+            val priceNorm = CurrencyService.convertFromTry(amountInTry, defaultCurrency, currentRates)
             when (sub.period) {
-                "yearly" -> sub.price
-                "monthly" -> sub.price * 12
-                "weekly" -> sub.price * 52
-                "daily" -> sub.price * 365
-                else -> sub.price
+                "yearly"  -> priceNorm / (12.0 * pv)
+                "weekly"  -> priceNorm * (4.33 / pv)
+                "daily"   -> priceNorm * (30.0 / pv)
+                else      -> priceNorm / pv
             }
         }
         tvMostExpensive.text = most?.let { sub ->
@@ -143,13 +143,13 @@ class ReportsFragment : Fragment() {
         subscriptions.filter { !it.isArchived }.forEach { sub ->
             val amountInTry = CurrencyService.convertToTry(sub.price, sub.currency ?: "TRY", currentRates)
             val price = CurrencyService.convertFromTry(amountInTry, defaultCurrency, currentRates)
-            
+            val pv = sub.periodValue.coerceAtLeast(1).toDouble()
             val monthly = when (sub.period) {
-                "yearly" -> price / 12.0
-                "weekly" -> price * 4.33
-                "daily" -> price * 30.0
+                "yearly"   -> price / (12.0 * pv)
+                "weekly"   -> price * (4.33 / pv)
+                "daily"    -> price * (30.0 / pv)
                 "one-time" -> price
-                else -> price
+                else       -> price / pv
             }
             val amount = when (reportMode) {
                 "DAILY" -> monthly / 30.0
@@ -172,48 +172,17 @@ class ReportsFragment : Fragment() {
     private fun updateTrendUI(view: View) {
         val ctx = context ?: return
         val prefs = ctx.getSharedPreferences("Settings", Context.MODE_PRIVATE)
-        val isPremium = prefs.getBoolean("is_premium_active", false)
-        
-        val overlay = view.findViewById<View>(R.id.layoutTrendPremiumOverlay)
-        val hsvTrendView = view.findViewById<View>(R.id.hsvTrend)
-        
-        if (!isPremium) {
-            // Apply blur on Android 12+, alpha fade on older devices
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
-                hsvTrendView?.setRenderEffect(
-                    android.graphics.RenderEffect.createBlurEffect(18f, 18f, android.graphics.Shader.TileMode.CLAMP)
-                )
-            } else {
-                hsvTrendView?.alpha = 0.15f
-            }
-            hsvTrendView?.visibility = View.VISIBLE
-            overlay?.visibility = View.VISIBLE
-            overlay?.setOnClickListener {
-                startActivity(android.content.Intent(ctx, PremiumActivity::class.java))
-            }
-            return
-        } else {
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
-                hsvTrendView?.setRenderEffect(null)
-            } else {
-                hsvTrendView?.alpha = 1f
-            }
-            hsvTrendView?.visibility = View.VISIBLE
-            overlay?.visibility = View.GONE
-        }
-
         val lang = ctx.resources.configuration.locales.get(0).toLanguageTag()
         val defaultCurrency = prefs.getString("default_currency", CurrencyHelper.getDefaultCurrencyBasedOnLanguage(lang)) ?: "TRY"
         val currencySymbol = CurrencyHelper.getLocalizedSymbol(defaultCurrency, ctx)
 
         val calendar = java.util.Calendar.getInstance()
         val currentYear = calendar.get(java.util.Calendar.YEAR)
-        val currentMonthIndex = calendar.get(java.util.Calendar.MONTH) // 0-11
+        val currentMonthIndex = calendar.get(java.util.Calendar.MONTH)
 
-        // 1. Find the oldest start date among active subscriptions
+        // Find oldest active subscription start date
         var oldestYear = currentYear
         var oldestMonthIndex = currentMonthIndex
-
         subscriptions.filter { !it.isArchived }.forEach { sub ->
             try {
                 val parser = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.US)
@@ -223,159 +192,28 @@ class ReportsFragment : Fragment() {
                     val y = cal.get(java.util.Calendar.YEAR)
                     val m = cal.get(java.util.Calendar.MONTH)
                     if (y < oldestYear || (y == oldestYear && m < oldestMonthIndex)) {
-                        oldestYear = y
-                        oldestMonthIndex = m
+                        oldestYear = y; oldestMonthIndex = m
                     }
                 }
-            } catch (e: Exception) {}
+            } catch (e: Exception) { /* ignore */ }
         }
 
-        // Calculate months between oldest start date and current month
         val totalMonths = (currentYear - oldestYear) * 12 + (currentMonthIndex - oldestMonthIndex) + 1
-        val monthsToShow = if (totalMonths < 12) 12 else totalMonths
-        // Safe cap to avoid populating too many months
-        val safeMonthsToShow = if (monthsToShow > 36) 36 else monthsToShow
+        val monthsToShow = (if (totalMonths < 12) 12 else totalMonths).coerceAtMost(36)
 
-        val monthValues = DoubleArray(safeMonthsToShow)
-        val monthNames = Array(safeMonthsToShow) { "" }
-
+        val monthValues = DoubleArray(monthsToShow)
+        val monthNames  = Array(monthsToShow) { "" }
         val monthFormat = java.text.SimpleDateFormat("MMM", java.util.Locale.getDefault())
 
-        for (i in 0 until safeMonthsToShow) {
+        for (i in 0 until monthsToShow) {
             val cal = java.util.Calendar.getInstance()
-            cal.add(java.util.Calendar.MONTH, -(safeMonthsToShow - 1 - i))
-            val year = cal.get(java.util.Calendar.YEAR)
-            val monthIdx = cal.get(java.util.Calendar.MONTH)
-            
-            monthValues[i] = calculateSpendingForMonth(year, monthIdx, defaultCurrency)
-            monthNames[i] = monthFormat.format(cal.time)
+            cal.add(java.util.Calendar.MONTH, -(monthsToShow - 1 - i))
+            monthValues[i] = calculateSpendingForMonth(cal.get(java.util.Calendar.YEAR), cal.get(java.util.Calendar.MONTH), defaultCurrency)
+            monthNames[i]  = monthFormat.format(cal.time)
         }
 
-        val maxVal = monthValues.maxOrNull() ?: 1.0
-        val safeMax = if (maxVal <= 0.0) 1.0 else maxVal
-
-        val container = view.findViewById<android.widget.LinearLayout>(R.id.llTrendBarsContainer)
-        if (container != null) {
-            container.removeAllViews()
-            val inflater = android.view.LayoutInflater.from(ctx)
-            
-            for (i in 0 until safeMonthsToShow) {
-                val barView = inflater.inflate(R.layout.item_trend_bar, container, false)
-                val tvVal = barView.findViewById<TextView>(R.id.tvTrendVal)
-                val vBar = barView.findViewById<View>(R.id.barTrend)
-                val tvMonth = barView.findViewById<TextView>(R.id.tvTrendMonth)
-
-                val value = monthValues[i]
-                val monthName = monthNames[i]
-
-                val numFmtTrend = java.text.NumberFormat.getInstance(java.util.Locale.getDefault()).apply {
-                    minimumFractionDigits = 0
-                    maximumFractionDigits = 0
-                }
-
-                tvVal.text = "${numFmtTrend.format(value)}$currencySymbol"
-                tvMonth.text = monthName
-
-                val maxBarHeightPx = (80 * ctx.resources.displayMetrics.density).toInt()
-                val heightPx = ((value / safeMax) * maxBarHeightPx).toInt()
-                val minHeightPx = (4 * ctx.resources.displayMetrics.density).toInt()
-                val safeHeightPx = if (heightPx < minHeightPx) minHeightPx else heightPx
-
-                val lp = vBar.layoutParams
-                lp.height = safeHeightPx
-                vBar.layoutParams = lp
-
-                container.addView(barView)
-            }
-        }
-
-        // Scroll to the end (most recent month) dynamically
-        val hsvTrend = view.findViewById<android.widget.HorizontalScrollView>(R.id.hsvTrend)
-        if (hsvTrend != null) {
-            hsvTrend.post {
-                hsvTrend.fullScroll(View.FOCUS_RIGHT)
-            }
-        }
-
-        val hintView = view.findViewById<android.widget.ImageView>(R.id.ivSwipeHintTrend)
-        if (hintView != null) {
-            trendHandler?.removeCallbacksAndMessages(null)
-            
-            val handler = android.os.Handler(android.os.Looper.getMainLooper())
-            trendHandler = handler
-            
-            val swipeRunnable = object : Runnable {
-                override fun run() {
-                    val ctx = context ?: return
-                    val hsv = hsvTrend ?: return
-                    
-                    // Determine if scrolled all the way to the left (start of history)
-                    val isFarLeft = hsv.scrollX < 30
-                    
-                    if (isFarLeft) {
-                        // Point Right to guide user back to the present/future
-                        hintView.setImageResource(R.drawable.ic_swipe_horizontal_right)
-                        hintView.alpha = 0f
-                        hintView.translationX = -40f
-                        hintView.visibility = View.VISIBLE
-                        
-                        hintView.animate()
-                            .alpha(0.6f)
-                            .translationX(40f)
-                            .setDuration(1200)
-                            .withEndAction {
-                                hintView.animate()
-                                    .alpha(0f)
-                                    .setDuration(400)
-                                    .withEndAction {
-                                        handler.postDelayed(this, 4000)
-                                    }
-                                    .start()
-                            }
-                            .start()
-                    } else {
-                        // Point Left to guide user to check past history
-                        hintView.setImageResource(R.drawable.ic_swipe_horizontal)
-                        hintView.alpha = 0f
-                        hintView.translationX = 40f
-                        hintView.visibility = View.VISIBLE
-                        
-                        hintView.animate()
-                            .alpha(0.6f)
-                            .translationX(-40f)
-                            .setDuration(1200)
-                            .withEndAction {
-                                hintView.animate()
-                                    .alpha(0f)
-                                    .setDuration(400)
-                                    .withEndAction {
-                                        handler.postDelayed(this, 4000)
-                                    }
-                                    .start()
-                            }
-                            .start()
-                    }
-                }
-            }
-            trendRunnable = swipeRunnable
-            
-            // Start the hint animation
-            handler.postDelayed(swipeRunnable, 1500)
-
-            // Hide the hint during scroll, but show again after 3 seconds of scroll inactivity (idle)
-            if (hsvTrend != null) {
-                hsvTrend.setOnScrollChangeListener { _, _, _, _, _ ->
-                    // Remove pending callbacks and cancel ongoing animation immediately
-                    handler.removeCallbacks(swipeRunnable)
-                    hintView.animate().cancel()
-                    hintView.alpha = 0f
-                    hintView.visibility = View.GONE
-                    
-                    // Schedule to show again after 3 seconds of idle/no scrolling
-                    handler.postDelayed(swipeRunnable, 3000)
-                }
-            }
-        }
+        val chartView = view.findViewById<SpendingTrendChartView>(R.id.trendChartView)
+        chartView?.setData(monthValues, monthNames, currencySymbol)
     }
 
     private fun calculateSpendingForMonth(year: Int, monthIndex: Int, defaultCurrency: String): Double {
@@ -401,11 +239,11 @@ class ReportsFragment : Fragment() {
 
             val amountInTry = CurrencyService.convertToTry(sub.price, sub.currency ?: "TRY", currentRates)
             val price = CurrencyService.convertFromTry(amountInTry, defaultCurrency, currentRates)
-
+            val pv = sub.periodValue.coerceAtLeast(1).toDouble()
             val monthValue = when (sub.period) {
-                "yearly" -> price / 12.0
-                "weekly" -> price * 4.33
-                "daily" -> price * 30.0
+                "yearly"   -> price / (12.0 * pv)
+                "weekly"   -> price * (4.33 / pv)
+                "daily"    -> price * (30.0 / pv)
                 "one-time" -> {
                     val startCal = java.util.Calendar.getInstance().apply { timeInMillis = startMillis }
                     if (startCal.get(java.util.Calendar.YEAR) == year && startCal.get(java.util.Calendar.MONTH) == monthIndex) {
@@ -414,7 +252,7 @@ class ReportsFragment : Fragment() {
                         0.0
                     }
                 }
-                else -> price
+                else -> price / pv
             }
             total += monthValue
         }
@@ -443,9 +281,6 @@ class ReportsFragment : Fragment() {
     }
 
     override fun onDestroyView() {
-        trendHandler?.removeCallbacksAndMessages(null)
-        trendHandler = null
-        trendRunnable = null
         super.onDestroyView()
     }
 }

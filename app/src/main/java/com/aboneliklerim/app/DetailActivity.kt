@@ -5,30 +5,78 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
 class DetailActivity : BaseActivity() {
 
     private var subscriptions = mutableListOf<Subscription>()
+    private var currentSubId: String? = null
+    
+    private val imagePickerLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: android.net.Uri? ->
+        uri?.let {
+            try {
+                contentResolver.takePersistableUriPermission(it, Intent.FLAG_GRANT_READ_URI_PERMISSION)
+            } catch (_: Exception) {}
+            
+            updateSubscriptionImage(it.toString())
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
         loadData()
-        val subId = intent.getStringExtra("sub_id") ?: run { finish(); return }
-        val sub = subscriptions.find { it.id == subId } ?: run { finish(); return }
+        currentSubId = intent.getStringExtra("sub_id") ?: run { finish(); return }
+        val sub = subscriptions.find { it.id == currentSubId } ?: run { finish(); return }
 
         findViewById<TextView>(R.id.tvDetailName).text = sub.name ?: getString(R.string.subscription)
-        findViewById<TextView>(R.id.tvDetailIcon).text = (sub.name ?: "A").take(1).uppercase()
-        try {
-            val colorStr = sub.color ?: "#6366f1"
-            findViewById<View>(R.id.viewDetailColor).setBackgroundColor(android.graphics.Color.parseColor(colorStr))
-            findViewById<TextView>(R.id.tvDetailIcon).backgroundTintList = android.content.res.ColorStateList.valueOf(android.graphics.Color.parseColor(colorStr))
-        } catch (_: Exception) {}
+        
+        val tvIcon = findViewById<TextView>(R.id.tvDetailIcon)
+        val ivLogo = findViewById<ImageView>(R.id.ivDetailLogo)
+        val iconContainer = findViewById<View>(R.id.cardDetailIcon)
+
+        fun updateUIWithImage(path: String?) {
+            if (!path.isNullOrEmpty()) {
+                ivLogo.visibility = View.VISIBLE
+                tvIcon.visibility = View.GONE
+                com.bumptech.glide.Glide.with(this)
+                    .load(path)
+                    .circleCrop()
+                    .into(ivLogo)
+            } else {
+                ivLogo.visibility = View.GONE
+                tvIcon.visibility = View.VISIBLE
+                tvIcon.text = (sub.name ?: "A").take(1).uppercase()
+                try {
+                    val colorStr = sub.color ?: "#6366f1"
+                    val colorInt = android.graphics.Color.parseColor(colorStr)
+                    tvIcon.background.setTint(colorInt)
+                } catch (_: Exception) {
+                    tvIcon.background.setTint(getColor(R.color.primary_indigo))
+                }
+            }
+        }
+
+        updateUIWithImage(sub.imagePath)
+
+        // Tint Total Spent with app purple
+        findViewById<TextView>(R.id.tvDetailTotalSpent).setTextColor(getColor(R.color.primary_indigo))
+        
+        if (!intent.getBooleanExtra("hide_actions", false)) {
+            iconContainer.setOnClickListener {
+                showImageOptionsDialog()
+            }
+        } else {
+            iconContainer.isClickable = false
+            iconContainer.isFocusable = false
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+                (iconContainer as? FrameLayout)?.foreground = null
+            }
+        }
 
         val numFmt = java.text.NumberFormat.getInstance(java.util.Locale.getDefault()).apply {
             minimumFractionDigits = 2
@@ -121,15 +169,6 @@ class DetailActivity : BaseActivity() {
         val fmt = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.getDefault())
         val startDate = try { fmt.parse(sub.startDate ?: "") } catch (_: Exception) { java.util.Date() }
         
-        val notifyDayText = when (sub.notifyDaysBefore) { 
-            -1 -> getString(R.string.off)
-            0 -> getString(R.string.same_day)
-            1 -> getString(R.string.one_day_before)
-            3 -> getString(R.string.three_days_before)
-            7 -> getString(R.string.seven_days_before)
-            else -> getString(R.string.days_before_plural, sub.notifyDaysBefore)
-        }
-        
         // Calculate exact next notification date for clarity
         val nextNotifyStr = if (sub.notifyDaysBefore != -1) {
             val now = java.util.Calendar.getInstance()
@@ -137,7 +176,7 @@ class DetailActivity : BaseActivity() {
             val notifyHour = timeParts.getOrNull(0)?.toIntOrNull() ?: 9
             val notifyMinute = timeParts.getOrNull(1)?.toIntOrNull() ?: 0
 
-            var payCal = getNextPaymentDate(sub.startDate, sub.period)
+            var payCal = getNextPaymentDate(sub.startDate, sub.period, sub.periodValue)
             var triggerCal = payCal?.clone() as? java.util.Calendar
             if (triggerCal != null) {
                 triggerCal.add(java.util.Calendar.DAY_OF_YEAR, -sub.notifyDaysBefore)
@@ -149,7 +188,7 @@ class DetailActivity : BaseActivity() {
                 if (triggerCal.before(now) && sub.period != "one-time" && payCal != null) {
                     val nextRef = payCal.clone() as java.util.Calendar
                     nextRef.add(java.util.Calendar.DAY_OF_YEAR, 1)
-                    payCal = getNextPaymentDate(sub.startDate, sub.period, nextRef)
+                    payCal = getNextPaymentDate(sub.startDate, sub.period, sub.periodValue, nextRef)
                     if (payCal != null) {
                         triggerCal = payCal.clone() as java.util.Calendar
                         triggerCal.add(java.util.Calendar.DAY_OF_YEAR, -sub.notifyDaysBefore)
@@ -211,20 +250,21 @@ class DetailActivity : BaseActivity() {
 
         findViewById<Button>(R.id.btnEdit).setOnClickListener {
             val intent = Intent(this, AddEditActivity::class.java)
-            intent.putExtra("sub_id", subId)
+            intent.putExtra("sub_id", currentSubId)
             startActivityForResult(intent, 100)
         }
         val btnArchive = findViewById<Button>(R.id.btnArchive)
         btnArchive.text = if (sub.isArchived) getString(R.string.unarchive) else getString(R.string.archive)
+        btnArchive.backgroundTintList = android.content.res.ColorStateList.valueOf(getColor(R.color.primary_indigo))
         
         btnArchive.setOnClickListener {
-            val targetSub = subscriptions.find { it.id == subId }
+            val targetSub = subscriptions.find { it.id == currentSubId }
             if (targetSub != null) {
                 targetSub.isArchived = !targetSub.isArchived
                 saveData()
                 
                 if (targetSub.isArchived) {
-                    NotificationScheduler.cancelAlarm(this, subId)
+                    NotificationScheduler.cancelAlarm(this, currentSubId!!)
                 }
                 NotificationScheduler.scheduleAlarms(this)
                 
@@ -240,14 +280,50 @@ class DetailActivity : BaseActivity() {
                 .setTitle(R.string.delete)
                 .setMessage(R.string.delete_confirm_msg)
                 .setPositiveButton(R.string.delete) { _, _ ->
-                    NotificationScheduler.cancelAlarm(this, subId)
-                    subscriptions.removeAll { it.id == subId }
+                    NotificationScheduler.cancelAlarm(this, currentSubId!!)
+                    subscriptions.removeAll { it.id == currentSubId }
                     saveData()
                     NotificationScheduler.scheduleAlarms(this)
+                    SubscriptionWidget.updateWidget(this)
+                    SubscriptionOneTimeWidget.updateWidget(this)
                     setResult(RESULT_OK)
                     finish()
                 }
                 .setNegativeButton(R.string.cancel, null).show()
+        }
+    }
+
+    private fun showImageOptionsDialog() {
+        val sub = subscriptions.find { it.id == currentSubId } ?: return
+        val options = if (sub.imagePath.isNullOrEmpty()) {
+            arrayOf(getString(R.string.add_photo))
+        } else {
+            arrayOf(getString(R.string.change_photo), getString(R.string.remove_photo))
+        }
+
+        AlertDialog.Builder(this, R.style.Theme_Aboneliklerim_Dialog)
+            .setItems(options) { _, which ->
+                when (options[which]) {
+                    getString(R.string.add_photo), getString(R.string.change_photo) -> {
+                        imagePickerLauncher.launch("image/*")
+                    }
+                    getString(R.string.remove_photo) -> {
+                        updateSubscriptionImage(null)
+                    }
+                }
+            }
+            .show()
+    }
+
+    private fun updateSubscriptionImage(path: String?) {
+        val index = subscriptions.indexOfFirst { it.id == currentSubId }
+        if (index != -1) {
+            subscriptions[index].imagePath = path
+            saveData()
+            SubscriptionWidget.updateWidget(this)
+            SubscriptionOneTimeWidget.updateWidget(this)
+            setResult(RESULT_OK)
+            recreate() // Refresh UI
         }
     }
 
@@ -291,7 +367,7 @@ class DetailActivity : BaseActivity() {
 
     private fun saveData() {
         getSharedPreferences("AboneliklerimData", Context.MODE_PRIVATE)
-            .edit().putString("subs_list", Gson().toJson(subscriptions)).apply()
+            .edit().putString("subs_list", Gson().toJson(subscriptions)).commit()
     }
 
     private fun loadData() {

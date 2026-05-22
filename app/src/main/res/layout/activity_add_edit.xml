@@ -54,6 +54,7 @@
                             android:contentDescription="@string/back" />
 
                         <TextView
+                            android:id="@+id/tvAddEditTitle"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -136,6 +137,108 @@
                 android:orientation="vertical"
                 android:padding="20dp">
 
+            <!-- Visual & Color Pickers -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="24dp">
+
+                <!-- Visual (Photo) Circle -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginEnd="32dp">
+
+                    <FrameLayout
+                        android:id="@+id/cardAddEditIcon"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:background="@drawable/circle_outline_selected"
+                        android:padding="3dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+
+                        <TextView
+                            android:id="@+id/tvAddEditIcon"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:background="@drawable/circle_color"
+                            android:text="A"
+                            android:textColor="@color/text_main"
+                            android:textSize="32sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivAddEditLogo"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:padding="0dp"
+                            android:visibility="gone"
+                            app:shapeAppearanceOverlay="@style/CircleImage" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/add_photo"
+                        android:textColor="@color/text_main"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Color Circle -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginStart="32dp">
+
+                    <FrameLayout
+                        android:id="@+id/cardAddEditColor"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:background="@drawable/circle_outline_selected"
+                        android:padding="3dp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+
+                        <View
+                            android:id="@+id/viewSelectedColorCircle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/circle_color"
+                            android:backgroundTint="#6366f1" />
+
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_price_tag"
+                            app:tint="@color/white"
+                            android:alpha="0.8" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/color"
+                        android:textColor="@color/text_main"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
             <!-- Name Section -->
             <TextView
                 android:layout_width="wrap_content"
@@ -144,19 +247,42 @@
                 android:textColor="@color/text_main"
                 android:textSize="15sp"
                 android:textStyle="bold" />
-            <EditText
-                android:id="@+id/etName"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="20dp"
-                android:background="@drawable/input_bg"
-                android:hint="@string/name"
-                android:padding="16dp"
-                android:textColor="@color/text_main"
-                android:textColorHint="@color/text_sub"
-                android:maxLines="1"
-                android:ellipsize="end" />
+                android:background="@drawable/input_bg">
+                
+                <EditText
+                    android:id="@+id/etName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/name"
+                    android:paddingStart="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:paddingEnd="48dp"
+                    android:textColor="@color/text_main"
+                    android:textColorHint="@color/text_sub"
+                    android:maxLines="1"
+                    android:maxLength="20"
+                    android:ellipsize="end" />
+
+                <TextView
+                    android:id="@+id/tvNameCharCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="0/20"
+                    android:textColor="#730692"
+                    android:textSize="11sp" />
+            </RelativeLayout>
 
 
 
@@ -354,29 +480,38 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+                
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_cost_sharing"
-                    android:layout_marginEnd="8dp"/>
-                <TextView
+                    android:layout_marginEnd="8dp" />
+                
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/shared_with"
-                    android:textColor="@color/text_main"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shared_with"
+                        android:textColor="@color/text_main"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                        
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/shared_with_desc"
+                        android:textColor="@color/text_sub"
+                        android:textSize="13sp"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
             </LinearLayout>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/shared_with_desc"
-                android:textColor="@color/text_sub"
-                android:textSize="13sp"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="8dp" />
-
             <FrameLayout
                 android:id="@+id/layoutSharedRoot"
                 android:layout_width="match_parent"
@@ -486,24 +621,7 @@
                     android:background="?attr/selectableItemBackground" />
             </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/color"
-                android:textColor="@color/text_main"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-            <TextView
-                android:id="@+id/tvColorPickerTrigger"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/input_bg"
-                android:padding="16dp"
-                android:text="@string/select_color_msg"
-                android:textColor="@color/text_main"
-                android:textSize="16sp" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -521,23 +639,46 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:text="@string/optional"
-                    android:textColor="@color/text_main"
+                    android:textColor="@color/text_sub"
                     android:textSize="13sp"
                     android:fontFamily="sans-serif-light" />
             </LinearLayout>
-            <EditText
-                android:id="@+id/etPaymentMethod"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="20dp"
-                android:background="@drawable/input_bg"
-                android:hint="@string/payment_method"
-                android:padding="16dp"
-                android:textColor="@color/text_main"
-                android:textColorHint="@color/text_sub"
-                android:maxLines="1"
-                android:ellipsize="end" />
+                android:background="@drawable/input_bg">
+
+                <EditText
+                    android:id="@+id/etPaymentMethod"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="56dp"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/payment_method"
+                    android:paddingStart="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:paddingEnd="48dp"
+                    android:textColor="@color/text_main"
+                    android:textColorHint="@color/text_sub"
+                    android:maxLines="1"
+                    android:maxLength="20"
+                    android:ellipsize="end" />
+
+                <TextView
+                    android:id="@+id/tvPaymentCharCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="0/20"
+                    android:textColor="#730692"
+                    android:textSize="11sp" />
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -555,22 +696,43 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:text="@string/optional"
-                    android:textColor="@color/text_main"
+                    android:textColor="@color/text_sub"
                     android:textSize="13sp"
                     android:fontFamily="sans-serif-light" />
             </LinearLayout>
-            <EditText
-                android:id="@+id/etNote"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="20dp"
-                android:background="@drawable/input_bg"
-                android:hint="@string/hint_desc_example"
-                android:padding="16dp"
-                android:gravity="top"
-                android:textColor="@color/text_main"
-                android:textColorHint="@color/text_sub" />
+                android:background="@drawable/input_bg">
+                <EditText
+                    android:id="@+id/etNote"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/hint_desc_example"
+                    android:paddingStart="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:paddingEnd="48dp"
+                    android:gravity="top"
+                    android:textColor="@color/text_main"
+                    android:textColorHint="@color/text_sub"
+                    android:maxLength="35" />
+
+                <TextView
+                    android:id="@+id/tvNoteCharCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="0/35"
+                    android:textColor="#730692"
+                    android:textSize="11sp" />
+            </RelativeLayout>
 
             <LinearLayout
                 android:id="@+id/btnTagsTrigger"

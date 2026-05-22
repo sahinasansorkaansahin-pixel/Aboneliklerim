@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">การสมัครของฉัน</string>
+    <string name="app_name">อโบเนลิคลีริม</string>
     <string name="my_subscriptions">การสมัครของฉัน</string>
     <string name="total_expense">ค่าใช้จ่ายรวมรายเดือน</string>
     <string name="shared_with">แบ่งปันกับ (การแบ่งต้นทุน)</string>
@@ -69,7 +69,7 @@
     <string name="show_tags">แสดงแท็ก</string>
     <string name="hide_tags">ซ่อนแท็ก</string>
     <string name="show_active_only">แสดงเฉพาะที่ใช้งานอยู่</string>
-    <string name="show_archived_only">แสดงเฉพาะที่เก็บถาวรเท่านั้น</string>
+    <string name="show_archived_only">แสดงที่เก็บถาวรเท่านั้น</string>
     <string name="active_count">%d การสมัครรับข้อมูลที่ใช้งานอยู่</string>
     <string name="archived_count">%d การสมัครรับข้อมูลที่เก็บถาวร</string>
     <string name="spending_reports">รายงานการใช้จ่าย</string>
@@ -115,10 +115,10 @@
     <string name="onboarding_title_4">สถิติโดยละเอียด</string>
     <string name="onboarding_desc_4">วิเคราะห์การใช้จ่ายของคุณด้วยแผนภูมิรายเดือนและรายปีเพื่อประหยัดเงิน</string>
     <string name="onboarding_title_5">การสนับสนุนทั่วโลกและการติดตามสกุลเงิน</string>
-    <string name="onboarding_desc_5">จัดการการสมัครสมาชิกในหลายภาษาและสกุลเงิน ติดตามอัตราแลกเปลี่ยนแบบเรียลไทม์ที่รวมไว้สำหรับทุกประเทศที่รองรับ</string>
+    <string name="onboarding_desc_5">จัดการการสมัครสมาชิกในภาษาและสกุลเงินต่างๆ มากมาย ติดตามอัตราแลกเปลี่ยนแบบเรียลไทม์แบบบูรณาการสำหรับประเทศที่รองรับทั้งหมด</string>
     <string name="onboarding_title_6">การแท็กขั้นสูง</string>
     <string name="onboarding_desc_6">จัดหมวดหมู่การสมัครของคุณเพื่อจัดการการใช้จ่ายของคุณได้ดียิ่งขึ้น</string>
-    <string name="onboarding_title_7">การสำรองข้อมูลภายในและบนคลาวด์</string>
+    <string name="onboarding_title_7">การสำรองข้อมูลท้องถิ่นและคลาวด์</string>
     <string name="onboarding_desc_7">สำรองข้อมูลของคุณทั้งบนอุปกรณ์ของคุณและในระบบคลาวด์เพื่อเข้าถึงจากอุปกรณ์ทั้งหมดของคุณ</string>
     <string name="onboarding_title_8">เริ่มเลย!</string>
     <string name="onboarding_desc_8">ควบคุมการสมัครรับข้อมูลของคุณตอนนี้โดยเพิ่มการสมัครรับข้อมูลแรกของคุณ</string>
@@ -168,6 +168,7 @@
     <string name="filter_tags">แท็ก</string>
     <string name="filter_archived">เก็บถาวรแล้ว</string>
     <string name="default_currency">สกุลเงินเริ่มต้น</string>
+    <string name="display_currency">แสดงสกุลเงิน</string>
     <string name="date_format">รูปแบบวันที่</string>
     <string name="select_date_format">เลือกรูปแบบวันที่</string>
     <string name="no_subs_to_backup">คุณไม่มีการสมัครรับข้อมูลที่จะสำรองข้อมูล</string>
@@ -216,19 +217,14 @@
     <string name="no_local_backup">ไม่พบข้อมูลสำรองในเครื่อง</string>
     <string name="local_delete_confirm">คุณแน่ใจหรือไม่ว่าต้องการลบข้อมูลสำรองในเครื่อง</string>
     <string name="local_restore_confirm">เมื่อสำรองข้อมูลในเครื่องแล้ว ระบบจะเขียนทับข้อมูลปัจจุบันของคุณ คุณต้องการดำเนินการต่อหรือไม่?</string>
-    <string name="tester_tools">เครื่องมือทดสอบ</string>
-    <string name="show_ad_id">แสดงรหัสโฆษณาของฉัน</string>
     <string name="account">บัญชี</string>
     <string name="made_by">สร้างโดย FALCON ANDROID STUDIO</string>
     <string name="msg_archived">เก็บถาวรแล้ว</string>
     <string name="msg_unarchived">คืนค่า</string>
     <string name="google_login_failed">การลงชื่อเข้าใช้ Google ล้มเหลว: %s</string>
     <string name="google_login_cancelled">การลงชื่อเข้าใช้ Google ถูกยกเลิก รหัส: %s</string>
-    <string name="ad_id_copied">คัดลอกรหัสโฆษณาแล้ว:\n%s</string>
-    <string name="ad_id_failed">ไม่สามารถรับ ID: %s</string>
     <string name="error_general">ข้อผิดพลาด: %s</string>
     <string name="play_services_update">โปรดอัปเดตบริการ Google Play</string>
-    <string name="ad_inspector_preparing">กำลังเตรียมเครื่องมือตรวจสอบโฆษณา...</string>
     <string name="duplicate_contact_warning">เพิ่มผู้ติดต่อนี้แล้ว</string>
     <string name="legal_and_privacy">กฎหมายและความเป็นส่วนตัว</string>
     <string name="policy_privacy_title">นโยบายความเป็นส่วนตัว</string>
@@ -236,8 +232,8 @@
     <string name="policy_copyright_title">ลิขสิทธิ์และข้อกำหนด</string>
     <string name="policy_adpartners_title">ความเป็นส่วนตัวของพันธมิตรโฆษณา</string>
     <string name="policy_privacy_content">ความเป็นส่วนตัวของคุณเป็นสิ่งสำคัญสำหรับเรา Aboneliklerim จะไม่รวบรวม ขาย หรือแบ่งปันรายละเอียดการสมัครสมาชิกส่วนตัวของคุณ ข้อมูลการสมัครสมาชิก ค่าใช้จ่าย และรายชื่อผู้ติดต่อทั้งหมดจะถูกจัดเก็บไว้ในอุปกรณ์ของคุณหรือสำรองไว้อย่างปลอดภัยในบัญชี Google Firebase ส่วนตัวของคุณภายใต้เซสชันการตรวจสอบสิทธิ์ของคุณ เราไม่ติดตามวิธีการชำระเงินหรือข้อมูลรับรองของคุณ</string>
-    <string name="policy_deletion_content">ภายใต้นโยบาย GDPR และ Google Play คุณสามารถควบคุมข้อมูลของคุณได้อย่างสมบูรณ์ หากต้องการลบข้อมูลการสมัครสมาชิกที่จัดเก็บไว้ในเครื่องของคุณอย่างถาวร ให้ไปที่การตั้งค่าแอปและล้างแคชของแอปพลิเคชัน หากคุณได้ซิงค์ข้อมูลของคุณกับคลาวด์แล้ว คุณสามารถลบแผนการสมัครสมาชิกทั้งหมดของคุณออกจากคลาวด์อย่างถาวรได้โดยคลิก \'ลบข้อมูลคลาวด์\' โปรดทราบว่าเราไม่รวบรวมหรือจัดเก็บโปรไฟล์ส่วนบุคคล การเข้าสู่ระบบของคุณใช้สำหรับการตรวจสอบความถูกต้องเท่านั้น ดังนั้นจึงไม่มีบัญชีที่จะลบ มีเพียงข้อมูลการสมัครของคุณเท่านั้นที่สามารถลบได้</string>
-    <string name="policy_copyright_content">© 2026 FALCON ANDROID STUDIO. สงวนลิขสิทธิ์. Aboneliklerim จัดทำเป็นบริการติดตามการสมัครสมาชิก กราฟิก การสร้างแบรนด์ ทรัพย์สิน ซอร์สโค้ด และส่วนประกอบการออกแบบทั้งหมดเป็นทรัพย์สินทางปัญญาของ FALCON ANDROİD STUDİO ห้ามทำซ้ำ การทำวิศวกรรมย้อนกลับ หรือการแจกจ่ายซอฟต์แวร์นี้โดยไม่ได้รับอนุญาตโดยไม่ได้รับความยินยอมล่วงหน้าโดยเด็ดขาด</string>
+    <string name="policy_deletion_content">ภายใต้นโยบาย GDPR และ Google Play คุณสามารถควบคุมข้อมูลของคุณได้อย่างสมบูรณ์ หากต้องการลบข้อมูลการสมัครสมาชิกที่จัดเก็บไว้ในเครื่องของคุณอย่างถาวร ให้ไปที่การตั้งค่าแอปและล้างแคชของแอปพลิเคชัน หากคุณได้ซิงค์ข้อมูลของคุณกับคลาวด์แล้ว คุณสามารถลบแผนการสมัครสมาชิกทั้งหมดของคุณออกจากคลาวด์อย่างถาวรได้โดยคลิก \'ลบข้อมูลคลาวด์\' โปรดทราบว่าเราไม่รวบรวมหรือจัดเก็บโปรไฟล์ส่วนบุคคล การเข้าสู่ระบบของคุณใช้สำหรับการตรวจสอบสิทธิ์เท่านั้น ดังนั้นจึงไม่มีบัญชีที่จะลบ มีเพียงข้อมูลการสมัครของคุณเท่านั้นที่สามารถลบได้</string>
+    <string name="policy_copyright_content">© 2026 FALCON ANDROID STUDIO. สงวนลิขสิทธิ์. Aboneliklerim จัดทำเป็นบริการติดตามการสมัครสมาชิก กราฟิก การสร้างแบรนด์ ทรัพย์สิน ซอร์สโค้ด และส่วนประกอบการออกแบบทั้งหมดเป็นทรัพย์สินทางปัญญาของ FALCON ANDROİD STUDİO ห้ามทำซ้ำ วิศวกรรมย้อนกลับ หรือการแจกจ่ายซอฟต์แวร์นี้โดยไม่ได้รับอนุญาตโดยไม่ได้รับความยินยอมล่วงหน้าโดยเด็ดขาด</string>
     <string name="policy_adpartners_content">เราใช้ Google AdMob เพื่อแสดงโฆษณาที่เป็นส่วนตัวหรือไม่เป็นส่วนตัวเพื่อรองรับการพัฒนาแอปพลิเคชัน Google AdMob อาจรวบรวมตัวระบุโฆษณาของอุปกรณ์ (GAID) รายละเอียดเครือข่าย และคุกกี้เพื่อแสดงโฆษณาที่เกี่ยวข้อง สำหรับข้อมูลเพิ่มเติมหรือการจัดการโฆษณาส่วนบุคคลของคุณ โปรดไปที่การตั้งค่าโฆษณา Google ส่วนบุคคลภายในการตั้งค่าระบบ Android ของคุณ</string>
     <string name="premium_title">บริการระดับพรีเมียม</string>
     <string name="premium_subtitle">เพิ่มพลังการสมัครสมาชิกของคุณ!</string>
@@ -267,5 +263,23 @@
     <string name="premium_active_toast">พรีเมี่ยมแอคทีฟ! 🎉</string>
     <string name="billing_connection_failed">ไม่สามารถเชื่อมต่อกับ Google Play ได้ โปรดตรวจสอบการเชื่อมต่ออินเทอร์เน็ตของคุณแล้วลองอีกครั้ง</string>
     <string name="ok">ตกลง</string>
-    <string name="tester_premium_toggle">สลับสถานะพรีเมียม (ทดสอบ)</string>
-</resources>
+    <string name="blue_light_filter">ฟิลเตอร์แสงสีฟ้า</string>
+    <string name="add_photo">เพิ่มรูปภาพ</string>
+    <string name="change_photo">เปลี่ยนรูปถ่าย</string>
+    <string name="choose_from_gallery">เลือกจากแกลเลอรี่</string>
+    <string name="remove_photo">ลบรูปภาพ</string>
+    <string name="payment_today">ชำระเงินวันนี้!</string>
+    <string name="upcoming_widget">วิดเจ็ตการชำระเงินที่กำลังจะมีขึ้น</string>
+    <string name="widget_status_off">วิดเจ็ตถูกปิดใช้งาน</string>
+    <string name="no_upcoming_subs">ไม่มีการสมัครสมาชิกที่กำลังจะเกิดขึ้น</string>
+    <string name="no_subs_at_all">ยังไม่มีการสมัครสมาชิกเพิ่ม</string>
+    <string name="widget_instructions_title">วิธีเพิ่มวิดเจ็ต</string>
+    <string name="widget_instructions_text">1. ไปที่หน้าจอหลักของโทรศัพท์\n2. กดค้างบนพื้นที่ว่างหรือไอคอนแอป\n3. เลือก \"วิดเจ็ต\"\n4. ค้นหา \"Aboneliklerim\" แล้วลากไปที่หน้าจอ</string>
+    <string name="biometric_title">ความปลอดภัยของแอป</string>
+    <string name="biometric_subtitle">ปลดล็อก Aboneliklerim เพื่อดำเนินการต่อ</string>
+    <string name="app_lock">ล็อคแอพ</string>
+    <string name="default_currency_view">สกุลเงินเริ่มต้น (แผน)</string>
+    <string name="active_users_loading">ผู้ใช้ออนไลน์: ...</string>
+    <string name="active_users_count">ผู้ใช้ที่ใช้งานอยู่ในปัจจุบัน: %d</string>
+    <string name="currency_info_msg">ตัวเลือกนี้ช่วยให้คุณกำหนดสกุลเงินที่คุณต้องการใช้เมื่อสร้างแผนใหม่</string>
+<string name="no_plans_found">ไม่พบแผน</string></resources>

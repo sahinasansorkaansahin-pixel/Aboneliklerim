@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">Aboneliklerim</string>
     <string name="my_subscriptions">Mijn abonnementen</string>
@@ -115,7 +115,7 @@
     <string name="onboarding_title_4">Gedetailleerde statistieken</string>
     <string name="onboarding_desc_4">Analyseer uw uitgaven met maandelijkse en jaarlijkse grafieken om geld te besparen.</string>
     <string name="onboarding_title_5">Wereldwijde ondersteuning en valutatracking</string>
-    <string name="onboarding_desc_5">Beheer abonnementen in talloze talen en valuta\'s. Volg realtime wisselkoersen geïntegreerd voor alle ondersteunde landen.</string>
+    <string name="onboarding_desc_5">Beheer abonnementen in talloze talen en valuta\'s. Volg geïntegreerde realtime wisselkoersen voor alle ondersteunde landen.</string>
     <string name="onboarding_title_6">Geavanceerde tagging</string>
     <string name="onboarding_desc_6">Categoriseer uw abonnementen om uw uitgaven beter te beheren.</string>
     <string name="onboarding_title_7">Lokale en cloudback-up</string>
@@ -126,7 +126,7 @@
     <string name="onboarding_desc_9">Deel abonnementskosten met vrienden of familie en stuur met één klik snelle betalingsherinneringen!</string>
     <string name="onboarding_title_10">Ga voor premium en advertentievrij</string>
     <string name="onboarding_desc_10">Geniet van onbeperkte back-ups, live realtime wisselkoersen, geavanceerde kostensplitsing en een volledig advertentievrije premium-ervaring.</string>
-    <string name="notif_channel_name">Herinneringen voor abonnementen</string>
+    <string name="notif_channel_name">Abonnementsherinneringen</string>
     <string name="notif_channel_desc">Geluidsmeldingen voor abonnementsbetalingen</string>
     <string name="payment_today_msg">Vandaag is uw %s betaling!</string>
     <string name="payment_days_left_msg">%1$s betaling in %2$d dagen.</string>
@@ -168,6 +168,7 @@
     <string name="filter_tags">Labels</string>
     <string name="filter_archived">Gearchiveerd</string>
     <string name="default_currency">Standaardvaluta</string>
+    <string name="display_currency">Valuta weergeven</string>
     <string name="date_format">Datumnotatie</string>
     <string name="select_date_format">Selecteer Datumnotatie</string>
     <string name="no_subs_to_backup">U heeft geen abonnementen waarvan u een back-up kunt maken.</string>
@@ -216,19 +217,14 @@
     <string name="no_local_backup">Geen lokale back-up gevonden.</string>
     <string name="local_delete_confirm">Weet u zeker dat u de lokale back-up wilt verwijderen?</string>
     <string name="local_restore_confirm">Wanneer de lokale back-up wordt hersteld, worden uw huidige gegevens overschreven. Wil je doorgaan?</string>
-    <string name="tester_tools">TESTGEREEDSCHAP</string>
-    <string name="show_ad_id">Toon mijn advertentie-ID</string>
     <string name="account">Rekening</string>
     <string name="made_by">Gemaakt door FALCON ANDROID STUDIO</string>
     <string name="msg_archived">Gearchiveerd</string>
     <string name="msg_unarchived">Hersteld</string>
     <string name="google_login_failed">Inloggen bij Google mislukt: %s</string>
     <string name="google_login_cancelled">Inloggen bij Google geannuleerd. Code: %s</string>
-    <string name="ad_id_copied">Advertentie-ID gekopieerd:\n%s</string>
-    <string name="ad_id_failed">Kan ID niet ophalen: %s</string>
     <string name="error_general">Fout: %s</string>
     <string name="play_services_update">Update Google Play-services</string>
-    <string name="ad_inspector_preparing">Advertentie-inspecteur voorbereiden...</string>
     <string name="duplicate_contact_warning">Dit contact is al toegevoegd</string>
     <string name="legal_and_privacy">Juridisch en privacy</string>
     <string name="policy_privacy_title">Privacybeleid</string>
@@ -246,7 +242,7 @@
     <string name="plan_yearly">Jaarplan</string>
     <string name="plan_lifetime">Levenslang plan</string>
     <string name="choose_plan">Kies een abonnement</string>
-    <string name="premium_limit_reached">You can only create up to 8 subscriptions on the free plan. Upgrade naar Premium om limieten te verwijderen!</string>
+    <string name="premium_limit_reached">U kunt maximaal 8 abonnementen maken met het gratis abonnement. Upgrade naar Premium om limieten te verwijderen!</string>
     <string name="premium_limit_max">U heeft de maximale limiet van 100 abonnementen bereikt.</string>
     <string name="premium_feature_no_ads">Advertenties verwijderen</string>
     <string name="premium_feature_currency">Wisselkoersfunctie</string>
@@ -267,5 +263,23 @@
     <string name="premium_active_toast">Premium Actief! 🎉</string>
     <string name="billing_connection_failed">Kan geen verbinding tot stand brengen met Google Play. Controleer uw internetverbinding en probeer het opnieuw.</string>
     <string name="ok">OK</string>
-    <string name="tester_premium_toggle">Toggle Premium-status (test)</string>
-</resources>
+    <string name="blue_light_filter">Blauwlichtfilter</string>
+    <string name="add_photo">Foto toevoegen</string>
+    <string name="change_photo">Foto wijzigen</string>
+    <string name="choose_from_gallery">Kies uit Galerij</string>
+    <string name="remove_photo">Foto verwijderen</string>
+    <string name="payment_today">Betaling vandaag nog!</string>
+    <string name="upcoming_widget">Aankomende betalingswidget</string>
+    <string name="widget_status_off">Widget uitgeschakeld</string>
+    <string name="no_upcoming_subs">Geen aankomende abonnementen</string>
+    <string name="no_subs_at_all">Nog geen abonnementen toegevoegd</string>
+    <string name="widget_instructions_title">Widget toevoegen</string>
+    <string name="widget_instructions_text">1. Ga naar het startscherm van je telefoon.\n2. Druk lang op een leeg gebied of het app-pictogram.\n3. Selecteer \"Widgets\".\n4. Zoek \"Aboneliklerim\" en sleep het naar uw scherm.</string>
+    <string name="biometric_title">App-beveiliging</string>
+    <string name="biometric_subtitle">Ontgrendel Aboneliklerim om door te gaan</string>
+    <string name="app_lock">App-vergrendeling</string>
+    <string name="default_currency_view">Standaardvaluta (plan)</string>
+    <string name="active_users_loading">Onlinegebruikers: ...</string>
+    <string name="active_users_count">Huidige actieve gebruikers: %d</string>
+    <string name="currency_info_msg">Met deze optie kunt u de valuta instellen die u wilt gebruiken bij het maken van een nieuw abonnement.</string>
+<string name="no_plans_found">Geen plannen gevonden</string></resources>

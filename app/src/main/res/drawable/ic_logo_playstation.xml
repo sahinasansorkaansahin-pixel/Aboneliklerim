@@ -1,0 +1,21 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- PlayStation Blue Circle Background -->
+    <path
+        android:fillColor="#0072CE"
+        android:pathData="M24,24m-22,0a22,22 0,1,1 44,0a22,22 0,1,1 -44,0" />
+    
+    <!-- Flat Laying 'S' Shadow/Base (White with 0.8 Alpha for Premium look) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.8"
+        android:pathData="M13,30.5 C13,28 17,26.5 24,26.5 C31,26.5 35,28 35,30.5 C35,33 29,34.5 24,34.5 C17,34.5 13,33 13,30.5 Z" />
+        
+    <!-- Vertical Standing 'P' (Solid White) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M20.5,12.5 H26.5 C29.5,12.5 32,14.7 32,17.8 C32,20.9 29.5,23.1 26.5,23.1 H23.8 V32.5 H20.5 V12.5 Z M23.8,15.7 V19.9 H26.5 C27.7,19.9 28.7,19 28.7,17.8 C28.7,16.6 27.7,15.7 26.5,15.7 H23.8 Z" />
+</vector>

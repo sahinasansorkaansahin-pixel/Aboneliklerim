@@ -609,21 +609,25 @@
   <string name="billing_connection_failed">Could not establish connection with Google Play. Please check your internet connection and try again.</string>
   <string name="ok">OK</string>
   <string name="tester_premium_toggle">Toggle Premium Status (Test)</string>
-  <string name="streaming_prices">Platform Prices Tracking</string>
-  <string name="last_update">Last Update: %s</string>
-  <string name="stable">Stable</string>
-  <string name="price_increased">▲ %s Increase</string>
-  <string name="price_decreased">▼ %s Decrease</string>
-  <string name="open_website">Official Website</string>
-  <string name="loading_prices">Updating prices...</string>
-  <string name="update_prices_success">Platform prices updated!</string>
-  <string name="update_prices_error">Failed to update prices.</string>
-  <string name="select_platform">Select any platform</string>
-  <string name="period_monthly_short">/mo</string>
-  <string name="period_yearly_short">/yr</string>
-  <string name="notif_platform_enabled_toast">Price tracking notifications enabled for %1$s.</string>
-  <string name="notif_platform_disabled_toast">Price tracking notifications disabled for %1$s.</string>
-  <string name="platform_price_change_title">%1$s Price Change!</string>
-  <string name="platform_price_increased_msg">%1$s price increased! Old: %2$s, New: %3$s</string>
-  <string name="platform_price_decreased_msg">%1$s price decreased! Old: %2$s, New: %3$s</string>
+  <string name="add_photo">Add Photo</string>
+  <string name="change_photo">Change Photo</string>
+  <string name="remove_photo">Remove Photo</string>
+  <string name="biometric_title">App Security</string>
+  <string name="biometric_subtitle">Unlock Aboneliklerim to continue</string>
+  <string name="payment_today">Payment Today!</string>
+  <string name="widget_status_off">Widget Disabled</string>
+  <string name="no_subs_at_all">No Subscriptions Added Yet</string>
+  <string name="no_upcoming_subs">No Upcoming Subscriptions</string>
+  <string name="no_plans_found">No plans found</string>
+  <string name="upcoming_widget">Upcoming Payment Widget</string>
+  <string name="news_title">Latest News</string>
+  <string name="news_tag_hike">Price Hike</string>
+  <string name="news_tag_discount">Discount</string>
+  <string name="news_tag_campaign">Campaign</string>
+  <string name="refresh">Refresh</string>
+  <string name="search_news_hint">Search digital news...</string>
+  <string name="blue_light_filter">Blue Light Filter</string>
+  <string name="app_lock">App Lock</string>
 </resources>
+
+

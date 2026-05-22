@@ -34,6 +34,15 @@ class TagsActivity : BaseActivity() {
         etTagName = findViewById(R.id.etTagName)
         rvTags = findViewById(R.id.rvTags)
         tvEmptyHint = findViewById(R.id.tvEmptyTagsHint)
+        val tvTagCharCount = findViewById<TextView>(R.id.tvTagCharCount)
+
+        etTagName.addTextChangedListener(object : android.text.TextWatcher {
+            override fun afterTextChanged(s: android.text.Editable?) {
+                tvTagCharCount.text = "${s?.length ?: 0}/20"
+            }
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+        })
 
         rvTags.layoutManager = LinearLayoutManager(this)
         adapter = TagsAdapter(tagsList, { selectedTag ->

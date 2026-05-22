@@ -41,22 +41,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_marginHorizontal="16dp"
+            android:layout_marginHorizontal="12dp"
             android:layout_marginBottom="16dp"
             app:backgroundTint="@color/surface_main"
             app:fabAlignmentMode="center"
-            app:fabCradleMargin="10dp"
+            app:fabCradleMargin="8dp"
             app:fabCradleRoundedCornerRadius="24dp"
             app:elevation="8dp">
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/bottomNav"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="@android:color/transparent"
                 app:elevation="0dp"
                 app:labelVisibilityMode="labeled"
+                app:itemHorizontalTranslationEnabled="false"
                 app:itemIconSize="20dp"
+                app:itemIconTint="@color/nav_color_selector"
+                app:itemTextColor="@color/nav_color_selector"
                 app:itemTextAppearanceActive="@style/BottomNavText"
                 app:itemTextAppearanceInactive="@style/BottomNavText"
                 app:menu="@menu/bottom_nav_menu" />

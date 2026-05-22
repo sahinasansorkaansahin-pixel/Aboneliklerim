@@ -592,7 +592,185 @@
 
             </androidx.cardview.widget.CardView>
 
+<!-- Currency Converter -->
 
+            <TextView
+
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+
+                android:text="@string/currency_converter" android:textColor="@color/text_main" android:textSize="14sp"
+
+                android:textStyle="bold" android:layout_marginStart="8dp" android:layout_marginBottom="8dp" />
+
+
+
+            <androidx.cardview.widget.CardView
+
+                android:id="@+id/cardCurrencyConverter"
+
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+
+                android:layout_marginBottom="24dp" app:cardBackgroundColor="@color/surface_main" app:cardCornerRadius="20dp" app:cardElevation="0dp">
+
+                <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+
+                        android:orientation="vertical" android:padding="16dp">
+
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+
+                            android:orientation="horizontal" android:gravity="center_vertical">
+
+                            <EditText android:id="@+id/etCurrencyAmount" android:layout_width="0dp" android:layout_height="wrap_content"
+
+                                android:layout_weight="1" android:background="@null" android:hint="1.00" android:inputType="numberDecimal"
+
+                                android:textColor="@color/text_main" android:textSize="20sp" android:textStyle="bold" android:text="1"/>
+
+                            <TextView android:id="@+id/tvBaseCurrencyCode" android:layout_width="wrap_content" android:layout_height="wrap_content"
+
+                                android:text="TRY" android:textColor="@color/text_secondary" android:textSize="16sp" android:textStyle="bold" android:layout_marginStart="8dp"
+
+                                android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" android:padding="4dp"/>
+
+                        </LinearLayout>
+
+                        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#1AFFFFFF" android:layout_marginTop="12dp" android:layout_marginBottom="12dp"/>
+
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+
+                            android:orientation="horizontal" android:gravity="center_vertical">
+
+                            <TextView android:id="@+id/tvConvertedAmount" android:layout_width="0dp" android:layout_height="wrap_content"
+
+                                android:layout_weight="1" android:text="0.00" android:textColor="@color/text_main" android:textSize="20sp" android:textStyle="bold"/>
+
+                            <TextView android:id="@+id/tvTargetCurrencyCode" android:layout_width="wrap_content" android:layout_height="wrap_content"
+
+                                android:text="USD" android:textColor="@color/text_secondary" android:textSize="16sp" android:textStyle="bold" android:layout_marginStart="8dp"
+
+                                android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" android:padding="4dp"/>
+
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatButton android:id="@+id/btnUpdateCurrency"
+
+                            android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginTop="16dp"
+
+                            android:text="@string/update" android:textAllCaps="false" android:textColor="@android:color/white"
+                            android:background="@drawable/bg_primary_button_small"/>
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- News Section -->
+
+            <LinearLayout
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginStart="8dp" android:layout_marginEnd="8dp" android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                    android:text="@string/news_title" android:textColor="@color/text_main" android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <ProgressBar
+                    android:id="@+id/pbNewsLoading"
+                    android:layout_width="16dp" android:layout_height="16dp"
+                    android:visibility="gone" android:layout_marginEnd="8dp"
+                    android:indeterminateTint="@color/primary_indigo" />
+
+                <TextView
+                    android:id="@+id/tvRefreshNews"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="@string/refresh" android:textColor="@color/primary_indigo" android:textSize="13sp"
+                    android:textStyle="bold" android:clickable="true" android:focusable="true"
+                    android:background="?attr/selectableItemBackground" android:padding="4dp"/>
+
+            </LinearLayout>
+
+
+            <!-- News Search Bar -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardNewsSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="@color/surface_main"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_search"
+                        app:tint="@color/text_secondary" />
+
+                    <EditText
+                        android:id="@+id/etNewsSearch"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="@string/search_news_hint"
+                        android:textColorHint="@color/text_secondary"
+                        android:textColor="@color/text_main"
+                        android:textSize="14sp"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:singleLine="true"
+                        android:imeOptions="actionSearch" />
+
+                    <ImageView
+                        android:id="@+id/ivClearNewsSearch"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_close"
+                        app:tint="@color/text_secondary"
+                        android:visibility="gone"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackgroundBorderless" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardNewsSection"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp" app:cardBackgroundColor="@color/surface_main"
+                app:cardCornerRadius="20dp" app:cardElevation="0dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:padding="16dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvNews"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
 
             <!-- Appearance Section -->
 
@@ -704,11 +882,21 @@
 
                     </LinearLayout>
 
-
-
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#1AFFFFFF" android:layout_marginVertical="12dp"/>
 
+                    <LinearLayout android:id="@+id/rowBlueLightFilter" android:layout_width="match_parent" android:layout_height="48dp"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_lightbulb_purple" app:tint="@color/primary_indigo"/>
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp"
+                            android:text="@string/blue_light_filter" android:textColor="@color/text_main" android:textSize="15sp"/>
+                        <androidx.appcompat.widget.SwitchCompat android:id="@+id/swBlueLightFilter"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:clickable="false" android:focusable="false"
+                            app:thumbTint="@color/primary_indigo" app:trackTint="#33730692"/>
+                    </LinearLayout>
 
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#1AFFFFFF" android:layout_marginVertical="12dp"/>
 
                 </LinearLayout>
 
@@ -774,7 +962,7 @@
 
                         <TextView android:id="@+id/tvCurrentDateFormat" android:layout_width="wrap_content" android:layout_height="wrap_content"
 
-                            android:text="dd/MM/yyyy" android:textColor="@color/text_secondary" android:textSize="14sp" android:layout_marginEnd="8dp"/>
+                            android:text="dd.MM.yyyy" android:textColor="@color/text_secondary" android:textSize="14sp" android:layout_marginEnd="8dp"/>
 
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textColor="@color/text_secondary" android:textSize="24sp"/>
 
@@ -852,329 +1040,20 @@
 
                     </LinearLayout>
 
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-
-
-            <!-- Currency Converter -->
-
-            <TextView
-
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
-
-                android:text="@string/currency_converter" android:textColor="@color/text_main" android:textSize="14sp"
-
-                android:textStyle="bold" android:layout_marginStart="8dp" android:layout_marginBottom="8dp" />
-
-
-
-            <androidx.cardview.widget.CardView
-
-                android:id="@+id/cardCurrencyConverter"
-
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-
-                android:layout_marginBottom="24dp" app:cardBackgroundColor="@color/surface_main" app:cardCornerRadius="20dp" app:cardElevation="0dp">
-
-                <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-
-                        android:orientation="vertical" android:padding="16dp">
-
-                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-
-                            android:orientation="horizontal" android:gravity="center_vertical">
-
-                            <EditText android:id="@+id/etCurrencyAmount" android:layout_width="0dp" android:layout_height="wrap_content"
-
-                                android:layout_weight="1" android:background="@null" android:hint="1.00" android:inputType="numberDecimal"
-
-                                android:textColor="@color/text_main" android:textSize="20sp" android:textStyle="bold" android:text="1"/>
-
-                            <TextView android:id="@+id/tvBaseCurrencyCode" android:layout_width="wrap_content" android:layout_height="wrap_content"
-
-                                android:text="TRY" android:textColor="@color/primary_indigo" android:textSize="16sp" android:textStyle="bold" android:layout_marginStart="8dp"
-
-                                android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" android:padding="4dp"/>
-
-                        </LinearLayout>
-
-                        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#1AFFFFFF" android:layout_marginTop="12dp" android:layout_marginBottom="12dp"/>
-
-                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-
-                            android:orientation="horizontal" android:gravity="center_vertical">
-
-                            <TextView android:id="@+id/tvConvertedAmount" android:layout_width="0dp" android:layout_height="wrap_content"
-
-                                android:layout_weight="1" android:text="0.00" android:textColor="@color/text_main" android:textSize="20sp" android:textStyle="bold"/>
-
-                            <TextView android:id="@+id/tvTargetCurrencyCode" android:layout_width="wrap_content" android:layout_height="wrap_content"
-
-                                android:text="USD" android:textColor="@color/text_secondary" android:textSize="16sp" android:textStyle="bold" android:layout_marginStart="8dp"
-
-                                android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground" android:padding="4dp"/>
-
-                        </LinearLayout>
-
-                        <androidx.appcompat.widget.AppCompatButton android:id="@+id/btnUpdateCurrency"
-
-                            android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginTop="16dp"
-
-                            android:text="@string/update" android:textAllCaps="false" android:textColor="@android:color/white"
-
-                            android:background="@drawable/bg_primary_button_small"/>
-
-                    </LinearLayout>
-
-
-
-                    <!-- Premium Lock Overlay for Converter -->
-
-                    <LinearLayout
-
-                        android:id="@+id/layoutConverterPremiumOverlay"
-
-                        android:layout_width="match_parent"
-
-                        android:layout_height="match_parent"
-
-                        android:background="#EE0B0B14"
-
-                        android:orientation="vertical"
-
-                        android:gravity="center"
-
-                        android:clickable="true"
-
-                        android:focusable="true"
-
-                        android:visibility="gone">
-
-                        <ImageView 
-
-                            android:layout_width=" 24dp " 
-
-                            android:layout_height=" 24dp " 
-
-                            android:src="@drawable/ic_lock" 
-
-                            app:tint="#8E8E93"/>
-
-                        <TextView 
-
-                            android:layout_width="wrap_content" 
-
-                            android:layout_height="wrap_content" 
-
-                            android:text="@string/premium_get_service" 
-
-                            android:textColor="#8E8E93" 
-
-                            android:textSize=" 12sp " 
-
-                            android:textStyle="bold" 
-
-                            android:layout_marginTop=" 4dp "/>
-
-                    </LinearLayout>
-
-                </FrameLayout>
-
-            </androidx.cardview.widget.CardView>
-
-
-
-            <!-- Streaming Prices Section -->
-
-            <LinearLayout
-
-                android:layout_width="match_parent"
-
-                android:layout_height="wrap_content"
-
-                android:orientation="horizontal"
-
-                android:gravity="center_vertical"
-
-                android:layout_marginStart="8dp"
-
-                android:layout_marginBottom="8dp">
-
-                <TextView
-
-                    android:id="@+id/tvStreamingTitle"
-
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-
-                    android:text="@string/streaming_prices" android:textColor="@color/text_main" android:textSize="14sp"
-
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-
-
-            <androidx.cardview.widget.CardView
-
-                android:id="@+id/cardStreamingPrices"
-
-                android:layout_width="match_parent" android:layout_height="wrap_content"
-
-                android:layout_marginBottom="24dp" app:cardBackgroundColor="@color/surface_main" app:cardCornerRadius="20dp" app:cardElevation="0dp">
-
-                
-
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-
-                    android:orientation="vertical" android:padding="16dp">
-
-
-
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-
-                        android:orientation="horizontal" android:gravity="center_vertical">
-
-
-
-                        <ImageView android:id="@+id/imgSelectedStreamingLogo"
-
-                            android:layout_width="32dp" android:layout_height="32dp"
-
-                            android:visibility="invisible"/>
-
-
-
-                        <androidx.appcompat.widget.AppCompatSpinner android:id="@+id/spinnerStreamingPlatforms"
-
-                            android:layout_width="0dp" android:layout_height="wrap_content"
-
-                            android:layout_weight="1" android:layout_marginStart="12dp"
-
-                            android:backgroundTint="@color/primary_indigo"/>
-
-
-
-                        <TextView android:id="@+id/tvStreamingSelectedTrend"
-
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#1AFFFFFF" android:layout_marginHorizontal="16dp"/>
+
+                    <LinearLayout android:id="@+id/rowAppLock" android:layout_width="match_parent" android:layout_height="56dp"
+                        android:orientation="horizontal" android:gravity="center_vertical"
+                        android:paddingHorizontal="16dp"
+                        android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground">
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_lock" app:tint="@color/primary_indigo"/>
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp"
+                            android:text="@string/app_lock" android:textColor="@color/text_main" android:textSize="16sp"/>
+                        <androidx.appcompat.widget.SwitchCompat android:id="@+id/swAppLock"
                             android:layout_width="wrap_content" android:layout_height="wrap_content"
-
-                            android:layout_marginStart="8dp" android:textSize="12sp" android:textStyle="bold"
-
-                            android:paddingHorizontal="8dp" android:paddingVertical="4dp"
-
-                            android:visibility="gone"/>
-
-
-
-                        <ImageView android:id="@+id/imgSelectedStreamingBell"
-
-                            android:layout_width="32dp" android:layout_height="32dp"
-
-                            android:layout_marginStart="8dp"
-
-                            android:padding="4dp"
-
-                            android:src="@drawable/ic_bell"
-
-                            android:clickable="true"
-
-                            android:focusable="true"
-
-                            android:background="?attr/selectableItemBackgroundBorderless"
-
-                            android:visibility="gone"/>
-
+                            android:clickable="false" android:focusable="false"
+                            app:thumbTint="@color/primary_indigo" app:trackTint="#33730692"/>
                     </LinearLayout>
-
-
-
-                    <LinearLayout android:id="@+id/layoutStreamingDetails"
-
-                        android:layout_width="match_parent" android:layout_height="wrap_content"
-
-                        android:orientation="vertical"
-
-                        android:visibility="gone">
-
-
-
-                        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#1AFFFFFF" android:layout_marginTop="12dp" android:layout_marginBottom="12dp"/>
-
-
-
-                        <LinearLayout android:id="@+id/layoutStreamingSelectedPlans"
-
-                            android:layout_width="match_parent" android:layout_height="wrap_content"
-
-                            android:orientation="vertical"/>
-
-
-
-                        <androidx.appcompat.widget.AppCompatButton android:id="@+id/btnOpenStreamingWeb"
-
-                            android:layout_width="match_parent" android:layout_height="40dp" android:layout_marginTop="16dp"
-
-                            android:text="@string/open_website" android:textAllCaps="false" android:textColor="@android:color/white"
-
-                            android:background="@drawable/bg_primary_button_small"/>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                
-
-                <!-- Premium Lock Overlay for Streaming Prices -->
-
-                <LinearLayout
-
-                    android:id="@+id/layoutStreamingPremiumOverlay"
-
-                    android:layout_width="match_parent"
-
-                    android:layout_height="match_parent"
-
-                    android:background="#EE0B0B14"
-
-                    android:focusable="true"
-
-                    android:clickable="true"
-
-                    android:gravity="center"
-
-                    android:orientation="vertical"
-
-                    android:visibility="gone">
-
-                    <ImageView 
-
-                        android:layout_width=" 24dp " 
-
-                        android:layout_height=" 24dp " 
-
-                        android:src="@drawable/ic_lock" 
-
-                        app:tint="#8E8E93"/>
-
-                    <TextView 
-
-                        android:layout_width="wrap_content" 
-
-                        android:layout_height="wrap_content" 
-
-                        android:text="@string/premium_get_service" 
-
-                        android:textColor="#8E8E93" 
-
-                        android:textSize=" 12sp " 
-
-                        android:textStyle="bold" 
-
-                        android:layout_marginTop=" 4dp "/>
 
                 </LinearLayout>
 
@@ -1182,71 +1061,15 @@
 
 
 
-            <!-- Tester Area -->
+            
 
-            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
 
-                android:text="@string/tester_tools" android:textColor="@color/text_main" android:textSize="14sp"
 
-                android:textStyle="bold" android:layout_marginStart="8dp" android:layout_marginTop="24dp" android:layout_marginBottom="8dp" />
 
-            <androidx.cardview.widget.CardView android:layout_width="match_parent" android:layout_height="wrap_content"
 
-                android:layout_marginBottom="24dp" app:cardBackgroundColor="@color/surface_main" app:cardCornerRadius="20dp" app:cardElevation="0dp">
 
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
 
-                    android:orientation="vertical" android:padding="8dp">
 
-                    
-
-                    <LinearLayout android:id="@+id/rowShowAdId" android:layout_width="match_parent" android:layout_height="48dp"
-
-                        android:orientation="horizontal" android:gravity="center_vertical" android:paddingHorizontal="8dp"
-
-                        android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground">
-
-                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_price_tag" app:tint="@color/primary_indigo"/>
-
-                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp"
-
-                            android:text="@string/show_ad_id" android:textColor="@color/text_main" android:textSize="15sp"/>
-
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textColor="@color/text_secondary" android:textSize="20sp"/>
-
-                    </LinearLayout>
-
-                    
-
-                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#1AFFFFFF" android:layout_marginHorizontal="8dp"/>
-
-                    
-
-                    <LinearLayout android:id="@+id/rowTogglePremium" android:layout_width="match_parent" android:layout_height="48dp"
-
-                        android:orientation="horizontal" android:gravity="center_vertical" android:paddingHorizontal="8dp"
-
-                        android:clickable="true" android:focusable="true" android:background="?attr/selectableItemBackground">
-
-                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_diamond_faceted" app:tint="@color/primary_indigo"/>
-
-                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp"
-
-                            android:text="@string/tester_premium_toggle" android:textColor="@color/text_main" android:textSize="15sp"/>
-
-                        <TextView android:id="@+id/tvCurrentPremiumStatus" android:layout_width="wrap_content" android:layout_height="wrap_content"
-
-                            android:text="Pasif" android:textColor="@color/text_secondary" android:textSize="13sp" android:layout_marginEnd="8dp"/>
-
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="›" android:textColor="@color/text_secondary" android:textSize="20sp"/>
-
-                    </LinearLayout>
-
-                    
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
 
 
 

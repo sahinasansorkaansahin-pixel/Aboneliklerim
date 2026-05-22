@@ -1,0 +1,15 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Adobe Vibrant Red Circle Background -->
+    <path
+        android:fillColor="#FF0000"
+        android:pathData="M24,24m-22,0a22,22 0,1,1 44,0a22,22 0,1,1 -44,0" />
+    
+    <!-- Stylized Adobe 'A' Logomark (White) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M24,13.5 L14,34 H20.5 L24,24.5 L27.5,34 H34 L24,13.5 Z M24,20 L26,25 H22 L24,20 Z" />
+</vector>

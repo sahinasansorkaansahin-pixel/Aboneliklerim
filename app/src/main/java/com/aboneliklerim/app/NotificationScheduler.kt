@@ -29,7 +29,7 @@ object NotificationScheduler {
                 } else null
             }
             .sortedBy { it.second } // Schedule nearest ones first
-            .take(400) // Android system limit is 500, we stay safe at 400
+            .take(500) // Android system limit is 500, we use it all since we have up to 100 subs
 
         activeNotifications.forEach { (sub, triggerTime) ->
             val intent = Intent(context, NotificationReceiver::class.java).apply {
@@ -77,7 +77,7 @@ object NotificationScheduler {
         }
     }
 
-    private fun calculateNextTriggerTime(sub: Subscription): Long? {
+    fun calculateNextTriggerTime(sub: Subscription): Long? {
         try {
             val now = Calendar.getInstance()
             
@@ -85,7 +85,7 @@ object NotificationScheduler {
             val notifyHour = timeParts.getOrNull(0)?.toIntOrNull() ?: 9
             val notifyMinute = timeParts.getOrNull(1)?.toIntOrNull() ?: 0
 
-            var payCal = getNextPaymentDate(sub.startDate, sub.period) ?: return null
+            var payCal = getNextPaymentDate(sub.startDate, sub.period, sub.periodValue) ?: return null
             
             // Setup trigger date for the upcoming payment
             var triggerCal = payCal.clone() as Calendar
@@ -100,7 +100,7 @@ object NotificationScheduler {
             if (triggerCal.before(now) && sub.period != "one-time") {
                 val nextRef = payCal.clone() as Calendar
                 nextRef.add(Calendar.DAY_OF_YEAR, 1)
-                payCal = getNextPaymentDate(sub.startDate, sub.period, nextRef) ?: return null
+                payCal = getNextPaymentDate(sub.startDate, sub.period, sub.periodValue, nextRef) ?: return null
                 
                 triggerCal = payCal.clone() as Calendar
                 triggerCal.add(Calendar.DAY_OF_YEAR, -sub.notifyDaysBefore)
