@@ -595,72 +595,72 @@
         ]
       },
       "SEK": {
-        "base_price": 149.0,
+        "base_price": 169.0,
         "base_currency": "SEK",
         "plans": [
           {
             "name": "Basic",
-            "price": 109.0,
+            "price": 129.0,
             "currency": "SEK",
             "period": "monthly"
           },
           {
             "name": "Standard",
-            "price": 149.0,
+            "price": 169.0,
             "currency": "SEK",
             "period": "monthly"
           },
           {
             "name": "Premium",
-            "price": 199.0,
+            "price": 219.0,
             "currency": "SEK",
             "period": "monthly"
           }
         ]
       },
       "NOK": {
-        "base_price": 129.0,
+        "base_price": 149.0,
         "base_currency": "NOK",
         "plans": [
           {
             "name": "Basic",
-            "price": 99.0,
+            "price": 119.0,
             "currency": "NOK",
             "period": "monthly"
           },
           {
             "name": "Standard",
-            "price": 129.0,
+            "price": 149.0,
             "currency": "NOK",
             "period": "monthly"
           },
           {
             "name": "Premium",
-            "price": 189.0,
+            "price": 219.0,
             "currency": "NOK",
             "period": "monthly"
           }
         ]
       },
       "DKK": {
-        "base_price": 129.0,
+        "base_price": 149.0,
         "base_currency": "DKK",
         "plans": [
           {
             "name": "Basic",
-            "price": 89.0,
+            "price": 109.0,
             "currency": "DKK",
             "period": "monthly"
           },
           {
             "name": "Standard",
-            "price": 129.0,
+            "price": 149.0,
             "currency": "DKK",
             "period": "monthly"
           },
           {
             "name": "Premium",
-            "price": 169.0,
+            "price": 189.0,
             "currency": "DKK",
             "period": "monthly"
           }
@@ -817,24 +817,24 @@
         ]
       },
       "PLN": {
-        "base_price": 49.0,
+        "base_price": 55.0,
         "base_currency": "PLN",
         "plans": [
           {
             "name": "Basic",
-            "price": 33.0,
+            "price": 37.0,
             "currency": "PLN",
             "period": "monthly"
           },
           {
             "name": "Standard",
-            "price": 49.0,
+            "price": 55.0,
             "currency": "PLN",
             "period": "monthly"
           },
           {
             "name": "Premium",
-            "price": 67.0,
+            "price": 75.0,
             "currency": "PLN",
             "period": "monthly"
           }
