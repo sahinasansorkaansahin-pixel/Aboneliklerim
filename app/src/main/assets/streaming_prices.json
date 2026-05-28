@@ -118,7 +118,7 @@
         ]
       },
       "KRW": {
-        "base_price": 18100,
+        "base_price": 18000,
         "base_currency": "KRW",
         "plans": [
           {
@@ -129,7 +129,7 @@
           },
           {
             "name": "Prime Monthly",
-            "price": 18100,
+            "price": 18000,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -172,18 +172,18 @@
         ]
       },
       "NOK": {
-        "base_price": 119.0,
+        "base_price": 129.0,
         "base_currency": "NOK",
         "plans": [
           {
             "name": "Prime Video",
-            "price": 69.0,
+            "price": 79.0,
             "currency": "NOK",
             "period": "monthly"
           },
           {
             "name": "Prime Monthly",
-            "price": 119.0,
+            "price": 129.0,
             "currency": "NOK",
             "period": "monthly"
           }
@@ -1078,7 +1078,7 @@
         ]
       },
       "KRW": {
-        "base_price": 15700,
+        "base_price": 15600,
         "base_currency": "KRW",
         "plans": [
           {
@@ -1089,19 +1089,19 @@
           },
           {
             "name": "Individual",
-            "price": 15700,
+            "price": 15600,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Duo",
-            "price": 22900,
+            "price": 22800,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 26500,
+            "price": 26400,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1680,7 +1680,7 @@
           },
           {
             "name": "Family",
-            "price": 20500,
+            "price": 20400,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1956,7 +1956,7 @@
         "plans": [
           {
             "name": "Student",
-            "price": 69.0,
+            "price": 79.0,
             "currency": "CZK",
             "period": "monthly"
           },
