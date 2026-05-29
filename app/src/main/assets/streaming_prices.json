@@ -172,18 +172,18 @@
         ]
       },
       "NOK": {
-        "base_price": 129.0,
+        "base_price": 119.0,
         "base_currency": "NOK",
         "plans": [
           {
             "name": "Prime Video",
-            "price": 79.0,
+            "price": 69.0,
             "currency": "NOK",
             "period": "monthly"
           },
           {
             "name": "Prime Monthly",
-            "price": 129.0,
+            "price": 119.0,
             "currency": "NOK",
             "period": "monthly"
           }
@@ -1198,7 +1198,7 @@
         ]
       },
       "DKK": {
-        "base_price": 79.0,
+        "base_price": 69.0,
         "base_currency": "DKK",
         "plans": [
           {
@@ -1209,7 +1209,7 @@
           },
           {
             "name": "Individual",
-            "price": 79.0,
+            "price": 69.0,
             "currency": "DKK",
             "period": "monthly"
           },
@@ -2229,7 +2229,7 @@
           },
           {
             "name": "Standard (200 GB)",
-            "price": 29.0,
+            "price": 19.0,
             "currency": "SEK",
             "period": "monthly"
           },
