@@ -118,7 +118,7 @@
         ]
       },
       "KRW": {
-        "base_price": 18300,
+        "base_price": 18400,
         "base_currency": "KRW",
         "plans": [
           {
@@ -129,7 +129,7 @@
           },
           {
             "name": "Prime Monthly",
-            "price": 18300,
+            "price": 18400,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -298,7 +298,7 @@
         ]
       },
       "THB": {
-        "base_price": 249.0,
+        "base_price": 239.0,
         "base_currency": "THB",
         "plans": [
           {
@@ -309,7 +309,7 @@
           },
           {
             "name": "Prime Monthly",
-            "price": 249.0,
+            "price": 239.0,
             "currency": "THB",
             "period": "monthly"
           }
@@ -1095,13 +1095,13 @@
           },
           {
             "name": "Duo",
-            "price": 23200,
+            "price": 23300,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 26900,
+            "price": 27000,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1461,7 +1461,7 @@
           },
           {
             "name": "Family",
-            "price": 279.0,
+            "price": 269.0,
             "currency": "CZK",
             "period": "monthly"
           }
@@ -1663,7 +1663,7 @@
         ]
       },
       "KRW": {
-        "base_price": 13400,
+        "base_price": 13500,
         "base_currency": "KRW",
         "plans": [
           {
@@ -1674,7 +1674,7 @@
           },
           {
             "name": "Individual",
-            "price": 13400,
+            "price": 13500,
             "currency": "KRW",
             "period": "monthly"
           },
@@ -1687,7 +1687,7 @@
         ]
       },
       "UAH": {
-        "base_price": 189.0,
+        "base_price": 199.0,
         "base_currency": "UAH",
         "plans": [
           {
@@ -1698,7 +1698,7 @@
           },
           {
             "name": "Individual",
-            "price": 189.0,
+            "price": 199.0,
             "currency": "UAH",
             "period": "monthly"
           },
