@@ -2187,7 +2187,7 @@
           },
           {
             "name": "Premium (2 TB)",
-            "price": 12300,
+            "price": 12400,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -2694,7 +2694,7 @@
           },
           {
             "name": "Family (6 TB)",
-            "price": 12300,
+            "price": 12400,
             "currency": "KRW",
             "period": "monthly"
           }
