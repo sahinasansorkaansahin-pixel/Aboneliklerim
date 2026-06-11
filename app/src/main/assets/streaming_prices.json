@@ -123,7 +123,7 @@
         "plans": [
           {
             "name": "Prime Video",
-            "price": 11000,
+            "price": 10900,
             "currency": "KRW",
             "period": "monthly"
           },
@@ -1131,7 +1131,7 @@
           },
           {
             "name": "Family",
-            "price": 389.0,
+            "price": 399.0,
             "currency": "UAH",
             "period": "monthly"
           }
@@ -1245,7 +1245,7 @@
           },
           {
             "name": "Duo",
-            "price": 22.99,
+            "price": 21.99,
             "currency": "CAD",
             "period": "monthly"
           },
@@ -1383,7 +1383,7 @@
         "plans": [
           {
             "name": "Student",
-            "price": 109.0,
+            "price": 119.0,
             "currency": "THB",
             "period": "monthly"
           },
@@ -1431,7 +1431,7 @@
           },
           {
             "name": "Family",
-            "price": 47.99,
+            "price": 48.99,
             "currency": "PLN",
             "period": "monthly"
           }
@@ -1704,7 +1704,7 @@
           },
           {
             "name": "Family",
-            "price": 299.0,
+            "price": 309.0,
             "currency": "UAH",
             "period": "monthly"
           }
@@ -1728,7 +1728,7 @@
           },
           {
             "name": "Family",
-            "price": 139.0,
+            "price": 149.0,
             "currency": "SEK",
             "period": "monthly"
           }
@@ -1752,7 +1752,7 @@
           },
           {
             "name": "Family",
-            "price": 149.0,
+            "price": 139.0,
             "currency": "NOK",
             "period": "monthly"
           }
@@ -1944,7 +1944,7 @@
           },
           {
             "name": "Family",
-            "price": 36.99,
+            "price": 37.99,
             "currency": "PLN",
             "period": "monthly"
           }
@@ -2235,7 +2235,7 @@
           },
           {
             "name": "Premium (2 TB)",
-            "price": 79.0,
+            "price": 89.0,
             "currency": "SEK",
             "period": "monthly"
           }
@@ -2458,12 +2458,12 @@
         ]
       },
       "CZK": {
-        "base_price": 19.0,
+        "base_price": 29.0,
         "base_currency": "CZK",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 19.0,
+            "price": 29.0,
             "currency": "CZK",
             "period": "monthly"
           },
@@ -2742,7 +2742,7 @@
           },
           {
             "name": "Family (6 TB)",
-            "price": 79.0,
+            "price": 89.0,
             "currency": "SEK",
             "period": "monthly"
           }
@@ -2928,7 +2928,7 @@
           },
           {
             "name": "Personal (1 TB)",
-            "price": 109.0,
+            "price": 119.0,
             "currency": "THB",
             "period": "monthly"
           },
@@ -2965,12 +2965,12 @@
         ]
       },
       "CZK": {
-        "base_price": 19.0,
+        "base_price": 29.0,
         "base_currency": "CZK",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 19.0,
+            "price": 29.0,
             "currency": "CZK",
             "period": "monthly"
           },
