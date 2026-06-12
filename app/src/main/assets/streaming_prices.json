@@ -123,7 +123,7 @@
         "plans": [
           {
             "name": "Prime Video",
-            "price": 10900,
+            "price": 11000,
             "currency": "KRW",
             "period": "monthly"
           },
@@ -1095,7 +1095,7 @@
           },
           {
             "name": "Duo",
-            "price": 23100,
+            "price": 23200,
             "currency": "KRW",
             "period": "monthly"
           },
@@ -1245,7 +1245,7 @@
           },
           {
             "name": "Duo",
-            "price": 21.99,
+            "price": 22.99,
             "currency": "CAD",
             "period": "monthly"
           },
@@ -1752,7 +1752,7 @@
           },
           {
             "name": "Family",
-            "price": 139.0,
+            "price": 149.0,
             "currency": "NOK",
             "period": "monthly"
           }
