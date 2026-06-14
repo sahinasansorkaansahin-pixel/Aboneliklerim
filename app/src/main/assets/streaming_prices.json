@@ -1567,7 +1567,7 @@
         ]
       },
       "EUR": {
-        "base_price": 8.99,
+        "base_price": 9.99,
         "base_currency": "EUR",
         "plans": [
           {
@@ -1578,7 +1578,7 @@
           },
           {
             "name": "Individual",
-            "price": 8.99,
+            "price": 9.99,
             "currency": "EUR",
             "period": "monthly"
           },
