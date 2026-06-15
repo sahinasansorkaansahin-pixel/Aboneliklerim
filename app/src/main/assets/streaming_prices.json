@@ -298,7 +298,7 @@
         ]
       },
       "THB": {
-        "base_price": 249.0,
+        "base_price": 239.0,
         "base_currency": "THB",
         "plans": [
           {
@@ -309,7 +309,7 @@
           },
           {
             "name": "Prime Monthly",
-            "price": 249.0,
+            "price": 239.0,
             "currency": "THB",
             "period": "monthly"
           }
@@ -1095,7 +1095,7 @@
           },
           {
             "name": "Duo",
-            "price": 23100,
+            "price": 23000,
             "currency": "KRW",
             "period": "monthly"
           },
@@ -1281,7 +1281,7 @@
           },
           {
             "name": "Family",
-            "price": 26.99,
+            "price": 25.99,
             "currency": "AUD",
             "period": "monthly"
           }
@@ -1567,7 +1567,7 @@
         ]
       },
       "EUR": {
-        "base_price": 9.99,
+        "base_price": 8.99,
         "base_currency": "EUR",
         "plans": [
           {
@@ -1578,7 +1578,7 @@
           },
           {
             "name": "Individual",
-            "price": 9.99,
+            "price": 8.99,
             "currency": "EUR",
             "period": "monthly"
           },
@@ -1824,7 +1824,7 @@
           },
           {
             "name": "Family",
-            "price": 20.99,
+            "price": 19.99,
             "currency": "AUD",
             "period": "monthly"
           }
@@ -1956,7 +1956,7 @@
         "plans": [
           {
             "name": "Student",
-            "price": 79.0,
+            "price": 69.0,
             "currency": "CZK",
             "period": "monthly"
           },
@@ -2475,7 +2475,7 @@
           },
           {
             "name": "Premium (2 TB)",
-            "price": 129.0,
+            "price": 119.0,
             "currency": "CZK",
             "period": "monthly"
           }
@@ -2982,7 +2982,7 @@
           },
           {
             "name": "Family (6 TB)",
-            "price": 129.0,
+            "price": 119.0,
             "currency": "CZK",
             "period": "monthly"
           }
