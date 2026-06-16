@@ -118,7 +118,7 @@
         ]
       },
       "KRW": {
-        "base_price": 18200,
+        "base_price": 18100,
         "base_currency": "KRW",
         "plans": [
           {
@@ -129,7 +129,7 @@
           },
           {
             "name": "Prime Monthly",
-            "price": 18200,
+            "price": 18100,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1078,7 +1078,7 @@
         ]
       },
       "KRW": {
-        "base_price": 15800,
+        "base_price": 15700,
         "base_currency": "KRW",
         "plans": [
           {
@@ -1089,7 +1089,7 @@
           },
           {
             "name": "Individual",
-            "price": 15800,
+            "price": 15700,
             "currency": "KRW",
             "period": "monthly"
           },
@@ -1101,7 +1101,7 @@
           },
           {
             "name": "Family",
-            "price": 26700,
+            "price": 26600,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1461,7 +1461,7 @@
           },
           {
             "name": "Family",
-            "price": 279.0,
+            "price": 269.0,
             "currency": "CZK",
             "period": "monthly"
           }
