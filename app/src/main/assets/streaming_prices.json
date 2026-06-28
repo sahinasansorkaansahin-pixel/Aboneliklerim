@@ -123,7 +123,7 @@
         "plans": [
           {
             "name": "Prime Video",
-            "price": 11000,
+            "price": 11100,
             "currency": "KRW",
             "period": "monthly"
           },
