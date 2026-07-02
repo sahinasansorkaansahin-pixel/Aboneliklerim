@@ -123,7 +123,7 @@
         "plans": [
           {
             "name": "Prime Video",
-            "price": 11100,
+            "price": 11200,
             "currency": "KRW",
             "period": "monthly"
           },
@@ -244,7 +244,7 @@
         ]
       },
       "SGD": {
-        "base_price": 15.99,
+        "base_price": 16.99,
         "base_currency": "SGD",
         "plans": [
           {
@@ -255,7 +255,7 @@
           },
           {
             "name": "Prime Monthly",
-            "price": 15.99,
+            "price": 16.99,
             "currency": "SGD",
             "period": "monthly"
           }
@@ -1095,13 +1095,13 @@
           },
           {
             "name": "Duo",
-            "price": 23500,
+            "price": 23600,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 27200,
+            "price": 27300,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1663,7 +1663,7 @@
         ]
       },
       "KRW": {
-        "base_price": 13600,
+        "base_price": 13700,
         "base_currency": "KRW",
         "plans": [
           {
@@ -1674,13 +1674,13 @@
           },
           {
             "name": "Individual",
-            "price": 13600,
+            "price": 13700,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 21000,
+            "price": 21100,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -2122,12 +2122,12 @@
         ]
       },
       "GBP": {
-        "base_price": 1.99,
+        "base_price": 0.99,
         "base_currency": "GBP",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 1.99,
+            "price": 0.99,
             "currency": "GBP",
             "period": "monthly"
           },
@@ -2434,12 +2434,12 @@
         ]
       },
       "PLN": {
-        "base_price": 3.99,
+        "base_price": 4.99,
         "base_currency": "PLN",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 3.99,
+            "price": 4.99,
             "currency": "PLN",
             "period": "monthly"
           },
@@ -2629,12 +2629,12 @@
         ]
       },
       "GBP": {
-        "base_price": 1.99,
+        "base_price": 0.99,
         "base_currency": "GBP",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 1.99,
+            "price": 0.99,
             "currency": "GBP",
             "period": "monthly"
           },
@@ -2941,12 +2941,12 @@
         ]
       },
       "PLN": {
-        "base_price": 3.99,
+        "base_price": 4.99,
         "base_currency": "PLN",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 3.99,
+            "price": 4.99,
             "currency": "PLN",
             "period": "monthly"
           },
