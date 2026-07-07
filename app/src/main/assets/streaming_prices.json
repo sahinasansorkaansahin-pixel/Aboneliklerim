@@ -1011,7 +1011,7 @@
           },
           {
             "name": "Family",
-            "price": 2800,
+            "price": 2900,
             "currency": "JPY",
             "period": "monthly"
           }
@@ -1395,13 +1395,13 @@
           },
           {
             "name": "Duo",
-            "price": 309.0,
+            "price": 319.0,
             "currency": "THB",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 359.0,
+            "price": 369.0,
             "currency": "THB",
             "period": "monthly"
           }
