@@ -896,26 +896,14 @@
     "official_url": "https://www.spotify.com/tr/premium/",
     "plans": [
       {
-        "name": "Öğrenci (Student)",
-        "price": 55.0,
-        "currency": "TRY",
-        "period": "monthly"
-      },
-      {
         "name": "Bireysel (Individual)",
         "price": 99.0,
         "currency": "TRY",
         "period": "monthly"
       },
       {
-        "name": "Duo",
-        "price": 135.0,
-        "currency": "TRY",
-        "period": "monthly"
-      },
-      {
-        "name": "Aile (Family)",
-        "price": 165.0,
+        "name": "Öğrenci (Student)",
+        "price": 55.0,
         "currency": "TRY",
         "period": "monthly"
       }
@@ -926,26 +914,14 @@
         "base_currency": "TRY",
         "plans": [
           {
-            "name": "Öğrenci (Student)",
-            "price": 55.0,
-            "currency": "TRY",
-            "period": "monthly"
-          },
-          {
             "name": "Bireysel (Individual)",
             "price": 99.0,
             "currency": "TRY",
             "period": "monthly"
           },
           {
-            "name": "Duo",
-            "price": 135.0,
-            "currency": "TRY",
-            "period": "monthly"
-          },
-          {
-            "name": "Aile (Family)",
-            "price": 165.0,
+            "name": "Öğrenci (Student)",
+            "price": 55.0,
             "currency": "TRY",
             "period": "monthly"
           }
