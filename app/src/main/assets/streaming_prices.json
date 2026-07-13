@@ -321,7 +321,7 @@
         "plans": [
           {
             "name": "Prime Video",
-            "price": 19.99,
+            "price": 20.99,
             "currency": "PLN",
             "period": "monthly"
           },
