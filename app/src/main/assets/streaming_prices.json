@@ -321,7 +321,7 @@
         "plans": [
           {
             "name": "Prime Video",
-            "price": 20.99,
+            "price": 19.99,
             "currency": "PLN",
             "period": "monthly"
           },
@@ -1011,7 +1011,7 @@
           },
           {
             "name": "Family",
-            "price": 2800,
+            "price": 2900,
             "currency": "JPY",
             "period": "monthly"
           }
@@ -1095,13 +1095,13 @@
           },
           {
             "name": "Duo",
-            "price": 22800,
+            "price": 22700,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 26400,
+            "price": 26300,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1680,7 +1680,7 @@
           },
           {
             "name": "Family",
-            "price": 20400,
+            "price": 20300,
             "currency": "KRW",
             "period": "monthly"
           }
