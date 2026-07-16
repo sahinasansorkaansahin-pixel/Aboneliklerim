@@ -890,14 +890,14 @@
   {
     "id": "spotify",
     "name": "Spotify",
-    "base_price": 99.0,
+    "base_price": 49.0,
     "base_currency": "TRY",
     "logo_res": "ic_logo_spotify",
     "official_url": "https://www.spotify.com/tr/premium/",
     "plans": [
       {
         "name": "Bireysel (Individual)",
-        "price": 99.0,
+        "price": 49.0,
         "currency": "TRY",
         "period": "monthly"
       },
@@ -910,12 +910,12 @@
     ],
     "regional": {
       "TRY": {
-        "base_price": 99.0,
+        "base_price": 49.0,
         "base_currency": "TRY",
         "plans": [
           {
             "name": "Bireysel (Individual)",
-            "price": 99.0,
+            "price": 49.0,
             "currency": "TRY",
             "period": "monthly"
           },
