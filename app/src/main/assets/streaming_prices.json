@@ -118,7 +118,7 @@
         ]
       },
       "KRW": {
-        "base_price": 17900,
+        "base_price": 17800,
         "base_currency": "KRW",
         "plans": [
           {
@@ -129,7 +129,7 @@
           },
           {
             "name": "Prime Monthly",
-            "price": 17900,
+            "price": 17800,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1155,7 +1155,7 @@
           },
           {
             "name": "Duo",
-            "price": 169.0,
+            "price": 159.0,
             "currency": "SEK",
             "period": "monthly"
           },
@@ -1263,7 +1263,7 @@
         "plans": [
           {
             "name": "Student",
-            "price": 8.99,
+            "price": 7.99,
             "currency": "AUD",
             "period": "monthly"
           },
@@ -1408,7 +1408,7 @@
         ]
       },
       "PLN": {
-        "base_price": 29.99,
+        "base_price": 28.99,
         "base_currency": "PLN",
         "plans": [
           {
@@ -1419,7 +1419,7 @@
           },
           {
             "name": "Individual",
-            "price": 29.99,
+            "price": 28.99,
             "currency": "PLN",
             "period": "monthly"
           },
@@ -1438,7 +1438,7 @@
         ]
       },
       "CZK": {
-        "base_price": 169.0,
+        "base_price": 159.0,
         "base_currency": "CZK",
         "plans": [
           {
@@ -1449,7 +1449,7 @@
           },
           {
             "name": "Individual",
-            "price": 169.0,
+            "price": 159.0,
             "currency": "CZK",
             "period": "monthly"
           },
@@ -1680,7 +1680,7 @@
           },
           {
             "name": "Family",
-            "price": 20300,
+            "price": 20200,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1704,7 +1704,7 @@
           },
           {
             "name": "Family",
-            "price": 309.0,
+            "price": 299.0,
             "currency": "UAH",
             "period": "monthly"
           }
@@ -1920,7 +1920,7 @@
           },
           {
             "name": "Family",
-            "price": 279.0,
+            "price": 289.0,
             "currency": "THB",
             "period": "monthly"
           }
@@ -2832,7 +2832,7 @@
           },
           {
             "name": "Personal (1 TB)",
-            "price": 8.99,
+            "price": 7.99,
             "currency": "AUD",
             "period": "monthly"
           },
