@@ -123,7 +123,7 @@
         "plans": [
           {
             "name": "Prime Video",
-            "price": 10600,
+            "price": 10700,
             "currency": "KRW",
             "period": "monthly"
           },
@@ -1078,7 +1078,7 @@
         ]
       },
       "KRW": {
-        "base_price": 15400,
+        "base_price": 15500,
         "base_currency": "KRW",
         "plans": [
           {
@@ -1089,19 +1089,19 @@
           },
           {
             "name": "Individual",
-            "price": 15400,
+            "price": 15500,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Duo",
-            "price": 22500,
+            "price": 22600,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 26000,
+            "price": 26200,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1185,7 +1185,7 @@
           },
           {
             "name": "Duo",
-            "price": 169.0,
+            "price": 159.0,
             "currency": "NOK",
             "period": "monthly"
           },
@@ -1263,7 +1263,7 @@
         "plans": [
           {
             "name": "Student",
-            "price": 7.99,
+            "price": 8.99,
             "currency": "AUD",
             "period": "monthly"
           },
@@ -1408,7 +1408,7 @@
         ]
       },
       "PLN": {
-        "base_price": 28.99,
+        "base_price": 29.99,
         "base_currency": "PLN",
         "plans": [
           {
@@ -1419,7 +1419,7 @@
           },
           {
             "name": "Individual",
-            "price": 28.99,
+            "price": 29.99,
             "currency": "PLN",
             "period": "monthly"
           },
@@ -1493,50 +1493,50 @@
   {
     "id": "apple_music",
     "name": "Apple Music",
-    "base_price": 59.99,
+    "base_price": 89.99,
     "base_currency": "TRY",
     "logo_res": "ic_logo_apple_music",
     "official_url": "https://www.apple.com/tr/apple-music/",
     "plans": [
       {
         "name": "Student (Öğrenci)",
-        "price": 32.99,
+        "price": 49.99,
         "currency": "TRY",
         "period": "monthly"
       },
       {
         "name": "Individual (Bireysel)",
-        "price": 59.99,
+        "price": 89.99,
         "currency": "TRY",
         "period": "monthly"
       },
       {
         "name": "Family (Aile)",
-        "price": 99.99,
+        "price": 149.99,
         "currency": "TRY",
         "period": "monthly"
       }
     ],
     "regional": {
       "TRY": {
-        "base_price": 59.99,
+        "base_price": 89.99,
         "base_currency": "TRY",
         "plans": [
           {
             "name": "Student (Öğrenci)",
-            "price": 32.99,
+            "price": 49.99,
             "currency": "TRY",
             "period": "monthly"
           },
           {
             "name": "Individual (Bireysel)",
-            "price": 59.99,
+            "price": 89.99,
             "currency": "TRY",
             "period": "monthly"
           },
           {
             "name": "Family (Aile)",
-            "price": 99.99,
+            "price": 149.99,
             "currency": "TRY",
             "period": "monthly"
           }
@@ -1663,7 +1663,7 @@
         ]
       },
       "KRW": {
-        "base_price": 13000,
+        "base_price": 13100,
         "base_currency": "KRW",
         "plans": [
           {
@@ -1674,13 +1674,13 @@
           },
           {
             "name": "Individual",
-            "price": 13000,
+            "price": 13100,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 20100,
+            "price": 20200,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -2181,13 +2181,13 @@
           },
           {
             "name": "Standard (200 GB)",
-            "price": 3500,
+            "price": 3600,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Premium (2 TB)",
-            "price": 11800,
+            "price": 11900,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -2694,7 +2694,7 @@
           },
           {
             "name": "Family (6 TB)",
-            "price": 11800,
+            "price": 11900,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -2832,7 +2832,7 @@
           },
           {
             "name": "Personal (1 TB)",
-            "price": 7.99,
+            "price": 8.99,
             "currency": "AUD",
             "period": "monthly"
           },
