@@ -1078,7 +1078,7 @@
         ]
       },
       "KRW": {
-        "base_price": 15400,
+        "base_price": 15500,
         "base_currency": "KRW",
         "plans": [
           {
@@ -1089,7 +1089,7 @@
           },
           {
             "name": "Individual",
-            "price": 15400,
+            "price": 15500,
             "currency": "KRW",
             "period": "monthly"
           },
@@ -1101,7 +1101,7 @@
           },
           {
             "name": "Family",
-            "price": 26100,
+            "price": 26200,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1155,7 +1155,7 @@
           },
           {
             "name": "Duo",
-            "price": 159.0,
+            "price": 169.0,
             "currency": "SEK",
             "period": "monthly"
           },
@@ -1438,7 +1438,7 @@
         ]
       },
       "CZK": {
-        "base_price": 159.0,
+        "base_price": 169.0,
         "base_currency": "CZK",
         "plans": [
           {
@@ -1449,7 +1449,7 @@
           },
           {
             "name": "Individual",
-            "price": 159.0,
+            "price": 169.0,
             "currency": "CZK",
             "period": "monthly"
           },
