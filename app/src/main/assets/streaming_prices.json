@@ -118,18 +118,18 @@
         ]
       },
       "KRW": {
-        "base_price": 17800,
+        "base_price": 17700,
         "base_currency": "KRW",
         "plans": [
           {
             "name": "Prime Video",
-            "price": 10700,
+            "price": 10600,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Prime Monthly",
-            "price": 17800,
+            "price": 17700,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1078,7 +1078,7 @@
         ]
       },
       "KRW": {
-        "base_price": 15500,
+        "base_price": 15400,
         "base_currency": "KRW",
         "plans": [
           {
@@ -1089,19 +1089,19 @@
           },
           {
             "name": "Individual",
-            "price": 15500,
+            "price": 15400,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Duo",
-            "price": 22600,
+            "price": 22500,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 26200,
+            "price": 26000,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1185,7 +1185,7 @@
           },
           {
             "name": "Duo",
-            "price": 159.0,
+            "price": 169.0,
             "currency": "NOK",
             "period": "monthly"
           },
@@ -1228,7 +1228,7 @@
         ]
       },
       "CAD": {
-        "base_price": 14.99,
+        "base_price": 15.99,
         "base_currency": "CAD",
         "plans": [
           {
@@ -1239,7 +1239,7 @@
           },
           {
             "name": "Individual",
-            "price": 14.99,
+            "price": 15.99,
             "currency": "CAD",
             "period": "monthly"
           },
@@ -1263,7 +1263,7 @@
         "plans": [
           {
             "name": "Student",
-            "price": 8.99,
+            "price": 7.99,
             "currency": "AUD",
             "period": "monthly"
           },
@@ -1663,7 +1663,7 @@
         ]
       },
       "KRW": {
-        "base_price": 13100,
+        "base_price": 13000,
         "base_currency": "KRW",
         "plans": [
           {
@@ -1674,13 +1674,13 @@
           },
           {
             "name": "Individual",
-            "price": 13100,
+            "price": 13000,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 20200,
+            "price": 20100,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -2181,13 +2181,13 @@
           },
           {
             "name": "Standard (200 GB)",
-            "price": 3600,
+            "price": 3500,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Premium (2 TB)",
-            "price": 11900,
+            "price": 11800,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -2694,7 +2694,7 @@
           },
           {
             "name": "Family (6 TB)",
-            "price": 11900,
+            "price": 11800,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -2832,7 +2832,7 @@
           },
           {
             "name": "Personal (1 TB)",
-            "price": 8.99,
+            "price": 7.99,
             "currency": "AUD",
             "period": "monthly"
           },
