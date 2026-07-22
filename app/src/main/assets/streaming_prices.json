@@ -64,7 +64,7 @@
         ]
       },
       "JPY": {
-        "base_price": 1900,
+        "base_price": 2000,
         "base_currency": "JPY",
         "plans": [
           {
@@ -75,7 +75,7 @@
           },
           {
             "name": "Prime Monthly",
-            "price": 1900,
+            "price": 2000,
             "currency": "JPY",
             "period": "monthly"
           }
@@ -1113,7 +1113,7 @@
         "plans": [
           {
             "name": "Student",
-            "price": 119.0,
+            "price": 129.0,
             "currency": "UAH",
             "period": "monthly"
           },
@@ -1185,7 +1185,7 @@
           },
           {
             "name": "Duo",
-            "price": 169.0,
+            "price": 159.0,
             "currency": "NOK",
             "period": "monthly"
           },
@@ -1903,7 +1903,7 @@
         ]
       },
       "THB": {
-        "base_price": 179.0,
+        "base_price": 189.0,
         "base_currency": "THB",
         "plans": [
           {
@@ -1914,7 +1914,7 @@
           },
           {
             "name": "Individual",
-            "price": 179.0,
+            "price": 189.0,
             "currency": "THB",
             "period": "monthly"
           },
@@ -2712,7 +2712,7 @@
           },
           {
             "name": "Personal (1 TB)",
-            "price": 119.0,
+            "price": 129.0,
             "currency": "UAH",
             "period": "monthly"
           },
