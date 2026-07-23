@@ -1735,7 +1735,7 @@
         ]
       },
       "NOK": {
-        "base_price": 99.0,
+        "base_price": 89.0,
         "base_currency": "NOK",
         "plans": [
           {
@@ -1746,7 +1746,7 @@
           },
           {
             "name": "Individual",
-            "price": 99.0,
+            "price": 89.0,
             "currency": "NOK",
             "period": "monthly"
           },
