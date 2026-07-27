@@ -1041,7 +1041,7 @@
           },
           {
             "name": "Family",
-            "price": 16.99,
+            "price": 15.99,
             "currency": "GBP",
             "period": "monthly"
           }
@@ -1263,7 +1263,7 @@
         "plans": [
           {
             "name": "Student",
-            "price": 8.99,
+            "price": 7.99,
             "currency": "AUD",
             "period": "monthly"
           },
@@ -1663,7 +1663,7 @@
         ]
       },
       "KRW": {
-        "base_price": 12900,
+        "base_price": 12800,
         "base_currency": "KRW",
         "plans": [
           {
@@ -1674,13 +1674,13 @@
           },
           {
             "name": "Individual",
-            "price": 12900,
+            "price": 12800,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 19900,
+            "price": 19800,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1903,7 +1903,7 @@
         ]
       },
       "THB": {
-        "base_price": 189.0,
+        "base_price": 179.0,
         "base_currency": "THB",
         "plans": [
           {
@@ -1914,7 +1914,7 @@
           },
           {
             "name": "Individual",
-            "price": 189.0,
+            "price": 179.0,
             "currency": "THB",
             "period": "monthly"
           },
@@ -2832,7 +2832,7 @@
           },
           {
             "name": "Personal (1 TB)",
-            "price": 8.99,
+            "price": 7.99,
             "currency": "AUD",
             "period": "monthly"
           },
