@@ -118,18 +118,18 @@
         ]
       },
       "KRW": {
-        "base_price": 17200,
+        "base_price": 17300,
         "base_currency": "KRW",
         "plans": [
           {
             "name": "Prime Video",
-            "price": 10300,
+            "price": 10400,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Prime Monthly",
-            "price": 17200,
+            "price": 17300,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1078,24 +1078,24 @@
         ]
       },
       "KRW": {
-        "base_price": 14900,
+        "base_price": 15000,
         "base_currency": "KRW",
         "plans": [
           {
             "name": "Student",
-            "price": 8000,
+            "price": 8100,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 14900,
+            "price": 15000,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Duo",
-            "price": 21800,
+            "price": 21900,
             "currency": "KRW",
             "period": "monthly"
           },
@@ -1608,7 +1608,7 @@
           },
           {
             "name": "Family",
-            "price": 2200,
+            "price": 2100,
             "currency": "JPY",
             "period": "monthly"
           }
@@ -1663,7 +1663,7 @@
         ]
       },
       "KRW": {
-        "base_price": 12600,
+        "base_price": 12700,
         "base_currency": "KRW",
         "plans": [
           {
@@ -1674,13 +1674,13 @@
           },
           {
             "name": "Individual",
-            "price": 12600,
+            "price": 12700,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 19500,
+            "price": 19600,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -2688,7 +2688,7 @@
           },
           {
             "name": "Personal (1 TB)",
-            "price": 8000,
+            "price": 8100,
             "currency": "KRW",
             "period": "monthly"
           },
