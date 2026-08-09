@@ -1095,7 +1095,7 @@
           },
           {
             "name": "Duo",
-            "price": 21400,
+            "price": 21500,
             "currency": "KRW",
             "period": "monthly"
           },
@@ -1281,7 +1281,7 @@
           },
           {
             "name": "Family",
-            "price": 25.99,
+            "price": 26.99,
             "currency": "AUD",
             "period": "monthly"
           }
