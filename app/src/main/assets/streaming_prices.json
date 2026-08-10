@@ -123,7 +123,7 @@
         "plans": [
           {
             "name": "Prime Video",
-            "price": 10200,
+            "price": 10100,
             "currency": "KRW",
             "period": "monthly"
           },
@@ -1078,7 +1078,7 @@
         ]
       },
       "KRW": {
-        "base_price": 14700,
+        "base_price": 14600,
         "base_currency": "KRW",
         "plans": [
           {
@@ -1089,13 +1089,13 @@
           },
           {
             "name": "Individual",
-            "price": 14700,
+            "price": 14600,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Duo",
-            "price": 21500,
+            "price": 21400,
             "currency": "KRW",
             "period": "monthly"
           },
@@ -1281,7 +1281,7 @@
           },
           {
             "name": "Family",
-            "price": 26.99,
+            "price": 25.99,
             "currency": "AUD",
             "period": "monthly"
           }
