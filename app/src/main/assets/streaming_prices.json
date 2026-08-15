@@ -316,7 +316,7 @@
         ]
       },
       "PLN": {
-        "base_price": 33.99,
+        "base_price": 32.99,
         "base_currency": "PLN",
         "plans": [
           {
@@ -327,7 +327,7 @@
           },
           {
             "name": "Prime Monthly",
-            "price": 33.99,
+            "price": 32.99,
             "currency": "PLN",
             "period": "monthly"
           }
@@ -1101,7 +1101,7 @@
           },
           {
             "name": "Family",
-            "price": 25000,
+            "price": 24900,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1425,7 +1425,7 @@
           },
           {
             "name": "Duo",
-            "price": 42.99,
+            "price": 41.99,
             "currency": "PLN",
             "period": "monthly"
           },
@@ -1663,7 +1663,7 @@
         ]
       },
       "KRW": {
-        "base_price": 12500,
+        "base_price": 12400,
         "base_currency": "KRW",
         "plans": [
           {
@@ -1674,13 +1674,13 @@
           },
           {
             "name": "Individual",
-            "price": 12500,
+            "price": 12400,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 19300,
+            "price": 19200,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1752,7 +1752,7 @@
           },
           {
             "name": "Family",
-            "price": 149.0,
+            "price": 139.0,
             "currency": "NOK",
             "period": "monthly"
           }
@@ -2259,7 +2259,7 @@
           },
           {
             "name": "Premium (2 TB)",
-            "price": 89.0,
+            "price": 79.0,
             "currency": "NOK",
             "period": "monthly"
           }
@@ -2766,7 +2766,7 @@
           },
           {
             "name": "Family (6 TB)",
-            "price": 89.0,
+            "price": 79.0,
             "currency": "NOK",
             "period": "monthly"
           }
