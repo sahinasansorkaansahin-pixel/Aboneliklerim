@@ -1113,7 +1113,7 @@
         "plans": [
           {
             "name": "Student",
-            "price": 129.0,
+            "price": 119.0,
             "currency": "UAH",
             "period": "monthly"
           },
@@ -1567,7 +1567,7 @@
         ]
       },
       "EUR": {
-        "base_price": 9.99,
+        "base_price": 8.99,
         "base_currency": "EUR",
         "plans": [
           {
@@ -1578,7 +1578,7 @@
           },
           {
             "name": "Individual",
-            "price": 9.99,
+            "price": 8.99,
             "currency": "EUR",
             "period": "monthly"
           },
@@ -2458,12 +2458,12 @@
         ]
       },
       "CZK": {
-        "base_price": 29.0,
+        "base_price": 19.0,
         "base_currency": "CZK",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 29.0,
+            "price": 19.0,
             "currency": "CZK",
             "period": "monthly"
           },
@@ -2712,7 +2712,7 @@
           },
           {
             "name": "Personal (1 TB)",
-            "price": 129.0,
+            "price": 119.0,
             "currency": "UAH",
             "period": "monthly"
           },
@@ -2965,12 +2965,12 @@
         ]
       },
       "CZK": {
-        "base_price": 29.0,
+        "base_price": 19.0,
         "base_currency": "CZK",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 29.0,
+            "price": 19.0,
             "currency": "CZK",
             "period": "monthly"
           },
