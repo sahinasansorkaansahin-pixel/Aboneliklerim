@@ -988,7 +988,7 @@
         ]
       },
       "JPY": {
-        "base_price": 1600,
+        "base_price": 1700,
         "base_currency": "JPY",
         "plans": [
           {
@@ -999,7 +999,7 @@
           },
           {
             "name": "Individual",
-            "price": 1600,
+            "price": 1700,
             "currency": "JPY",
             "period": "monthly"
           },
@@ -1095,7 +1095,7 @@
           },
           {
             "name": "Duo",
-            "price": 21100,
+            "price": 21200,
             "currency": "KRW",
             "period": "monthly"
           },
@@ -1113,7 +1113,7 @@
         "plans": [
           {
             "name": "Student",
-            "price": 129.0,
+            "price": 119.0,
             "currency": "UAH",
             "period": "monthly"
           },
@@ -1198,7 +1198,7 @@
         ]
       },
       "DKK": {
-        "base_price": 79.0,
+        "base_price": 69.0,
         "base_currency": "DKK",
         "plans": [
           {
@@ -1209,7 +1209,7 @@
           },
           {
             "name": "Individual",
-            "price": 79.0,
+            "price": 69.0,
             "currency": "DKK",
             "period": "monthly"
           },
@@ -1383,7 +1383,7 @@
         "plans": [
           {
             "name": "Student",
-            "price": 119.0,
+            "price": 109.0,
             "currency": "THB",
             "period": "monthly"
           },
@@ -1413,7 +1413,7 @@
         "plans": [
           {
             "name": "Student",
-            "price": 15.99,
+            "price": 14.99,
             "currency": "PLN",
             "period": "monthly"
           },
@@ -1632,7 +1632,7 @@
           },
           {
             "name": "Family",
-            "price": 12.99,
+            "price": 11.99,
             "currency": "GBP",
             "period": "monthly"
           }
@@ -1663,7 +1663,7 @@
         ]
       },
       "KRW": {
-        "base_price": 12200,
+        "base_price": 12300,
         "base_currency": "KRW",
         "plans": [
           {
@@ -1674,13 +1674,13 @@
           },
           {
             "name": "Individual",
-            "price": 12200,
+            "price": 12300,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 18900,
+            "price": 19000,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -2712,7 +2712,7 @@
           },
           {
             "name": "Personal (1 TB)",
-            "price": 129.0,
+            "price": 119.0,
             "currency": "UAH",
             "period": "monthly"
           },
@@ -2928,7 +2928,7 @@
           },
           {
             "name": "Personal (1 TB)",
-            "price": 119.0,
+            "price": 109.0,
             "currency": "THB",
             "period": "monthly"
           },
@@ -2952,7 +2952,7 @@
           },
           {
             "name": "Personal (1 TB)",
-            "price": 15.99,
+            "price": 14.99,
             "currency": "PLN",
             "period": "monthly"
           },
