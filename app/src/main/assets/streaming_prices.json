@@ -123,7 +123,7 @@
         "plans": [
           {
             "name": "Prime Video",
-            "price": 10000,
+            "price": 9900,
             "currency": "KRW",
             "period": "monthly"
           },
@@ -298,7 +298,7 @@
         ]
       },
       "THB": {
-        "base_price": 239.0,
+        "base_price": 249.0,
         "base_currency": "THB",
         "plans": [
           {
@@ -309,7 +309,7 @@
           },
           {
             "name": "Prime Monthly",
-            "price": 239.0,
+            "price": 249.0,
             "currency": "THB",
             "period": "monthly"
           }
@@ -1101,7 +1101,7 @@
           },
           {
             "name": "Family",
-            "price": 24400,
+            "price": 24300,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1113,7 +1113,7 @@
         "plans": [
           {
             "name": "Student",
-            "price": 119.0,
+            "price": 129.0,
             "currency": "UAH",
             "period": "monthly"
           },
@@ -1305,7 +1305,7 @@
           },
           {
             "name": "Duo",
-            "price": 19.99,
+            "price": 20.99,
             "currency": "SGD",
             "period": "monthly"
           },
@@ -1728,7 +1728,7 @@
           },
           {
             "name": "Family",
-            "price": 139.0,
+            "price": 149.0,
             "currency": "SEK",
             "period": "monthly"
           }
@@ -2712,7 +2712,7 @@
           },
           {
             "name": "Personal (1 TB)",
-            "price": 119.0,
+            "price": 129.0,
             "currency": "UAH",
             "period": "monthly"
           },
