@@ -1113,7 +1113,7 @@
         "plans": [
           {
             "name": "Student",
-            "price": 129.0,
+            "price": 119.0,
             "currency": "UAH",
             "period": "monthly"
           },
@@ -1305,7 +1305,7 @@
           },
           {
             "name": "Duo",
-            "price": 20.99,
+            "price": 19.99,
             "currency": "SGD",
             "period": "monthly"
           },
@@ -1728,7 +1728,7 @@
           },
           {
             "name": "Family",
-            "price": 149.0,
+            "price": 139.0,
             "currency": "SEK",
             "period": "monthly"
           }
@@ -2712,7 +2712,7 @@
           },
           {
             "name": "Personal (1 TB)",
-            "price": 129.0,
+            "price": 119.0,
             "currency": "UAH",
             "period": "monthly"
           },
