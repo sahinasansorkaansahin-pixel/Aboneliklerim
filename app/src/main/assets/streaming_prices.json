@@ -1378,7 +1378,7 @@
         ]
       },
       "THB": {
-        "base_price": 209.0,
+        "base_price": 219.0,
         "base_currency": "THB",
         "plans": [
           {
@@ -1389,7 +1389,7 @@
           },
           {
             "name": "Individual",
-            "price": 209.0,
+            "price": 219.0,
             "currency": "THB",
             "period": "monthly"
           },
@@ -2427,7 +2427,7 @@
           },
           {
             "name": "Premium (2 TB)",
-            "price": 159.0,
+            "price": 169.0,
             "currency": "THB",
             "period": "monthly"
           }
@@ -2934,7 +2934,7 @@
           },
           {
             "name": "Family (6 TB)",
-            "price": 159.0,
+            "price": 169.0,
             "currency": "THB",
             "period": "monthly"
           }
