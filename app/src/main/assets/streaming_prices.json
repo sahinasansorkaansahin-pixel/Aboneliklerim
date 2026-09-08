@@ -1005,7 +1005,7 @@
           },
           {
             "name": "Duo",
-            "price": 2400,
+            "price": 2300,
             "currency": "JPY",
             "period": "monthly"
           },
@@ -1095,7 +1095,7 @@
           },
           {
             "name": "Duo",
-            "price": 20500,
+            "price": 20400,
             "currency": "KRW",
             "period": "monthly"
           },
@@ -1383,7 +1383,7 @@
         "plans": [
           {
             "name": "Student",
-            "price": 119.0,
+            "price": 109.0,
             "currency": "THB",
             "period": "monthly"
           },
@@ -1668,7 +1668,7 @@
         "plans": [
           {
             "name": "Student",
-            "price": 6500,
+            "price": 6400,
             "currency": "KRW",
             "period": "monthly"
           },
@@ -2253,7 +2253,7 @@
           },
           {
             "name": "Standard (200 GB)",
-            "price": 29.0,
+            "price": 19.0,
             "currency": "NOK",
             "period": "monthly"
           },
@@ -2928,7 +2928,7 @@
           },
           {
             "name": "Personal (1 TB)",
-            "price": 119.0,
+            "price": 109.0,
             "currency": "THB",
             "period": "monthly"
           },
