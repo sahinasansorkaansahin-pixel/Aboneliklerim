@@ -1101,7 +1101,7 @@
           },
           {
             "name": "Family",
-            "price": 23700,
+            "price": 23600,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1680,7 +1680,7 @@
           },
           {
             "name": "Family",
-            "price": 18300,
+            "price": 18200,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1956,7 +1956,7 @@
         "plans": [
           {
             "name": "Student",
-            "price": 69.0,
+            "price": 79.0,
             "currency": "CZK",
             "period": "monthly"
           },
