@@ -316,7 +316,7 @@
         ]
       },
       "PLN": {
-        "base_price": 32.99,
+        "base_price": 33.99,
         "base_currency": "PLN",
         "plans": [
           {
@@ -327,7 +327,7 @@
           },
           {
             "name": "Prime Monthly",
-            "price": 32.99,
+            "price": 33.99,
             "currency": "PLN",
             "period": "monthly"
           }
@@ -1680,7 +1680,7 @@
           },
           {
             "name": "Family",
-            "price": 18300,
+            "price": 18200,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -2253,7 +2253,7 @@
           },
           {
             "name": "Standard (200 GB)",
-            "price": 19.0,
+            "price": 29.0,
             "currency": "NOK",
             "period": "monthly"
           },
@@ -2427,7 +2427,7 @@
           },
           {
             "name": "Premium (2 TB)",
-            "price": 159.0,
+            "price": 169.0,
             "currency": "THB",
             "period": "monthly"
           }
@@ -2934,7 +2934,7 @@
           },
           {
             "name": "Family (6 TB)",
-            "price": 159.0,
+            "price": 169.0,
             "currency": "THB",
             "period": "monthly"
           }
