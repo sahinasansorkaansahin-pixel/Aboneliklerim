@@ -1493,7 +1493,7 @@
   {
     "id": "apple_music",
     "name": "Apple Music",
-    "base_price": 89.99,
+    "base_price": 134.99,
     "base_currency": "TRY",
     "logo_res": "ic_logo_apple_music",
     "official_url": "https://www.apple.com/tr/apple-music/",
@@ -1506,7 +1506,7 @@
       },
       {
         "name": "Individual (Bireysel)",
-        "price": 89.99,
+        "price": 134.99,
         "currency": "TRY",
         "period": "monthly"
       },
@@ -1519,7 +1519,7 @@
     ],
     "regional": {
       "TRY": {
-        "base_price": 89.99,
+        "base_price": 134.99,
         "base_currency": "TRY",
         "plans": [
           {
@@ -1530,7 +1530,7 @@
           },
           {
             "name": "Individual (Bireysel)",
-            "price": 89.99,
+            "price": 134.99,
             "currency": "TRY",
             "period": "monthly"
           },
