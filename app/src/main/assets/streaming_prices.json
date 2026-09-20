@@ -321,7 +321,7 @@
         "plans": [
           {
             "name": "Prime Video",
-            "price": 19.99,
+            "price": 20.99,
             "currency": "PLN",
             "period": "monthly"
           },
@@ -1656,7 +1656,7 @@
           },
           {
             "name": "Family",
-            "price": 13.99,
+            "price": 14.99,
             "currency": "AZN",
             "period": "monthly"
           }
@@ -1680,7 +1680,7 @@
           },
           {
             "name": "Family",
-            "price": 18900,
+            "price": 18800,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -2163,7 +2163,7 @@
           },
           {
             "name": "Premium (2 TB)",
-            "price": 7.99,
+            "price": 8.99,
             "currency": "AZN",
             "period": "monthly"
           }
@@ -2670,7 +2670,7 @@
           },
           {
             "name": "Family (6 TB)",
-            "price": 7.99,
+            "price": 8.99,
             "currency": "AZN",
             "period": "monthly"
           }
