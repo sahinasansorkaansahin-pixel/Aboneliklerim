@@ -1113,7 +1113,7 @@
         "plans": [
           {
             "name": "Student",
-            "price": 119.0,
+            "price": 129.0,
             "currency": "UAH",
             "period": "monthly"
           },
@@ -1656,7 +1656,7 @@
           },
           {
             "name": "Family",
-            "price": 14.99,
+            "price": 13.99,
             "currency": "AZN",
             "period": "monthly"
           }
@@ -2098,12 +2098,12 @@
         ]
       },
       "JPY": {
-        "base_price": 300,
+        "base_price": 200,
         "base_currency": "JPY",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 300,
+            "price": 200,
             "currency": "JPY",
             "period": "monthly"
           },
@@ -2605,12 +2605,12 @@
         ]
       },
       "JPY": {
-        "base_price": 300,
+        "base_price": 200,
         "base_currency": "JPY",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 300,
+            "price": 200,
             "currency": "JPY",
             "period": "monthly"
           },
@@ -2712,7 +2712,7 @@
           },
           {
             "name": "Personal (1 TB)",
-            "price": 119.0,
+            "price": 129.0,
             "currency": "UAH",
             "period": "monthly"
           },
