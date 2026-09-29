@@ -1680,7 +1680,7 @@
           },
           {
             "name": "Family",
-            "price": 18400,
+            "price": 18500,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1759,7 +1759,7 @@
         ]
       },
       "DKK": {
-        "base_price": 59.0,
+        "base_price": 69.0,
         "base_currency": "DKK",
         "plans": [
           {
@@ -1770,7 +1770,7 @@
           },
           {
             "name": "Individual",
-            "price": 59.0,
+            "price": 69.0,
             "currency": "DKK",
             "period": "monthly"
           },
@@ -1920,7 +1920,7 @@
           },
           {
             "name": "Family",
-            "price": 279.0,
+            "price": 289.0,
             "currency": "THB",
             "period": "monthly"
           }
@@ -2181,13 +2181,13 @@
           },
           {
             "name": "Standard (200 GB)",
-            "price": 3200,
+            "price": 3300,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Premium (2 TB)",
-            "price": 10800,
+            "price": 10900,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -2694,7 +2694,7 @@
           },
           {
             "name": "Family (6 TB)",
-            "price": 10800,
+            "price": 10900,
             "currency": "KRW",
             "period": "monthly"
           }
