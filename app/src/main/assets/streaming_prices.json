@@ -1663,7 +1663,7 @@
         ]
       },
       "KRW": {
-        "base_price": 11800,
+        "base_price": 11900,
         "base_currency": "KRW",
         "plans": [
           {
@@ -1674,7 +1674,7 @@
           },
           {
             "name": "Individual",
-            "price": 11800,
+            "price": 11900,
             "currency": "KRW",
             "period": "monthly"
           },
