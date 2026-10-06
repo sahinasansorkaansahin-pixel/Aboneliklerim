@@ -1101,7 +1101,7 @@
           },
           {
             "name": "Family",
-            "price": 23700,
+            "price": 23600,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1425,13 +1425,13 @@
           },
           {
             "name": "Duo",
-            "price": 43.99,
+            "price": 44.99,
             "currency": "PLN",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 50.99,
+            "price": 51.99,
             "currency": "PLN",
             "period": "monthly"
           }
@@ -1735,7 +1735,7 @@
         ]
       },
       "NOK": {
-        "base_price": 99.0,
+        "base_price": 89.0,
         "base_currency": "NOK",
         "plans": [
           {
@@ -1746,7 +1746,7 @@
           },
           {
             "name": "Individual",
-            "price": 99.0,
+            "price": 89.0,
             "currency": "NOK",
             "period": "monthly"
           },
@@ -1903,7 +1903,7 @@
         ]
       },
       "THB": {
-        "base_price": 179.0,
+        "base_price": 189.0,
         "base_currency": "THB",
         "plans": [
           {
@@ -1914,7 +1914,7 @@
           },
           {
             "name": "Individual",
-            "price": 179.0,
+            "price": 189.0,
             "currency": "THB",
             "period": "monthly"
           },
@@ -2163,7 +2163,7 @@
           },
           {
             "name": "Premium (2 TB)",
-            "price": 8.99,
+            "price": 7.99,
             "currency": "AZN",
             "period": "monthly"
           }
@@ -2670,7 +2670,7 @@
           },
           {
             "name": "Family (6 TB)",
-            "price": 8.99,
+            "price": 7.99,
             "currency": "AZN",
             "period": "monthly"
           }
