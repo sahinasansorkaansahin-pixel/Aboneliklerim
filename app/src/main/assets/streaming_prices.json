@@ -154,7 +154,7 @@
         ]
       },
       "SEK": {
-        "base_price": 129.0,
+        "base_price": 139.0,
         "base_currency": "SEK",
         "plans": [
           {
@@ -165,7 +165,7 @@
           },
           {
             "name": "Prime Monthly",
-            "price": 129.0,
+            "price": 139.0,
             "currency": "SEK",
             "period": "monthly"
           }
@@ -1425,13 +1425,13 @@
           },
           {
             "name": "Duo",
-            "price": 43.99,
+            "price": 44.99,
             "currency": "PLN",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 50.99,
+            "price": 51.99,
             "currency": "PLN",
             "period": "monthly"
           }
