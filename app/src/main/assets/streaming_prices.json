@@ -123,7 +123,7 @@
         "plans": [
           {
             "name": "Prime Video",
-            "price": 9700,
+            "price": 9600,
             "currency": "KRW",
             "period": "monthly"
           },
@@ -1608,7 +1608,7 @@
           },
           {
             "name": "Family",
-            "price": 2100,
+            "price": 2200,
             "currency": "JPY",
             "period": "monthly"
           }
@@ -1704,7 +1704,7 @@
           },
           {
             "name": "Family",
-            "price": 299.0,
+            "price": 309.0,
             "currency": "UAH",
             "period": "monthly"
           }
@@ -1903,7 +1903,7 @@
         ]
       },
       "THB": {
-        "base_price": 189.0,
+        "base_price": 179.0,
         "base_currency": "THB",
         "plans": [
           {
@@ -1914,7 +1914,7 @@
           },
           {
             "name": "Individual",
-            "price": 189.0,
+            "price": 179.0,
             "currency": "THB",
             "period": "monthly"
           },
