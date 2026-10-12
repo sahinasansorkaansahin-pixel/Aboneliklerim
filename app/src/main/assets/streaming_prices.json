@@ -1131,7 +1131,7 @@
           },
           {
             "name": "Family",
-            "price": 389.0,
+            "price": 399.0,
             "currency": "UAH",
             "period": "monthly"
           }
@@ -1408,7 +1408,7 @@
         ]
       },
       "PLN": {
-        "base_price": 29.99,
+        "base_price": 30.99,
         "base_currency": "PLN",
         "plans": [
           {
@@ -1419,7 +1419,7 @@
           },
           {
             "name": "Individual",
-            "price": 29.99,
+            "price": 30.99,
             "currency": "PLN",
             "period": "monthly"
           },
@@ -1920,7 +1920,7 @@
           },
           {
             "name": "Family",
-            "price": 289.0,
+            "price": 279.0,
             "currency": "THB",
             "period": "monthly"
           }
