@@ -890,38 +890,62 @@
   {
     "id": "spotify",
     "name": "Spotify",
-    "base_price": 115.0,
+    "base_price": 99.0,
     "base_currency": "TRY",
     "logo_res": "ic_logo_spotify",
     "official_url": "https://www.spotify.com/tr/premium/",
     "plans": [
       {
-        "name": "Bireysel (Individual)",
-        "price": 115.0,
+        "name": "Öğrenci (Student)",
+        "price": 55.0,
         "currency": "TRY",
         "period": "monthly"
       },
       {
-        "name": "Öğrenci (Student)",
-        "price": 60.0,
+        "name": "Bireysel (Individual)",
+        "price": 99.0,
+        "currency": "TRY",
+        "period": "monthly"
+      },
+      {
+        "name": "Duo",
+        "price": 135.0,
+        "currency": "TRY",
+        "period": "monthly"
+      },
+      {
+        "name": "Aile (Family)",
+        "price": 165.0,
         "currency": "TRY",
         "period": "monthly"
       }
     ],
     "regional": {
       "TRY": {
-        "base_price": 115.0,
+        "base_price": 99.0,
         "base_currency": "TRY",
         "plans": [
           {
-            "name": "Bireysel (Individual)",
-            "price": 115.0,
+            "name": "Öğrenci (Student)",
+            "price": 55.0,
             "currency": "TRY",
             "period": "monthly"
           },
           {
-            "name": "Öğrenci (Student)",
-            "price": 60.0,
+            "name": "Bireysel (Individual)",
+            "price": 99.0,
+            "currency": "TRY",
+            "period": "monthly"
+          },
+          {
+            "name": "Duo",
+            "price": 135.0,
+            "currency": "TRY",
+            "period": "monthly"
+          },
+          {
+            "name": "Aile (Family)",
+            "price": 165.0,
             "currency": "TRY",
             "period": "monthly"
           }
