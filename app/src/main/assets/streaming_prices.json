@@ -1119,7 +1119,7 @@
           },
           {
             "name": "Duo",
-            "price": 20200,
+            "price": 20100,
             "currency": "KRW",
             "period": "monthly"
           },
@@ -1632,7 +1632,7 @@
           },
           {
             "name": "Family",
-            "price": 2200,
+            "price": 2100,
             "currency": "JPY",
             "period": "monthly"
           }
