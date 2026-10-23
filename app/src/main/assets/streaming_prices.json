@@ -1215,7 +1215,7 @@
           },
           {
             "name": "Family",
-            "price": 189.0,
+            "price": 179.0,
             "currency": "NOK",
             "period": "monthly"
           }
@@ -1252,7 +1252,7 @@
         ]
       },
       "CAD": {
-        "base_price": 15.99,
+        "base_price": 14.99,
         "base_currency": "CAD",
         "plans": [
           {
@@ -1263,7 +1263,7 @@
           },
           {
             "name": "Individual",
-            "price": 15.99,
+            "price": 14.99,
             "currency": "CAD",
             "period": "monthly"
           },
@@ -1687,18 +1687,18 @@
         ]
       },
       "KRW": {
-        "base_price": 11700,
+        "base_price": 11600,
         "base_currency": "KRW",
         "plans": [
           {
             "name": "Student",
-            "price": 6400,
+            "price": 6300,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Individual",
-            "price": 11700,
+            "price": 11600,
             "currency": "KRW",
             "period": "monthly"
           },
@@ -1927,7 +1927,7 @@
         ]
       },
       "THB": {
-        "base_price": 179.0,
+        "base_price": 189.0,
         "base_currency": "THB",
         "plans": [
           {
@@ -1938,7 +1938,7 @@
           },
           {
             "name": "Individual",
-            "price": 179.0,
+            "price": 189.0,
             "currency": "THB",
             "period": "monthly"
           },
@@ -2122,12 +2122,12 @@
         ]
       },
       "JPY": {
-        "base_price": 300,
+        "base_price": 200,
         "base_currency": "JPY",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 300,
+            "price": 200,
             "currency": "JPY",
             "period": "monthly"
           },
@@ -2629,12 +2629,12 @@
         ]
       },
       "JPY": {
-        "base_price": 300,
+        "base_price": 200,
         "base_currency": "JPY",
         "plans": [
           {
             "name": "Basic (100 GB)",
-            "price": 300,
+            "price": 200,
             "currency": "JPY",
             "period": "monthly"
           },
