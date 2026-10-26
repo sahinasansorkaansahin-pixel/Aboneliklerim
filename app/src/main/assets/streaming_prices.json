@@ -1132,7 +1132,7 @@
         ]
       },
       "UAH": {
-        "base_price": 229.0,
+        "base_price": 239.0,
         "base_currency": "UAH",
         "plans": [
           {
@@ -1143,7 +1143,7 @@
           },
           {
             "name": "Individual",
-            "price": 229.0,
+            "price": 239.0,
             "currency": "UAH",
             "period": "monthly"
           },
