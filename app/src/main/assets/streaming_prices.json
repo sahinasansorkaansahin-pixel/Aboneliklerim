@@ -316,7 +316,7 @@
         ]
       },
       "PLN": {
-        "base_price": 34.99,
+        "base_price": 35.99,
         "base_currency": "PLN",
         "plans": [
           {
@@ -327,7 +327,7 @@
           },
           {
             "name": "Prime Monthly",
-            "price": 34.99,
+            "price": 35.99,
             "currency": "PLN",
             "period": "monthly"
           }
@@ -1065,7 +1065,7 @@
           },
           {
             "name": "Family",
-            "price": 15.99,
+            "price": 16.99,
             "currency": "GBP",
             "period": "monthly"
           }
@@ -1119,7 +1119,7 @@
           },
           {
             "name": "Duo",
-            "price": 20100,
+            "price": 20200,
             "currency": "KRW",
             "period": "monthly"
           },
@@ -1252,7 +1252,7 @@
         ]
       },
       "CAD": {
-        "base_price": 14.99,
+        "base_price": 15.99,
         "base_currency": "CAD",
         "plans": [
           {
@@ -1263,7 +1263,7 @@
           },
           {
             "name": "Individual",
-            "price": 14.99,
+            "price": 15.99,
             "currency": "CAD",
             "period": "monthly"
           },
@@ -1872,7 +1872,7 @@
           },
           {
             "name": "Family",
-            "price": 17.99,
+            "price": 18.99,
             "currency": "SGD",
             "period": "monthly"
           }
@@ -2163,7 +2163,7 @@
           },
           {
             "name": "Premium (2 TB)",
-            "price": 6.99,
+            "price": 7.99,
             "currency": "GBP",
             "period": "monthly"
           }
@@ -2670,7 +2670,7 @@
           },
           {
             "name": "Family (6 TB)",
-            "price": 6.99,
+            "price": 7.99,
             "currency": "GBP",
             "period": "monthly"
           }
