@@ -316,7 +316,7 @@
         ]
       },
       "PLN": {
-        "base_price": 34.99,
+        "base_price": 35.99,
         "base_currency": "PLN",
         "plans": [
           {
@@ -327,7 +327,7 @@
           },
           {
             "name": "Prime Monthly",
-            "price": 34.99,
+            "price": 35.99,
             "currency": "PLN",
             "period": "monthly"
           }
@@ -1119,13 +1119,13 @@
           },
           {
             "name": "Duo",
-            "price": 20300,
+            "price": 20200,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 23500,
+            "price": 23400,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1149,7 +1149,7 @@
           },
           {
             "name": "Duo",
-            "price": 339.0,
+            "price": 349.0,
             "currency": "UAH",
             "period": "monthly"
           },
@@ -2187,7 +2187,7 @@
           },
           {
             "name": "Premium (2 TB)",
-            "price": 7.99,
+            "price": 8.99,
             "currency": "AZN",
             "period": "monthly"
           }
@@ -2694,7 +2694,7 @@
           },
           {
             "name": "Family (6 TB)",
-            "price": 7.99,
+            "price": 8.99,
             "currency": "AZN",
             "period": "monthly"
           }
