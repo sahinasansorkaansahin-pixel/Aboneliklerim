@@ -1287,7 +1287,7 @@
         "plans": [
           {
             "name": "Student",
-            "price": 7.99,
+            "price": 8.99,
             "currency": "AUD",
             "period": "monthly"
           },
@@ -1632,7 +1632,7 @@
           },
           {
             "name": "Family",
-            "price": 2100,
+            "price": 2200,
             "currency": "JPY",
             "period": "monthly"
           }
@@ -1872,7 +1872,7 @@
           },
           {
             "name": "Family",
-            "price": 17.99,
+            "price": 18.99,
             "currency": "SGD",
             "period": "monthly"
           }
@@ -2277,7 +2277,7 @@
           },
           {
             "name": "Standard (200 GB)",
-            "price": 29.0,
+            "price": 19.0,
             "currency": "NOK",
             "period": "monthly"
           },
@@ -2856,7 +2856,7 @@
           },
           {
             "name": "Personal (1 TB)",
-            "price": 7.99,
+            "price": 8.99,
             "currency": "AUD",
             "period": "monthly"
           },
