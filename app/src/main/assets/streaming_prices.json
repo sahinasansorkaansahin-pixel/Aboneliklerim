@@ -123,7 +123,7 @@
         "plans": [
           {
             "name": "Prime Video",
-            "price": 9800,
+            "price": 9700,
             "currency": "KRW",
             "period": "monthly"
           },
@@ -1125,7 +1125,7 @@
           },
           {
             "name": "Family",
-            "price": 23900,
+            "price": 23800,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1944,7 +1944,7 @@
           },
           {
             "name": "Family",
-            "price": 289.0,
+            "price": 279.0,
             "currency": "THB",
             "period": "monthly"
           }
