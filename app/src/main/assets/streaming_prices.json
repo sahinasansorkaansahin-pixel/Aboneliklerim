@@ -123,7 +123,7 @@
         "plans": [
           {
             "name": "Prime Video",
-            "price": 9700,
+            "price": 9800,
             "currency": "KRW",
             "period": "monthly"
           },
@@ -1119,13 +1119,13 @@
           },
           {
             "name": "Duo",
-            "price": 20600,
+            "price": 20700,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 23800,
+            "price": 23900,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1687,7 +1687,7 @@
         ]
       },
       "KRW": {
-        "base_price": 11900,
+        "base_price": 12000,
         "base_currency": "KRW",
         "plans": [
           {
@@ -1698,13 +1698,13 @@
           },
           {
             "name": "Individual",
-            "price": 11900,
+            "price": 12000,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Family",
-            "price": 18400,
+            "price": 18500,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1944,7 +1944,7 @@
           },
           {
             "name": "Family",
-            "price": 279.0,
+            "price": 289.0,
             "currency": "THB",
             "period": "monthly"
           }
@@ -2205,13 +2205,13 @@
           },
           {
             "name": "Standard (200 GB)",
-            "price": 3200,
+            "price": 3300,
             "currency": "KRW",
             "period": "monthly"
           },
           {
             "name": "Premium (2 TB)",
-            "price": 10800,
+            "price": 10900,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -2283,7 +2283,7 @@
           },
           {
             "name": "Premium (2 TB)",
-            "price": 79.0,
+            "price": 89.0,
             "currency": "NOK",
             "period": "monthly"
           }
@@ -2718,7 +2718,7 @@
           },
           {
             "name": "Family (6 TB)",
-            "price": 10800,
+            "price": 10900,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -2790,7 +2790,7 @@
           },
           {
             "name": "Family (6 TB)",
-            "price": 79.0,
+            "price": 89.0,
             "currency": "NOK",
             "period": "monthly"
           }
