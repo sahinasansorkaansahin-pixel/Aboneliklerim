@@ -321,7 +321,7 @@
         "plans": [
           {
             "name": "Prime Video",
-            "price": 20.99,
+            "price": 21.99,
             "currency": "PLN",
             "period": "monthly"
           },
@@ -1305,7 +1305,7 @@
           },
           {
             "name": "Family",
-            "price": 26.99,
+            "price": 27.99,
             "currency": "AUD",
             "period": "monthly"
           }
@@ -1704,7 +1704,7 @@
           },
           {
             "name": "Family",
-            "price": 18100,
+            "price": 18200,
             "currency": "KRW",
             "period": "monthly"
           }
@@ -1836,7 +1836,7 @@
         "plans": [
           {
             "name": "Student",
-            "price": 6.99,
+            "price": 7.99,
             "currency": "AUD",
             "period": "monthly"
           },
@@ -1992,7 +1992,7 @@
           },
           {
             "name": "Family",
-            "price": 219.0,
+            "price": 229.0,
             "currency": "CZK",
             "period": "monthly"
           }
@@ -2355,7 +2355,7 @@
           },
           {
             "name": "Premium (2 TB)",
-            "price": 11.99,
+            "price": 12.99,
             "currency": "AUD",
             "period": "monthly"
           }
@@ -2862,7 +2862,7 @@
           },
           {
             "name": "Family (6 TB)",
-            "price": 11.99,
+            "price": 12.99,
             "currency": "AUD",
             "period": "monthly"
           }
