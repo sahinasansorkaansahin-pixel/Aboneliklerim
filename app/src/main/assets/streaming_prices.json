@@ -195,7 +195,7 @@
         "plans": [
           {
             "name": "Prime Video",
-            "price": 49.0,
+            "price": 59.0,
             "currency": "DKK",
             "period": "monthly"
           },
@@ -1149,7 +1149,7 @@
           },
           {
             "name": "Duo",
-            "price": 349.0,
+            "price": 339.0,
             "currency": "UAH",
             "period": "monthly"
           },
