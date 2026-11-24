@@ -1012,7 +1012,7 @@
         ]
       },
       "JPY": {
-        "base_price": 1600,
+        "base_price": 1700,
         "base_currency": "JPY",
         "plans": [
           {
@@ -1023,7 +1023,7 @@
           },
           {
             "name": "Individual",
-            "price": 1600,
+            "price": 1700,
             "currency": "JPY",
             "period": "monthly"
           },
@@ -1179,7 +1179,7 @@
           },
           {
             "name": "Duo",
-            "price": 169.0,
+            "price": 179.0,
             "currency": "SEK",
             "period": "monthly"
           },
@@ -1245,7 +1245,7 @@
           },
           {
             "name": "Family",
-            "price": 129.0,
+            "price": 139.0,
             "currency": "DKK",
             "period": "monthly"
           }
@@ -1485,7 +1485,7 @@
           },
           {
             "name": "Family",
-            "price": 289.0,
+            "price": 299.0,
             "currency": "CZK",
             "period": "monthly"
           }
@@ -1608,7 +1608,7 @@
           },
           {
             "name": "Family",
-            "price": 14.99,
+            "price": 15.99,
             "currency": "EUR",
             "period": "monthly"
           }
@@ -1968,7 +1968,7 @@
           },
           {
             "name": "Family",
-            "price": 40.99,
+            "price": 41.99,
             "currency": "PLN",
             "period": "monthly"
           }
@@ -2187,7 +2187,7 @@
           },
           {
             "name": "Premium (2 TB)",
-            "price": 7.99,
+            "price": 8.99,
             "currency": "AZN",
             "period": "monthly"
           }
@@ -2694,7 +2694,7 @@
           },
           {
             "name": "Family (6 TB)",
-            "price": 7.99,
+            "price": 8.99,
             "currency": "AZN",
             "period": "monthly"
           }
