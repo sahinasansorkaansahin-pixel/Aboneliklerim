@@ -1125,14 +1125,14 @@
           },
           {
             "name": "Family",
-            "price": 23700,
+            "price": 23600,
             "currency": "KRW",
             "period": "monthly"
           }
         ]
       },
       "UAH": {
-        "base_price": 239.0,
+        "base_price": 229.0,
         "base_currency": "UAH",
         "plans": [
           {
@@ -1143,7 +1143,7 @@
           },
           {
             "name": "Individual",
-            "price": 239.0,
+            "price": 229.0,
             "currency": "UAH",
             "period": "monthly"
           },
@@ -1179,7 +1179,7 @@
           },
           {
             "name": "Duo",
-            "price": 179.0,
+            "price": 169.0,
             "currency": "SEK",
             "period": "monthly"
           },
@@ -1245,7 +1245,7 @@
           },
           {
             "name": "Family",
-            "price": 139.0,
+            "price": 129.0,
             "currency": "DKK",
             "period": "monthly"
           }
@@ -1449,7 +1449,7 @@
           },
           {
             "name": "Duo",
-            "price": 45.99,
+            "price": 46.99,
             "currency": "PLN",
             "period": "monthly"
           },
